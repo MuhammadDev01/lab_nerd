@@ -63,7 +63,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                               width: 20,
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
-                                  const Color(0xffD3B1B1).withOpacity(0.2),
+                                  const Color(0xCCD3B1B1),
                                   const Color(0xffD9D9D9),
                                 ]),
                                 borderRadius: BorderRadius.circular(50),

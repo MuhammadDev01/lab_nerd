@@ -29,7 +29,7 @@ class BottomNavigatorBarItem extends StatelessWidget {
         builder: (controller) => Container(
           decoration: isActive
               ? BoxDecoration(
-                  color: Colors.grey.withOpacity(0.3),
+                  color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(12),
                 )
               : const BoxDecoration(),

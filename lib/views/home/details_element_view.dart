@@ -41,7 +41,7 @@ class DetailsElementView extends StatelessWidget {
                   image: NetworkImage(backdrop),
                   fit: BoxFit.fill,
                   colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(0.4),
+                    Colors.white38,
                     BlendMode.dstATop,
                   ),
                 )),

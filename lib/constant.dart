@@ -27,8 +27,8 @@ Gradient forgotpasswordgradient = LinearGradient(
   end: Alignment.bottomCenter,
   colors: [
     const Color(0xffFFB636),
-    const Color(0xffFFB636).withOpacity(0.6),
-    const Color(0xffFFB636).withOpacity(0.21)
+    const Color(0x66FFB636),
+    const Color(0xE3FFB636),
   ],
 );
 

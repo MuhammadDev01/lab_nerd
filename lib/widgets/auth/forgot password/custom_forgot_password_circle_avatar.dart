@@ -12,7 +12,7 @@ class CustomForgotPasswordCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircleAvatar(
-        backgroundColor: const Color(0xff390b07).withOpacity(0.43),
+        backgroundColor: const Color(0x91390b07),
         radius: radius,
         child: insideCircleAvatar,
       ),

@@ -31,7 +31,6 @@ class BoardingPage extends StatefulWidget {
       body:
           'The student can study the periodic table and apply what he has learned with ease and take important notes',
       image: Image.asset('assets/images/Online learning.gif'),
-      //image: 'assets/images/svg/beaker chemistry.svg',
     ),
     BoardingItemModel(
       title: 'Quizes on what you want',
