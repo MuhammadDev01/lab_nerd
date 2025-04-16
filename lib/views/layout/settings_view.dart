@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/widgets/about_us_widget.dart';
+import 'package:lab_nerd/views/settings/widget/about_us_widget.dart';
 import 'package:lab_nerd/views/home/change_username_email_view.dart';
-import 'package:lab_nerd/widgets/change_password_widget.dart';
-import 'package:lab_nerd/widgets/dark_mode_widget.dart';
-import 'package:lab_nerd/widgets/logout_widget.dart';
-import 'package:lab_nerd/widgets/profile_widget_layout.dart';
-import 'package:lab_nerd/widgets/share_app_widget.dart';
+import 'package:lab_nerd/views/settings/widget/change_password_widget.dart';
+import 'package:lab_nerd/views/settings/widget/dark_mode_widget.dart';
+import 'package:lab_nerd/views/settings/widget/logout_widget.dart';
+import 'package:lab_nerd/views/settings/widget/profile_widget_layout.dart';
+import 'package:lab_nerd/views/settings/widget/share_app_widget.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});

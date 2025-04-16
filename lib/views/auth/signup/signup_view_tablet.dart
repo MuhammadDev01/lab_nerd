@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../widgets/auth/animated_logo.dart';
-import '../../../widgets/auth/background_auth.dart';
-import '../../widgets/auth/signup_tablet_fields.dart';
+import '../auth/animated_logo.dart';
+import '../auth/background_auth.dart';
+import '../auth/signup_tablet_fields.dart';
 
 class SignUpViewTablet extends StatelessWidget {
   const SignUpViewTablet({super.key});

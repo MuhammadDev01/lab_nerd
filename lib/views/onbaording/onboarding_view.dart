@@ -2,37 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/helper/cached_helper.dart';
-import 'package:lab_nerd/views/auth/login_layout.dart';
+import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class BoardingItemModel {
+class OnboardingItemModel {
   final String title;
   final String body;
   final Image image;
 
-  const BoardingItemModel({
+  const OnboardingItemModel({
     required this.title,
     required this.body,
     required this.image,
   });
 }
 
-class BoardingPage extends StatefulWidget {
-  BoardingPage({super.key});
-  final List<BoardingItemModel> boardingList = [
-    BoardingItemModel(
+class OnboardingView extends StatefulWidget {
+  OnboardingView({super.key});
+  final List<OnboardingItemModel> boardingList = [
+    OnboardingItemModel(
       title: 'Unique and safe experience',
       body:
           'Lab Nerd provides a special experience for students where interactions can be done easily and completely safely',
       image: Image.asset('assets/images/beaker chemistry.gif'),
     ),
-    BoardingItemModel(
+    OnboardingItemModel(
       title: 'Learn everything at home',
       body:
           'The student can study the periodic table and apply what he has learned with ease and take important notes',
       image: Image.asset('assets/images/Online learning.gif'),
     ),
-    BoardingItemModel(
+    OnboardingItemModel(
       title: 'Quizes on what you want',
       body:
           'Many quizzes on what have studied specifically,as there are Exams for the preparatory stage',
@@ -41,10 +41,10 @@ class BoardingPage extends StatefulWidget {
   ];
 
   @override
-  State<BoardingPage> createState() => _BoardingPageState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _BoardingPageState extends State<BoardingPage> {
+class _OnboardingViewState extends State<OnboardingView> {
   final boardingController = PageController();
 
   bool isLast = false;
@@ -59,7 +59,7 @@ class _BoardingPageState extends State<BoardingPage> {
                     .then((value) {
                   if (value) {
                     Get.off(
-                      () => const LoginLayout(),
+                      () => const LoginViewBuilder(),
                       transition: Transition.zoom,
                       curve: Curves.bounceInOut,
                       duration: const Duration(milliseconds: 500),
@@ -126,7 +126,7 @@ class _BoardingPageState extends State<BoardingPage> {
                             .then((value) {
                           if (value) {
                             Get.off(
-                              () => const LoginLayout(),
+                              () => const LoginViewBuilder(),
                               transition: Transition.zoom,
                               curve: Curves.bounceInOut,
                               duration: const Duration(milliseconds: 500),
@@ -153,7 +153,7 @@ class _BoardingPageState extends State<BoardingPage> {
 }
 
 Widget boardingBuildItem({
-  required BoardingItemModel model,
+  required OnboardingItemModel model,
 }) =>
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,

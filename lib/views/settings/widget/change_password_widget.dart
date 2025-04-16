@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/widgets/change_password_view.dart';
+import 'package:lab_nerd/views/settings/views/change_password_view.dart';
 
 class ChangePasswordWidget extends StatelessWidget {
   const ChangePasswordWidget({super.key});

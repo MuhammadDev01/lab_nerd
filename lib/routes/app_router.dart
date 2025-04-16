@@ -1,16 +1,16 @@
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/bindings/app_binding.dart';
 import 'package:lab_nerd/logic/bindings/auth_binding.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
-import 'package:lab_nerd/views/boarding_page.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
+import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt_view.dart';
 import 'package:lab_nerd/views/home/edit_profile_view.dart';
 import 'package:lab_nerd/views/home/elements_list_view.dart';
 import 'package:lab_nerd/views/home/search_element_view.dart';
 import 'package:lab_nerd/views/layout/exams_view.dart';
 import 'package:lab_nerd/views/layout/experiment_view.dart';
-import 'package:lab_nerd/views/auth/login_layout.dart';
-import 'package:lab_nerd/views/auth/signup_layout.dart';
+import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
+import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
 import 'package:lab_nerd/views/layout/home_layout.dart';
 import 'package:lab_nerd/views/layout/periodic_table_view.dart';
 import 'package:lab_nerd/views/home/quizes_view.dart';
@@ -31,11 +31,11 @@ class AppRouter {
     ),
     GetPage(
       name: Routes.onBoardingView,
-      page: () => BoardingPage(),
+      page: () => OnboardingView(),
     ),
     GetPage(
       name: Routes.loginView,
-      page: () => const LoginLayout(),
+      page: () => const LoginViewBuilder(),
       binding: AuthBinding(),
     ),
     GetPage(

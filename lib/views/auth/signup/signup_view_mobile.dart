@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/auth/animated_logo.dart';
-import '../../../widgets/auth/background_auth.dart';
-import '../../../widgets/auth/signup_mobile_bottom_sheet.dart';
+import '../auth/animated_logo.dart';
+import '../auth/background_auth.dart';
+import '../auth/signup_mobile_bottom_sheet.dart';
 
 class SignupViewMobile extends StatefulWidget {
   const SignupViewMobile({

@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/app_style.dart';
-import '../default_button.dart';
-import '../default_text_form_field.dart';
+import '../../../widgets/default_button.dart';
+import '../../../widgets/default_text_form_field.dart';
 
 class SignupDesktopFields extends StatefulWidget {
   const SignupDesktopFields({super.key});

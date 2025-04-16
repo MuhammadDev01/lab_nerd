@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import '../../../widgets/home/bottom_navigation_bar_item.dart';
+import '../home/home/bottom_navigation_bar_item.dart';
 
 class HomeViewMobile extends StatelessWidget {
   const HomeViewMobile({super.key});

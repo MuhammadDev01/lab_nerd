@@ -4,11 +4,11 @@ import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/helper/cached_helper.dart';
 import 'package:lab_nerd/logic/controllers/register_controller.dart';
 import 'package:lab_nerd/utils/app_style.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 import 'app_bar_bottom_sheet.dart';
-import '../default_button.dart';
-import '../default_text_form_field.dart';
-import '../cancel_icon_button.dart';
+import '../../../widgets/default_button.dart';
+import '../../../widgets/default_text_form_field.dart';
+import '../../../widgets/cancel_icon_button.dart';
 
 class SignupMobileBottomSheet extends StatefulWidget {
   const SignupMobileBottomSheet({super.key});

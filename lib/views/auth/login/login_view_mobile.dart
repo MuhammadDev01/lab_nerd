@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/auth/animated_logo.dart';
-import '../../../widgets/auth/background_auth.dart';
-import '../../../widgets/auth/center_login_text.dart';
-import '../../../widgets/shimer_arrows.dart';
-import '../../../widgets/auth/mobile_show_login_bottom_sheet.dart';
+import '../auth/animated_logo.dart';
+import '../auth/background_auth.dart';
+import '../auth/center_login_text.dart';
+import '../../../../widgets/shimer_arrows.dart';
+import '../auth/mobile_show_login_bottom_sheet.dart';
 
 class LoginViewMobile extends StatelessWidget {
   const LoginViewMobile({

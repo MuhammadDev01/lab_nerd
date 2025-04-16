@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
 import 'package:lab_nerd/models/exam_model.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 
 class ExamsView extends StatefulWidget {
   const ExamsView({super.key});

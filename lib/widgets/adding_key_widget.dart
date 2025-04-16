@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/helper/cached_helper.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 
 class AddingKeyWidget extends StatefulWidget {
   const AddingKeyWidget({

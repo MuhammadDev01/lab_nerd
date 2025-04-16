@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
 import 'package:lab_nerd/widgets/adding_key_widget.dart';
-import '../../../widgets/home/bottom_navigation_bar_item.dart';
+import '../home/home/bottom_navigation_bar_item.dart';
 
 class HomeViewDesktop extends StatelessWidget {
   const HomeViewDesktop({super.key});

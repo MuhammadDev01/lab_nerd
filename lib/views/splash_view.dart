@@ -22,9 +22,9 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    navigateToWelcome();
+    _navigateToWelcome();
     if (mounted) {
-      moveEyes();
+      _moveEyes();
     }
   }
 
@@ -34,7 +34,7 @@ class _SplashViewState extends State<SplashView> {
     _timer?.cancel();
   }
 
-  void moveEyes() {
+  void _moveEyes() {
     _timer = Timer.periodic(const Duration(milliseconds: 150), (Timer timer) {
       setState(() {
         if (_currentIndex < splashEyes.length - 1) {
@@ -116,7 +116,7 @@ class _SplashViewState extends State<SplashView> {
     );
   }
 
-  void navigateToWelcome() {
+  void _navigateToWelcome() {
     Future.delayed(const Duration(seconds: 2)).then((value) {
       if (CachedHelper.getData(key: kOnBoarding) == null) {
         Get.offNamed(Routes.onBoardingView);

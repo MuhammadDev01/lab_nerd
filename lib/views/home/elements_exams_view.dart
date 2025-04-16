@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/utils/app_images.dart';
 import 'package:lab_nerd/views/home/elements_quizzes_view.dart';
-import 'package:lab_nerd/widgets/auth/arrow_back_widget.dart';
+import 'package:lab_nerd/views/auth/auth/arrow_back_widget.dart';
 
 class ElementsExamsView extends StatefulWidget {
   const ElementsExamsView({super.key});

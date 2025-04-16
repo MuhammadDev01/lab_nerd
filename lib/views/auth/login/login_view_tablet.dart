@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/widgets/auth/animated_logo.dart';
-import 'package:lab_nerd/widgets/auth/background_auth.dart';
-import 'package:lab_nerd/widgets/auth/center_login_text.dart';
-import 'package:lab_nerd/widgets/auth/login_fields_tablet.dart';
+import 'package:lab_nerd/views/auth/auth/animated_logo.dart';
+import 'package:lab_nerd/views/auth/auth/background_auth.dart';
+import 'package:lab_nerd/views/auth/auth/center_login_text.dart';
+import 'package:lab_nerd/views/auth/auth/login_fields_tablet.dart';
 
 class LoginViewTablet extends StatefulWidget {
   const LoginViewTablet({super.key});

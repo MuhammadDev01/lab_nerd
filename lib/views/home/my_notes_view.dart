@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/widgets/auth/arrow_back_widget.dart';
+import 'package:lab_nerd/views/auth/auth/arrow_back_widget.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

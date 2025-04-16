@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
 import 'package:lab_nerd/utils/app_style.dart';
-import '../../../widgets/auth/forgot password/custom_forgot_password_appbar.dart';
-import '../../../widgets/auth/forgot password/custom_forgot_password_circle_avatar.dart';
-import '../../widgets/default_text_form_field.dart';
-import '../../../widgets/auth/forgot password/forgot_password_button.dart';
+import '../auth/forgot password/custom_forgot_password_appbar.dart';
+import '../auth/forgot password/custom_forgot_password_circle_avatar.dart';
+import '../../../widgets/default_text_form_field.dart';
+import '../auth/forgot password/forgot_password_button.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});

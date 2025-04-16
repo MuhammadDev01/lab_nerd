@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/helper/cached_helper.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/routes/app_router.dart';
 import 'package:lab_nerd/utils/app_style.dart';
-import 'package:lab_nerd/views/auth/forgot_password_view.dart';
-import '../default_button.dart';
-import '../default_text_form_field.dart';
+import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
+import 'package:lab_nerd/views/layout/home_layout.dart';
+import 'app_bar_bottom_sheet.dart';
+import '../../../widgets/default_button.dart';
+import '../../../widgets/default_text_form_field.dart';
 import 'google_login_button.dart';
 
-class LoginFieldsTablet extends StatefulWidget {
-  const LoginFieldsTablet({super.key});
+class LoginFields extends StatefulWidget {
+  const LoginFields({super.key});
 
   @override
-  State<LoginFieldsTablet> createState() => _LoginFieldsTabletState();
+  State<LoginFields> createState() => _LoginFieldsState();
 }
 
-class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
+class _LoginFieldsState extends State<LoginFields> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
@@ -36,14 +40,22 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
         child: Column(
           children: [
             const SizedBox(
-              height: 80,
+              height: 16,
+            ),
+            const AppbarBottomSheet(),
+            const SizedBox(
+              height: 8,
             ),
             Text(
               'LOGIN',
-              style: AppStyle.interF14w600.copyWith(fontSize: 24),
+              style: AppStyle.interF14w600.copyWith(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+              ),
             ),
             DefaultTextFormField(
               helperText: 'Email',
+              width: 650,
               hintText: 'email address',
               onChange: (value) {
                 setState(() {
@@ -60,6 +72,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
             GetBuilder<LoginController>(
               builder: (controller) => DefaultTextFormField(
                 helperText: 'Password',
+                width: 650,
                 cursorAndPrefixIconColor: Colors.black,
                 controller: passwordController,
                 obscureText: controller.isVisibilty,
@@ -69,7 +82,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                   },
                   icon: Icon(controller.visibilityPassword),
                 ),
-                hintText: 'password',
+                hintText: 'Password',
                 textInputType: TextInputType.visiblePassword,
               ),
             ),
@@ -173,16 +186,12 @@ class LoginButton extends StatelessWidget {
     return GetBuilder<LoginController>(
       builder: (controller) => DefaultButton(
         onPressed: () async {
-          //String email = emailController.text.trim();
-          //String password = passwordController.text.trim();
+          String email = emailController.text.trim();
+          String password = passwordController.text.trim();
           if (formKey.currentState!.validate()) {
             controller.changeLoading();
-            // await controller
-            //     .loginWithFirebase(
-            //       email: email,
-            //       password: password,
-            //     )
-            //     .then((value) => controller.changeLoading());
+            await loginToHomeMethod(controller, email, password);
+            controller.changeLoading();
           }
         },
         colorButton: const Color(0xff5BE9A0),
@@ -190,11 +199,49 @@ class LoginButton extends StatelessWidget {
             ? const LoadingWidget()
             : Text(
                 'Login',
-                style: AppStyle.interF14w600.copyWith(
-                  fontSize: 18,
-                ),
+                style: AppStyle.interF14w600,
               ),
       ),
+    );
+  }
+
+  Future<void> loginToHomeMethod(
+      LoginController controller, String email, String password) async {
+    await controller
+        .loginWithBackend(
+      email: email,
+      password: password,
+    )
+        .then(
+      (value) {
+        try {
+          if (controller.loginWithBackModel?.accessToken != null) {
+            CachedHelper.saveData(
+                    key: kOnLogging,
+                    value: controller.loginWithBackModel!.accessToken)
+                .then((value) {
+              Get.off(
+                const HomeLayout(),
+                transition: Transition.fadeIn,
+              );
+            });
+          } else if (controller.loginWithBackModel?.message != null) {
+            Get.snackbar(
+              'Error Found',
+              controller.loginWithBackModel!.message!,
+              colorText: Colors.white,
+              backgroundColor: Colors.red[900],
+            );
+          }
+        } catch (e) {
+          Get.snackbar(
+            'Error Found',
+            e.toString(),
+            colorText: Colors.white,
+            backgroundColor: Colors.red[900],
+          );
+        }
+      },
     );
   }
 }
@@ -203,6 +250,7 @@ class GoogleButton extends StatelessWidget {
   const GoogleButton({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(
