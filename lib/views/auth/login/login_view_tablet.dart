@@ -14,9 +14,22 @@ class LoginViewTablet extends StatefulWidget {
 }
 
 class _LoginViewTabletState extends State<LoginViewTablet> {
-  var controller = Get.find<LoginController>();
   int index = 0;
   final PageController _pageController = PageController();
+
+  final loginController = Get.find<LoginController>();
+
+  @override
+  void initState() {
+    loginController.moveEyes();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    loginController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +60,7 @@ class _LoginViewTabletState extends State<LoginViewTablet> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const AnimatedLogo(
-                logoHight: 190,
-                sizeEye: 70,
-                betweenEyes: 140,
-                trans: 60,
-                labNerdSize: 60,
-                wordSize: 26,
-              ),
+              const AnimatedLogo(),
               Expanded(
                 flex: 3,
                 child: PageView(

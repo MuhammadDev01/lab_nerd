@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 
 class CenterLoginText extends StatelessWidget {
   const CenterLoginText({
@@ -17,24 +17,24 @@ class CenterLoginText extends StatelessWidget {
           children: [
             Text(
               blackText,
-              style: AppStyle.interF32w400.copyWith(
+              style: TextStyles.interF32w400.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
             Text(
               'to',
-              style: AppStyle.interF32w400
+              style: TextStyles.interF32w400
                   .copyWith(color: const Color(0xffC12D2B)),
             ),
           ],
         ),
         Text(
           'explore world of',
-          style: AppStyle.interF32w400.copyWith(color: const Color(0xffC12D2B)),
+          style: TextStyles.interF32w400.copyWith(color: const Color(0xffC12D2B)),
         ),
         Text(
           'chemistry',
-          style: AppStyle.interF32w400
+          style: TextStyles.interF32w400
               .copyWith(color: const Color(0xffC12D2B)),
         ),
       ],

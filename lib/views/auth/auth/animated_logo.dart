@@ -4,26 +4,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/widgets/adding_key_widget.dart';
 
 class AnimatedLogo extends StatelessWidget {
   const AnimatedLogo({
     super.key,
-    this.logoWidth = 266,
-    this.logoHight = 150,
-    this.sizeEye = 50,
-    this.betweenEyes = 111,
-    this.trans = 50,
-    this.labNerdSize = 50,
-    this.wordSize = 23,
   });
-  final double logoWidth; // = 266;
-  final double logoHight; // = 150;
-  final double sizeEye; // = 50;
-  final double betweenEyes;
-  final double trans;
-  final double labNerdSize;
-  final double wordSize;
+  final double sizeEye = 40;
+  final double betweenEyes = 100;
 
   @override
   Widget build(BuildContext context) {
@@ -36,18 +23,16 @@ class AnimatedLogo extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 Assets.imagesSvgLogowithouteyes,
-                width: logoWidth,
-                height: logoHight,
+                height: 130,
               ),
               Padding(
-                padding: EdgeInsets.only(top: trans),
+                padding: EdgeInsets.only(top: 50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GetBuilder<LoginController>(
                       builder: (controller) => SvgPicture.asset(
                         'assets/images/svg/${controller.eyesMovation[controller.currentIndexEyes]}',
-                        width: sizeEye,
                         height: sizeEye,
                       ),
                     ),
@@ -57,7 +42,6 @@ class AnimatedLogo extends StatelessWidget {
                     GetBuilder<LoginController>(
                       builder: (controller) => SvgPicture.asset(
                         'assets/images/svg/${controller.eyesMovation[controller.currentIndexEyes]}',
-                        width: sizeEye,
                         height: sizeEye,
                       ),
                     ),
@@ -67,33 +51,21 @@ class AnimatedLogo extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 8,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              InkWell(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => const AlertDialog(
-                      actions: [
-                        AddingKeyWidget(),
-                      ],
-                    ),
-                  );
-                },
-                child: SvgPicture.asset(
-                  Assets.imagesSvgLab,
-                  height: labNerdSize,
-                ),
+              SvgPicture.asset(
+                Assets.imagesSvgLab,
+                height: 50,
               ),
               const SizedBox(
                 width: 13,
               ),
               SvgPicture.asset(
                 Assets.imagesSvgNerd,
-                height: labNerdSize,
+                height: 50,
               ),
             ],
           ),
@@ -102,7 +74,7 @@ class AnimatedLogo extends StatelessWidget {
           ),
           SvgPicture.asset(
             Assets.imagesSvgChemistryforeveryone,
-            height: wordSize,
+            height: 23,
           ),
         ],
       ),

@@ -5,7 +5,11 @@ import 'package:lab_nerd/logic/controllers/register_controller.dart';
 class AuthBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(LoginController());
-    Get.put(RegisterController());
+    Get.lazyPut(
+      () => LoginController(),
+    );
+    Get.lazyPut(
+      () => RegisterController(),
+    );
   }
 }

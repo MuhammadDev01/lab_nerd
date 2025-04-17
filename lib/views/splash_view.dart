@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
@@ -16,7 +17,7 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   int _currentIndex = 0;
-
+  final int eyeSize = 50;
   Timer? _timer;
 
   @override
@@ -32,18 +33,6 @@ class _SplashViewState extends State<SplashView> {
   void dispose() {
     super.dispose();
     _timer?.cancel();
-  }
-
-  void _moveEyes() {
-    _timer = Timer.periodic(const Duration(milliseconds: 150), (Timer timer) {
-      setState(() {
-        if (_currentIndex < splashEyes.length - 1) {
-          _currentIndex++;
-        } else {
-          _timer?.cancel();
-        }
-      });
-    });
   }
 
   @override
@@ -68,8 +57,7 @@ class _SplashViewState extends State<SplashView> {
                   children: [
                     SvgPicture.asset(
                       Assets.imagesSvgLogowithouteyes,
-                      width: 266,
-                      height: 150,
+                      height: 135,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 50),
@@ -78,21 +66,22 @@ class _SplashViewState extends State<SplashView> {
                         children: [
                           SvgPicture.asset(
                             'assets/images/svg/${splashEyes[_currentIndex]}',
-                            width: 50,
-                            height: 50,
+                            height: eyeSize.h,
                           ),
                           const SizedBox(
-                            width: 111,
+                            width: 100,
                           ),
                           SvgPicture.asset(
                             'assets/images/svg/${splashEyes[_currentIndex]}',
-                            width: 50,
-                            height: 50,
+                            height: eyeSize.h,
                           ),
                         ],
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +94,7 @@ class _SplashViewState extends State<SplashView> {
                   ],
                 ),
                 const SizedBox(
-                  height: 13,
+                  height: 15,
                 ),
                 SvgPicture.asset(Assets.imagesSvgChemistryforeveryone),
               ],
@@ -114,6 +103,18 @@ class _SplashViewState extends State<SplashView> {
         ],
       ),
     );
+  }
+
+  void _moveEyes() {
+    _timer = Timer.periodic(const Duration(milliseconds: 150), (Timer timer) {
+      setState(() {
+        if (_currentIndex < splashEyes.length - 1) {
+          _currentIndex++;
+        } else {
+          _timer?.cancel();
+        }
+      });
+    });
   }
 
   void _navigateToWelcome() {

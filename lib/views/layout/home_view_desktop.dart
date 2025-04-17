@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/widgets/adding_key_widget.dart';
 import '../home/home/bottom_navigation_bar_item.dart';
 
 class HomeViewDesktop extends StatelessWidget {
@@ -115,22 +113,10 @@ class HomeViewDesktop extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: IconButton(
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => const AlertDialog(
-                      actions: [
-                        AddingKeyWidget(),
-                      ],
-                    ),
-                  );
-                },
-                icon: const Icon(
-                  FontAwesomeIcons.key,
-                  size: 30,
-                  color: Colors.purple,
-                ),
+              child: Icon(
+                FontAwesomeIcons.key,
+                size: 30,
+                color: Colors.purple,
               ),
             ),
           ],

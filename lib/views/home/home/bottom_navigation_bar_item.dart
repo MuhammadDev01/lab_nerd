@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 
 class BottomNavigatorBarItem extends StatelessWidget {
   const BottomNavigatorBarItem({
@@ -55,13 +55,13 @@ class BottomNavigatorBarItem extends StatelessWidget {
                 children: [
                   Text(
                     firstLetter,
-                    style: AppStyle.slacksideOnesF16.copyWith(
+                    style: TextStyles.slacksideOnesF16.copyWith(
                       color: Colors.red,
                     ),
                   ),
                   Text(
                     label,
-                    style: AppStyle.slacksideOnesF16.copyWith(
+                    style: TextStyles.slacksideOnesF16.copyWith(
                       color: Get.isDarkMode
                           ? Theme.of(context).primaryColorLight
                           : Theme.of(context).primaryColorDark,

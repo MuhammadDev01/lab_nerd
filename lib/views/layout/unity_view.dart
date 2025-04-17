@@ -8,7 +8,6 @@ import 'package:lab_nerd/views/home/chat_gpt_view.dart';
 import 'package:lab_nerd/views/home/elements_exams_view.dart';
 import 'package:lab_nerd/views/home/my_notes_view.dart';
 import 'package:lab_nerd/views/home/search_element_view.dart';
-import 'package:lab_nerd/widgets/adding_key_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -57,21 +56,9 @@ class _HomeViewState extends State<HomeView>
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => const AlertDialog(
-                    actions: [
-                      AddingKeyWidget(),
-                    ],
-                  ),
-                );
-              },
-              child: SvgPicture.asset(
-                Assets.imagesSvgLab,
-                height: 35,
-              ),
+            SvgPicture.asset(
+              Assets.imagesSvgLab,
+              height: 35,
             ),
             const SizedBox(
               width: 10,

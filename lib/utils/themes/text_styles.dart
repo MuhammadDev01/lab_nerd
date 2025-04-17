@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/constant.dart';
 
-class AppStyle {
+class TextStyles {
   static TextStyle interF32w400 = const TextStyle(
     fontSize: 32,
     fontFamily: fontInter,

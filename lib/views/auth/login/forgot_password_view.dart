@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 import '../auth/forgot password/custom_forgot_password_appbar.dart';
 import '../auth/forgot password/custom_forgot_password_circle_avatar.dart';
 import '../../../widgets/default_text_form_field.dart';
@@ -84,7 +84,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     Text(
                       'please enter your Email Address To Receive a Verification Code',
                       textAlign: TextAlign.center,
-                      style: AppStyle.interF14w600,
+                      style: TextStyles.interF14w600,
                     ),
                     const SizedBox(
                       height: 30,
@@ -106,7 +106,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                             : Center(
                                 child: Text(
                                   'Send',
-                                  style: AppStyle.interF14w600,
+                                  style: TextStyles.interF14w600,
                                 ),
                               ),
                         onTap: () async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   const DefaultTextFormField({
@@ -56,7 +56,7 @@ class DefaultTextFormField extends StatelessWidget {
       children: [
         Text(
           helperText,
-          style: textStyle ?? AppStyle.interF14w600,
+          style: textStyle ?? TextStyles.interF14w600,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),

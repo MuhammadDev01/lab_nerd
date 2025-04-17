@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/helper/cached_helper.dart';
 import 'package:lab_nerd/logic/controllers/register_controller.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 import 'app_bar_bottom_sheet.dart';
 import '../../../widgets/default_button.dart';
@@ -60,7 +60,7 @@ class _SignupMobileBottomSheetState extends State<SignupMobileBottomSheet> {
                   ),
                   Text(
                     'SIGNUP',
-                    style: AppStyle.interF14w600.copyWith(
+                    style: TextStyles.interF14w600.copyWith(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                     ),
@@ -122,7 +122,7 @@ class _SignupMobileBottomSheetState extends State<SignupMobileBottomSheet> {
                           ? const LoadingWidget()
                           : Text(
                               'Sign up',
-                              style: AppStyle.interF14w600,
+                              style: TextStyles.interF14w600,
                             ),
                     ),
                   ),

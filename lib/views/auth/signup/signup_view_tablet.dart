@@ -17,12 +17,12 @@ class SignUpViewTablet extends StatelessWidget {
             Column(
               children: [
                 AnimatedLogo(
-                  logoHight: 190,
-                  sizeEye: 70,
-                  betweenEyes: 140,
-                  trans: 60,
-                  labNerdSize: 60,
-                  wordSize: 26,
+                  // logoHight: 190,
+                  // sizeEye: 70,
+                  // betweenEyes: 140,
+                  // trans: 60,
+                  // labNerdSize: 60,
+                  // wordSize: 26,
                 ),
                 Spacer(),
                 SignupDesktopFields(),

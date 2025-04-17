@@ -5,7 +5,7 @@ import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/helper/cached_helper.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/routes/app_router.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
 import 'package:lab_nerd/views/layout/home_layout.dart';
 import 'app_bar_bottom_sheet.dart';
@@ -48,7 +48,7 @@ class _LoginFieldsState extends State<LoginFields> {
             ),
             Text(
               'LOGIN',
-              style: AppStyle.interF14w600.copyWith(
+              style: TextStyles.interF14w600.copyWith(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
               ),
@@ -95,7 +95,7 @@ class _LoginFieldsState extends State<LoginFields> {
                     children: [
                       Text(
                         'Remember me',
-                        style: AppStyle.interF14w600,
+                        style: TextStyles.interF14w600,
                       ),
                       const SizedBox(
                         width: 5,
@@ -122,7 +122,7 @@ class _LoginFieldsState extends State<LoginFields> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: AppStyle.interF14w600.copyWith(color: Colors.red),
+                      style: TextStyles.interF14w600.copyWith(color: Colors.red),
                     ),
                   ),
                 ],
@@ -145,7 +145,7 @@ class _LoginFieldsState extends State<LoginFields> {
               children: [
                 Text(
                   "Don't have an account?",
-                  style: AppStyle.interF14w600,
+                  style: TextStyles.interF14w600,
                 ),
                 const SizedBox(
                   width: 14,
@@ -156,7 +156,7 @@ class _LoginFieldsState extends State<LoginFields> {
                   },
                   child: Text(
                     'Sign up',
-                    style: AppStyle.interF14w600
+                    style: TextStyles.interF14w600
                         .copyWith(color: const Color(0xffFD0505)),
                   ),
                 ),
@@ -199,7 +199,7 @@ class LoginButton extends StatelessWidget {
             ? const LoadingWidget()
             : Text(
                 'Login',
-                style: AppStyle.interF14w600,
+                style: TextStyles.interF14w600,
               ),
       ),
     );

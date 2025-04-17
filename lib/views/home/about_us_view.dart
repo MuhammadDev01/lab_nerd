@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/auth/arrow_back_widget.dart';
 
 class AboutUsView extends StatefulWidget {
@@ -104,7 +104,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                 ),
                 Text(
                   'About US',
-                  style: AppStyle.interF14w600.copyWith(
+                  style: TextStyles.interF14w600.copyWith(
                     fontSize: 24,
                   ),
                 ),

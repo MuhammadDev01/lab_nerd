@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 import '../../../widgets/default_button.dart';
 import '../../../widgets/default_text_form_field.dart';
 
@@ -37,7 +37,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
           children: [
             Text(
               'SIGNUP',
-              style: AppStyle.interF14w600.copyWith(fontSize: 24),
+              style: TextStyles.interF14w600.copyWith(fontSize: 24),
             ),
             DefaultTextFormField(
               helperText: 'Username',
@@ -107,7 +107,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
               colorButton: colorButton1,
               child: Text(
                 'SignUp',
-                style: AppStyle.interF14w600.copyWith(
+                style: TextStyles.interF14w600.copyWith(
                   fontSize: 18,
                 ),
               ),

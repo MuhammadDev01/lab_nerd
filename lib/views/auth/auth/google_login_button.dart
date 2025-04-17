@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/utils/app_images.dart';
-import 'package:lab_nerd/utils/app_style.dart';
+import 'package:lab_nerd/utils/themes/text_styles.dart';
 
 class LoginWithGoogleButton extends StatelessWidget {
   const LoginWithGoogleButton({
@@ -21,7 +21,7 @@ class LoginWithGoogleButton extends StatelessWidget {
         ),
         Text(
           'Login with Google',
-          style: AppStyle.interF14w600,
+          style: TextStyles.interF14w600,
         ),
       ],
     );
