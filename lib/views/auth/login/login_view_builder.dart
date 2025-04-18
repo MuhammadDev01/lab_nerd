@@ -10,7 +10,7 @@ class LoginViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveLayout(
       mobile: (context) => const LoginViewMobile(),
-      desktop: (context) => const LoginViewTablet(),
+      tablet: (context) => const LoginViewTablet(),
     );
   }
 }

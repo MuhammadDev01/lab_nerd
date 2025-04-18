@@ -1,36 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/login_controller.dart';
-import '../auth/animated_logo.dart';
-import '../auth/background_auth.dart';
-import '../auth/center_login_text.dart';
+import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
+import 'widgets/logo_of_login.dart';
+import 'widgets/background_auth.dart';
+import 'widgets/center_login_text.dart';
 import '../../../../widgets/shimer_arrows.dart';
-import '../auth/mobile_show_login_bottom_sheet.dart';
+import 'widgets/mobile_show_login_bottom_sheet.dart';
 
-class LoginViewMobile extends StatefulWidget {
+class LoginViewMobile extends StatelessWidget {
   const LoginViewMobile({
     super.key,
   });
-
-  @override
-  State<LoginViewMobile> createState() => _LoginViewMobileState();
-}
-
-class _LoginViewMobileState extends State<LoginViewMobile> {
-  final loginController = Get.find<LoginController>();
-
-  @override
-  void initState() {
-    loginController.moveEyes();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    loginController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,25 +18,28 @@ class _LoginViewMobileState extends State<LoginViewMobile> {
       resizeToAvoidBottomInset: false,
       body: BackgroundAuth(
         child: Padding(
-          padding: EdgeInsets.only(right: 16.w, left: 16.w, top: 16.h),
+          padding: EdgeInsets.only(right: 16, left: 16, top: 16),
           child: Stack(
             children: [
               Column(
                 children: [
-                  AnimatedLogo(),
-                  Expanded(
-                    child: Stack(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            CenterLoginText(),
-                            ShimmerArrows(),
-                          ],
-                        ),
-                        ShowLoginBottomSheet(),
-                      ],
-                    ),
+                  LogoOfLogin(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const NerdLabWord(),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CenterLoginText(),
+                          ShimmerArrows(),
+                        ],
+                      ),
+                      ShowLoginBottomSheet(),
+                    ],
                   ),
                 ],
               ),

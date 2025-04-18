@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
 
 class ShareAppWidget extends StatelessWidget {
   const ShareAppWidget({super.key});

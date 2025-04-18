@@ -10,7 +10,7 @@ class ProfileWidgetLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveLayout(
       mobile: (context) => const ProfileWidget(),
-      desktop: (context) => const ProfileWidgetTablet(),
+      tablet: (context) => const ProfileWidgetTablet(),
     );
   }
 }

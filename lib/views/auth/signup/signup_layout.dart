@@ -10,7 +10,7 @@ class SignupLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveLayout(
       mobile: (context) => const SignupViewMobile(),
-      desktop: (context) => const SignUpViewTablet(),
+      tablet: (context) => const SignUpViewTablet(),
     );
   }
 }

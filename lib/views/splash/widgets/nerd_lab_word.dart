@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lab_nerd/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/app_images.dart';
 
 class NerdLabWord extends StatelessWidget {
   const NerdLabWord({

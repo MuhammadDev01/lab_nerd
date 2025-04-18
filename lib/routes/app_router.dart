@@ -1,21 +1,21 @@
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/bindings/app_binding.dart';
-import 'package:lab_nerd/logic/bindings/auth_binding.dart';
-import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
+import 'package:lab_nerd/core/logic/bindings/app_binding.dart';
+import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
+import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/views/home/unity_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt_view.dart';
-import 'package:lab_nerd/views/home/edit_profile_view.dart';
-import 'package:lab_nerd/views/home/elements_list_view.dart';
+import 'package:lab_nerd/views/settings/edit_profile_view.dart';
+import 'package:lab_nerd/views/exams/widgets/elements_list_view.dart';
 import 'package:lab_nerd/views/home/search_element_view.dart';
-import 'package:lab_nerd/views/layout/exams_view.dart';
-import 'package:lab_nerd/views/layout/experiment_view.dart';
+import 'package:lab_nerd/views/exams/exams_view.dart';
+import 'package:lab_nerd/views/home/experiment_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
-import 'package:lab_nerd/views/layout/home_layout.dart';
-import 'package:lab_nerd/views/layout/periodic_table_view.dart';
-import 'package:lab_nerd/views/home/quizes_view.dart';
-import 'package:lab_nerd/views/layout/settings_view.dart';
-import 'package:lab_nerd/views/layout/unity_view.dart';
+import 'package:lab_nerd/views/home/home_layout.dart';
+import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
+import 'package:lab_nerd/views/exams/quizes_view.dart';
+import 'package:lab_nerd/views/settings/settings_view.dart';
 import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {

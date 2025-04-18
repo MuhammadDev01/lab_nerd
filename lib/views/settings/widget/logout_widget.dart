@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
 
 class LogOutWidget extends StatelessWidget {
   const LogOutWidget({super.key});
@@ -26,8 +26,7 @@ class LogOutWidget extends StatelessWidget {
             onConfirm: () {
               controller.signoutFromApp();
             },
-            buttonColor:
-                Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
+            buttonColor: Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
           );
         },
         borderRadius: BorderRadius.circular(6),

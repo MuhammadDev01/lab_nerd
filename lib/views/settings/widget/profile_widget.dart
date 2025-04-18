@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
+import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});

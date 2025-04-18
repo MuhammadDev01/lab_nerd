@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../auth/animated_logo.dart';
-import '../auth/background_auth.dart';
-import '../auth/signup_mobile_bottom_sheet.dart';
+import '../login/widgets/logo_of_login.dart';
+import '../login/widgets/background_auth.dart';
+import 'widgets/signup_mobile_bottom_sheet.dart';
 
 class SignupViewMobile extends StatefulWidget {
   const SignupViewMobile({
@@ -20,7 +20,7 @@ class _SignupViewMobileState extends State<SignupViewMobile> {
       body: BackgroundAuth(
         child: ListView(
           children: const [
-            AnimatedLogo(),
+            LogoOfLogin(),
             SignupMobileBottomSheet(),
           ],
         ),

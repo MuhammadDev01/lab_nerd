@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../auth/animated_logo.dart';
-import '../auth/background_auth.dart';
-import '../auth/signup_tablet_fields.dart';
+import '../login/widgets/logo_of_login.dart';
+import '../login/widgets/background_auth.dart';
+import 'widgets/signup_tablet_fields.dart';
 
 class SignUpViewTablet extends StatelessWidget {
   const SignUpViewTablet({super.key});
@@ -16,14 +16,14 @@ class SignUpViewTablet extends StatelessWidget {
           children: [
             Column(
               children: [
-                AnimatedLogo(
-                  // logoHight: 190,
-                  // sizeEye: 70,
-                  // betweenEyes: 140,
-                  // trans: 60,
-                  // labNerdSize: 60,
-                  // wordSize: 26,
-                ),
+                LogoOfLogin(
+                    // logoHight: 190,
+                    // sizeEye: 70,
+                    // betweenEyes: 140,
+                    // trans: 60,
+                    // labNerdSize: 60,
+                    // wordSize: 26,
+                    ),
                 Spacer(),
                 SignupDesktopFields(),
                 Spacer(

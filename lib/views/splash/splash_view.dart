@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/splash_controller.dart';
-import 'package:lab_nerd/views/auth/auth/background_auth.dart';
+import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
+import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
 import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
 import 'package:lab_nerd/views/splash/widgets/splash_logo.dart';
 

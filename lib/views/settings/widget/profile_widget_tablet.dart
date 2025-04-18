@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/routes/app_router.dart';
-import 'package:lab_nerd/views/auth/login/forgot_password_view.dart';
+import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/routes/app_router.dart';
+import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
 class ProfileWidgetTablet extends StatelessWidget {
   const ProfileWidgetTablet({super.key});

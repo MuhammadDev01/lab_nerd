@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/helper/cached_helper.dart';
-import 'package:lab_nerd/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/helper/cached_helper.dart';
+import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
 
 class DarkModeWidget extends StatelessWidget {
   const DarkModeWidget({super.key});
