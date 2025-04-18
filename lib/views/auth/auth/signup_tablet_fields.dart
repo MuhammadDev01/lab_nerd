@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/utils/themes/text_styles.dart';

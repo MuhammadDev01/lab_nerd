@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 //fonts
 const fontInter = 'Inter';
 const fontPoppins = 'Poppins';

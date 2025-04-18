@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/utils/app_images.dart';
 import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
 import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
 

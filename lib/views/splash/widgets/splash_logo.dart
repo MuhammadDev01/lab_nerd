@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/splash_controller.dart';
+import 'package:lab_nerd/views/splash/widgets/logo_eye.dart';
 import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
 
 class SplashLogo extends StatelessWidget {
   const SplashLogo({
     super.key,
   });
-
-  final double eyeSize = 40;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +21,14 @@ class SplashLogo extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/images/svg/${controller.splashEyes[controller.currentIndex]}',
-                  height: eyeSize,
+                LogoEye(
+                  eyeAssets: controller.splashEyes[controller.currentIndex],
                 ),
                 const SizedBox(
                   width: 100,
                 ),
-                SvgPicture.asset(
-                  'assets/images/svg/${controller.splashEyes[controller.currentIndex]}',
-                  height: eyeSize,
+                LogoEye(
+                  eyeAssets: controller.splashEyes[controller.currentIndex],
                 ),
               ],
             ),

@@ -48,7 +48,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/beaker chemistry.gif
     - assets/images/svg/
 
   fonts:
@@ -65,8 +64,11 @@ flutter:
       fonts:
         - asset: assets/fonts/SlacksideOne-Regular.ttf
 
+
+# Generate images_app.dart file
 flutter_assets:
-  assets_path: assets/images/svg
-  output_path: lib/utils
-  filename: app_images.dart
-  field_prefix: null
+  assets_path: assets/images/
+  output_path: lib/utils/
+  filename: assets.dart
+  field_prefix: ""
+  ignore_comments: true
