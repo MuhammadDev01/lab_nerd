@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'widgets/custom_forgot_password_appbar.dart';
 import 'widgets/custom_forgot_password_circle_avatar.dart';
@@ -32,7 +32,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            Assets.imagesSvgLayoutbackground,
+            Assets.imagesSvgBackgroundMain,
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.fill,
@@ -84,7 +84,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     Text(
                       'please enter your Email Address To Receive a Verification Code',
                       textAlign: TextAlign.center,
-                      style: TextStyles.inter14Bold,
+                      style: TextStyles.rem14Bold,
                     ),
                     const SizedBox(
                       height: 30,
@@ -106,7 +106,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                             : Center(
                                 child: Text(
                                   'Send',
-                                  style: TextStyles.inter14Bold,
+                                  style: TextStyles.rem14Bold,
                                 ),
                               ),
                         onTap: () async {

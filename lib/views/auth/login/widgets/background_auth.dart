@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class BackgroundAuth extends StatelessWidget {
   final Widget child;

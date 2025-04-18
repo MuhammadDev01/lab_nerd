@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/elements_quizzes_view.dart';
 import 'package:lab_nerd/widgets/arrow_back_widget.dart';
 
@@ -25,7 +25,7 @@ class _ElementsExamsViewState extends State<ElementsExamsView> {
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
-            Assets.background_2,
+            Assets.imagesSvgBackground2,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),

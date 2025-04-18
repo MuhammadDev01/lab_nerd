@@ -48,7 +48,7 @@ class _LoginFieldsState extends State<LoginFields> {
             ),
             Text(
               'LOGIN',
-              style: TextStyles.inter14Bold.copyWith(
+              style: TextStyles.rem14Bold.copyWith(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
               ),
@@ -95,7 +95,7 @@ class _LoginFieldsState extends State<LoginFields> {
                     children: [
                       Text(
                         'Remember me',
-                        style: TextStyles.inter14Bold,
+                        style: TextStyles.rem14Bold,
                       ),
                       const SizedBox(
                         width: 5,
@@ -122,7 +122,7 @@ class _LoginFieldsState extends State<LoginFields> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: TextStyles.inter14Bold.copyWith(color: Colors.red),
+                      style: TextStyles.rem14Bold.copyWith(color: Colors.red),
                     ),
                   ),
                 ],
@@ -145,7 +145,7 @@ class _LoginFieldsState extends State<LoginFields> {
               children: [
                 Text(
                   "Don't have an account?",
-                  style: TextStyles.inter14Bold,
+                  style: TextStyles.rem14Bold,
                 ),
                 const SizedBox(
                   width: 14,
@@ -156,7 +156,7 @@ class _LoginFieldsState extends State<LoginFields> {
                   },
                   child: Text(
                     'Sign up',
-                    style: TextStyles.inter14Bold
+                    style: TextStyles.rem14Bold
                         .copyWith(color: const Color(0xffFD0505)),
                   ),
                 ),
@@ -199,7 +199,7 @@ class LoginButton extends StatelessWidget {
             ? const LoadingWidget()
             : Text(
                 'Login',
-                style: TextStyles.inter14Bold,
+                style: TextStyles.rem14Bold,
               ),
       ),
     );

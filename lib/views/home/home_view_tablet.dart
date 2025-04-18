@@ -3,11 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'widgets/bottom_navigation_bar_item.dart';
 
-class HomeViewDesktop extends StatelessWidget {
-  const HomeViewDesktop({super.key});
+class HomeViewTablet extends StatelessWidget {
+  const HomeViewTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class HomeViewDesktop extends StatelessWidget {
                         children: [
                           Expanded(
                             child: BottomNavigatorBarItem(
-                              image: Assets.imagesSvgHome,
+                              image: Assets.imagesSvgHomeIcon,
                               isActive: controller.currentIndex == 0,
                               onTap: () {
                                 if (controller.currentIndex != 0) {
@@ -60,7 +60,7 @@ class HomeViewDesktop extends StatelessWidget {
                                   controller.changeIndexNav(1);
                                 }
                               },
-                              image: Assets.imagesSvgPeriodicTableLogo,
+                              image: Assets.imagesSvgPeriodicTableIcon,
                               firstLetter: 'P',
                               label: 'eriodic table ',
                             ),
@@ -73,7 +73,7 @@ class HomeViewDesktop extends StatelessWidget {
                                   controller.changeIndexNav(2);
                                 }
                               },
-                              image: Assets.imagesSvgExperiment,
+                              image: Assets.imagesSvgExperimentIcon,
                               firstLetter: 'E',
                               label: 'xperiment',
                             ),
@@ -86,7 +86,7 @@ class HomeViewDesktop extends StatelessWidget {
                                   controller.changeIndexNav(3);
                                 }
                               },
-                              image: Assets.imagesSvgExam,
+                              image: Assets.imagesSvgExamIcon,
                               firstLetter: 'E',
                               label: 'xams',
                             ),
@@ -99,7 +99,7 @@ class HomeViewDesktop extends StatelessWidget {
                                   controller.changeIndexNav(4);
                                 }
                               },
-                              image: Assets.imagesSvgSettings,
+                              image: Assets.imagesSvgSettingsIcon,
                               firstLetter: 'S',
                               label: 'ettings',
                             ),

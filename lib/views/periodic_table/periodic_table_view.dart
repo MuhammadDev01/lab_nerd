@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class PeriodicTableView extends StatelessWidget {
   const PeriodicTableView({super.key});
@@ -21,8 +21,8 @@ class PeriodicTableView extends StatelessWidget {
                       ? Assets.imagesSvgPeriodicTableLargeDark
                       : Assets.imagesSvgPeriodicTableLarge
                   : Get.isDarkMode
-                      ? Assets.imagesSvgPeriodictableArDark
-                      : Assets.imagesSvgPeriodictableAr,
+                      ? Assets.imagesSvgPeriodicTableArDark
+                      : Assets.imagesSvgPeriodicTableAr,
               // colorFilter: const ColorFilter.mode(
               //   Colors.transparent,
               //   BlendMode.colorDodge,

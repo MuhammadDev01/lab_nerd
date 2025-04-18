@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         getPages: AppRouter.routes,
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
-        initialRoute: Routes.splashView,
+        initialRoute: Routes.onBoardingView,
         textDirection: TextDirection.ltr,
         theme: defaultTheme,
         darkTheme: darkTheme,

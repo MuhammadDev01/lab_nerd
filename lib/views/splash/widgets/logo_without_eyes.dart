@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class LogoWithoutEyes extends StatelessWidget {
   const LogoWithoutEyes({super.key});
@@ -8,7 +8,7 @@ class LogoWithoutEyes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      Assets.imagesSvgLogowithouteyes,
+      Assets.imagesSvgLogoWithoutEyes,
       height: 130,
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'widgets/bottom_navigation_bar_item.dart';
 
 class HomeViewMobile extends StatelessWidget {
@@ -40,7 +40,7 @@ class HomeViewMobile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           BottomNavigatorBarItem(
-                            image: Assets.imagesSvgHome,
+                            image: Assets.imagesSvgHomeIcon,
                             isActive: controller.currentIndex == 0,
                             onTap: () {
                               if (controller.currentIndex != 0) {
@@ -57,7 +57,7 @@ class HomeViewMobile extends StatelessWidget {
                                 controller.changeIndexNav(1);
                               }
                             },
-                            image: Assets.imagesSvgPeriodicTableLogo,
+                            image: Assets.imagesSvgPeriodicTableIcon,
                             firstLetter: 'P',
                             label: 'eriodic table ',
                           ),
@@ -68,7 +68,7 @@ class HomeViewMobile extends StatelessWidget {
                                 controller.changeIndexNav(2);
                               }
                             },
-                            image: Assets.imagesSvgExperiment,
+                            image: Assets.imagesSvgExperimentIcon,
                             firstLetter: 'E',
                             label: 'xperiment',
                           ),
@@ -79,7 +79,7 @@ class HomeViewMobile extends StatelessWidget {
                                 controller.changeIndexNav(3);
                               }
                             },
-                            image: Assets.imagesSvgExam,
+                            image: Assets.imagesSvgExamIcon,
                             firstLetter: 'E',
                             label: 'xams',
                           ),
@@ -90,7 +90,7 @@ class HomeViewMobile extends StatelessWidget {
                                 controller.changeIndexNav(4);
                               }
                             },
-                            image: Assets.imagesSvgSettings,
+                            image: Assets.imagesSvgSettingsIcon,
                             firstLetter: 'S',
                             label: 'ettings',
                           ),

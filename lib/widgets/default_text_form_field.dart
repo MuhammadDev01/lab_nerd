@@ -56,7 +56,7 @@ class DefaultTextFormField extends StatelessWidget {
       children: [
         Text(
           helperText,
-          style: textStyle ?? TextStyles.inter14Bold,
+          style: textStyle ?? TextStyles.rem14Bold,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),

@@ -60,7 +60,7 @@ class _SignupMobileBottomSheetState extends State<SignupMobileBottomSheet> {
                   ),
                   Text(
                     'SIGNUP',
-                    style: TextStyles.inter14Bold.copyWith(
+                    style: TextStyles.rem14Bold.copyWith(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                     ),
@@ -122,7 +122,7 @@ class _SignupMobileBottomSheetState extends State<SignupMobileBottomSheet> {
                           ? const LoadingWidget()
                           : Text(
                               'Sign up',
-                              style: TextStyles.inter14Bold,
+                              style: TextStyles.rem14Bold,
                             ),
                     ),
                   ),

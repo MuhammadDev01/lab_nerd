@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/arrow_back_widget.dart';
 
@@ -23,7 +23,7 @@ class _AboutUsViewState extends State<AboutUsView> {
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
-            Assets.backgroundLight,
+            Assets.imagesSvgBackgroundLight,
           ),
           const SingleChildScrollView(
             child: Column(
@@ -104,7 +104,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                 ),
                 Text(
                   'About US',
-                  style: TextStyles.inter14Bold.copyWith(
+                  style: TextStyles.rem14Bold.copyWith(
                     fontSize: 24,
                   ),
                 ),

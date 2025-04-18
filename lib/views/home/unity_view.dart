@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/home/chat_gpt_view.dart';
 import 'package:lab_nerd/views/exams/elements_exams_view.dart';
 import 'package:lab_nerd/views/home/my_notes_view.dart';
@@ -278,7 +278,7 @@ class AppBarHome extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         children: [
           SvgPicture.asset(
-            Assets.imagesSvgLogowithouteyes,
+            Assets.imagesSvgLogoWithoutEyes,
             width: 70,
             height: 50,
             // ignore: deprecated_member_use

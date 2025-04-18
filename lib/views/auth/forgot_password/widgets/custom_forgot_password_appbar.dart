@@ -22,7 +22,7 @@ class CustomForgotPasswordAppbar extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               child: Text(
                 nameView,
-                style: TextStyles.inter14Bold.copyWith(
+                style: TextStyles.rem14Bold.copyWith(
                   fontSize: 18,
                   color: Colors.black,
                 ),

@@ -3,21 +3,21 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class SplashController extends GetxController {
   int currentIndex = 0;
   Timer? _timer;
 
   final List<String> splashEyes = const [
-    Assets.imagesSvgLook,
-    Assets.imagesSvgLook,
-    Assets.imagesSvgHalfeye,
-    Assets.imagesSvgLook,
-    Assets.imagesSvgLook,
-    Assets.imagesSvgHalfeye,
-    Assets.imagesSvgLook,
-    Assets.imagesSvgLook,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgHalfEye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgHalfEye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgLookEye,
   ];
 
   moveEyes() {

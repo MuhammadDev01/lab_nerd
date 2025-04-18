@@ -68,7 +68,7 @@ flutter:
 # Generate images_app.dart file
 flutter_assets:
   assets_path: assets/images/
-  output_path: lib/utils/
+  output_path: lib/core/utils/
   filename: assets.dart
   field_prefix: ""
   ignore_comments: true

@@ -9,7 +9,7 @@ import 'package:lab_nerd/models/login_with_back_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/home/experiment_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
@@ -97,8 +97,8 @@ class Appcontroller extends GetxController {
 
   //bool isDark = false;
   String backgroundHome = CachedHelper.getData(key: 'isDark')
-      ? Assets.backgroundBlack
-      : Assets.backgroundLight;
+      ? Assets.imagesSvgBackgroundBlack
+      : Assets.imagesSvgBackgroundLight;
   Color color = CachedHelper.getData(key: 'isDark')
       ? Colors.black54
       : Colors.grey.shade100;
@@ -106,7 +106,9 @@ class Appcontroller extends GetxController {
     isdark = !isdark;
     //isDark = isdark;
     await CachedHelper.saveData(key: 'isDark', value: isdark);
-    backgroundHome = isdark ? Assets.backgroundBlack : Assets.backgroundLight;
+    backgroundHome = isdark
+        ? Assets.imagesSvgBackgroundBlack
+        : Assets.imagesSvgBackgroundLight;
     color = isdark ? Colors.black54 : Colors.grey.shade100;
     update();
   }

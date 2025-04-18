@@ -37,7 +37,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
           children: [
             Text(
               'SIGNUP',
-              style: TextStyles.inter14Bold.copyWith(fontSize: 24),
+              style: TextStyles.rem14Bold.copyWith(fontSize: 24),
             ),
             DefaultTextFormField(
               helperText: 'Username',
@@ -107,7 +107,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
               colorButton: ColorsManager.colorButton1,
               child: Text(
                 'SignUp',
-                style: TextStyles.inter14Bold.copyWith(
+                style: TextStyles.rem14Bold.copyWith(
                   fontSize: 18,
                 ),
               ),

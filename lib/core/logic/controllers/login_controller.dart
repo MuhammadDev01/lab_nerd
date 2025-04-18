@@ -6,7 +6,7 @@ import 'package:lab_nerd/core/helper/dio_helper.dart';
 import 'package:lab_nerd/core/helper/end_points.dart';
 import 'package:lab_nerd/models/login_with_back_model.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class LoginController extends GetxController {
   @override
@@ -25,13 +25,13 @@ class LoginController extends GetxController {
 
   String displayname = 'student';
   List<String> eyesList = const [
-    Assets.imagesSvgLook,
-    Assets.imagesSvgLook,
-    Assets.imagesSvgRighteye,
-    Assets.imagesSvgRighteye,
-    Assets.imagesSvgLefteye,
-    Assets.imagesSvgLefteye,
-    Assets.imagesSvgHalfeye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgLookEye,
+    Assets.imagesSvgRightEye,
+    Assets.imagesSvgRightEye,
+    Assets.imagesSvgLeftEye,
+    Assets.imagesSvgLeftEye,
+    Assets.imagesSvgHalfEye,
   ];
 
   moveEyes() {

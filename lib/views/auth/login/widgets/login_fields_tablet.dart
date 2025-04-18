@@ -40,7 +40,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
             ),
             Text(
               'LOGIN',
-              style: TextStyles.inter14Bold.copyWith(fontSize: 24),
+              style: TextStyles.rem14Bold.copyWith(fontSize: 24),
             ),
             DefaultTextFormField(
               helperText: 'Email',
@@ -82,7 +82,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                     children: [
                       Text(
                         'Remember me',
-                        style: TextStyles.inter14Bold,
+                        style: TextStyles.rem14Bold,
                       ),
                       const SizedBox(
                         width: 5,
@@ -109,7 +109,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: TextStyles.inter14Bold.copyWith(color: Colors.red),
+                      style: TextStyles.rem14Bold.copyWith(color: Colors.red),
                     ),
                   ),
                 ],
@@ -132,7 +132,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
               children: [
                 Text(
                   "Don't have an account?",
-                  style: TextStyles.inter14Bold,
+                  style: TextStyles.rem14Bold,
                 ),
                 const SizedBox(
                   width: 14,
@@ -143,7 +143,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                   },
                   child: Text(
                     'Sign up',
-                    style: TextStyles.inter14Bold
+                    style: TextStyles.rem14Bold
                         .copyWith(color: const Color(0xffFD0505)),
                   ),
                 ),
@@ -190,7 +190,7 @@ class LoginButton extends StatelessWidget {
             ? const LoadingWidget()
             : Text(
                 'Login',
-                style: TextStyles.inter14Bold.copyWith(
+                style: TextStyles.rem14Bold.copyWith(
                   fontSize: 18,
                 ),
               ),

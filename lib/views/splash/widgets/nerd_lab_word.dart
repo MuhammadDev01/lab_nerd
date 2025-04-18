@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 
 class NerdLabWord extends StatelessWidget {
   const NerdLabWord({
@@ -24,7 +24,7 @@ class NerdLabWord extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        SvgPicture.asset(Assets.imagesSvgChemistryforeveryone),
+        SvgPicture.asset(Assets.imagesSvgChemistryForEveryone),
       ],
     );
   }

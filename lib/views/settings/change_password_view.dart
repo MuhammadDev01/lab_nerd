@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/core/utils/app_images.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
@@ -36,7 +36,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            Assets.background_2,
+            Assets.imagesSvgBackground2,
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.cover,
