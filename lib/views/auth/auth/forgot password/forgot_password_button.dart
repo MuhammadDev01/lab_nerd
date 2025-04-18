@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/utils/themes/colors_manager.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton(
@@ -14,7 +14,7 @@ class ForgotPasswordButton extends StatelessWidget {
         width: 256,
         height: 50,
         decoration: BoxDecoration(
-          gradient: forgotpasswordgradient,
+          gradient: ColorsManager.forgotpasswordgradient,
           borderRadius: BorderRadius.circular(10),
         ),
         child: child,

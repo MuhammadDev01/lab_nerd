@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
+import 'package:lab_nerd/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/utils/themes/text_styles.dart';
 import '../../../widgets/default_button.dart';
 import '../../../widgets/default_text_form_field.dart';
@@ -104,7 +105,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
                   // });
                 }
               },
-              colorButton: colorButton1,
+              colorButton: ColorsManager.colorButton1,
               child: Text(
                 'SignUp',
                 style: TextStyles.interF14w600.copyWith(

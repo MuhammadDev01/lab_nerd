@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/utils/app_images.dart';
+import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
+import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
 
 class AnimatedLogo extends StatelessWidget {
   const AnimatedLogo({
@@ -21,10 +23,7 @@ class AnimatedLogo extends StatelessWidget {
           Stack(
             alignment: AlignmentDirectional.center,
             children: [
-              SvgPicture.asset(
-                Assets.imagesSvgLogowithouteyes,
-                height: 130,
-              ),
+              LogoWithoutEyes(),
               Padding(
                 padding: EdgeInsets.only(top: 50),
                 child: Row(
@@ -53,29 +52,30 @@ class AnimatedLogo extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                Assets.imagesSvgLab,
-                height: 50,
-              ),
-              const SizedBox(
-                width: 13,
-              ),
-              SvgPicture.asset(
-                Assets.imagesSvgNerd,
-                height: 50,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          SvgPicture.asset(
-            Assets.imagesSvgChemistryforeveryone,
-            height: 23,
-          ),
+          NerdLabWord(),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     SvgPicture.asset(
+          //       Assets.imagesSvgLab,
+          //       height: 50,
+          //     ),
+          //     const SizedBox(
+          //       width: 13,
+          //     ),
+          //     SvgPicture.asset(
+          //       Assets.imagesSvgNerd,
+          //       height: 50,
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(
+          //   height: 6,
+          // ),
+          // SvgPicture.asset(
+          //   Assets.imagesSvgChemistryforeveryone,
+          //   height: 23,
+          // ),
         ],
       ),
     );

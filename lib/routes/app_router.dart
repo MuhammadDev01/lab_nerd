@@ -16,7 +16,7 @@ import 'package:lab_nerd/views/layout/periodic_table_view.dart';
 import 'package:lab_nerd/views/home/quizes_view.dart';
 import 'package:lab_nerd/views/layout/settings_view.dart';
 import 'package:lab_nerd/views/layout/unity_view.dart';
-import 'package:lab_nerd/views/splash_view.dart';
+import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {
   //inital route
