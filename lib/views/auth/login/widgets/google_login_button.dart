@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:get/get.dart';
+import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
+import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/views/auth/login/widgets/google_login_widget.dart';
+import 'package:lab_nerd/widgets/default_button.dart';
 
-class LoginWithGoogleButton extends StatelessWidget {
-  const LoginWithGoogleButton({
+class GoogleLoginButton extends StatelessWidget {
+  const GoogleLoginButton({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
-          Assets.imagesSvgGoogleIcon,
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Text(
-          'Login with Google',
-          style: TextStyles.rem14Bold,
-        ),
-      ],
+    return GetBuilder<LoginController>(
+      builder: (controller) => DefaultButton(
+          onPressed: () async {
+            controller.changeLoading();
+            await controller.loginWithGoogle();
+            controller.changeLoading();
+          },
+          colorButton: Colors.grey[300],
+          child: controller.isLoading
+              ? const LoadingWidget()
+              : const GoogleLoginWidget()),
     );
   }
 }

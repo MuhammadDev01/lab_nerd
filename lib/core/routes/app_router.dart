@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/bindings/app_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
+import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt_view.dart';
@@ -27,7 +28,7 @@ class AppRouter {
     GetPage(
       name: Routes.splashView,
       page: () => const SplashView(),
-      binding: AuthBinding(),
+      binding: SplashBinding(),
     ),
     GetPage(
       name: Routes.onBoardingView,

@@ -7,7 +7,6 @@ class DefaultButton extends StatelessWidget {
     required this.child,
     required this.colorButton,
     this.width = 256,
-    
   });
   final void Function() onPressed;
   final Widget child;
@@ -17,13 +16,11 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      
       style: ElevatedButton.styleFrom(
           backgroundColor: colorButton,
           fixedSize: Size(
             width,
             50,
-           // MediaQuery.sizeOf(context).height * heightOfMediaQuery,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_fields.dart';
+import 'login_fields_mobile.dart';
 
 class ShowLoginBottomSheet extends StatelessWidget {
   const ShowLoginBottomSheet({
@@ -29,7 +29,7 @@ class ShowLoginBottomSheet extends StatelessWidget {
                     topRight: Radius.circular(25),
                   ),
                 ),
-                child: const LoginFields(),
+                child: const LoginFieldsMobile(),
               );
             },
           );

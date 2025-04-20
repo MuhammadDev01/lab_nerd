@@ -54,7 +54,7 @@ class _SignupMobileBottomSheetState extends State<SignupMobileBottomSheet> {
                   const SizedBox(
                     height: 12,
                   ),
-                  const AppbarBottomSheet(),
+                  const AppbarLoginBottomSheet(),
                   const SizedBox(
                     height: 8,
                   ),

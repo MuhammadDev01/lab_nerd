@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ColorsManager {
-  static Color colorButton1 = const Color(0xff5BE9A0);
-  static Color colorButton2 = const Color(0xffF4F4F4);
+  static Color greenWhite = const Color(0xff5BE9A0);
+  static Color whiteLowOpacity = const Color(0xffF4F4F4);
+  static Color errorColor = const Color(0xffBC1620);
+  static Color successColor = const Color(0xff16B57A);
   static Gradient forgotpasswordgradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,

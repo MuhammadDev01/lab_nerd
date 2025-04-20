@@ -57,7 +57,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
                 obscureText: controller.isVisibilty,
                 suffixIcon: IconButton(
                   onPressed: () {
-                    controller.visibilty();
+                    controller.visibiltyPassword();
                   },
                   icon: Icon(
                     controller.isVisibilty
@@ -104,7 +104,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
                   // });
                 }
               },
-              colorButton: ColorsManager.colorButton1,
+              colorButton: ColorsManager.greenWhite,
               child: Text(
                 'SignUp',
                 style: TextStyles.rem14Bold.copyWith(

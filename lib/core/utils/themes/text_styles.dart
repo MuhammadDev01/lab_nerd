@@ -9,10 +9,16 @@ class TextStyles {
     fontWeight: FontWeight.normal,
     color: Colors.black,
   );
-  static TextStyle inter32Bold = const TextStyle(
+  static TextStyle inter32RegularRED = const TextStyle(
     fontSize: 32,
     fontFamily: fontInter,
     fontWeight: FontWeight.normal,
+    color: Color(0xffC12D2B),
+  );
+  static TextStyle inter32Bold = const TextStyle(
+    fontSize: 32,
+    fontFamily: fontInter,
+    fontWeight: FontWeight.bold,
     color: Colors.black,
   );
   //*** REM ***\\
@@ -25,6 +31,12 @@ class TextStyles {
   static TextStyle rem16Bold = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
+    fontFamily: fontREM,
+    color: Colors.black,
+  );
+  static TextStyle rem20Boldd = const TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
     fontFamily: fontREM,
     color: Colors.black,
   );

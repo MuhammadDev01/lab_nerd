@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "928257268738",
-    "project_id": "lab-nerd",
-    "storage_bucket": "lab-nerd.appspot.com"
+    "project_number": "1078406388474",
+    "project_id": "lab-nerd01",
+    "storage_bucket": "lab-nerd01.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:928257268738:android:6b07d30620f8c9fbe2db1b",
+        "mobilesdk_app_id": "1:1078406388474:android:f012c2558b35273161c743",
         "android_client_info": {
           "package_name": "com.example.lab_nerd"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "928257268738-p4t8h6ga8e265rscbqqjt6skph12asvt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCqCjqC89MHQVjiKN2R0SOu5pipGlPKhrU"
+          "current_key": "AIzaSyBMMULprgMsPCsL5LBdcAuvsCCukmUdZOM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "928257268738-p4t8h6ga8e265rscbqqjt6skph12asvt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "928257268738-qmm8bl8ntd1aceo9va3a4831c8hvm42f.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.labNerd"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

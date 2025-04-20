@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ShimmerArrows extends StatefulWidget {
-  const ShimmerArrows({super.key});
+class SwipeUpArrow extends StatefulWidget {
+  const SwipeUpArrow({super.key});
 
   @override
-  State<ShimmerArrows> createState() => _ShimmerArrowsState();
+  State<SwipeUpArrow> createState() => _SwipeUpArrowState();
 }
 
-class _ShimmerArrowsState extends State<ShimmerArrows>
+class _SwipeUpArrowState extends State<SwipeUpArrow>
     with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
   @override
@@ -43,6 +43,7 @@ class _ShimmerArrowsState extends State<ShimmerArrows>
         child: child,
       ),
       child: const Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Align(
             heightFactor: .2,
@@ -59,6 +60,9 @@ class _ShimmerArrowsState extends State<ShimmerArrows>
               size: 50,
               color: Colors.black,
             ),
+          ),
+          SizedBox(
+            height: 50,
           ),
         ],
       ),

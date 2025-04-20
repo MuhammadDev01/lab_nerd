@@ -61,11 +61,11 @@ class DefaultTextFormField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: SizedBox(
-            width: 650,
+            width: width ?? 650,
             child: TextFormField(
               onFieldSubmitted: onSubmitted,
               style: const TextStyle(
-                color: Colors.black, // تحديد لون النص هنا
+                color: Colors.black,
               ),
               keyboardType: textInputType,
               onSaved: onSaved,

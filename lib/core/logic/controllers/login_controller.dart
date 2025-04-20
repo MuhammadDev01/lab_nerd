@@ -1,12 +1,12 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
-import 'package:lab_nerd/core/helper/dio_helper.dart';
-import 'package:lab_nerd/core/helper/end_points.dart';
-import 'package:lab_nerd/models/login_with_back_model.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 
 class LoginController extends GetxController {
   @override
@@ -15,8 +15,15 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
+
   bool isVisibilty = true;
-  IconData visibilityPassword = Icons.visibility_off;
+  IconData visibilityPasswordIcon = Icons.visibility_off;
 
   bool isLoading = false;
   bool check = false;
@@ -49,13 +56,14 @@ class LoginController extends GetxController {
     );
   }
 
-  void visibilty() {
+  visibiltyPassword() {
     isVisibilty = !isVisibilty;
-    visibilityPassword = isVisibilty ? Icons.visibility_off : Icons.visibility;
+    visibilityPasswordIcon =
+        isVisibilty ? Icons.visibility_off : Icons.visibility;
     update();
   }
 
-  void checkIcon() {
+  void rememberMeCheck() {
     check = !check;
     update();
   }
@@ -83,113 +91,82 @@ class LoginController extends GetxController {
     update();
   }
 
-//login Firebase\\
+//***SIGN IN ***\\
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey();
 
-  // Future<void> loginWithFirebase({
-  //   required String email,
-  //   required String password,
-  // }) async {
-  //   try {
-  //     await auth
-  //         .signInWithEmailAndPassword(email: email, password: password)
-  //         .then((value) async {
-  //       await CachedHelper.saveData(key: 'uId', value: value.user!.uid);
-  //     });
-
-  //     update();
-  //     Get.offNamed(Routes.homeView);
-  //   } on FirebaseAuthException catch (e) {
-  //     String title = e.code.replaceAll(RegExp('-'), ' ').capitalize!;
-  //     String message = '';
-  //     if (e.code == 'user-not-found') {
-  //       message = 'Email not found..please register and try again';
-  //     } else if (e.code == 'wrong-password') {
-  //       message = 'Incorrect password';
-  //     } else {
-  //       message = e.message.toString();
-  //     }
-  //     Get.snackbar(
-  //       title,
-  //       message,
-  //       snackPosition: SnackPosition.TOP,
-  //       colorText: Colors.white,
-  //       backgroundColor: Colors.deepOrange[300],
-  //     );
-  //   } catch (e) {
-  //     Get.snackbar(
-  //       'Error Found',
-  //       e.toString(),
-  //       snackPosition: SnackPosition.TOP,
-  //       colorText: Colors.white,
-  //       backgroundColor: Colors.red,
-  //     );
-  //     debugPrint('Error : ${e.toString()}');
-  //   }
-  // }
-
-  Response<dynamic>? response;
-//login Backend
-  LoginWithBackModel? loginWithBackModel;
-  Future<void> loginWithBackend({
-    required String email,
-    required String password,
-  }) async {
-    await DioHelper.postData(
-        url: '${CachedHelper.getData(key: 'url')}/api/$lOGIN',
-        data: {
-          'email': email,
-          'password': password,
-        }).then((value) {
-      update();
-      loginWithBackModel = LoginWithBackModel.fromJson(value.data);
-    }).catchError((error) {
-      update();
-
-      Get.snackbar('Error', error.toString());
-    });
-  }
-
-//google signIn
-  Future<void> loginWithGoogle() async {
+  void Function(String)? onChange(String? value) {
+    emailController.text = value!;
     update();
-    Get.offNamed(Routes.homeView);
+    return null;
+  }
+//*Email and password
+
+  Future<void> loginWithEmailAndPassword() async {
+    try {
+      String emailAddress = emailController.text.trim();
+      String password = passwordController.text.trim();
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: emailAddress, password: password);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        appSnackbar(
+            title: 'Login Failed',
+            message: 'Account Not Found, Signup First',
+            backgroundColor: ColorsManager.errorColor);
+      } else if (e.code == 'wrong-password') {
+        appSnackbar(
+            title: 'Login Failed',
+            message: 'Wrong Password, Try Again',
+            backgroundColor: ColorsManager.errorColor);
+      } else {
+        appSnackbar(
+            title: 'Login Failed',
+            message: 'email or password is wrong',
+            backgroundColor: ColorsManager.errorColor);
+      }
+    } catch (e) {
+      appSnackbar(
+        title: 'Failed',
+        message: 'something is wrong',
+        backgroundColor: ColorsManager.errorColor,
+      );
+      debugPrint('Error!!!! : ${e.toString()}');
+      update();
+    }
   }
 
-//reset password
-  // Future<void> resetPassword(String email) async {
-  //   try {
-  //     await auth.sendPasswordResetEmail(email: email).then((value) => update());
-  //     Get.back();
-  //     Get.snackbar(
-  //       'Success!',
-  //       'Check Your Email Now',
-  //       snackPosition: SnackPosition.TOP,
-  //       colorText: Colors.white,
-  //       backgroundColor: Colors.teal,
-  //     );
-  //   } on FirebaseAuthException catch (e) {
-  //     String title = e.code.replaceAll(RegExp('-'), ' ').capitalize!;
-  //     String message = '';
-  //     if (e.code == 'user-not-found') {
-  //       message = 'This email is not registered';
-  //     } else {
-  //       message = e.message.toString();
-  //     }
-  //     Get.snackbar(
-  //       title,
-  //       message,
-  //       snackPosition: SnackPosition.TOP,
-  //       colorText: Colors.white,
-  //       backgroundColor: Colors.orangeAccent,
-  //     );
-  //   } catch (e) {
-  //     Get.snackbar(
-  //       'Error Found',
-  //       e.toString(),
-  //       snackPosition: SnackPosition.TOP,
-  //       colorText: Colors.white,
-  //       backgroundColor: Colors.red,
-  //     );
-  //   }
-  // }
+//*Google
+  Future<UserCredential> loginWithFirebaseGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  Future<void> loginWithGoogle() async {
+    try {
+      await loginWithFirebaseGoogle();
+      Get.offNamed(Routes.homeView);
+    } catch (e) {
+      appSnackbar(
+        title: 'Failed',
+        message: 'Login Failed Please Try Again',
+        backgroundColor: ColorsManager.errorColor,
+      );
+      debugPrint('Error!!! : ${e.toString()}');
+    }
+  }
 }

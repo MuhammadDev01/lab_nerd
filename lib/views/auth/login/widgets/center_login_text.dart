@@ -14,6 +14,7 @@ class CenterLoginText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               blackText,
@@ -28,13 +29,11 @@ class CenterLoginText extends StatelessWidget {
         ),
         Text(
           'explore world of',
-          style: TextStyles.inter32Regular
-              .copyWith(color: const Color(0xffC12D2B)),
+          style: TextStyles.inter32RegularRED,
         ),
         Text(
           'chemistry',
-          style: TextStyles.inter32Regular
-              .copyWith(color: const Color(0xffC12D2B)),
+          style: TextStyles.inter32RegularRED,
         ),
       ],
     );
