@@ -106,7 +106,7 @@ class _HomeViewState extends State<HomeView>
                           );
                         },
                         child: Image.asset(
-                          'assets/images/gpt.png',
+                          Assets.imagesChatGpt,
                         ),
                       ),
                     ),
@@ -140,7 +140,7 @@ class _HomeViewState extends State<HomeView>
                       child: Stack(
                         children: [
                           Image.asset(
-                            'assets/images/search in table.png',
+                            Assets.imagesSearchInTable,
                           ),
                           Center(
                             child: AnimatedBuilder(
@@ -197,9 +197,8 @@ class _HomeViewState extends State<HomeView>
                             child: child,
                           );
                         },
-                        child: Image.asset(
-                          'assets/images/quiz1.png',
-                          scale: 2,
+                        child: SvgPicture.asset(
+                          Assets.imagesSvgHomeIcon,
                         ),
                       ),
                     ),
@@ -239,7 +238,7 @@ class _HomeViewState extends State<HomeView>
                           );
                         },
                         child: Image.asset(
-                          'assets/images/note.png',
+                          Assets.imagesAddNote,
                         ),
                       ),
                     ),
@@ -291,7 +290,7 @@ class AppBarHome extends StatelessWidget {
               children: [
                 GetBuilder<LoginController>(
                   builder: (controller) => SvgPicture.asset(
-                    'assets/images/svg/${controller.eyesList[controller.currentEyeIndex]}',
+                    controller.eyesList[controller.currentEyeIndex],
                     width: 18,
                     height: 18,
                   ),
@@ -301,7 +300,7 @@ class AppBarHome extends StatelessWidget {
                 ),
                 GetBuilder<LoginController>(
                   builder: (controller) => SvgPicture.asset(
-                    'assets/images/svg/${controller.eyesList[controller.currentEyeIndex]}',
+                    controller.eyesList[controller.currentEyeIndex],
                     width: 18,
                     height: 18,
                   ),

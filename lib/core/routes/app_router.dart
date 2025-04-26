@@ -9,7 +9,6 @@ import 'package:lab_nerd/views/settings/edit_profile_view.dart';
 import 'package:lab_nerd/views/exams/widgets/elements_list_view.dart';
 import 'package:lab_nerd/views/home/search_element_view.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
-import 'package:lab_nerd/views/home/experiment_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
 import 'package:lab_nerd/views/home/home_layout.dart';
@@ -49,17 +48,13 @@ class AppRouter {
       page: () => const ForgotPasswordView(),
       binding: AuthBinding(),
     ),
-    GetPage(
-        name: Routes.homeView,
-        page: () => const HomeLayout(),
-        bindings: [AuthBinding(), AppBinding()]),
+    GetPage(name: Routes.homeView, page: () => const HomeLayout(), bindings: [
+      AuthBinding(),
+      AppBinding(),
+    ]),
     GetPage(
       name: Routes.periodicTableView,
       page: () => const PeriodicTableView(),
-    ),
-    GetPage(
-      name: Routes.experimentView,
-      page: () => const ExperimentView(),
     ),
     GetPage(
       name: Routes.examsView,
@@ -109,7 +104,6 @@ class Routes {
   static const forgotPasswordView = '/forgotPasswordView';
   static const homeView = '/homeView';
   static const periodicTableView = '/peridocTableView';
-  static const experimentView = '/ExperimentView';
   static const examsView = '/ExamsView';
   static const quizesView = '/QuizesView';
   static const settingsView = '/SettingsView';

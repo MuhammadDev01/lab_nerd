@@ -132,10 +132,10 @@ class _EditProfileViewState extends State<EditProfileView> {
                                   );
                                 } else {
                                   controller.changeLoading();
-                                  await controller.changeNameAndEmail(
-                                    username: nameController.text,
-                                    email: emailController.text,
-                                  );
+                                  // await controller.changeNameAndEmail(
+                                  //   username: nameController.text,
+                                  //   email: emailController.text,
+                                  // );
                                   controller.changeLoading();
                                 }
                               }

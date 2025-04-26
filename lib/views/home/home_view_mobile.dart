@@ -68,26 +68,15 @@ class HomeViewMobile extends StatelessWidget {
                                 controller.changeIndexNav(2);
                               }
                             },
-                            image: Assets.imagesSvgExperimentIcon,
+                            image: Assets.imagesSvgExamIcon,
                             firstLetter: 'E',
-                            label: 'xperiment',
+                            label: 'xams',
                           ),
                           BottomNavigatorBarItem(
                             isActive: controller.currentIndex == 3,
                             onTap: () {
                               if (controller.currentIndex != 3) {
                                 controller.changeIndexNav(3);
-                              }
-                            },
-                            image: Assets.imagesSvgExamIcon,
-                            firstLetter: 'E',
-                            label: 'xams',
-                          ),
-                          BottomNavigatorBarItem(
-                            isActive: controller.currentIndex == 4,
-                            onTap: () {
-                              if (controller.currentIndex != 4) {
-                                controller.changeIndexNav(4);
                               }
                             },
                             image: Assets.imagesSvgSettingsIcon,

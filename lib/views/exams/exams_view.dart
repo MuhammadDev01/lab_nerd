@@ -18,7 +18,7 @@ class _ExamsViewState extends State<ExamsView> {
 
   @override
   void initState() {
-    modelList = controller.getExams();
+    //modelList = controller.getExams();
 
     super.initState();
   }

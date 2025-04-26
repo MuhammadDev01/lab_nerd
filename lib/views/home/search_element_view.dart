@@ -72,12 +72,12 @@ class _SearchElementViewState extends State<SearchElementView> {
                           hintText: 'type name element...',
                           onSubmitted: (String text) async {
                             if (formKey.currentState!.validate()) {
-                              controller.changeLoading();
-                              await controller.getSearchOfElements(
-                                nameElement: searchController.text,
-                                sortType: 'asc',
-                              );
-                              controller.changeLoading();
+                              // controller.changeLoading();
+                              // await controller.getSearchOfElements(
+                              //   nameElement: searchController.text,
+                              //   sortType: 'asc',
+                              // );
+                              // controller.changeLoading();
                             }
                           },
                         ),
@@ -85,10 +85,10 @@ class _SearchElementViewState extends State<SearchElementView> {
                       ascIcon
                           ? IconButton(
                               onPressed: () {
-                                controller.getSearchOfElements(
-                                  nameElement: searchController.text,
-                                  sortType: 'desc',
-                                );
+                                // controller.getSearchOfElements(
+                                //   nameElement: searchController.text,
+                                //   sortType: 'desc',
+                                // );
                                 ascIcon = false;
                               },
                               color: Colors.black,
@@ -96,10 +96,10 @@ class _SearchElementViewState extends State<SearchElementView> {
                             )
                           : IconButton(
                               onPressed: () {
-                                controller.getSearchOfElements(
-                                  nameElement: searchController.text,
-                                  sortType: 'asc',
-                                );
+                                // controller.getSearchOfElements(
+                                //   nameElement: searchController.text,
+                                //   sortType: 'asc',
+                                // );
                                 ascIcon = true;
                               },
                               color: Colors.black,

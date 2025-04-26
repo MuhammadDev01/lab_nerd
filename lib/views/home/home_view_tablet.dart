@@ -67,19 +67,6 @@ class HomeViewTablet extends StatelessWidget {
                           ),
                           Expanded(
                             child: BottomNavigatorBarItem(
-                              isActive: controller.currentIndex == 2,
-                              onTap: () {
-                                if (controller.currentIndex != 2) {
-                                  controller.changeIndexNav(2);
-                                }
-                              },
-                              image: Assets.imagesSvgExperimentIcon,
-                              firstLetter: 'E',
-                              label: 'xperiment',
-                            ),
-                          ),
-                          Expanded(
-                            child: BottomNavigatorBarItem(
                               isActive: controller.currentIndex == 3,
                               onTap: () {
                                 if (controller.currentIndex != 3) {

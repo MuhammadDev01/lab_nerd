@@ -36,8 +36,8 @@ class Assets {
 
   static const String imagesSvgExamIcon = "assets/images/svg/exam_icon.svg";
 
-  static const String imagesSvgExperimentIcon =
-      "assets/images/svg/experiment_icon.svg";
+  // static const String imagesSvgExperimentIcon =
+  //     "assets/images/svg/experiment_icon.svg";
 
   static const String imagesSvgGoogleIcon = "assets/images/svg/google_icon.svg";
 

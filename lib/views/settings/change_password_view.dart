@@ -155,13 +155,13 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                                 if (newPasswordController.text ==
                                     confirmPasswordController.text) {
                                   controller.changeLoading();
-                                  await controller.changePasswordUser(
-                                    currentPassword:
-                                        currentPasswordController.text,
-                                    newPassword: newPasswordController.text,
-                                    confirmPassword:
-                                        confirmPasswordController.text,
-                                  );
+                                  // await controller.changePasswordUser(
+                                  //   currentPassword:
+                                  //       currentPasswordController.text,
+                                  //   newPassword: newPasswordController.text,
+                                  //   confirmPassword:
+                                  //       confirmPasswordController.text,
+                                  // );
                                   controller.changeLoading();
                                 } else {
                                   Get.snackbar(

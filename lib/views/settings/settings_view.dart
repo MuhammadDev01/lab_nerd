@@ -20,7 +20,7 @@ class _SettingsViewState extends State<SettingsView> {
   var controller = Get.find<Appcontroller>();
   @override
   void initState() {
-    controller.showProfileUser();
+    //  controller.showProfileUser();
     super.initState();
   }
 

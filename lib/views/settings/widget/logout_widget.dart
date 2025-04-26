@@ -24,7 +24,7 @@ class LogOutWidget extends StatelessWidget {
               Get.back();
             },
             onConfirm: () {
-              controller.signoutFromApp();
+              // controller.signoutFromApp();
             },
             buttonColor: Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
           );

@@ -20,7 +20,7 @@ class _QuizesViewState extends State<QuizesView> {
     super.initState();
     {
       if (controller.examID != null) {
-        controller.getQuestionsOfExam();
+        //  controller.getQuestionsOfExam();
       }
     }
   }
@@ -153,7 +153,7 @@ class _QuizesViewState extends State<QuizesView> {
                                                 : Colors.white;
                                           });
                                           controller.i++;
-                                          controller.getQuestionsOfExam();
+                                          //  controller.getQuestionsOfExam();
                                         } else {
                                           //generateRandomQuestions();
                                         }

@@ -22,13 +22,14 @@ void main() async {
   bool isDark = CachedHelper.getData(key: 'isDark');
   runApp(
     DevicePreview(
-      builder: (_) => MyApp(isDark),
+      enabled: false,
+      builder: (_) => LabNerdApp(isDark),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp(
+class LabNerdApp extends StatelessWidget {
+  const LabNerdApp(
     this.isDark, {
     super.key,
   });
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         getPages: AppRouter.routes,
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
-        initialRoute: Routes.splashView,
+        initialRoute: Routes.homeView,
         textDirection: TextDirection.ltr,
         theme: defaultTheme,
         darkTheme: darkTheme,

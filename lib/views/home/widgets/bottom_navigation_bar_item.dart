@@ -41,10 +41,11 @@ class BottomNavigatorBarItem extends StatelessWidget {
                 child: SvgPicture.asset(
                   image,
                   colorFilter: ColorFilter.mode(
-                      Get.isDarkMode
-                          ? Theme.of(context).primaryColorLight
-                          : Theme.of(context).primaryColorDark,
-                      BlendMode.srcIn),
+                    Get.isDarkMode
+                        ? Theme.of(context).primaryColorLight
+                        : Theme.of(context).primaryColorDark,
+                    BlendMode.srcIn,
+                  ),
 
                   // color: Get.isDarkMode ? Colors.deepOrange[900] : Colors.black,
                   //scale: scale,
