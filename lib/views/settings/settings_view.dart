@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/views/settings/widget/about_us_widget.dart';
 import 'package:lab_nerd/views/settings/change_username_email_view.dart';
 import 'package:lab_nerd/views/settings/widget/change_password_widget.dart';
@@ -17,7 +17,7 @@ class SettingsView extends StatefulWidget {
 }
 
 class _SettingsViewState extends State<SettingsView> {
-  var controller = Get.find<Appcontroller>();
+  var controller = Get.find<Maincontroller>();
   @override
   void initState() {
     //  controller.showProfileUser();

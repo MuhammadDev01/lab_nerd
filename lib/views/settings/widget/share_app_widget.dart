@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 
 class ShareAppWidget extends StatelessWidget {
   const ShareAppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Appcontroller>(
+    return GetBuilder<Maincontroller>(
       builder: (controller) => Material(
         color: Colors.transparent,
         child: Row(

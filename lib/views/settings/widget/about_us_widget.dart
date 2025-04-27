@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/views/settings/about_us_view.dart';
 
 class AboutUsWidget extends StatelessWidget {
@@ -8,7 +8,7 @@ class AboutUsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Appcontroller>(
+    return GetBuilder<Maincontroller>(
       builder: (controller) => InkWell(
         onTap: () {
           Get.to(() => const AboutUsView());

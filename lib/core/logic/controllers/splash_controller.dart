@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/helper/cached_helper.dart';
-import 'package:lab_nerd/core/routes/app_router.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
 class SplashController extends GetxController {

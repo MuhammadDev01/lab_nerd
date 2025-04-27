@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
 class QuizesView extends StatefulWidget {
@@ -13,7 +13,7 @@ class QuizesView extends StatefulWidget {
 
 class _QuizesViewState extends State<QuizesView> {
   bool isAnswered = false;
-  Appcontroller controller = Get.find<Appcontroller>();
+  Maincontroller controller = Get.find<Maincontroller>();
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _QuizesViewState extends State<QuizesView> {
   @override
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
-      return GetBuilder<Appcontroller>(
+      return GetBuilder<Maincontroller>(
         builder: (_) => controller.questionsList.isEmpty
             ? const LoadingWidget()
             : Column(

@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/views/home/home_layout.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/views/main/main_view_adaptive.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
 
 class ElementsQuizzesView extends StatefulWidget {
@@ -143,7 +143,7 @@ class _ElementsQuizzesViewState extends State<ElementsQuizzesView> {
   //String _selectedAnswer = '';
   bool _isAnswered = false;
   bool _isCorrect = false;
-  var controller = Get.find<Appcontroller>();
+  var controller = Get.find<Maincontroller>();
 
   void _nextQuestion() {
     setState(() {
@@ -307,7 +307,8 @@ class _ElementsQuizzesViewState extends State<ElementsQuizzesView> {
                       Get.isDarkMode ? Colors.black : Colors.white,
                   onCancel: () {},
                   onConfirm: () {
-                    Get.off(const HomeLayout(), transition: Transition.fadeIn);
+                    Get.off(const MainViewAdaptive(),
+                        transition: Transition.fadeIn);
                   },
                   buttonColor:
                       Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],

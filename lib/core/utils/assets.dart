@@ -22,9 +22,6 @@ class Assets {
   static const String imagesSvgBackground2 =
       "assets/images/svg/background_2.svg";
 
-  static const String imagesSvgBackgroundBlack =
-      "assets/images/svg/background_black.svg";
-
   static const String imagesSvgBackgroundLight =
       "assets/images/svg/background_light.svg";
 
@@ -36,14 +33,13 @@ class Assets {
 
   static const String imagesSvgExamIcon = "assets/images/svg/exam_icon.svg";
 
-  // static const String imagesSvgExperimentIcon =
-  //     "assets/images/svg/experiment_icon.svg";
-
   static const String imagesSvgGoogleIcon = "assets/images/svg/google_icon.svg";
 
   static const String imagesSvgHalfEye = "assets/images/svg/half_eye.svg";
 
   static const String imagesSvgHomeIcon = "assets/images/svg/home_icon.svg";
+
+  static const String imagesSvgHomeIcon2 = "assets/images/svg/home_icon(2).svg";
 
   static const String imagesSvgLab = "assets/images/svg/Lab.svg";
 

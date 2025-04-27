@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/views/home/chat_gpt_view.dart';
+import 'package:lab_nerd/views/main/chat_gpt/chat_gpt_view.dart';
 import 'package:lab_nerd/views/exams/elements_exams_view.dart';
-import 'package:lab_nerd/views/home/my_notes_view.dart';
-import 'package:lab_nerd/views/home/search_element_view.dart';
+import 'package:lab_nerd/views/main/my_notes/my_notes_view.dart';
+import 'package:lab_nerd/views/main/search_elements/search_element_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -28,11 +28,8 @@ class _HomeViewState extends State<HomeView>
 
     _controller = AnimationController(
       vsync: this,
-      duration:
-          const Duration(seconds: 1), // Duration for one cycle of the animation
-    )..repeat(
-        reverse:
-            true); // Repeat the animation indefinitely, reversing direction each time
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
 
     _animation = Tween<double>(begin: 0, end: 10).animate(_controller);
     _animationSearch = CurvedAnimation(
@@ -51,33 +48,34 @@ class _HomeViewState extends State<HomeView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              Assets.imagesSvgLab,
-              height: 35,
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            SvgPicture.asset(
-              Assets.imagesSvgNerd,
-              height: 35,
-              // ignore: deprecated_member_use
-              color: Get.isDarkMode ? Colors.white : null,
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            const AppBarHome(),
-          ],
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   title: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       SvgPicture.asset(
+      //         Assets.imagesSvgLab,
+      //         height: 35,
+      //       ),
+      //       const SizedBox(
+      //         width: 10,
+      //       ),
+      //       SvgPicture.asset(
+      //         Assets.imagesSvgNerd,
+      //         height: 35,
+      //         // ignore: deprecated_member_use
+      //         //  color: Get.isDarkMode ? Colors.white : null,
+      //       ),
+      //       const SizedBox(
+      //         width: 20,
+      //       ),
+      //       // const AppBarHome(),
+      //     ],
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: Colors.transparent,
+      // ),
+
       backgroundColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -198,7 +196,7 @@ class _HomeViewState extends State<HomeView>
                           );
                         },
                         child: SvgPicture.asset(
-                          Assets.imagesSvgHomeIcon,
+                          Assets.imagesQuiz,
                         ),
                       ),
                     ),
@@ -265,51 +263,51 @@ class _HomeViewState extends State<HomeView>
   }
 }
 
-class AppBarHome extends StatelessWidget {
-  const AppBarHome({
-    super.key,
-  });
+// class AppBarHome extends StatelessWidget {
+//   const AppBarHome({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<LoginController>(
-      builder: (_) => Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          SvgPicture.asset(
-            Assets.imagesSvgLogoWithoutEyes,
-            width: 70,
-            height: 50,
-            // ignore: deprecated_member_use
-            color: Get.isDarkMode ? Colors.white.withOpacity(0.8) : null,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 14),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GetBuilder<LoginController>(
-                  builder: (controller) => SvgPicture.asset(
-                    controller.eyesList[controller.currentEyeIndex],
-                    width: 18,
-                    height: 18,
-                  ),
-                ),
-                const SizedBox(
-                  width: 36,
-                ),
-                GetBuilder<LoginController>(
-                  builder: (controller) => SvgPicture.asset(
-                    controller.eyesList[controller.currentEyeIndex],
-                    width: 18,
-                    height: 18,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetBuilder<LoginController>(
+//       builder: (_) => Stack(
+//         alignment: AlignmentDirectional.center,
+//         children: [
+//           SvgPicture.asset(
+//             Assets.imagesSvgLogoWithoutEyes,
+//             width: 70,
+//             height: 50,
+//             // ignore: deprecated_member_use
+//             color: Get.isDarkMode ? Colors.white.withOpacity(0.8) : null,
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.only(top: 14),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 GetBuilder<LoginController>(
+//                   builder: (controller) => SvgPicture.asset(
+//                     controller.eyesList[controller.currentEyeIndex],
+//                     width: 18,
+//                     height: 18,
+//                   ),
+//                 ),
+//                 const SizedBox(
+//                   width: 36,
+//                 ),
+//                 GetBuilder<LoginController>(
+//                   builder: (controller) => SvgPicture.asset(
+//                     controller.eyesList[controller.currentEyeIndex],
+//                     width: 18,
+//                     height: 18,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

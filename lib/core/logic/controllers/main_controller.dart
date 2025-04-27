@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/models/element_model.dart';
@@ -10,18 +11,73 @@ import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
-import 'package:lab_nerd/views/home/unity_view.dart';
+import 'package:lab_nerd/views/home/home_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
-class Appcontroller extends GetxController {
+class Maincontroller extends GetxController {
   bool isLoading = false;
   int currentIndex = 0;
 
-  List<Widget> pages = const [
-    HomeView(),
+  List<Widget> views = const [
     PeriodicTableView(),
+    HomeView(),
     ExamsView(),
     SettingsView(),
   ];
+
+  late final PersistentTabController persistentTabViewController;
+
+  @override
+  void onInit() {
+    persistentTabViewController = PersistentTabController(initialIndex: 0);
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    persistentTabViewController.dispose();
+    super.onClose();
+  }
+
+  // List<PersistentBottomNavBarItem> navBarItems = [
+  //   PersistentBottomNavBarItem(
+  //       contentPadding: 0,
+  //       icon: Image.asset(
+  //         Assets.imagesHomeIcon,
+  //         height: 20,
+  //         width: 20,
+  //       ),
+  //       activeColorPrimary: Colors.red,
+  //       inactiveColorPrimary: Colors.red,
+  //       activeColorSecondary: Colors.red,
+  //       inactiveColorSecondary: Colors.red
+  //       //title: 'Home',
+  //       ),
+  //   PersistentBottomNavBarItem(
+  //     icon: Image.asset(
+  //       Assets.imagesPeriodicTableIcon,
+  //       height: 20,
+  //       width: 20,
+  //     ),
+  //     // title: 'Periodic table',
+  //   ),
+  //   PersistentBottomNavBarItem(
+  //     icon: Image.asset(
+  //       Assets.imagesExamIcon,
+  //       height: 20,
+  //       width: 20,
+  //     ),
+  //     //title: 'Exam',
+  //   ),
+  //   PersistentBottomNavBarItem(
+  //     icon: Image.asset(
+  //       Assets.imagesSettingsIcon,
+  //       height: 20,
+  //       width: 20,
+  //     ),
+  //     //title: 'Settings',
+  //   ),
+  // ];
 
   ProfileUserModel? profileUser;
   // Future<void> showProfileUser() async {
@@ -88,19 +144,19 @@ class Appcontroller extends GetxController {
   }
 
   //bool isDark = false;
-  String backgroundHome = CachedHelper.getData(key: 'isDark')
-      ? Assets.imagesSvgBackgroundBlack
-      : Assets.imagesSvgBackgroundLight;
-  Color color = CachedHelper.getData(key: 'isDark')
-      ? Colors.black54
-      : Colors.grey.shade100;
+  String backgroundHome = '';
+  // = CachedHelper.getData(key: 'isDark')
+  //     ? Assets.imagesSvgBackgroundBlack
+  //     : Assets.imagesSvgBackgroundLight;
+  Color color =
+      CachedHelper.getData(key: 'isDark') ? Colors.black : Colors.grey.shade100;
   changeThemeMode(bool isdark) async {
     isdark = !isdark;
     //isDark = isdark;
     await CachedHelper.saveData(key: 'isDark', value: isdark);
-    backgroundHome = isdark
-        ? Assets.imagesSvgBackgroundBlack
-        : Assets.imagesSvgBackgroundLight;
+    // backgroundHome = isdark
+    //     ? Assets.imagesSvgBackgroundBlack
+    //     : Assets.imagesSvgBackgroundLight;
     color = isdark ? Colors.black54 : Colors.grey.shade100;
     update();
   }

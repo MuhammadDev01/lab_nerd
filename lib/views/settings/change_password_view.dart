@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
@@ -78,7 +78,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                     key: formKey,
                     child: Column(
                       children: [
-                        GetBuilder<Appcontroller>(
+                        GetBuilder<Maincontroller>(
                           builder: (visibilityController1) =>
                               DefaultTextFormField(
                             cursorAndPrefixIconColor: Colors.black54,
@@ -101,7 +101,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                         const SizedBox(
                           height: 25,
                         ),
-                        GetBuilder<Appcontroller>(
+                        GetBuilder<Maincontroller>(
                           builder: (visibilityController2) =>
                               DefaultTextFormField(
                             cursorAndPrefixIconColor: Colors.black54,
@@ -124,7 +124,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                         const SizedBox(
                           height: 25,
                         ),
-                        GetBuilder<Appcontroller>(
+                        GetBuilder<Maincontroller>(
                           builder: (visibilityController3) =>
                               DefaultTextFormField(
                             cursorAndPrefixIconColor: Colors.black54,
@@ -147,7 +147,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                         const SizedBox(
                           height: 100,
                         ),
-                        GetBuilder<Appcontroller>(
+                        GetBuilder<Maincontroller>(
                           builder: (controller) => DefaultButton(
                             width: 110,
                             onPressed: () async {

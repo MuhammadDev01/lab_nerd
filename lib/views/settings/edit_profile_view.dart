@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
@@ -19,7 +19,7 @@ class _EditProfileViewState extends State<EditProfileView> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  Appcontroller controller = Get.find<Appcontroller>();
+  Maincontroller controller = Get.find<Maincontroller>();
   String currentName = 'username';
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _EditProfileViewState extends State<EditProfileView> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
-            child: GetBuilder<Appcontroller>(
+            child: GetBuilder<Maincontroller>(
               builder: (_) => Column(
                 children: [
                   Row(

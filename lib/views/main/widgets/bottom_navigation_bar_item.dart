@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class BottomNavigatorBarItem extends StatelessWidget {
-  const BottomNavigatorBarItem({
+class CustomBottomNavigatorBarItem extends StatelessWidget {
+  const CustomBottomNavigatorBarItem({
     super.key,
     required this.image,
     required this.onTap,
@@ -25,33 +25,30 @@ class BottomNavigatorBarItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(12),
-      child: GetBuilder<Appcontroller>(
-        builder: (controller) => Container(
-          decoration: isActive
-              ? BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(12),
-                )
-              : const BoxDecoration(),
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              SizedBox(
-                height: 60,
-                child: SvgPicture.asset(
-                  image,
-                  colorFilter: ColorFilter.mode(
-                    Get.isDarkMode
-                        ? Theme.of(context).primaryColorLight
-                        : Theme.of(context).primaryColorDark,
-                    BlendMode.srcIn,
-                  ),
+      child: Container(
+        decoration: isActive
+            ? BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(12),
+              )
+            : const BoxDecoration(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SvgPicture.asset(
+              image,
+              // colorFilter: ColorFilter.mode(
+              //   Get.isDarkMode
+              //       ? Theme.of(context).primaryColorLight
+              //       : Theme.of(context).primaryColorDark,
+              //   BlendMode.srcIn,
+              // ),
 
-                  // color: Get.isDarkMode ? Colors.deepOrange[900] : Colors.black,
-                  //scale: scale,
-                ),
-              ),
-              Row(
+              // color: Get.isDarkMode ? Colors.deepOrange[900] : Colors.black,
+              //scale: scale,
+            ),
+            FittedBox(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -70,8 +67,8 @@ class BottomNavigatorBarItem extends StatelessWidget {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

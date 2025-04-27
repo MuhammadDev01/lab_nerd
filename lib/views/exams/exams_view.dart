@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
@@ -13,7 +13,7 @@ class ExamsView extends StatefulWidget {
 
 class _ExamsViewState extends State<ExamsView> {
   List<ExamModel> modelList = [];
-  var controller = Get.find<Appcontroller>();
+  var controller = Get.find<Maincontroller>();
   GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -25,7 +25,7 @@ class _ExamsViewState extends State<ExamsView> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Appcontroller>(builder: (_) {
+    return GetBuilder<Maincontroller>(builder: (_) {
       return modelList.isEmpty
           ? const LoadingWidget()
           : Padding(

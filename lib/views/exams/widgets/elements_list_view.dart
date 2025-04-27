@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/views/exams/details_element_view.dart';
 
@@ -9,7 +9,7 @@ class ElementsListView extends StatelessWidget {
   final ElementModel? element;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Appcontroller>(
+    return GetBuilder<Maincontroller>(
       builder: (controller) => InkWell(
         onTap: () {
           Get.to(

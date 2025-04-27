@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 final defaultTheme = ThemeData(
-  primaryColorDark: Colors.black,
-  primaryColorLight: Colors.white,
+  //primaryColorDark: Colors.black,
+  //primaryColorLight: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20,
     backgroundColor: Colors.white,

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/core/helper/dio_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/dark_theme.dart';
 import 'package:lab_nerd/core/utils/themes/default_theme.dart';
 import 'package:lab_nerd/firebase_options.dart';
@@ -45,7 +46,7 @@ class LabNerdApp extends StatelessWidget {
         getPages: AppRouter.routes,
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
-        initialRoute: Routes.homeView,
+        initialRoute: Routes.mainView,
         textDirection: TextDirection.ltr,
         theme: defaultTheme,
         darkTheme: darkTheme,

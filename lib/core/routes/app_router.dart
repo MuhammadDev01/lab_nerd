@@ -2,20 +2,21 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/bindings/app_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
-import 'package:lab_nerd/views/home/chat_gpt_view.dart';
+import 'package:lab_nerd/views/main/chat_gpt/chat_gpt_view.dart';
 import 'package:lab_nerd/views/settings/edit_profile_view.dart';
 import 'package:lab_nerd/views/exams/widgets/elements_list_view.dart';
-import 'package:lab_nerd/views/home/search_element_view.dart';
+import 'package:lab_nerd/views/main/search_elements/search_element_view.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
-import 'package:lab_nerd/views/home/home_layout.dart';
+import 'package:lab_nerd/views/main/main_view_adaptive.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
-import 'package:lab_nerd/views/exams/quizes_view.dart';
+import 'package:lab_nerd/views/main/quizzes/quizes_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
-import 'package:lab_nerd/views/home/unity_view.dart';
+import 'package:lab_nerd/views/home/home_view.dart';
 import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {
@@ -48,10 +49,13 @@ class AppRouter {
       page: () => const ForgotPasswordView(),
       binding: AuthBinding(),
     ),
-    GetPage(name: Routes.homeView, page: () => const HomeLayout(), bindings: [
-      AuthBinding(),
-      AppBinding(),
-    ]),
+    GetPage(
+        name: Routes.mainView,
+        page: () => const MainViewAdaptive(),
+        bindings: [
+          AuthBinding(),
+          AppBinding(),
+        ]),
     GetPage(
       name: Routes.periodicTableView,
       page: () => const PeriodicTableView(),
@@ -70,7 +74,7 @@ class AppRouter {
       page: () => const SettingsView(),
     ),
     GetPage(
-      name: Routes.unityView,
+      name: Routes.homeView,
       page: () => const HomeView(),
       binding: AuthBinding(),
     ),
@@ -94,22 +98,4 @@ class AppRouter {
       binding: AppBinding(),
     ),
   ];
-}
-
-class Routes {
-  static const splashView = '/splashView';
-  static const onBoardingView = '/onBoardingView';
-  static const loginView = '/loginView';
-  static const signupView = '/signupView';
-  static const forgotPasswordView = '/forgotPasswordView';
-  static const homeView = '/homeView';
-  static const periodicTableView = '/peridocTableView';
-  static const examsView = '/ExamsView';
-  static const quizesView = '/QuizesView';
-  static const settingsView = '/SettingsView';
-  static const unityView = '/unityView';
-  static const editProfileView = '/editProfileView';
-  static const chatGptView = '/chatGptView';
-  static const elementsListView = '/elementsListView';
-  static const searchElementView = '/searchElementView';
 }

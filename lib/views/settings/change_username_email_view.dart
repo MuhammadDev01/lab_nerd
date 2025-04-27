@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
-import 'package:lab_nerd/core/routes/app_router.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 
 class ChangeUsernameEmailWidget extends StatelessWidget {
   const ChangeUsernameEmailWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Appcontroller>(
+    return GetBuilder<Maincontroller>(
       builder: (controller) => InkWell(
         onTap: () {
           Get.toNamed(Routes.editProfileView);

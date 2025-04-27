@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/app_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/widgets/elements_list_view.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
@@ -37,7 +37,7 @@ class _SearchElementViewState extends State<SearchElementView> {
           ),
           Form(
             key: formKey,
-            child: GetBuilder<Appcontroller>(
+            child: GetBuilder<Maincontroller>(
               builder: (controller) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
