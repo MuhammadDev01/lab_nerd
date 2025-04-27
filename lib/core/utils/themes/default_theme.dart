@@ -21,14 +21,7 @@ final defaultTheme = ThemeData(
       size: 32,
     ),
   ),
-  textTheme: const TextTheme(
-    displaySmall: TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'REM',
-      fontSize: 20,
-    ),
-  ),
+
   scaffoldBackgroundColor: Colors.white,
   brightness: Brightness.light,
 );

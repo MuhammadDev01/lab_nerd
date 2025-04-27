@@ -2,9 +2,11 @@
 class Assets {
   Assets._();
 
-  static const String imagesAddNote = "assets/images/add_note.png";
-
   static const String imagesChatGpt = "assets/images/chat_gpt.png";
+
+  static const String imagesMyNote = "assets/images/my_note.png";
+
+  static const String imagesNotFound = "assets/images/not_found.jpg";
 
   static const String imagesOnbaording1 = "assets/images/onbaording1.gif";
 
@@ -39,7 +41,7 @@ class Assets {
 
   static const String imagesSvgHomeIcon = "assets/images/svg/home_icon.svg";
 
-  static const String imagesSvgHomeIcon2 = "assets/images/svg/home_icon(2).svg";
+  static const String imagesSvgHomeIcon2 = "assets/images/svg/home_icon2.svg";
 
   static const String imagesSvgLab = "assets/images/svg/Lab.svg";
 

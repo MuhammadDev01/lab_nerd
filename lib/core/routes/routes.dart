@@ -10,6 +10,7 @@ class Routes {
   static const mainView = '/mainView';
   static const chatGptView = '/chatGptView';
   static const quizesView = '/QuizesView';
+  static const myNotesView = '/myNotesView';
   //**Nav Bar**\\
   static const homeView = '/homeView';
   static const periodicTableView = '/peridocTableView';

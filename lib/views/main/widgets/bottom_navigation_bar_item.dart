@@ -42,13 +42,13 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
                 children: [
                   Text(
                     firstLetter,
-                    style: TextStyles.slacksideOnesF16.copyWith(
+                    style: TextStyles.slacksideOnes16.copyWith(
                       color: Colors.red,
                     ),
                   ),
                   Text(
                     label,
-                    style: TextStyles.slacksideOnesF16.copyWith(),
+                    style: TextStyles.slacksideOnes16.copyWith(),
                   ),
                 ],
               ),

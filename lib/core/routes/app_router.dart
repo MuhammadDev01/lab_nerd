@@ -4,6 +4,7 @@ import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/views/home/my_notes/my_notes_view.dart';
 import 'package:lab_nerd/views/home/quizzes/quizes_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
@@ -20,11 +21,11 @@ import 'package:lab_nerd/views/home/home_view.dart';
 import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {
-  //inital route
   static const initalView = Routes.splashView;
 
-  //get pages
+  //*get pages
   static final List<GetPage<dynamic>> routes = [
+    //** Splash **\\
     GetPage(
       name: Routes.splashView,
       page: () => const SplashView(),
@@ -34,6 +35,7 @@ class AppRouter {
       name: Routes.onBoardingView,
       page: () => OnboardingView(),
     ),
+    //** Auth **\\
     GetPage(
       name: Routes.loginView,
       page: () => const LoginViewBuilder(),
@@ -49,6 +51,7 @@ class AppRouter {
       page: () => const ForgotPasswordView(),
       binding: AuthBinding(),
     ),
+    //** Main **\\
     GetPage(
         name: Routes.mainView,
         page: () => const MainViewAdaptive(),
@@ -56,6 +59,39 @@ class AppRouter {
           AuthBinding(),
           AppBinding(),
         ]),
+    GetPage(
+      name: Routes.chatGptView,
+      page: () => const ChatGptView(),
+    ),
+    GetPage(
+      name: Routes.searchElementView,
+      page: () => const SearchElementView(),
+    ),
+    GetPage(
+      name: Routes.quizesView,
+      page: () => const QuizesView(),
+    ),
+    GetPage(
+      name: Routes.quizesView,
+      page: () => const QuizesView(),
+    ),
+    GetPage(
+      name: Routes.myNotesView,
+      page: () => const MyNotesView(),
+    ),
+//! non-unkwnown page
+    GetPage(
+      name: Routes.elementsListView,
+      page: () => const ElementsListView(),
+      binding: AppBinding(),
+    ),
+//!  non-unkwnown page
+    //**Nav Bar *\\
+    GetPage(
+      name: Routes.homeView,
+      page: () => const HomeView(),
+      binding: AuthBinding(),
+    ),
     GetPage(
       name: Routes.periodicTableView,
       page: () => const PeriodicTableView(),
@@ -65,36 +101,12 @@ class AppRouter {
       page: () => const ExamsView(),
     ),
     GetPage(
-      name: Routes.quizesView,
-      page: () => const QuizesView(),
-      binding: AppBinding(),
-    ),
-    GetPage(
       name: Routes.settingsView,
       page: () => const SettingsView(),
     ),
     GetPage(
-      name: Routes.homeView,
-      page: () => const HomeView(),
-      binding: AuthBinding(),
-    ),
-    GetPage(
       name: Routes.editProfileView,
       page: () => const EditProfileView(),
-      binding: AppBinding(),
-    ),
-    GetPage(
-      name: Routes.chatGptView,
-      page: () => ChatGptView(),
-    ),
-    GetPage(
-      name: Routes.elementsListView,
-      page: () => const ElementsListView(),
-      binding: AppBinding(),
-    ),
-    GetPage(
-      name: Routes.searchElementView,
-      page: () => const SearchElementView(),
       binding: AppBinding(),
     ),
   ];

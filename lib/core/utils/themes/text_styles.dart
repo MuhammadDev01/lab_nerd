@@ -42,13 +42,19 @@ class TextStyles {
   );
   static TextStyle rem26Bold = const TextStyle(
     fontSize: 26,
-    fontFamily: 'REM',
+    fontFamily: fontREM,
     fontWeight: FontWeight.bold,
   );
 //*** Slackside One ***\\
-  static TextStyle slacksideOnesF16 = const TextStyle(
+  static TextStyle slacksideOnes16 = const TextStyle(
     fontSize: 16,
     fontFamily: fontSlacksideOne,
     color: Color.fromARGB(255, 109, 74, 74),
+  );
+  static TextStyle slacksideOnes20Bold = const TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontFamily: fontSlacksideOne,
+    fontSize: 20,
   );
 }
