@@ -60,25 +60,21 @@ class AppRouter {
           AppBinding(),
         ]),
     GetPage(
-      name: Routes.chatGptView,
-      page: () => const ChatGptView(),
-    ),
+        name: Routes.chatGptView,
+        page: () => const ChatGptView(),
+        transition: Transition.zoom),
     GetPage(
-      name: Routes.searchElementView,
-      page: () => const SearchElementView(),
-    ),
+        name: Routes.searchElementView,
+        page: () => const SearchElementView(),
+        transition: Transition.zoom),
     GetPage(
-      name: Routes.quizesView,
-      page: () => const QuizesView(),
-    ),
+        name: Routes.quizesView,
+        page: () => const QuizesView(),
+        transition: Transition.zoom),
     GetPage(
-      name: Routes.quizesView,
-      page: () => const QuizesView(),
-    ),
-    GetPage(
-      name: Routes.myNotesView,
-      page: () => const MyNotesView(),
-    ),
+        name: Routes.myNotesView,
+        page: () => const MyNotesView(),
+        transition: Transition.zoom),
 //! non-unkwnown page
     GetPage(
       name: Routes.elementsListView,

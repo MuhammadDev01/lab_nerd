@@ -10,7 +10,6 @@ import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
 import 'package:lab_nerd/views/home/home_view.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class Maincontroller extends GetxController {
   bool isLoading = false;
@@ -22,60 +21,6 @@ class Maincontroller extends GetxController {
     ExamsView(),
     SettingsView(),
   ];
-
-  late final PersistentTabController persistentTabViewController;
-
-  @override
-  void onInit() {
-    persistentTabViewController = PersistentTabController(initialIndex: 0);
-    super.onInit();
-  }
-
-  @override
-  void onClose() {
-    persistentTabViewController.dispose();
-    super.onClose();
-  }
-
-  // List<PersistentBottomNavBarItem> navBarItems = [
-  //   PersistentBottomNavBarItem(
-  //       contentPadding: 0,
-  //       icon: Image.asset(
-  //         Assets.imagesHomeIcon,
-  //         height: 20,
-  //         width: 20,
-  //       ),
-  //       activeColorPrimary: Colors.red,
-  //       inactiveColorPrimary: Colors.red,
-  //       activeColorSecondary: Colors.red,
-  //       inactiveColorSecondary: Colors.red
-  //       //title: 'Home',
-  //       ),
-  //   PersistentBottomNavBarItem(
-  //     icon: Image.asset(
-  //       Assets.imagesPeriodicTableIcon,
-  //       height: 20,
-  //       width: 20,
-  //     ),
-  //     // title: 'Periodic table',
-  //   ),
-  //   PersistentBottomNavBarItem(
-  //     icon: Image.asset(
-  //       Assets.imagesExamIcon,
-  //       height: 20,
-  //       width: 20,
-  //     ),
-  //     //title: 'Exam',
-  //   ),
-  //   PersistentBottomNavBarItem(
-  //     icon: Image.asset(
-  //       Assets.imagesSettingsIcon,
-  //       height: 20,
-  //       width: 20,
-  //     ),
-  //     //title: 'Settings',
-  //   ),
-  // ];
 
   ProfileUserModel? profileUser;
   // Future<void> showProfileUser() async {
