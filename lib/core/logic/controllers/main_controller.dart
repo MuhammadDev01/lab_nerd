@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/models/element_model.dart';
@@ -7,7 +6,6 @@ import 'package:lab_nerd/models/questions_model.dart';
 import 'package:lab_nerd/models/login_with_back_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
@@ -19,8 +17,8 @@ class Maincontroller extends GetxController {
   int currentIndex = 0;
 
   List<Widget> views = const [
-    PeriodicTableView(),
     HomeView(),
+    PeriodicTableView(),
     ExamsView(),
     SettingsView(),
   ];

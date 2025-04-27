@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
-import 'widgets/bottom_navigation_bar_item.dart';
 
 class MainViewTablet extends StatelessWidget {
   const MainViewTablet({super.key});

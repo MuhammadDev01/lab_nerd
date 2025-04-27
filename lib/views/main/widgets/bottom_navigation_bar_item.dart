@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class CustomBottomNavigatorBarItem extends StatelessWidget {
@@ -37,15 +35,6 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
           children: [
             SvgPicture.asset(
               image,
-              // colorFilter: ColorFilter.mode(
-              //   Get.isDarkMode
-              //       ? Theme.of(context).primaryColorLight
-              //       : Theme.of(context).primaryColorDark,
-              //   BlendMode.srcIn,
-              // ),
-
-              // color: Get.isDarkMode ? Colors.deepOrange[900] : Colors.black,
-              //scale: scale,
             ),
             FittedBox(
               child: Row(
@@ -59,11 +48,7 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
                   ),
                   Text(
                     label,
-                    style: TextStyles.slacksideOnesF16.copyWith(
-                      color: Get.isDarkMode
-                          ? Theme.of(context).primaryColorLight
-                          : Theme.of(context).primaryColorDark,
-                    ),
+                    style: TextStyles.slacksideOnesF16.copyWith(),
                   ),
                 ],
               ),
