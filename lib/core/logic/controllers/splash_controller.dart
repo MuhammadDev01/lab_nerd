@@ -49,13 +49,5 @@ class SplashController extends GetxController {
         Get.toNamed(Routes.loginView);
       }
     });
-    // if (authBox.get(kOnBoarding) == null) {
-    //   authBox.put(kOnBoarding, true);
-    //   Get.toNamed(Routes.onBoardingView);
-    // } else if (authBox.get(kuserToken) != null) {
-    //   Get.toNamed(Routes.homeView);
-    // } else {
-    //   Get.toNamed(Routes.loginView);
-    // }
   }
 }

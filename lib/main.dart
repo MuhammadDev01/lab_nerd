@@ -16,6 +16,7 @@ import 'package:lab_nerd/firebase_options.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kAuthBox);
+  await Hive.openBox(kUsersBox);
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(

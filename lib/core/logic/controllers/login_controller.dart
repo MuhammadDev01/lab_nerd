@@ -3,10 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/repos/login_repo.dart';
 
 class LoginController extends GetxController {
   @override
@@ -73,7 +76,7 @@ class LoginController extends GetxController {
     update();
   }
 
-//**Login Pages in Tablet**\\
+//**For Tablet**\\
   final PageController pageController = PageController();
   int currentPage = 0;
   changeIndexPage(int index) {
@@ -101,40 +104,32 @@ class LoginController extends GetxController {
     update();
     return null;
   }
-//*Email and password
 
+//*Email and password
+  var usersBox = Hive.box(kUsersBox);
   Future<void> loginWithEmailAndPassword() async {
-    try {
-      String emailAddress = emailController.text.trim();
-      String password = passwordController.text.trim();
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: emailAddress, password: password);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
+    String emailAddress = emailController.text.trim();
+    String password = passwordController.text.trim();
+    await LoginRepo.loginWithEmail(email: emailAddress, password: password)
+        .then((value) {
+      if (value == 'Success') {
         appSnackbar(
-            title: 'Login Failed',
-            message: 'Account Not Found, Signup First',
-            backgroundColor: ColorsManager.errorColor);
-      } else if (e.code == 'wrong-password') {
-        appSnackbar(
-            title: 'Login Failed',
-            message: 'Wrong Password, Try Again',
-            backgroundColor: ColorsManager.errorColor);
+          title: 'Success',
+          message: 'Login Successfully',
+          backgroundColor: ColorsManager.successColor,
+        );
+        usersBox.put(kuserToken, LoginRepo.userToken).then((_) {
+          Get.offNamed(Routes.mainView);
+        });
       } else {
         appSnackbar(
-            title: 'Login Failed',
-            message: 'email or password is wrong',
-            backgroundColor: ColorsManager.errorColor);
+          title: 'Failed',
+          message: value,
+          backgroundColor: ColorsManager.errorColor,
+        );
       }
-    } catch (e) {
-      appSnackbar(
-        title: 'Failed',
-        message: 'something is wrong',
-        backgroundColor: ColorsManager.errorColor,
-      );
-      debugPrint('Error!!!! : ${e.toString()}');
-      update();
-    }
+    });
+    update();
   }
 
 //*Google
