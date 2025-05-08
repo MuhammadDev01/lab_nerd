@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/models/element_model.dart';
-import 'package:lab_nerd/views/exams/details_element_view.dart';
+import 'package:lab_nerd/views/exams/widgets/details_element_view.dart';
 
 class ElementsListView extends StatelessWidget {
   const ElementsListView({super.key, this.element});

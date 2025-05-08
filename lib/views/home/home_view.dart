@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return ImageBackround(
+    return ImageBackground(
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

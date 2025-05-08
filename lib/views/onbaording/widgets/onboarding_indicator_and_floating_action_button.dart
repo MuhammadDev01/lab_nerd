@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lab_nerd/constant.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/models/onboarding_item_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import '../../auth/login/login_view_builder.dart';
 
 class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
   const OnboardingIndicatorAndFloatingActionButton({
@@ -62,14 +61,9 @@ class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
   }
 
   void _saveInCacheAndGoToLogin() {
-    CachedHelper.saveData(key: kOnBoarding, value: true).then((value) {
-      if (value) {
-        Get.off(
-          () => const LoginViewBuilder(),
-          transition: Transition.zoom,
-          duration: const Duration(milliseconds: 500),
-        );
-      }
+    var authBox = Hive.box(kAuthBox);
+    authBox.put(kOnBoarding, true).then((_) {
+      Get.offNamed(Routes.loginView);
     });
   }
 }

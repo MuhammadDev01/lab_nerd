@@ -25,6 +25,7 @@ class DefaultTextFormField extends StatelessWidget {
     this.minLines,
     this.maxLines = 1,
     this.contentPadding = const EdgeInsets.only(left: 10),
+    this.validateMessage,
   });
 
   final TextEditingController controller;
@@ -48,6 +49,7 @@ class DefaultTextFormField extends StatelessWidget {
   final int? minLines;
   final int? maxLines;
   final EdgeInsetsGeometry? contentPadding;
+  final String? validateMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +78,7 @@ class DefaultTextFormField extends StatelessWidget {
               minLines: minLines,
               validator: (value) {
                 if (value?.isEmpty ?? true) {
-                  return 'Field Required';
+                  return validateMessage ?? 'Field Required';
                 }
                 return null;
               },

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
-class ImageBackround extends StatelessWidget {
-  const ImageBackround({
+class ImageBackground extends StatelessWidget {
+  const ImageBackground({
     super.key,
     this.backgroundHome = Assets.imagesSvgBackgroundLight,
     required this.child,

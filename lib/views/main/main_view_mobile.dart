@@ -11,7 +11,7 @@ class MainViewMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(
       builder: (controller) => Scaffold(
-        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.white,
         bottomNavigationBar: MainBottomNavigationBar(
           controller: controller,
         ),

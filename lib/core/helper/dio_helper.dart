@@ -25,7 +25,7 @@ class DioHelper {
   }) async {
     dio.options.headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${CachedHelper.getData(key: kOnLogging)}',
+      'Authorization': 'Bearer ${CachedHelper.getData(key: kLogin)}',
     };
     try {
       final response = await dio.get(
@@ -47,7 +47,7 @@ class DioHelper {
   }) async {
     dio.options.headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${CachedHelper.getData(key: kOnLogging)}',
+      'Authorization': 'Bearer ${CachedHelper.getData(key: kLogin)}',
     };
     try {
       final response = await dio.post(
@@ -69,7 +69,7 @@ class DioHelper {
   }) async {
     dio.options.headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${CachedHelper.getData(key: kOnLogging)}',
+      'Authorization': 'Bearer ${CachedHelper.getData(key: kLogin)}',
     };
     try {
       final response = await dio.put(

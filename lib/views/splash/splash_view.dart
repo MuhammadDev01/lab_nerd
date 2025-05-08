@@ -1,25 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
 import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
 import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
 import 'package:lab_nerd/views/splash/widgets/splash_logo.dart';
 
-class SplashView extends StatefulWidget {
+class SplashView extends StatelessWidget {
   const SplashView({super.key});
-
-  @override
-  State<SplashView> createState() => _SplashViewState();
-}
-
-class _SplashViewState extends State<SplashView> {
-  final _controller = Get.find<SplashController>();
-  @override
-  void initState() {
-    _controller.moveEyes();
-    _controller.navigateToWelcome();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

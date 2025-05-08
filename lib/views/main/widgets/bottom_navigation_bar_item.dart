@@ -23,38 +23,36 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(12),
-      child: Container(
-        decoration: isActive
-            ? BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.circular(12),
-              )
-            : const BoxDecoration(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SvgPicture.asset(
-              image,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            image,
+            colorFilter: ColorFilter.mode(
+              isActive ? Color(0xff2896E8) : Colors.black,
+              BlendMode.srcIn,
             ),
-            FittedBox(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    firstLetter,
-                    style: TextStyles.slacksideOnes16.copyWith(
-                      color: Colors.red,
-                    ),
+          ),
+          FittedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  firstLetter,
+                  style: TextStyles.slacksideOnes16.copyWith(
+                    color: Colors.red,
                   ),
-                  Text(
-                    label,
-                    style: TextStyles.slacksideOnes16.copyWith(),
+                ),
+                Text(
+                  label,
+                  style: TextStyles.slacksideOnes16.copyWith(
+                    color: isActive ? Color(0xff2896E8) : Colors.black,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

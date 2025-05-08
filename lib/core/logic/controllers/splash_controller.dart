@@ -1,13 +1,20 @@
 import 'dart:async';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lab_nerd/constant.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
 class SplashController extends GetxController {
   int currentIndex = 0;
   Timer? _timer;
+  var authBox = Hive.box(kAuthBox);
+  @override
+  void onInit() {
+    moveEyes();
+    navigateToWhere();
+    super.onInit();
+  }
 
   final List<String> splashEyes = const [
     Assets.imagesSvgLookEye,
@@ -32,17 +39,23 @@ class SplashController extends GetxController {
     });
   }
 
-  navigateToWelcome() {
-    Future.delayed(const Duration(seconds: 2)).then((value) {
-      if (CachedHelper.getData(key: kOnBoarding) == null) {
-        Get.offNamed(Routes.onBoardingView);
+  navigateToWhere() {
+    Future.delayed(const Duration(seconds: 2), () {
+      if (authBox.get(kOnBoarding) == null) {
+        Get.toNamed(Routes.onBoardingView);
+      } else if (authBox.get(kuserToken) != null) {
+        Get.toNamed(Routes.homeView);
       } else {
-        if (CachedHelper.getData(key: kOnLogging) == null) {
-          Get.offNamed(Routes.loginView);
-        } else {
-          Get.offNamed(Routes.homeView);
-        }
+        Get.toNamed(Routes.loginView);
       }
     });
+    // if (authBox.get(kOnBoarding) == null) {
+    //   authBox.put(kOnBoarding, true);
+    //   Get.toNamed(Routes.onBoardingView);
+    // } else if (authBox.get(kuserToken) != null) {
+    //   Get.toNamed(Routes.homeView);
+    // } else {
+    //   Get.toNamed(Routes.loginView);
+    // }
   }
 }
