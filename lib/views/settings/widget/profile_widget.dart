@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
 class ProfileWidget extends StatelessWidget {
@@ -11,7 +12,7 @@ class ProfileWidget extends StatelessWidget {
     return GetBuilder<Maincontroller>(
       builder: (controller) => Column(
         children: [
-          controller.profileUser == null
+          controller.user!.displayName == null
               ? const LoadingWidget()
               : Row(
                   children: [
@@ -20,7 +21,7 @@ class ProfileWidget extends StatelessWidget {
                       radius: 35,
                       child: ClipOval(
                         child: Image.asset(
-                          'assets/images/user image profile.png',
+                          Assets.imagesUserImageProfile,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -32,7 +33,7 @@ class ProfileWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          controller.profileUser?.name ?? 'username',
+                          controller.user!.displayName ?? 'username',
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall
@@ -44,7 +45,7 @@ class ProfileWidget extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          controller.profileUser?.email ?? 'email@gmail.com',
+                          controller.user!.email ?? 'email@gmail.com',
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall

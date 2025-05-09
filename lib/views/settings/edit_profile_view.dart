@@ -23,9 +23,9 @@ class _EditProfileViewState extends State<EditProfileView> {
   String currentName = 'username';
   @override
   void initState() {
-    nameController.text = controller.profileUser!.name;
-    emailController.text = controller.profileUser!.email;
-    currentName = controller.profileUser!.name;
+    nameController.text = controller.userPofile.name!;
+    emailController.text = controller.userPofile.email!;
+    currentName = controller.userPofile.name!;
     super.initState();
   }
 
@@ -122,7 +122,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                             onPressed: () async {
                               if (formKey.currentState!.validate()) {
                                 if (nameController.text ==
-                                    controller.profileUser!.name) {
+                                    controller.userPofile.name) {
                                   Get.snackbar(
                                     "Can't Update",
                                     'No changing in current name is happend',

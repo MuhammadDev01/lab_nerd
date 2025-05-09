@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/models/element_model.dart';
@@ -13,14 +14,27 @@ class Maincontroller extends GetxController {
   bool isLoading = false;
   int currentIndex = 0;
 
+  @override
+  onInit() {
+    showProfileUser();
+    super.onInit();
+  }
+
   List<Widget> views = const [
     HomeView(),
     PeriodicTableView(),
     ExamsView(),
     SettingsView(),
   ];
-
-  ProfileUserModel? profileUser;
+  final user = FirebaseAuth.instance.currentUser;
+  late ProfileUserModel userPofile;
+  showProfileUser() {
+    userPofile = ProfileUserModel(
+      name: user?.displayName,
+      email: user?.email,
+    );
+    update();
+  }
   // Future<void> showProfileUser() async {
   //   DioHelper.getData(url: '${CachedHelper.getData(key: 'url')}/api/profile')
   //       .then((value) {

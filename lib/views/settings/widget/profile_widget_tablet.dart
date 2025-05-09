@@ -13,7 +13,7 @@ class ProfileWidgetTablet extends StatelessWidget {
     return GetBuilder<Maincontroller>(
       builder: (controller) => Column(
         children: [
-          controller.profileUser == null
+          controller.userPofile.name == null
               ? const LoadingWidget()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -35,7 +35,7 @@ class ProfileWidgetTablet extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          controller.profileUser?.name ?? '',
+                          controller.userPofile.name ?? '',
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall
@@ -47,7 +47,7 @@ class ProfileWidgetTablet extends StatelessWidget {
                           height: 12,
                         ),
                         Text(
-                          controller.profileUser?.email ?? '',
+                          controller.userPofile.email ?? '',
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall
