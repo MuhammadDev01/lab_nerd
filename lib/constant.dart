@@ -13,7 +13,7 @@ const kPicUser =
 const String kAuthBox = 'authBox';
 const String kOnBoarding = 'onboarding';
 const String kLogin = 'kLogin';
-const String kUsersBox = 'usersBox';
+const String kUserBox = 'usersBox';
 const String kuserToken = 'kUserToken';
 
 String? uId;

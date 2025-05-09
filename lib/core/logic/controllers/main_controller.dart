@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/models/questions_model.dart';
-import 'package:lab_nerd/models/login_with_back_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
@@ -31,7 +29,7 @@ class Maincontroller extends GetxController {
   //   });
   // }
 
-  LoginWithBackModel? changePassModel;
+//  LoginWithBackModel? changePassModel;
   // Future<void> changePasswordUser({
   //   required String currentPassword,
   //   required String newPassword,
@@ -91,18 +89,6 @@ class Maincontroller extends GetxController {
   // = CachedHelper.getData(key: 'isDark')
   //     ? Assets.imagesSvgBackgroundBlack
   //     : Assets.imagesSvgBackgroundLight;
-  Color color =
-      CachedHelper.getData(key: 'isDark') ? Colors.black : Colors.grey.shade100;
-  changeThemeMode(bool isdark) async {
-    isdark = !isdark;
-    //isDark = isdark;
-    await CachedHelper.saveData(key: 'isDark', value: isdark);
-    // backgroundHome = isdark
-    //     ? Assets.imagesSvgBackgroundBlack
-    //     : Assets.imagesSvgBackgroundLight;
-    color = isdark ? Colors.black54 : Colors.grey.shade100;
-    update();
-  }
 
   List<ExamModel> examsList = [];
   // List<ExamModel> getExams() {

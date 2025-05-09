@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 
 class DarkModeWidget extends StatelessWidget {
@@ -35,12 +34,13 @@ class DarkModeWidget extends StatelessWidget {
             Switch(
               activeColor: Colors.blue[700],
               activeTrackColor: Colors.grey,
-              value: CachedHelper.getData(key: 'isDark'),
+              //!toDO
+              value: true,
               onChanged: (value) {
-                controller.changeThemeMode(CachedHelper.getData(key: 'isDark'));
-                CachedHelper.getData(key: 'isDark')
-                    ? Get.changeThemeMode(ThemeMode.dark)
-                    : Get.changeThemeMode(ThemeMode.light);
+                // controller.changeThemeMode(CachedHelper.getData(key: 'isDark'));
+                // CachedHelper.getData(key: 'isDark')
+                //     ? Get.changeThemeMode(ThemeMode.dark)
+                //     : Get.changeThemeMode(ThemeMode.light);
               },
             ),
           ],

@@ -1,6 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive/hive.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -43,10 +44,11 @@ class SplashController extends GetxController {
     Future.delayed(const Duration(seconds: 2), () {
       if (authBox.get(kOnBoarding) == null) {
         Get.toNamed(Routes.onBoardingView);
-      } else if (authBox.get(kuserToken) != null) {
-        Get.toNamed(Routes.homeView);
-      } else {
+      } else if (authBox.get(kuserToken) == null) {
+        log('token:  ${authBox.get(kuserToken)}');
         Get.toNamed(Routes.loginView);
+      } else {
+        Get.toNamed(Routes.mainView);
       }
     });
   }

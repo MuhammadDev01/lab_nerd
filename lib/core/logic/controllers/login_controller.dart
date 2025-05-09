@@ -3,9 +3,8 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -106,14 +105,15 @@ class LoginController extends GetxController {
   }
 
 //**Email and password
-  var usersBox = Hive.box(kUsersBox);
   Future<void> loginWithEmailAndPassword() async {
     String emailAddress = emailController.text.trim();
     String password = passwordController.text.trim();
     await LoginRepo.loginWithEmail(email: emailAddress, password: password)
         .then((value) {
       if (value == 'Success') {
-        usersBox.put(kuserToken, LoginRepo.userToken).then((_) {
+        final userToken = FirebaseAuth.instance.currentUser?.uid;
+        log('userToken : ${userToken.toString()}');
+        CacheHelper.authBox.put(kuserToken, userToken).then((_) {
           Get.offNamed(Routes.mainView);
         });
       } else {
@@ -131,7 +131,7 @@ class LoginController extends GetxController {
   Future<void> loginWithGoogle() async {
     await LoginRepo.loginWithFirebaseGoogle().then((value) async {
       final userID = value.user?.uid;
-      await usersBox.put(kuserToken, userID).then((_) {
+      await CacheHelper.authBox.put(kuserToken, userID).then((_) {
         Get.offNamed(Routes.mainView);
       });
     }).catchError((error) {

@@ -5,8 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lab_nerd/constant.dart';
-import 'package:lab_nerd/core/helper/cached_helper.dart';
-import 'package:lab_nerd/core/helper/dio_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/dark_theme.dart';
@@ -16,32 +14,29 @@ import 'package:lab_nerd/firebase_options.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kAuthBox);
-  await Hive.openBox(kUsersBox);
+  await Hive.openBox(kUserBox);
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  await CachedHelper.init();
-  DioHelper.init();
-  CachedHelper.getData(key: 'isDark') ??
-      CachedHelper.saveData(key: 'isDark', value: false);
-  bool isDark = CachedHelper.getData(key: 'isDark');
+  // DioHelper.init();
+  // CachedHelper.getData(key: 'isDark') ??
+  //     CachedHelper.saveData(key: 'isDark', value: false);
+  // bool isDark = CachedHelper.getData(key: 'isDark');
   runApp(
     DevicePreview(
       enabled: false,
-      builder: (_) => LabNerdApp(isDark),
+      builder: (_) => LabNerdApp(),
     ),
   );
 }
 
 class LabNerdApp extends StatelessWidget {
-  const LabNerdApp(
-    this.isDark, {
+  const LabNerdApp({
     super.key,
   });
-  final bool isDark;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -57,7 +52,6 @@ class LabNerdApp extends StatelessWidget {
         textDirection: TextDirection.ltr,
         theme: defaultTheme,
         darkTheme: darkTheme,
-        themeMode: isDark == true ? ThemeMode.dark : ThemeMode.light,
       ),
     );
   }

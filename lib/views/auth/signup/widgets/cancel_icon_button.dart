@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 
 class CancelIconButton extends StatelessWidget {
   const CancelIconButton({
@@ -17,9 +18,9 @@ class CancelIconButton extends StatelessWidget {
           onTap: () {
             Get.back();
           },
-          child: const Icon(
+          child: Icon(
             FontAwesomeIcons.circleXmark,
-            color: Colors.deepOrange,
+            color: ColorsManager.greenWhite,
             size: 30,
           ),
         ),
