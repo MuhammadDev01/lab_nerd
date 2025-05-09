@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
 
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key});
+class UserDetails extends StatelessWidget {
+  const UserDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ProfileWidget extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.white,
-                      radius: 35,
+                      radius: 50.r,
                       child: ClipOval(
                         child: Image.asset(
                           Assets.imagesUserImageProfile,
@@ -26,32 +28,23 @@ class ProfileWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 15,
+                    SizedBox(
+                      width: 15.w,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          controller.user!.displayName ?? 'username',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall
-                              ?.copyWith(
-                                fontSize: 18,
-                              ),
+                          controller.user!.displayName!.capitalize!,
+                          style: TextStyles.rem20Boldd,
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         Text(
-                          controller.user!.email ?? 'email@gmail.com',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall
-                              ?.copyWith(
-                                fontSize: 16,
-                              ),
+                          controller.user!.email!,
+                          style: TextStyles.rem16Bold
+                              .copyWith(fontWeight: FontWeight.normal),
                         ),
                       ],
                     ),
