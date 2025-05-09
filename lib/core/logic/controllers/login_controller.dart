@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,7 +34,6 @@ class LoginController extends GetxController {
   int currentEyeIndex = 0;
   Timer? timer;
 
-  String displayname = 'student';
   List<String> eyesList = const [
     Assets.imagesSvgLookEye,
     Assets.imagesSvgLookEye,
@@ -105,7 +105,7 @@ class LoginController extends GetxController {
     return null;
   }
 
-//*Email and password
+//**Email and password
   var usersBox = Hive.box(kUsersBox);
   Future<void> loginWithEmailAndPassword() async {
     String emailAddress = emailController.text.trim();
@@ -113,11 +113,6 @@ class LoginController extends GetxController {
     await LoginRepo.loginWithEmail(email: emailAddress, password: password)
         .then((value) {
       if (value == 'Success') {
-        appSnackbar(
-          title: 'Success',
-          message: 'Login Successfully',
-          backgroundColor: ColorsManager.successColor,
-        );
         usersBox.put(kuserToken, LoginRepo.userToken).then((_) {
           Get.offNamed(Routes.mainView);
         });
@@ -132,36 +127,20 @@ class LoginController extends GetxController {
     update();
   }
 
-//*Google
-  Future<UserCredential> loginWithFirebaseGoogle() async {
-    // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
-
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
-
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
-  }
-
+//**Google
   Future<void> loginWithGoogle() async {
-    try {
-      await loginWithFirebaseGoogle();
-      Get.offNamed(Routes.homeView);
-    } catch (e) {
+    await LoginRepo.loginWithFirebaseGoogle().then((value) async {
+      final userID = value.user?.uid;
+      await usersBox.put(kuserToken, userID).then((_) {
+        Get.offNamed(Routes.mainView);
+      });
+    }).catchError((error) {
       appSnackbar(
         title: 'Failed',
         message: 'Login Failed Please Try Again',
         backgroundColor: ColorsManager.errorColor,
       );
-      debugPrint('Error!!! : ${e.toString()}');
-    }
+    });
+    update();
   }
 }
