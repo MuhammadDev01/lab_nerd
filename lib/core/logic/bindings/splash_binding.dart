@@ -4,8 +4,6 @@ import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
 class SplashBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(
-      () => SplashController(),
-    );
+    Get.lazyPut(() => SplashController(), fenix: true);
   }
 }

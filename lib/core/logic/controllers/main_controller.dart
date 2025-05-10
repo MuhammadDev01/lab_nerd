@@ -28,7 +28,19 @@ class Maincontroller extends GetxController {
     SettingsView(),
   ];
 
-  //** In Setting View **\\
+  //*****************DEFAULT*****************\\
+  void changeIndexNav(int index) {
+    currentIndex = index;
+    update();
+  }
+
+  void changeLoading() {
+    isLoading = !isLoading;
+    update();
+  }
+
+  //*****************SHOW PROFILE USER*****************\\
+
   final user = FirebaseAuth.instance.currentUser;
   late ProfileUserModel userPofile;
   showProfileUser() {
@@ -36,6 +48,18 @@ class Maincontroller extends GetxController {
       name: user?.displayName,
       email: user?.email,
     );
+    update();
+  }
+
+  //*****************DARK MODE*****************\\
+  bool isDark = false;
+  Color colorDarkLight = Colors.black;
+  Color colorBottomActive = Color(0xff2896E8);
+  void switchDarkMode() {
+    isDark = !isDark;
+    colorDarkLight = isDark ? Colors.white : Colors.black;
+    colorBottomActive = isDark ? ColorsManager.greenWhite : Color(0xff2896E8);
+    Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
     update();
   }
 
@@ -83,27 +107,6 @@ class Maincontroller extends GetxController {
   //     update();
   //     Get.snackbar('Error', error.toString());
   //   });
-
-  void changeIndexNav(int index) {
-    currentIndex = index;
-    update();
-  }
-
-  bool isDark = false;
-  Color colorDarkLight = Colors.black;
-  Color colorBottomActive = Color(0xff2896E8);
-  void switchDarkMode() {
-    isDark = !isDark;
-    colorDarkLight = isDark ? Colors.white : Colors.black;
-    colorBottomActive = isDark ? ColorsManager.greenWhite : Color(0xff2896E8);
-    Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
-    update();
-  }
-
-  void changeLoading() {
-    isLoading = !isLoading;
-    update();
-  }
 
   //bool isDark = false;
   String backgroundHome = '';
@@ -206,25 +209,6 @@ class Maincontroller extends GetxController {
   //   });
   //   update();
   // }
-
-//*signout
-  // void signoutFromApp() async {
-  //   await DioHelper.postData(
-  //       url: '${CachedHelper.getData(key: 'url')}/api/logout',
-  //       data: {}).then((value) {
-  //     CachedHelper.removeData(key: kOnLogging);
-  //     Get.offNamed(Routes.loginView);
-  //     update();
-  //   });
-  // }
-
-  bool isVisibilty = true;
-  IconData visibilityPassword = Icons.visibility_off;
-  void visibilty() {
-    isVisibilty = !isVisibilty;
-    visibilityPassword = isVisibilty ? Icons.visibility_off : Icons.visibility;
-    update();
-  }
 
   bool isEnglish = false;
   void changeLang() {

@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/home/settings_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class LogOutWidget extends StatelessWidget {
-  const LogOutWidget({super.key});
+class LogoutButton extends StatelessWidget {
+  const LogoutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Maincontroller>(
+    return GetBuilder<SettingsController>(
       builder: (controller) => InkWell(
         onTap: () {
           Get.defaultDialog(
-            title: "Logout From App?",
-            titleStyle: Theme.of(context).textTheme.displaySmall,
+            title: "Logout From App",
+            titleStyle: TextStyles.rem20Boldd,
             middleText: 'Are you sure you need to logout',
-            middleTextStyle: Theme.of(context).textTheme.displaySmall,
+            middleTextStyle: TextStyles.rem16Bold,
             radius: 10,
             textCancel: " No ",
             cancelTextColor: Get.isDarkMode ? Colors.white : Colors.black,
             textConfirm: " YES ",
-            confirmTextColor: Get.isDarkMode ? Colors.black : Colors.white,
-            onCancel: () {
-              Get.back();
-            },
-            onConfirm: () {
-              // controller.signoutFromApp();
-            },
+            confirmTextColor: Colors.white,
+            onConfirm: () => controller.signoutFromApp(),
             buttonColor: Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
           );
         },

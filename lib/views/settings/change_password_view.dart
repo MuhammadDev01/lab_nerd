@@ -86,13 +86,14 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                             controller: currentPasswordController,
                             hintText: 'current password',
                             textInputType: TextInputType.visiblePassword,
-                            obscureText: visibilityController1.isVisibilty,
+                            //obscureText: visibilityController1.isVisibilty,
                             suffixIcon: IconButton(
                               onPressed: () {
-                                visibilityController1.visibilty();
+                                //  visibilityController1.visibilty();
                               },
                               icon: Icon(
-                                visibilityController1.visibilityPassword,
+                                Icons.abc,
+                                //visibilityController1.visibilityPassword,
                                 color: Colors.black,
                               ),
                             ),
@@ -109,13 +110,14 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                             controller: newPasswordController,
                             hintText: 'new password',
                             textInputType: TextInputType.visiblePassword,
-                            obscureText: visibilityController2.isVisibilty,
+                            //  obscureText: visibilityController2.isVisibilty,
                             suffixIcon: IconButton(
                               onPressed: () {
-                                visibilityController2.visibilty();
+                                // visibilityController2.visibilty();
                               },
                               icon: Icon(
-                                visibilityController2.visibilityPassword,
+                                Icons.abc,
+                                //visibilityController2.visibilityPassword,
                                 color: Colors.black,
                               ),
                             ),
@@ -132,13 +134,14 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                             controller: confirmPasswordController,
                             hintText: 'confirm password',
                             textInputType: TextInputType.visiblePassword,
-                            obscureText: visibilityController3.isVisibilty,
+                            //obscureText: visibilityController3.isVisibilty,
                             suffixIcon: IconButton(
                               onPressed: () {
-                                visibilityController3.visibilty();
+                                //  visibilityController3.visibilty();
                               },
                               icon: Icon(
-                                visibilityController3.visibilityPassword,
+                                Icons.abc,
+                                //visibilityController3.visibilityPassword,
                                 color: Colors.black,
                               ),
                             ),
