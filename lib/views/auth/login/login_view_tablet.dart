@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/views/auth/login/widgets/logo_of_login.dart';
 import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
 import 'package:lab_nerd/views/auth/login/widgets/center_login_text.dart';

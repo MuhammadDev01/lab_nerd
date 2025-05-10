@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/login_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/home/home_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
 class HomeViewAppBar extends StatelessWidget {
@@ -42,7 +42,7 @@ class AnimatedLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LoginController>(
+    return GetBuilder<HomeController>(
       builder: (controller) => Stack(
         alignment: AlignmentDirectional.center,
         children: [

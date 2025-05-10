@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/sign_up_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/auth/sign_up_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';

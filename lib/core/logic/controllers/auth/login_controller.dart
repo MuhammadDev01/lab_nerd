@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
+import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
@@ -14,6 +15,8 @@ import 'package:lab_nerd/repos/login_repo.dart';
 class LoginController extends GetxController {
   @override
   void onInit() {
+    Get.delete<SplashController>();
+
     moveEyes();
     super.onInit();
   }
@@ -30,8 +33,6 @@ class LoginController extends GetxController {
 
   bool isLoading = false;
   bool check = false;
-  int currentEyeIndex = 0;
-  Timer? timer;
 
   List<String> eyesList = const [
     Assets.imagesSvgLookEye,
@@ -43,6 +44,8 @@ class LoginController extends GetxController {
     Assets.imagesSvgHalfEye,
   ];
 
+  int currentEyeIndex = 0;
+  Timer? timer;
   moveEyes() {
     timer = Timer.periodic(
       const Duration(milliseconds: 250),

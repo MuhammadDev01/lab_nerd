@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final defaultTheme = ThemeData(
-  //primaryColorDark: Colors.black,
-  //primaryColorLight: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20,
     backgroundColor: Colors.white,
@@ -22,7 +20,6 @@ final defaultTheme = ThemeData(
       size: 32,
     ),
   ),
-
   textTheme: TextTheme(
     displaySmall: TextStyle(
       color: Colors.black,

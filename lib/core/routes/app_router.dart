@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/bindings/app_binding.dart';
+import 'package:lab_nerd/core/logic/bindings/main_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
@@ -44,21 +44,17 @@ class AppRouter {
     GetPage(
       name: Routes.signupView,
       page: () => const SignupLayout(),
-      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.forgotPasswordView,
       page: () => const ForgotPasswordView(),
-      binding: AuthBinding(),
     ),
     //** Main **\\
     GetPage(
-        name: Routes.mainView,
-        page: () => const MainViewAdaptive(),
-        bindings: [
-          AuthBinding(),
-          AppBinding(),
-        ]),
+      name: Routes.mainView,
+      page: () => const MainViewAdaptive(),
+      binding: MainBinding(),
+    ),
     GetPage(
       name: Routes.chatGptView,
       page: () => const ChatGptView(),
@@ -79,14 +75,13 @@ class AppRouter {
     GetPage(
       name: Routes.elementsListView,
       page: () => const ElementsListView(),
-      binding: AppBinding(),
+      binding: MainBinding(),
     ),
 //!  non-unkwnown page
     //**Nav Bar *\\
     GetPage(
       name: Routes.homeView,
       page: () => const HomeView(),
-      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.periodicTableView,
@@ -103,7 +98,7 @@ class AppRouter {
     GetPage(
       name: Routes.editProfileView,
       page: () => const EditProfileView(),
-      binding: AppBinding(),
+      binding: MainBinding(),
     ),
   ];
 }
