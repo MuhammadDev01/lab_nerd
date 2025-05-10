@@ -11,9 +11,8 @@ const kPicUser =
 
 //**Hive**\\
 const String kAuthBox = 'authBox';
+const String kUserBox = 'usersBox';
 const String kOnBoarding = 'onboarding';
 const String kLogin = 'kLogin';
-const String kUserBox = 'usersBox';
 const String kuserToken = 'kUserToken';
-
-String? uId;
+const String kDarkMode = 'kDarkMode';

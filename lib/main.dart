@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/dark_theme.dart';
@@ -52,6 +53,9 @@ class LabNerdApp extends StatelessWidget {
         textDirection: TextDirection.ltr,
         theme: defaultTheme,
         darkTheme: darkTheme,
+        themeMode: CacheHelper.userBox.get(kDarkMode) == true
+            ? ThemeMode.dark
+            : ThemeMode.light,
       ),
     );
   }
