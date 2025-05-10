@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 appSnackbar({
@@ -22,4 +23,9 @@ appSnackbar({
       snackPosition: SnackPosition.TOP,
       colorText: Colors.white,
       backgroundColor: backgroundColor,
+    );
+
+Divider appDivider() => const Divider(
+      color: ColorsManager.greenWhite,
+      height: 50,
     );

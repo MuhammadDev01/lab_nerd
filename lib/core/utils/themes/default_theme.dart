@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final defaultTheme = ThemeData(
   //primaryColorDark: Colors.black,
@@ -22,6 +23,14 @@ final defaultTheme = ThemeData(
     ),
   ),
 
+  textTheme: TextTheme(
+    displaySmall: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'REM',
+      fontSize: 20.sp,
+    ),
+  ),
   scaffoldBackgroundColor: Colors.white,
   brightness: Brightness.light,
 );

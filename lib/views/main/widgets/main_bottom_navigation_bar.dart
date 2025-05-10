@@ -11,9 +11,8 @@ class MainBottomNavigationBar extends StatelessWidget {
   final Maincontroller controller;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.sizeOf(context).height * 0.09,
-      color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/views/settings/widget/about_us_widget.dart';
 import 'package:lab_nerd/views/settings/change_username_email_view.dart';
 import 'package:lab_nerd/views/settings/widget/change_password_widget.dart';
@@ -12,24 +13,23 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
-          spacing: 10,
           children: [
             UserDetailsLayout(),
-            Divider(),
+            appDivider(),
             DarkModeWidget(),
-            Divider(),
+            appDivider(),
             ChangeUsernameEmailWidget(),
-            Divider(),
+            appDivider(),
             ChangePasswordWidget(),
-            Divider(),
+            appDivider(),
             LogOutWidget(),
-            Divider(),
+            appDivider(),
             ShareAppWidget(),
-            Divider(),
+            appDivider(),
             AboutUsWidget(),
           ],
         ),

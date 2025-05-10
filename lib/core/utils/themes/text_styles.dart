@@ -19,26 +19,22 @@ class TextStyles {
     fontSize: 32,
     fontFamily: fontInter,
     fontWeight: FontWeight.bold,
-    color: Colors.black,
   );
   //*** REM ***\\
   static TextStyle rem14Bold = const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     fontFamily: fontREM,
-    color: Colors.black,
   );
   static TextStyle rem16Bold = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     fontFamily: fontREM,
-    color: Colors.black,
   );
   static TextStyle rem20Boldd = const TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     fontFamily: fontREM,
-    color: Colors.black,
   );
   static TextStyle rem26Bold = const TextStyle(
     fontSize: 26,
@@ -52,7 +48,6 @@ class TextStyles {
     color: Color.fromARGB(255, 109, 74, 74),
   );
   static TextStyle slacksideOnes20Bold = const TextStyle(
-    color: Colors.black,
     fontWeight: FontWeight.bold,
     fontFamily: fontSlacksideOne,
     fontSize: 20,

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/models/questions_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
@@ -35,13 +36,6 @@ class Maincontroller extends GetxController {
     );
     update();
   }
-  // Future<void> showProfileUser() async {
-  //   DioHelper.getData(url: '${CachedHelper.getData(key: 'url')}/api/profile')
-  //       .then((value) {
-  //     profileUser = ProfileUserModel.fromJson(value.data);
-  //     update();
-  //   });
-  // }
 
 //  LoginWithBackModel? changePassModel;
   // Future<void> changePasswordUser({
@@ -90,6 +84,17 @@ class Maincontroller extends GetxController {
 
   void changeIndexNav(int index) {
     currentIndex = index;
+    update();
+  }
+
+  bool isDark = false;
+  Color colorDarkLight = Colors.black;
+  Color colorBottomActive = Color(0xff2896E8);
+  void switchDarkMode() {
+    isDark = !isDark;
+    colorDarkLight = isDark ? Colors.white : Colors.black;
+    colorBottomActive = isDark ? ColorsManager.greenWhite : Color(0xff2896E8);
+    Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
     update();
   }
 

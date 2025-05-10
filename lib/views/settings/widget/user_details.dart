@@ -36,7 +36,7 @@ class UserDetails extends StatelessWidget {
                       children: [
                         Text(
                           controller.user!.displayName!.capitalize!,
-                          style: TextStyles.rem20Boldd,
+                          style: TextStyles.rem16Bold,
                         ),
                         const SizedBox(
                           height: 10,

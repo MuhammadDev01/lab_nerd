@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/settings/about_us_view.dart';
 
 class AboutUsWidget extends StatelessWidget {
@@ -33,7 +34,7 @@ class AboutUsWidget extends StatelessWidget {
               ),
               Text(
                 "About Us",
-                style: Theme.of(context).textTheme.displaySmall,
+                style: TextStyles.rem20Boldd,
               ),
             ],
           ),

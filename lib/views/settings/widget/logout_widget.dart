@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class LogOutWidget extends StatelessWidget {
   const LogOutWidget({super.key});
@@ -48,7 +49,7 @@ class LogOutWidget extends StatelessWidget {
             ),
             Text(
               "Logout",
-              style: Theme.of(context).textTheme.displaySmall,
+              style: TextStyles.rem20Boldd,
             ),
           ],
         ),

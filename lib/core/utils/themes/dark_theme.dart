@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 
 final darkTheme = ThemeData(
   primaryColorDark: Colors.black,
@@ -21,13 +23,13 @@ final darkTheme = ThemeData(
       size: 32,
     ),
   ),
-  scaffoldBackgroundColor: const Color(0xff27292a),
-  textTheme: const TextTheme(
+  scaffoldBackgroundColor: ColorsManager.darkModeColor,
+  textTheme: TextTheme(
     displaySmall: TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.bold,
       fontFamily: 'REM',
-      fontSize: 20,
+      fontSize: 20.sp,
     ),
   ),
   brightness: Brightness.dark,

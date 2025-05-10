@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class ChangeUsernameEmailWidget extends StatelessWidget {
   const ChangeUsernameEmailWidget({super.key});
@@ -32,7 +33,7 @@ class ChangeUsernameEmailWidget extends StatelessWidget {
             ),
             Text(
               "Change Username",
-              style: Theme.of(context).textTheme.displaySmall,
+              style: TextStyles.rem20Boldd,
             ),
           ],
         ),

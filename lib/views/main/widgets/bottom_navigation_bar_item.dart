@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class CustomBottomNavigatorBarItem extends StatelessWidget {
@@ -20,39 +22,45 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
   final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          SvgPicture.asset(
-            image,
-            colorFilter: ColorFilter.mode(
-              isActive ? Color(0xff2896E8) : Colors.black,
-              BlendMode.srcIn,
+    return GetBuilder<Maincontroller>(
+      builder: (controller) => InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SvgPicture.asset(
+              image,
+              colorFilter: ColorFilter.mode(
+                isActive
+                    ? controller.colorBottomActive
+                    : controller.colorDarkLight,
+                BlendMode.srcIn,
+              ),
             ),
-          ),
-          FittedBox(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  firstLetter,
-                  style: TextStyles.slacksideOnes16.copyWith(
-                    color: Colors.red,
+            FittedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    firstLetter,
+                    style: TextStyles.slacksideOnes16.copyWith(
+                      color: Colors.red,
+                    ),
                   ),
-                ),
-                Text(
-                  label,
-                  style: TextStyles.slacksideOnes16.copyWith(
-                    color: isActive ? Color(0xff2896E8) : Colors.black,
+                  Text(
+                    label,
+                    style: TextStyles.slacksideOnes16.copyWith(
+                      color: isActive
+                          ? controller.colorBottomActive
+                          : controller.colorDarkLight,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
