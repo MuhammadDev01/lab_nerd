@@ -28,7 +28,7 @@ class Maincontroller extends GetxController {
     SettingsView(),
   ];
 
-  //** Setting View **\\
+  //** In Setting View **\\
   final user = FirebaseAuth.instance.currentUser;
   late ProfileUserModel userPofile;
   showProfileUser() {

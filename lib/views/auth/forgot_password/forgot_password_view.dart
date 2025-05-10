@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 import 'widgets/custom_forgot_password_appbar.dart';
 import 'widgets/custom_forgot_password_circle_avatar.dart';
 import '../../../widgets/default_text_form_field.dart';
@@ -102,7 +103,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     GetBuilder<LoginController>(
                       builder: (controller) => ForgotPasswordButton(
                         child: controller.isLoading
-                            ? const LoadingWidget()
+                            ? const AppLoading()
                             : Center(
                                 child: Text(
                                   'Send',
@@ -122,26 +123,6 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: SizedBox(
-        height: 30,
-        width: 30,
-        child: CircularProgressIndicator(
-          backgroundColor: Colors.white,
-          color: Colors.grey,
-        ),
       ),
     );
   }

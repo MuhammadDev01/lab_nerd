@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class ProfileWidgetTablet extends StatelessWidget {
   const ProfileWidgetTablet({super.key});
@@ -14,7 +14,7 @@ class ProfileWidgetTablet extends StatelessWidget {
       builder: (controller) => Column(
         children: [
           controller.userPofile.name == null
-              ? const LoadingWidget()
+              ? const AppLoading()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

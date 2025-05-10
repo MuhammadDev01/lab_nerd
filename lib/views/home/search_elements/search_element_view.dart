@@ -27,8 +27,8 @@ class _SearchElementViewState extends State<SearchElementView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ImageBackground(
-        backgroundHome: Assets.imagesSvgBackground2,
+      body: BackgroundImage(
+        image: Assets.imagesSvgBackgroundDark,
         child: Form(
           key: formKey,
           child: GetBuilder<Maincontroller>(

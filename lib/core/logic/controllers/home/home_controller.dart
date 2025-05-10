@@ -4,7 +4,13 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
 class HomeController extends GetxController {
-  /// ************************* Move Eyes ***********************************
+  @override
+  onInit() {
+    moveEyes();
+    super.onInit();
+  }
+
+  // ************************* Move Eyes ***********************************
   int currentEyeIndex = 0;
   Timer? timer;
   List<String> eyesList = const [

@@ -25,7 +25,7 @@ class _ElementsExamsViewState extends State<ElementsExamsView> {
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
-            Assets.imagesSvgBackground2,
+            Assets.imagesSvgBackgroundDark,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),

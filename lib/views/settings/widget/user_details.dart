@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class UserDetails extends StatelessWidget {
   const UserDetails({super.key});
@@ -15,17 +15,14 @@ class UserDetails extends StatelessWidget {
       builder: (controller) => Column(
         children: [
           controller.user!.displayName == null
-              ? const LoadingWidget()
+              ? const AppLoading()
               : Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.transparent,
                       radius: 50.r,
-                      child: ClipOval(
-                        child: Image.asset(
-                          Assets.imagesUserImageProfile,
-                          fit: BoxFit.cover,
-                        ),
+                      backgroundImage: AssetImage(
+                        Assets.imagesUserImageProfile,
                       ),
                     ),
                     SizedBox(

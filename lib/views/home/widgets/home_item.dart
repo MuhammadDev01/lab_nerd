@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class HomeViewItem extends StatelessWidget {
-  const HomeViewItem({
+class HomeItem extends StatelessWidget {
+  const HomeItem({
     super.key,
     required this.onTap,
     required this.animation,
@@ -22,7 +22,6 @@ class HomeViewItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Card(
-        color: Colors.white70,
         elevation: 25,
         child: Column(
           children: [

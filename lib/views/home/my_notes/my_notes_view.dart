@@ -21,8 +21,8 @@ class _MyNotesViewState extends State<MyNotesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: ImageBackground(
-        backgroundHome: Assets.imagesSvgBackground2,
+      body: BackgroundImage(
+        image: Assets.imagesSvgBackgroundDark,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: SafeArea(

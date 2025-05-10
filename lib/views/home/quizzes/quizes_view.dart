@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class QuizesView extends StatefulWidget {
   const QuizesView({
@@ -30,7 +30,7 @@ class _QuizesViewState extends State<QuizesView> {
     return Builder(builder: (context) {
       return GetBuilder<Maincontroller>(
         builder: (_) => controller.questionsList.isEmpty
-            ? const LoadingWidget()
+            ? const AppLoading()
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

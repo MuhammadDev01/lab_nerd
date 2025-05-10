@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 import 'package:lab_nerd/widgets/default_text_form_field.dart';
 
@@ -36,7 +36,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            Assets.imagesSvgBackground2,
+            Assets.imagesSvgBackgroundDark,
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -141,7 +141,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                               }
                             },
                             child: controller.isLoading
-                                ? const LoadingWidget()
+                                ? const AppLoading()
                                 : const Text(
                                     'UPDATE',
                                     style: TextStyle(

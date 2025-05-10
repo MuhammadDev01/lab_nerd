@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/sign_up_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 import 'custom_app_bar_bottom_sheet.dart';
 import '../../../../widgets/default_button.dart';
 import '../../../../widgets/default_text_form_field.dart';
@@ -91,7 +91,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                       },
                       colorButton: ColorsManager.greenWhite,
                       child: controller.isLoading
-                          ? const LoadingWidget()
+                          ? const AppLoading()
                           : Text(
                               'SIGN UP',
                               style: TextStyles.rem14Bold,

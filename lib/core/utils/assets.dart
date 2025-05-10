@@ -21,7 +21,7 @@ class Assets {
   static const String imagesSvgAuthBackground =
       "assets/images/svg/auth_background.svg";
 
-  static const String imagesSvgBackground2 =
+  static const String imagesSvgBackgroundDark =
       "assets/images/svg/background_2.svg";
 
   static const String imagesSvgBackgroundLight =

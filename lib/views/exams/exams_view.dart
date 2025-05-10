@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/models/exam_model.dart';
-import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class ExamsView extends StatefulWidget {
   const ExamsView({super.key});
@@ -27,7 +27,7 @@ class _ExamsViewState extends State<ExamsView> {
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(builder: (_) {
       return modelList.isEmpty
-          ? const LoadingWidget()
+          ? const AppLoading()
           : Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Center(
