@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/notes_controller.dart';
-import 'package:lab_nerd/views/widgets/colors_list_view.dart';
-import 'package:lab_nerd/views/widgets/custom_button.dart';
-import 'package:lab_nerd/views/widgets/custom_text_field.dart';
+import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/colors_list_view.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/custom_button.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/custom_text_field.dart';
 
 class AddNoteBottomSheetForm extends StatelessWidget {
   const AddNoteBottomSheetForm({
@@ -31,7 +31,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
               height: 16,
             ),
             CustomTextFormField(
-              controller: controller.subTitleController,
+              controller: controller.contentController,
               title: 'Content',
               maxLines: 5,
               validator: (content) =>

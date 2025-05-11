@@ -15,7 +15,7 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => EditNoteView(
-              noteModel: note,
+              note: note,
             ),
           ),
         );
@@ -24,7 +24,7 @@ class CustomNoteItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         margin: const EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
-          color: Color(note.color),
+          color: note.backgroundColor,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -44,7 +44,7 @@ class CustomNoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: Text(
-                  note.subTitle,
+                  note.content,
                   style: TextStyle(
                     color: Colors.black.withAlpha(126),
                     fontSize: 18,
@@ -66,7 +66,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: Text(
-                note.date,
+                note.createdAt,
                 style: TextStyle(
                   color: Colors.black.withAlpha(126),
                 ),

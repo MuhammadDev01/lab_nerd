@@ -21,12 +21,12 @@ class _ElementsExamsViewState extends State<ElementsExamsView> {
     return Scaffold(
       body: Stack(
         children: [
-          SvgPicture.asset(
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-            Assets.imagesSvgBackgroundDark,
-          ),
+          // SvgPicture.asset(
+          //   width: double.infinity,
+          //   height: double.infinity,
+          //   fit: BoxFit.cover,
+          //   Assets.imagesSvgBackgroundDark,
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(

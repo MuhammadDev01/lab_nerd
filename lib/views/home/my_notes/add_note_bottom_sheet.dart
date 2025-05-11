@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/views/home/my_notes/widgets/add_note_bottom_form.dart';
+import 'package:lab_nerd/views/home/my_notes/add_note_bottom_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});

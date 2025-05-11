@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/models/note_model.dart';
-import 'package:lab_nerd/views/widgets/color_item.dart';
-import 'package:lab_nerd/views/widgets/constants.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/color_item.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/constants.dart';
 
 class EditNoteColor extends StatelessWidget {
   const EditNoteColor({super.key, required this.note});

@@ -4,7 +4,7 @@ import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
 import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
-import 'package:lab_nerd/views/home/my_notes/note_app_view.dart';
+import 'package:lab_nerd/views/home/my_notes/my_notes_view.dart';
 import 'package:lab_nerd/views/home/quizzes/quizes_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';

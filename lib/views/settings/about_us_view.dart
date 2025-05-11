@@ -19,12 +19,12 @@ class _AboutUsViewState extends State<AboutUsView> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          SvgPicture.asset(
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-            Assets.imagesSvgBackgroundLight,
-          ),
+          // SvgPicture.asset(
+          //   width: double.infinity,
+          //   height: double.infinity,
+          //   fit: BoxFit.cover,
+          //   Assets.imagesSvgBackgroundLight,
+          // ),
           const SingleChildScrollView(
             child: Column(
               children: [
