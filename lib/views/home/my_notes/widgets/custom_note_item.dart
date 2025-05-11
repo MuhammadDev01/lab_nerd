@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/note_model.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/edit_my_note_view.dart';
 
@@ -45,8 +47,23 @@ class CustomNoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {
-                  // note.delete();
-                  // context.read<NotesCubit>().fetchNotes();
+                  Get.defaultDialog(
+                    title: "Delete Note",
+                    titleStyle: TextStyles.rem20Boldd,
+                    middleText: 'Are you sure delete this note?',
+                    middleTextStyle: TextStyles.rem16Bold,
+                    radius: 10,
+                    textCancel: " No ",
+                    cancelTextColor:
+                        Get.isDarkMode ? Colors.white : Colors.black,
+                    textConfirm: " YES ",
+                    confirmTextColor: Colors.white,
+                    onConfirm: () async {
+                      await Get.find<NotesController>().deleteNote(note.id);
+                    },
+                    buttonColor:
+                        Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
+                  );
                 },
                 icon: const Icon(
                   FontAwesomeIcons.trash,

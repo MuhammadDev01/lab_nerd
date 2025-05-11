@@ -116,4 +116,24 @@ class NotesController extends GetxController {
     isLoading = false;
     update();
   }
+
+  Future<void> deleteNote(String noteID) async {
+    try {
+      final DocumentReference noteRef = FirebaseFirestore.instance
+          .collection('users')
+          .doc(CacheHelper.userBox.get(kuserToken))
+          .collection('notes')
+          .doc(noteID);
+
+      await noteRef.delete();
+      Get.back();
+      await fetchAllNotes();
+    } catch (e) {
+      appSnackbar(
+        title: 'Failed',
+        message: 'check your internet connection',
+        backgroundColor: ColorsManager.errorColor,
+      );
+    }
+  }
 }
