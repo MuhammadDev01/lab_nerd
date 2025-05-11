@@ -71,6 +71,7 @@ class AppRouter {
       name: Routes.myNotesView,
       page: () => const MyNotesView(),
     ),
+
 //! non-unkwnown page
     GetPage(
       name: Routes.elementsListView,

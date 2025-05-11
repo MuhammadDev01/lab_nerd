@@ -34,9 +34,7 @@ class MyNotesViewBody extends StatelessWidget {
                       ? const NoNotesYet()
                       : Expanded(
                           child: ListView.builder(
-                            //physics: NeverScrollableScrollPhysics(),
                             padding: EdgeInsets.symmetric(horizontal: 18),
-
                             itemBuilder: (context, index) => CustomNoteItem(
                               note: controller.notes![index],
                             ),

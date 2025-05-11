@@ -11,6 +11,7 @@ class AddNoteTextFormField extends StatelessWidget {
     this.initialValue,
     this.controller,
     this.validator,
+    this.textColor,
   });
   final void Function(String)? onChanged;
   final String title;
@@ -19,14 +20,16 @@ class AddNoteTextFormField extends StatelessWidget {
   final String? initialValue;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final Color? textColor;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
       validator: validator,
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: textColor ?? Colors.white),
       initialValue: initialValue,
       onChanged: onChanged,
+      cursorColor: textColor ?? Colors.white,
       keyboardType: TextInputType.text,
       onSaved: onSaved,
       maxLines: maxLines,
@@ -35,9 +38,9 @@ class AddNoteTextFormField extends StatelessWidget {
         hintStyle: const TextStyle(
           color: kPrimary,
         ),
-        border: outlineMethod(kPrimary),
-        enabledBorder: outlineMethod(Colors.white),
-        focusedBorder: outlineMethod(kPrimary),
+        border: outlineMethod(textColor ?? kPrimary),
+        enabledBorder: outlineMethod(textColor ?? Colors.white),
+        focusedBorder: outlineMethod(textColor ?? kPrimary),
       ),
     );
   }

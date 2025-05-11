@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:lab_nerd/models/note_model.dart';
-import 'package:lab_nerd/views/home/my_notes/edit_note/edit_note_view.dart';
+import 'package:lab_nerd/views/home/my_notes/edit_note/edit_my_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.note});
@@ -10,16 +11,7 @@ class CustomNoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => EditNoteView(
-              note: note,
-            ),
-          ),
-        );
-      },
+      onTap: () => Get.to(EditMyNoteView(note: note)),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         margin: const EdgeInsets.symmetric(vertical: 4),

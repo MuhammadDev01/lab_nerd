@@ -66,7 +66,7 @@ class NotesController extends GetxController {
     }
   }
 
-  Color selectedColor = Colors.white;
+  late Color selectedColor;
   void selectNoteColor(Color color) {
     selectedColor = color;
     update();
@@ -84,8 +84,36 @@ class NotesController extends GetxController {
     update();
   }
 
-  void editNoteColor(Color color) {
-    selectedColor = color;
-    //  emit(ChangeColorNoteState());
+  Future<void> updateNote(String noteID) async {
+    isLoading = true;
+    update();
+    final note = NoteModel(
+      title: titleController.text.trim(),
+      content: contentController.text.trim(),
+      createdAt: formattedCurrentDate,
+      backgroundColor: selectedColor.toARGB32(),
+      id: noteID,
+    );
+    try {
+      final DocumentReference noteRef = FirebaseFirestore.instance
+          .collection('users')
+          .doc(CacheHelper.userBox.get(kuserToken))
+          .collection('notes')
+          .doc(noteID);
+
+      await noteRef.update(note.toJson());
+      await fetchAllNotes();
+      titleController.clear();
+      contentController.clear();
+      Get.back();
+    } catch (e) {
+      appSnackbar(
+        title: 'Failed',
+        message: 'check your internet connection',
+        backgroundColor: ColorsManager.errorColor,
+      );
+    }
+    isLoading = false;
+    update();
   }
 }
