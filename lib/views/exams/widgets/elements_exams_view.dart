@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/exams/widgets/elements_quizzes_view.dart';
 import 'package:lab_nerd/widgets/arrow_back_widget.dart';
 
