@@ -4,7 +4,7 @@ import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
 import 'package:lab_nerd/models/note_model.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/widgets/custom_app_bar.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/widgets/edit_note_color.dart';
-import 'package:lab_nerd/views/home/my_notes/widgets/custom_text_field.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/add_note_text_field.dart';
 
 class EditNoteView extends StatelessWidget {
   const EditNoteView({
@@ -39,7 +39,7 @@ class EditNoteView extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  CustomTextFormField(
+                  AddNoteTextFormField(
                     title: 'Title',
                     initialValue: note.title,
                     onSaved: (value) {
@@ -49,7 +49,7 @@ class EditNoteView extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  CustomTextFormField(
+                  AddNoteTextFormField(
                     title: 'Content',
                     onSaved: (value) {
                       // note.subTitle = value ?? '';

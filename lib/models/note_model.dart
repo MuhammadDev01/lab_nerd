@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 class NoteModel {
   String id;
   String title;
   String content;
-  Color backgroundColor;
+  int backgroundColor;
   String createdAt;
 
   NoteModel({

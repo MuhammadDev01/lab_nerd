@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/colors_list_view.dart';
-import 'package:lab_nerd/views/home/my_notes/widgets/custom_button.dart';
-import 'package:lab_nerd/views/home/my_notes/widgets/custom_text_field.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/add_note_button.dart';
+import 'package:lab_nerd/views/home/my_notes/widgets/add_note_text_field.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class AddNoteBottomSheetForm extends StatelessWidget {
   const AddNoteBottomSheetForm({
@@ -21,7 +22,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            CustomTextFormField(
+            AddNoteTextFormField(
               controller: controller.titleController,
               title: 'Title',
               validator: (title) =>
@@ -30,7 +31,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            CustomTextFormField(
+            AddNoteTextFormField(
               controller: controller.contentController,
               title: 'Content',
               maxLines: 5,
@@ -44,24 +45,29 @@ class AddNoteBottomSheetForm extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            CustomButton(
-              onTap: () => addNote(controller),
+            AddNoteButton(
+              child: controller.isLoading
+                  ? AppLoading()
+                  : Text(
+                      'Add',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+              onTap: () async {
+                if (controller.formKey.currentState!.validate()) {
+                  controller.changeLoading();
+                  await controller.addNote();
+                  controller.changeLoading();
+                  Get.back();
+                }
+              },
             ),
           ],
         ),
       ),
     );
-  }
-
-  void addNote(NotesController controller) {
-    if (controller.formKey.currentState!.validate()) {
-      // cubit.addNote(NoteModel(
-      //     title: cubit.titleController.text,
-      //     subTitle: cubit.subTitleController.text,
-      //     date: cubit.formattedCurrentDate,
-      //     color: cubit.selectedColor.toARGB32()));
-    } else {
-      // cubit.autoValidateMode = AutovalidateMode.always;
-    }
   }
 }

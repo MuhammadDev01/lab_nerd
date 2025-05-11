@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,25 +16,47 @@ class NotesController extends GetxController {
   TextEditingController titleController = TextEditingController();
   TextEditingController contentController = TextEditingController();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  List<NoteModel> notes = [];
+  List<NoteModel>? notes;
 
   @override
   onInit() async {
-    if (notes.isEmpty) notes = await fetchAllNotes();
+    await fetchAllNotes();
     super.onInit();
   }
 
-  Future<void> addNote(NoteModel note) async {
+  @override
+  void onClose() {
+    titleController.dispose();
+    contentController.dispose();
+    super.onClose();
+  }
+
+  bool isLoading = false;
+  void changeLoading() {
+    isLoading = !isLoading;
+    update();
+  }
+
+  Future<void> addNote() async {
     try {
       final CollectionReference notesRef = FirebaseFirestore.instance
           .collection('users')
           .doc(CacheHelper.userBox.get(kuserToken))
           .collection('notes');
-      //**Create Note ID**\\
-      DocumentReference newNoteRef = notesRef.doc();
-      note.id = newNoteRef.id;
 
-      await notesRef.doc(note.id).set(note.toJson());
+      final newNote = NoteModel(
+        title: titleController.text.trim(),
+        content: contentController.text.trim(),
+        createdAt: formattedCurrentDate,
+        backgroundColor: selectedColor.toARGB32(),
+        id: notesRef.doc().id,
+      );
+
+      await notesRef.doc(newNote.id).set(newNote.toJson());
+      await fetchAllNotes();
+      titleController.clear();
+      contentController.clear();
+      update();
     } catch (e) {
       appSnackbar(
         title: 'Failed',
@@ -45,23 +69,20 @@ class NotesController extends GetxController {
   Color selectedColor = Colors.white;
   void selectNoteColor(Color color) {
     selectedColor = color;
-    // emit(AddNoteColorSelected());
+    update();
   }
 
-  Future<List<NoteModel>> fetchAllNotes() async {
-    final CollectionReference notesRef = FirebaseFirestore.instance
+  Future<void> fetchAllNotes() async {
+    final notesRef = FirebaseFirestore.instance
         .collection('users')
         .doc(CacheHelper.userBox.get(kuserToken))
         .collection('notes');
 
-    QuerySnapshot snapshot = await notesRef.get();
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await notesRef.get();
+    notes = snapshot.docs.map((doc) => NoteModel.fromJson(doc.data())).toList();
+    log("Fetched!!!!!");
     update();
-    return snapshot.docs
-        .map((doc) => NoteModel.fromJson(doc.data() as Map<String, dynamic>))
-        .toList();
   }
-
-//  late Color selectedColor;
 
   void editNoteColor(Color color) {
     selectedColor = color;

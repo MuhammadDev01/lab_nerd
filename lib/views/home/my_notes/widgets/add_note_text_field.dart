@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/constants.dart';
 
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+class AddNoteTextFormField extends StatelessWidget {
+  const AddNoteTextFormField({
     super.key,
     required this.title,
     this.maxLines = 1,
@@ -24,6 +24,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: validator,
+      style: TextStyle(color: Colors.white),
       initialValue: initialValue,
       onChanged: onChanged,
       keyboardType: TextInputType.text,

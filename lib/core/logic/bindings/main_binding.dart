@@ -9,7 +9,7 @@ class MainBinding extends Bindings {
   void dependencies() {
     Get.put(Maincontroller());
     Get.lazyPut(() => HomeController(), fenix: true);
-    Get.lazyPut(() => NotesController(), fenix: true);
+    Get.put(NotesController());
     Get.lazyPut(() => SettingsController(), fenix: true);
   }
 }

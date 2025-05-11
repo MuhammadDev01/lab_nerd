@@ -6,6 +6,7 @@ import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/custom_note_item.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/no_notes_yet.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
 
 class MyNotesViewBody extends StatelessWidget {
   const MyNotesViewBody({super.key});
@@ -28,23 +29,21 @@ class MyNotesViewBody extends StatelessWidget {
                 ),
                 centerTitle: true,
               ),
-              FutureBuilder(
-                future: controller.fetchAllNotes(),
-                builder: (context, snapshot) {
-                  return snapshot.hasData
-                      ? snapshot.data!.isEmpty
-                          ? const NoNotesYet()
-                          : ListView.builder(
-                              padding: EdgeInsets.symmetric(horizontal: 18),
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) => CustomNoteItem(
-                                note: controller.notes[index],
-                              ),
-                              itemCount: controller.notes.length,
-                            )
-                      : Center(child: CircularProgressIndicator());
-                },
-              )
+              controller.notes != null
+                  ? controller.notes!.isEmpty
+                      ? const NoNotesYet()
+                      : Expanded(
+                          child: ListView.builder(
+                            //physics: NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.symmetric(horizontal: 18),
+
+                            itemBuilder: (context, index) => CustomNoteItem(
+                              note: controller.notes![index],
+                            ),
+                            itemCount: controller.notes!.length,
+                          ),
+                        )
+                  : Expanded(child: AppLoading())
             ],
           ),
         ),
