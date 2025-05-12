@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class DefaultTextFormField extends StatelessWidget {
-  const DefaultTextFormField({
+class AppTextFormField extends StatelessWidget {
+  const AppTextFormField({
     super.key,
     required this.controller,
     required this.hintText,
@@ -58,7 +58,8 @@ class DefaultTextFormField extends StatelessWidget {
       children: [
         Text(
           helperText,
-          style: textStyle ?? TextStyles.rem14Bold,
+          style:
+              textStyle ?? TextStyles.rem14Bold.copyWith(color: Colors.black),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
@@ -84,6 +85,9 @@ class DefaultTextFormField extends StatelessWidget {
               },
               cursorColor: cursorAndPrefixIconColor,
               decoration: InputDecoration(
+                helperStyle: TextStyle(
+                  color: Colors.black,
+                ),
                 counterText: '',
                 prefixIconColor: cursorAndPrefixIconColor,
                 focusColor: Colors.black,
@@ -98,29 +102,24 @@ class DefaultTextFormField extends StatelessWidget {
                     ),
                 suffixIcon: suffixIcon,
                 suffixIconColor: Colors.grey,
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: focusedColor ?? Colors.blue.shade800,
-                      width: 2,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))),
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: borderColor ?? Colors.black,
-                      width: 2,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: borderColor ?? Colors.black,
-                      width: 2,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))),
+                focusedBorder: defaultOutlineBorder(),
+                focusedErrorBorder: defaultOutlineBorder(),
+                border: defaultOutlineBorder(),
+                enabledBorder: defaultOutlineBorder(),
               ),
             ),
           ),
         ),
       ],
     );
+  }
+
+  OutlineInputBorder defaultOutlineBorder() {
+    return OutlineInputBorder(
+        borderSide: BorderSide(
+          color: borderColor ?? Colors.black,
+          width: 2,
+        ),
+        borderRadius: const BorderRadius.all(Radius.circular(12)));
   }
 }

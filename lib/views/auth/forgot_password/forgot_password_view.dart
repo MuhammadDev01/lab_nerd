@@ -8,7 +8,7 @@ import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'widgets/custom_forgot_password_appbar.dart';
 import 'widgets/custom_forgot_password_circle_avatar.dart';
-import '../../../widgets/default_text_form_field.dart';
+import '../../../widgets/app_text_form_field.dart';
 import 'widgets/forgot_password_button.dart';
 
 class ForgotPasswordView extends StatefulWidget {
@@ -86,7 +86,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   const SizedBox(
                     height: 30,
                   ),
-                  DefaultTextFormField(
+                  AppTextFormField(
                     helperText: 'Email',
                     width: 650,
                     controller: emailController,

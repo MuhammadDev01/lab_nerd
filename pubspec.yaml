@@ -43,6 +43,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/svg/
+    - assets/data/periodic-table.json
 
   fonts:
     - family: REM

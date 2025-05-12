@@ -4,7 +4,7 @@ import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import '../../../../widgets/default_button.dart';
-import '../../../../widgets/default_text_form_field.dart';
+import '../../../../widgets/app_text_form_field.dart';
 
 class SignupDesktopFields extends StatefulWidget {
   const SignupDesktopFields({super.key});
@@ -39,7 +39,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
               'SIGNUP',
               style: TextStyles.rem14Bold.copyWith(fontSize: 24),
             ),
-            DefaultTextFormField(
+            AppTextFormField(
               helperText: 'Username',
               width: 650,
               hintText: 'username',
@@ -50,7 +50,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
               height: 4,
             ),
             GetBuilder<LoginController>(
-              builder: (controller) => DefaultTextFormField(
+              builder: (controller) => AppTextFormField(
                 helperText: 'Password',
                 width: 650,
                 controller: passwordController,
@@ -72,7 +72,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
             const SizedBox(
               height: 4,
             ),
-            DefaultTextFormField(
+            AppTextFormField(
               helperText: 'Email',
               cursorAndPrefixIconColor: Colors.black,
               borderColor: Colors.black,

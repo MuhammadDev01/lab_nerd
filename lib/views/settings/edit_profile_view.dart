@@ -5,7 +5,7 @@ import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
-import 'package:lab_nerd/widgets/default_text_form_field.dart';
+import 'package:lab_nerd/widgets/app_text_form_field.dart';
 
 class EditProfileView extends StatefulWidget {
   const EditProfileView({super.key});
@@ -77,7 +77,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                         const SizedBox(
                           height: 25,
                         ),
-                        DefaultTextFormField(
+                        AppTextFormField(
                           cursorAndPrefixIconColor: Colors.black87,
                           helperText: 'Username',
                           hintText: 'username',
@@ -94,7 +94,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                         const SizedBox(
                           height: 25,
                         ),
-                        DefaultTextFormField(
+                        AppTextFormField(
                           helperText: 'Email',
                           hintText: 'email',
                           controller: emailController,

@@ -6,7 +6,7 @@ import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/widgets/default_login_button.dart';
 import 'package:lab_nerd/views/auth/login/widgets/remember_me_and_forgot_password.dart';
 import '../../signup/widgets/custom_app_bar_bottom_sheet.dart';
-import '../../../../widgets/default_text_form_field.dart';
+import '../../../../widgets/app_text_form_field.dart';
 import 'google_login_button.dart';
 
 class LoginFieldsMobile extends StatelessWidget {
@@ -32,7 +32,7 @@ class LoginFieldsMobile extends StatelessWidget {
                 'LOGIN',
                 style: TextStyles.rem20Boldd,
               ),
-              DefaultTextFormField(
+              AppTextFormField(
                 helperText: 'Email',
                 hintText: 'email address',
                 onChange: (value) => controller.onChange(value),
@@ -43,7 +43,7 @@ class LoginFieldsMobile extends StatelessWidget {
               const SizedBox(
                 height: 8,
               ),
-              DefaultTextFormField(
+              AppTextFormField(
                 helperText: 'Password',
                 cursorAndPrefixIconColor: Colors.black,
                 controller: controller.passwordController,

@@ -1,114 +1,99 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
-import 'package:lab_nerd/views/exams/widgets/details_element_view.dart';
 
-class ElementsListView extends StatelessWidget {
-  const ElementsListView({super.key, this.element});
-  final ElementModel? element;
+class ElementBuilder extends StatelessWidget {
+  const ElementBuilder({super.key, required this.element});
+  final ElementModel element;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Maincontroller>(
-      builder: (controller) => InkWell(
-        onTap: () {
-          Get.to(
-            DetailsElementView(
-              backdrop: element!.imageUrl!,
-              poster: element!.imageUrl!,
-              title: element!.nameElement!,
-              description: element!.description!,
-              atomicNumber: element!.atomicNumber!.toString(),
-            ),
-            transition: Transition.size,
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SizedBox(
-            height: 150,
-            child: Row(
-              children: [
-                Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        element!.imageUrl!,
-                        width: 150,
+    return InkWell(
+      onTap: () {
+        // Get.to(
+        //   DetailsElementView(
+        //     backdrop: element!.imageUrl!,
+        //     poster: element!.imageUrl!,
+        //     title: element!.nameElement!,
+        //     description: element!.description!,
+        //     atomicNumber: element!.atomicNumber!.toString(),
+        //   ),
+        //   transition: Transition.size,
+        // );
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SizedBox(
+          height: 150,
+          child: Row(
+            children: [
+              Stack(
+                alignment: Alignment.bottomLeft,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network(
+                      element.image?.url ?? element.bohrModelImage,
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(3),
+                      color: Colors.deepPurple,
+                    ),
+                    child: Text(
+                      element.symbol,
+                      style: TextStyles.rem16Bold.copyWith(
+                        color: Colors.white,
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      color: Colors.blueGrey,
-                      child: Text(
-                        element!.symbol!,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(element.name,
+                            maxLines: 2, style: TextStyles.rem20Boldd),
+                        const SizedBox(
+                          width: 12,
                         ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Colors.teal,
+                          ),
+                          child: Text(
+                            element.atomicNumber.toString(),
+                            style: TextStyles.rem16Bold.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Text(
+                        element.image?.attribution ?? 'no information',
+                        maxLines: 4,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyles.rem16Bold,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            element!.nameElement!,
-                            maxLines: 2,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontFamily: 'REM',
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 5.0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              color: Colors.teal,
-                            ),
-                            child: Text(
-                              '${element!.atomicNumber}',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Text(
-                          element!.description!,
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontFamily: 'REM',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

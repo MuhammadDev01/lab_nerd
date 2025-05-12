@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/views/main/main_view_adaptive.dart';
-import 'package:lab_nerd/widgets/default_text_form_field.dart';
+import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
+import 'package:lab_nerd/widgets/app_text_form_field.dart';
 
 class ElementsQuizzesView extends StatefulWidget {
   const ElementsQuizzesView({super.key, required this.id});
@@ -187,140 +188,142 @@ class _ElementsQuizzesViewState extends State<ElementsQuizzesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SvgPicture.asset(
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-            controller.backgroundHome,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              key: formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FittedBox(
-                    child: Text(
-                      (widget.id == 'symbol')
-                          ? 'What is the symbol for ${periodicTable[_currentQuestionIndex]['name']} ?'
-                          : 'What is the atomic number of ${periodicTable[_currentQuestionIndex]['name']} ?',
-                      style: Theme.of(context).textTheme.displaySmall,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  const SizedBox(height: 20.0),
-                  (widget.id == 'symbol')
-                      ? DefaultTextFormField(
-                          controller: questionController,
-                          hintText: 'your answer',
-                          textInputType: TextInputType.name,
-                          helperText: '',
-                        )
-                      : DefaultTextFormField(
-                          controller: questionController,
-                          hintText: 'your answer',
-                          textInputType: TextInputType.number,
-                          helperText: '',
-                        ),
-                  const SizedBox(height: 20.0),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      maximumSize: const Size.fromHeight(50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6),
+      body: BackgroundGradient(
+        gradient: Get.isDarkMode
+            ? ColorsManager.darkHomeGradient
+            : ColorsManager.lightHomeGradient,
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FittedBox(
+                      child: Text(
+                        (widget.id == 'symbol')
+                            ? 'What is the symbol for ${periodicTable[_currentQuestionIndex]['name']} ?'
+                            : 'What is the atomic number of ${periodicTable[_currentQuestionIndex]['name']} ?',
+                        style: Theme.of(context).textTheme.displaySmall,
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        _isAnswered
-                            ? _nextQuestion()
-                            : _checkAnswer(questionController.text);
-                      }
+                    const SizedBox(height: 20.0),
+                    (widget.id == 'symbol')
+                        ? AppTextFormField(
+                            controller: questionController,
+                            hintText: 'your answer',
+                            textInputType: TextInputType.name,
+                            helperText: '',
+                          )
+                        : AppTextFormField(
+                            controller: questionController,
+                            hintText: 'your answer',
+                            textInputType: TextInputType.number,
+                            helperText: '',
+                          ),
+                    const SizedBox(height: 20.0),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        maximumSize: const Size.fromHeight(50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                      ),
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          _isAnswered
+                              ? _nextQuestion()
+                              : _checkAnswer(questionController.text);
+                        }
+                      },
+                      child: Text(
+                        _isAnswered ? 'Next Question' : 'Check',
+                        style:
+                            Theme.of(context).textTheme.displaySmall!.copyWith(
+                                  fontSize: 16,
+                                  fontFamily: fontInter,
+                                ),
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
+                    if (_isAnswered)
+                      Text(
+                        _isCorrect ? 'Correct!' : 'Wrong!',
+                        style: TextStyle(
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
+                          color: _isCorrect ? Colors.green : Colors.red[900],
+                        ),
+                      ),
+                    if (!_isCorrect && _isAnswered)
+                      const SizedBox(height: 20.0),
+                    if (!_isCorrect && _isAnswered)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Correct Answer : ',
+                            style: Theme.of(context)
+                                .textTheme
+                                .displaySmall!
+                                .copyWith(
+                                  fontSize: 28,
+                                ),
+                          ),
+                          Text(
+                            (widget.id == 'symbol')
+                                ? periodicTable[_currentQuestionIndex]['symbol']
+                                : periodicTable[_currentQuestionIndex]
+                                        ['atomicNumber']
+                                    .toString(),
+                            style: const TextStyle(
+                              fontSize: 32.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.teal,
+                            ),
+                          ),
+                        ],
+                      ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: BackButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                    title: "Exit",
+                    titleStyle: Theme.of(context).textTheme.displaySmall,
+                    middleText: 'Are you sure you need to exit',
+                    middleTextStyle: Theme.of(context).textTheme.displaySmall,
+                    radius: 10,
+                    textCancel: " No ",
+                    cancelTextColor:
+                        Get.isDarkMode ? Colors.white : Colors.black,
+                    textConfirm: " YES ",
+                    confirmTextColor:
+                        Get.isDarkMode ? Colors.black : Colors.white,
+                    onCancel: () {},
+                    onConfirm: () {
+                      Get.off(const MainViewAdaptive(),
+                          transition: Transition.fadeIn);
                     },
-                    child: Text(
-                      _isAnswered ? 'Next Question' : 'Check',
-                      style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                            fontSize: 16,
-                            fontFamily: fontInter,
-                          ),
-                    ),
-                  ),
-                  const SizedBox(height: 20.0),
-                  if (_isAnswered)
-                    Text(
-                      _isCorrect ? 'Correct!' : 'Wrong!',
-                      style: TextStyle(
-                        fontSize: 32.0,
-                        fontWeight: FontWeight.bold,
-                        color: _isCorrect ? Colors.green : Colors.red[900],
-                      ),
-                    ),
-                  if (!_isCorrect && _isAnswered) const SizedBox(height: 20.0),
-                  if (!_isCorrect && _isAnswered)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Correct Answer : ',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall!
-                              .copyWith(
-                                fontSize: 28,
-                              ),
-                        ),
-                        Text(
-                          (widget.id == 'symbol')
-                              ? periodicTable[_currentQuestionIndex]['symbol']
-                              : periodicTable[_currentQuestionIndex]
-                                      ['atomicNumber']
-                                  .toString(),
-                          style: const TextStyle(
-                            fontSize: 32.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.teal,
-                          ),
-                        ),
-                      ],
-                    ),
-                ],
+                    buttonColor:
+                        Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
+                  );
+                },
+                style: const ButtonStyle(
+                  iconColor: WidgetStatePropertyAll(Colors.black),
+                  iconSize: WidgetStatePropertyAll(32),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: BackButton(
-              onPressed: () {
-                Get.defaultDialog(
-                  title: "Exit",
-                  titleStyle: Theme.of(context).textTheme.displaySmall,
-                  middleText: 'Are you sure you need to exit',
-                  middleTextStyle: Theme.of(context).textTheme.displaySmall,
-                  radius: 10,
-                  textCancel: " No ",
-                  cancelTextColor: Get.isDarkMode ? Colors.white : Colors.black,
-                  textConfirm: " YES ",
-                  confirmTextColor:
-                      Get.isDarkMode ? Colors.black : Colors.white,
-                  onCancel: () {},
-                  onConfirm: () {
-                    Get.off(const MainViewAdaptive(),
-                        transition: Transition.fadeIn);
-                  },
-                  buttonColor:
-                      Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
-                );
-              },
-              style: const ButtonStyle(
-                iconColor: WidgetStatePropertyAll(Colors.black),
-                iconSize: WidgetStatePropertyAll(32),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

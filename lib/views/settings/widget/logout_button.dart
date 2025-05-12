@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/home/settings_controller.dart';
+import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class LogoutButton extends StatelessWidget {

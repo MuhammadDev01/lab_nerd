@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/note_model.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/widgets/edit_note_color.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/add_note_text_field.dart';
@@ -30,26 +30,17 @@ class EditMyNoteView extends StatelessWidget {
                 key: controller.formKey,
                 child: Column(
                   children: [
-                    AppBar(
-                      backgroundColor: Colors.transparent,
-                      title: Text(
-                        'Edit Note',
-                        style: TextStyles.rem26Bold,
+                    customAppBar(centerTitle: 'Edit Note', actions: [
+                      IconButton(
+                        onPressed: () async {
+                          if (controller.formKey.currentState!.validate()) {
+                            controller.formKey.currentState!.save();
+                            await controller.updateNote(note.id);
+                          }
+                        },
+                        icon: Icon(Icons.check_box_outlined),
                       ),
-                      centerTitle: true,
-                      actionsPadding: EdgeInsets.only(right: 18),
-                      actions: [
-                        IconButton(
-                          onPressed: () async {
-                            if (controller.formKey.currentState!.validate()) {
-                              controller.formKey.currentState!.save();
-                              await controller.updateNote(note.id);
-                            }
-                          },
-                          icon: Icon(Icons.check_box_outlined),
-                        )
-                      ],
-                    ),
+                    ]),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 18),
                       child: Column(

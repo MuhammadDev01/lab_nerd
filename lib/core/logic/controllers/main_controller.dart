@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
@@ -18,8 +21,9 @@ class Maincontroller extends GetxController {
   int currentIndex = 0;
 
   @override
-  onInit() {
+  onInit() async {
     showProfileUser();
+    await loadJsonData();
     super.onInit();
   }
 
@@ -70,56 +74,19 @@ class Maincontroller extends GetxController {
     update();
   }
 
-//  LoginWithBackModel? changePassModel;
-  // Future<void> changePasswordUser({
-  //   required String currentPassword,
-  //   required String newPassword,
-  //   required String confirmPassword,
-  // }) async {
-  //   await DioHelper.postData(
-  //       url: '${CachedHelper.getData(key: 'url')}/api/change-user-password',
-  //       data: {
-  //         'current_password': currentPassword,
-  //         'password': newPassword,
-  //         'password_confirmation': confirmPassword,
-  //       }).then((value) {
-  //     changePassModel = LoginWithBackModel.fromJson(value.data);
-  //     update();
-  //     Get.snackbar(
-  //       'Success',
-  //       changePassModel!.message!,
-  //       backgroundColor: Colors.teal,
-  //       colorText: Colors.white,
-  //     );
-  //   }).catchError((error) {
-  //     update();
-  //     Get.snackbar('Error', error.toString());
-  //   });
-  // }
+//*****************ELEMENTS******************\\
+  static List<ElementModel> elementsList = [];
 
-  // Future<void> changeNameAndEmail({
-  //   required String username,
-  //   required String email,
-  // }) async {
-  //   await DioHelper.putData(
-  //       url: '${CachedHelper.getData(key: 'url')}/api/update-email',
-  //       data: {
-  //         'name': username,
-  //         'email': email,
-  //       }).then((value) async {
-  //     await showProfileUser();
-  //     update();
-  //     Get.back();
-  //   }).catchError((error) {
-  //     update();
-  //     Get.snackbar('Error', error.toString());
-  //   });
-
-  //bool isDark = false;
-  String backgroundHome = '';
-  // = CachedHelper.getData(key: 'isDark')
-  //     ? Assets.imagesSvgBackgroundBlack
-  //     : Assets.imagesSvgBackgroundLight;
+  Future<List<ElementModel>> loadJsonData() async {
+    String jsonString =
+        await rootBundle.loadString('assets/data/periodic-table.json');
+    var jsonData = jsonDecode(jsonString);
+    var elements = jsonData['elements'] as List<dynamic>;
+    for (var element in elements) {
+      elementsList.add(ElementModel.fromJson(element));
+    }
+    return elementsList;
+  }
 
   List<ExamModel> examsList = [];
   // List<ExamModel> getExams() {
@@ -199,23 +166,6 @@ class Maincontroller extends GetxController {
       update();
     }
   }
-
-  List<ElementModel> elementsList = [];
-  // Future<void> getSearchOfElements({
-  //   required String nameElement,
-  //   required String sortType,
-  // }) async {
-  //   if (elementsList.isNotEmpty) elementsList.clear();
-  //   await DioHelper.postData(
-  //           url: '${CachedHelper.getData(key: 'url')}/api/all-elements',
-  //           data: {'search': nameElement, 'sort': 'name', 'order': sortType})
-  //       .then((value) {
-  //     for (var element in value.data['data']) {
-  //       elementsList.add(ElementModel.fromJson(element));
-  //     }
-  //   });
-  //   update();
-  // }
 
   bool isEnglish = false;
   void changeLang() {

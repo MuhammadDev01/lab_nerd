@@ -5,7 +5,7 @@ import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
-import 'package:lab_nerd/widgets/default_text_form_field.dart';
+import 'package:lab_nerd/widgets/app_text_form_field.dart';
 
 class ChangePasswordView extends StatefulWidget {
   const ChangePasswordView({super.key});
@@ -74,8 +74,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                   child: Column(
                     children: [
                       GetBuilder<Maincontroller>(
-                        builder: (visibilityController1) =>
-                            DefaultTextFormField(
+                        builder: (visibilityController1) => AppTextFormField(
                           cursorAndPrefixIconColor: Colors.black54,
                           helperText: 'Current password',
                           controller: currentPasswordController,
@@ -98,8 +97,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                         height: 25,
                       ),
                       GetBuilder<Maincontroller>(
-                        builder: (visibilityController2) =>
-                            DefaultTextFormField(
+                        builder: (visibilityController2) => AppTextFormField(
                           cursorAndPrefixIconColor: Colors.black54,
                           helperText: 'New password',
                           controller: newPasswordController,
@@ -122,8 +120,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                         height: 25,
                       ),
                       GetBuilder<Maincontroller>(
-                        builder: (visibilityController3) =>
-                            DefaultTextFormField(
+                        builder: (visibilityController3) => AppTextFormField(
                           cursorAndPrefixIconColor: Colors.black54,
                           helperText: 'Confirm password',
                           controller: confirmPasswordController,

@@ -19,6 +19,5 @@ class Routes {
   static const settingsView = '/SettingsView';
 
   //**Settings**\\
-  static const elementsListView = '/elementsListView';
   static const editProfileView = '/editProfileView';
 }

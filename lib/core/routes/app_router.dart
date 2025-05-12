@@ -9,7 +9,6 @@ import 'package:lab_nerd/views/home/quizzes/quizes_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
 import 'package:lab_nerd/views/settings/edit_profile_view.dart';
-import 'package:lab_nerd/views/exams/widgets/elements_list_view.dart';
 import 'package:lab_nerd/views/home/search_elements/search_element_view.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
@@ -72,13 +71,6 @@ class AppRouter {
       page: () => const MyNotesView(),
     ),
 
-//! non-unkwnown page
-    GetPage(
-      name: Routes.elementsListView,
-      page: () => const ElementsListView(),
-      binding: MainBinding(),
-    ),
-//!  non-unkwnown page
     //**Nav Bar *\\
     GetPage(
       name: Routes.homeView,

@@ -4,18 +4,8 @@ import 'package:flutter/material.dart';
 class DetailsElementView extends StatelessWidget {
   const DetailsElementView({
     super.key,
-    required this.poster,
-    required this.title,
-    required this.backdrop,
-    required this.atomicNumber,
-    required this.description,
   });
 
-  final String poster;
-  final String title;
-  final String backdrop;
-  final String atomicNumber;
-  final String description;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +28,7 @@ class DetailsElementView extends StatelessWidget {
                 height: 240,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: NetworkImage(backdrop),
+                  image: NetworkImage(''),
                   fit: BoxFit.fill,
                   colorFilter: ColorFilter.mode(
                     Colors.white38,
@@ -54,7 +44,7 @@ class DetailsElementView extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image(
-                        image: NetworkImage(poster),
+                        image: NetworkImage(''),
                         fit: BoxFit.fill,
                         width: 150,
                         height: 220,
@@ -67,7 +57,8 @@ class DetailsElementView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Name : $title',
+                          '',
+                          // 'Name : $title',
                           style: const TextStyle(
                             letterSpacing: 1.2,
                             fontSize: 18,
@@ -78,7 +69,8 @@ class DetailsElementView extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          'Atomic Number : $atomicNumber',
+                          '',
+                          //'Atomic Number : $atomicNumber',
                           style: const TextStyle(
                             letterSpacing: 1,
                             fontSize: 18,
@@ -104,7 +96,8 @@ class DetailsElementView extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  'Description : $description',
+                  '',
+                  //   'Description : $description',
                   style: const TextStyle(
                     height: 1.8,
                     fontSize: 18,

@@ -6,7 +6,7 @@ import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'custom_app_bar_bottom_sheet.dart';
 import '../../../../widgets/default_button.dart';
-import '../../../../widgets/default_text_form_field.dart';
+import '../../../../widgets/app_text_form_field.dart';
 import 'cancel_icon_button.dart';
 
 class SignupMobileBottomSheet extends StatelessWidget {
@@ -46,7 +46,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    DefaultTextFormField(
+                    AppTextFormField(
                       controller: controller.usernameController,
                       helperText: 'Username',
                       hintText: 'username',
@@ -56,7 +56,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    DefaultTextFormField(
+                    AppTextFormField(
                       controller: controller.emailController,
                       helperText: 'Email',
                       hintText: 'email',
@@ -66,7 +66,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    DefaultTextFormField(
+                    AppTextFormField(
                       controller: controller.passwordController,
                       helperText: 'Password',
                       obscureText: controller.isVisibilty,

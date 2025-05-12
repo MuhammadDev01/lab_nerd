@@ -29,3 +29,19 @@ Divider appDivider() => const Divider(
       color: ColorsManager.greenWhite,
       height: 50,
     );
+
+AppBar customAppBar({
+  required String centerTitle,
+  List<Widget>? actions,
+}) {
+  return AppBar(
+    backgroundColor: Colors.transparent,
+    title: Text(
+      centerTitle,
+      style: TextStyles.rem26Bold,
+    ),
+    centerTitle: true,
+    actionsPadding: EdgeInsets.only(right: 18),
+    actions: actions,
+  );
+}
