@@ -5,7 +5,6 @@ import 'package:lab_nerd/models/element_model.dart';
 class SearchElementsController extends GetxController {
   bool isLoading = false;
   List<ElementModel> resultElements = [];
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController searchController = TextEditingController();
 
   void searchElements(

@@ -22,10 +22,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // DioHelper.init();
-  // CachedHelper.getData(key: 'isDark') ??
-  //     CachedHelper.saveData(key: 'isDark', value: false);
-  // bool isDark = CachedHelper.getData(key: 'isDark');
   runApp(
     DevicePreview(
       enabled: false,

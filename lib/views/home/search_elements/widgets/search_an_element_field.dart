@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lab_nerd/core/logic/controllers/home/search_elements_controller.dart';
@@ -10,12 +9,12 @@ class SearchAnElementField extends StatelessWidget {
   final SearchElementsController controller;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: const Alignment(0.95, -2),
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: AppTextFormField(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Stack(
+        alignment: Alignment.topRight,
+        children: [
+          AppTextFormField(
             controller: controller.searchController,
             helperText: 'Search An Element',
             prefixIcon: const Icon(Icons.search, color: Colors.black),
@@ -40,18 +39,12 @@ class SearchAnElementField extends StatelessWidget {
               }
             },
           ),
-        ),
-        IconButton(
-          onPressed: () {
-            // controller.getSearchOfElements(
-            //   nameElement: searchController.text,
-            //   sortType: 'asc',
-            // );
-          },
-          color: Colors.black,
-          icon: const Icon(FontAwesomeIcons.arrowDownAZ),
-        )
-      ],
+          const Icon(
+            FontAwesomeIcons.arrowDownAZ,
+            color: Colors.black,
+          ),
+        ],
+      ),
     );
   }
 }

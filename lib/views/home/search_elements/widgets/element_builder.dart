@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
 
@@ -33,8 +34,8 @@ class ElementBuilder extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
                       element.image?.url ?? element.bohrModelImage,
-                      width: 150,
-                      height: 150,
+                      width: 150.w,
+                      height: 150.h,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -62,8 +63,12 @@ class ElementBuilder extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text(element.name,
-                            maxLines: 2, style: TextStyles.rem20Boldd),
+                        Text(
+                          element.name,
+                          maxLines: 2,
+                          style: TextStyles.rem20Boldd
+                              .copyWith(color: Colors.black),
+                        ),
                         const SizedBox(
                           width: 12,
                         ),
@@ -84,10 +89,12 @@ class ElementBuilder extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        element.image?.attribution ?? 'no information',
+                        element.image?.title ?? 'no information',
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyles.rem16Bold,
+                        style: TextStyles.rem16Bold.copyWith(
+                          color: Colors.black45,
+                        ),
                       ),
                     ),
                   ],
