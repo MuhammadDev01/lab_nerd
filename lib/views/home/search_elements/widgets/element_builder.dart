@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
+import 'package:lab_nerd/views/home/search_elements/details_element_view.dart';
 
 class ElementBuilder extends StatelessWidget {
   const ElementBuilder({super.key, required this.element});
@@ -9,18 +11,7 @@ class ElementBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // Get.to(
-        //   DetailsElementView(
-        //     backdrop: element!.imageUrl!,
-        //     poster: element!.imageUrl!,
-        //     title: element!.nameElement!,
-        //     description: element!.description!,
-        //     atomicNumber: element!.atomicNumber!.toString(),
-        //   ),
-        //   transition: Transition.size,
-        // );
-      },
+      onTap: () => Get.to(DetailsElementView(element: element)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SizedBox(
