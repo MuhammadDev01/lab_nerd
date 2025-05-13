@@ -11,7 +11,7 @@ class ElementBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.to(DetailsElementView(element: element)),
+      onTap: () => Get.to(() => DetailsElementView(element: element)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SizedBox(

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 

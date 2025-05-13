@@ -105,6 +105,7 @@ class DetailsElementView extends StatelessWidget {
                             style: TextStyles.rem16Bold.copyWith(
                               color: Colors.blue[600],
                               decoration: TextDecoration.underline,
+                              decorationColor: Colors.black,
                             ),
                           ),
                         ),

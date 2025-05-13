@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/models/onboarding_item_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

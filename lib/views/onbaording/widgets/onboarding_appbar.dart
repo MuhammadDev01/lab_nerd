@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 

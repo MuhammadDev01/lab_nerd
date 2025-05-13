@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class CacheHelper {
   static Box authBox = Hive.box(kAuthBox);

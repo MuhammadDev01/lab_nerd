@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:get/get.dart';
-import 'package:lab_nerd/constant.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/views/main/main_view_adaptive.dart';
