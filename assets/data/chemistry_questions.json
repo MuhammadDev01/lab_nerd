@@ -1,0 +1,901 @@
+{
+  "Symbols": [
+    {
+      "question": "What is the chemical symbol for Iron?",
+      "choices": [
+        "Cl",
+        "Pb",
+        "Fe",
+        "Ag"
+      ],
+      "answer": "Fe",
+      "id": 1
+    },
+    {
+      "question": "What is the chemical symbol for Chlorine?",
+      "choices": [
+        "H",
+        "Fe",
+        "Cl",
+        "Au"
+      ],
+      "answer": "Cl",
+      "id": 2
+    },
+    {
+      "question": "What is the chemical symbol for Hydrogen?",
+      "choices": [
+        "H",
+        "Na",
+        "K",
+        "Pb"
+      ],
+      "answer": "H",
+      "id": 3
+    },
+    {
+      "question": "What is the chemical symbol for Gold?",
+      "choices": [
+        "Au",
+        "Na",
+        "Cu",
+        "Cl"
+      ],
+      "answer": "Au",
+      "id": 4
+    },
+    {
+      "question": "What is the chemical symbol for Oxygen?",
+      "choices": [
+        "Au",
+        "Na",
+        "O",
+        "H"
+      ],
+      "answer": "O",
+      "id": 5
+    },
+    {
+      "question": "What is the chemical symbol for Copper?",
+      "choices": [
+        "Cl",
+        "Na",
+        "Ag",
+        "Cu"
+      ],
+      "answer": "Cu",
+      "id": 6
+    },
+    {
+      "question": "What is the chemical symbol for Silver?",
+      "choices": [
+        "Cl",
+        "Na",
+        "Pb",
+        "Ag"
+      ],
+      "answer": "Ag",
+      "id": 7
+    },
+    {
+      "question": "What is the chemical symbol for Lead?",
+      "choices": [
+        "H",
+        "Ag",
+        "Fe",
+        "Pb"
+      ],
+      "answer": "Pb",
+      "id": 8
+    },
+    {
+      "question": "What is the chemical symbol for Sodium?",
+      "choices": [
+        "H",
+        "Na",
+        "Pb",
+        "Cl"
+      ],
+      "answer": "Na",
+      "id": 9
+    },
+    {
+      "question": "What is the chemical symbol for Potassium?",
+      "choices": [
+        "H",
+        "Na",
+        "K",
+        "Cl"
+      ],
+      "answer": "K",
+      "id": 10
+    },
+    {
+      "question": "What is the chemical symbol for Carbon?",
+      "choices": [
+        "C",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "C",
+      "id": 11
+    },
+    {
+      "question": "What is the chemical symbol for Helium?",
+      "choices": [
+        "He",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "He",
+      "id": 12
+    },
+    {
+      "question": "What is the chemical symbol for Nitrogen?",
+      "choices": [
+        "N",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "N",
+      "id": 13
+    },
+    {
+      "question": "What is the chemical symbol for Fluorine?",
+      "choices": [
+        "F",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "F",
+      "id": 14
+    },
+    {
+      "question": "What is the chemical symbol for Neon?",
+      "choices": [
+        "Ne",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "Ne",
+      "id": 15
+    },
+    {
+      "question": "What is the chemical symbol for Sulfur?",
+      "choices": [
+        "S",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "S",
+      "id": 16
+    },
+    {
+      "question": "What is the chemical symbol for Bromine?",
+      "choices": [
+        "Br",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "Br",
+      "id": 17
+    },
+    {
+      "question": "What is the chemical symbol for Iodine?",
+      "choices": [
+        "I",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "I",
+      "id": 18
+    },
+    {
+      "question": "What is the chemical symbol for Xenon?",
+      "choices": [
+        "Xe",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "Xe",
+      "id": 19
+    },
+    {
+      "question": "What is the chemical symbol for Rubidium?",
+      "choices": [
+        "Rb",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "Rb",
+      "id": 20
+    },
+    {
+      "question": "What is the chemical symbol for Strontium?",
+      "choices": [
+        "Sr",
+        "H",
+        "Na",
+        "K"
+      ],
+      "answer": "Sr",
+      "id": 21
+    }
+  ],
+  "Atomic_number": [
+    {
+      "question": "What is the atomic number of Hydrogen?",
+      "choices": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": "1",
+      "id": 22
+    },
+    {
+      "question": "What is the atomic number of Helium?",
+      "choices": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": "2",
+      "id": 23
+    },
+    {
+      "question": "What is the atomic number of Lithium?",
+      "choices": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": "3",
+      "id": 24
+    },
+    {
+      "question": "What is the atomic number of Sodium?",
+      "choices": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "11",
+      "id": 25
+    },
+    {
+      "question": "What is the atomic number of Potassium?",
+      "choices": [
+        "22",
+        "19",
+        "18",
+        "20"
+      ],
+      "answer": "19",
+      "id": 26
+    },
+    {
+      "question": "What is the atomic number of Calcium?",
+      "choices": [
+        "20",
+        "21",
+        "24",
+        "26"
+      ],
+      "answer": "20",
+      "id": 27
+    },
+    {
+      "question": "What is the atomic number of Iron?",
+      "choices": [
+        "26",
+        "25",
+        "24",
+        "23"
+      ],
+      "answer": "26",
+      "id": 28
+    },
+    {
+      "question": "What is the atomic number of Copper?",
+      "choices": [
+        "29",
+        "28",
+        "27",
+        "30"
+      ],
+      "answer": "29",
+      "id": 29
+    },
+    {
+      "question": "What is the atomic number of Zinc?",
+      "choices": [
+        "30",
+        "31",
+        "32",
+        "33"
+      ],
+      "answer": "30",
+      "id": 30
+    },
+    {
+      "question": "What is the atomic number of Selenium?",
+      "choices": [
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "answer": "34",
+      "id": 31
+    },
+    {
+      "question": "What is the atomic number of Gadolinium?",
+      "choices": [
+        "59",
+        "60",
+        "61",
+        "62"
+      ],
+      "answer": "60",
+      "id": 32
+    },
+    {
+      "question": "What is the atomic number of Ruthenium?",
+      "choices": [
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "answer": "45",
+      "id": 33
+    },
+    {
+      "question": "What is the atomic number of Xenon?",
+      "choices": [
+        "54",
+        "55",
+        "56",
+        "57"
+      ],
+      "answer": "54",
+      "id": 34
+    },
+    {
+      "question": "What is the atomic number of Rubidium?",
+      "choices": [
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "answer": "37",
+      "id": 35
+    },
+    {
+      "question": "What is the atomic number of Strontium?",
+      "choices": [
+        "38",
+        "39",
+        "40",
+        "41"
+      ],
+      "answer": "38",
+      "id": 36
+    },
+    {
+      "question": "What is the atomic number of Nitrogen?",
+      "choices": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": "7",
+      "id": 37
+    },
+    {
+      "question": "What is the atomic number of Oxygen?",
+      "choices": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "8",
+      "id": 38
+    },
+    {
+      "question": "What is the atomic number of Fluorine?",
+      "choices": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "9",
+      "id": 39
+    },
+    {
+      "question": "What is the atomic number of Chlorine?",
+      "choices": [
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "answer": "17",
+      "id": 40
+    },
+    {
+      "question": "What is the atomic number of Carbon?",
+      "choices": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "answer": "6",
+      "id": 41
+    }
+  ],
+  "Balance_chemical_equations": [
+    {
+      "id": 42,
+      "question": "What are the correct coefficients to balance:\n __H₂ + __O₂ → __H₂O",
+      "choices": [
+        "2, 1, 2",
+        "1, 2, 1",
+        "2, 2, 2",
+        "2, 1, 1"
+      ],
+      "answer": "2, 1, 2"
+    },
+    {
+      "id": 43,
+      "question": "Balance the equation:\n __N₂ + __H₂ → __NH₃",
+      "choices": [
+        "1, 3, 2",
+        "2, 3, 1",
+        "1, 2, 3",
+        "3, 1, 2"
+      ],
+      "answer": "1, 3, 2"
+    },
+    {
+      "id": 44,
+      "question": "Correct coefficients for:\n __KClO₃ → __KCl + __O₂",
+      "choices": [
+        "2, 2, 3",
+        "1, 1, 2",
+        "3, 2, 3",
+        "2, 1, 3"
+      ],
+      "answer": "2, 2, 3"
+    },
+    {
+      "id": 45,
+      "question": "Balance:\n __Al + __O₂ → __Al₂O₃",
+      "choices": [
+        "2, 3, 1",
+        "4, 3, 2",
+        "1, 3, 2",
+        "3, 2, 1"
+      ],
+      "answer": "4, 3, 2"
+    },
+    {
+      "id": 46,
+      "question": "Correct coefficients for:\n __CH₄ + __O₂ → __CO₂ + __H₂O",
+      "choices": [
+        "1, 2, 1, 2",
+        "2, 1, 2, 1",
+        "1, 1, 1, 1",
+        "2, 3, 2, 2"
+      ],
+      "answer": "1, 2, 1, 2"
+    },
+    {
+      "id": 47,
+      "question": "Balance:\n __Fe + __Cl₂ → __FeCl₃",
+      "choices": [
+        "1, 3, 2",
+        "2, 3, 2",
+        "3, 2, 1",
+        "2, 1, 3"
+      ],
+      "answer": "2, 3, 2"
+    },
+    {
+      "id": 48,
+      "question": "Correct coefficients for:\n __P₄ + __O₂ → __P₂O₅",
+      "choices": [
+        "1, 5, 2",
+        "2, 3, 4",
+        "4, 3, 2",
+        "2, 5, 1"
+      ],
+      "answer": "1, 5, 2"
+    },
+    {
+      "id": 49,
+      "question": "Balance:\n __Na + __H₂O → __NaOH + __H₂",
+      "choices": [
+        "2, 2, 2, 1",
+        "1, 2, 1, 1",
+        "3, 1, 2, 1",
+        "2, 1, 2, 1"
+      ],
+      "answer": "2, 2, 2, 1"
+    },
+    {
+      "id": 50,
+      "question": "Correct coefficients for:\n __C₂H₆ + __O₂ → __CO₂ + __H₂O",
+      "choices": [
+        "2, 7, 4, 6",
+        "1, 4, 2, 3",
+        "3, 5, 2, 6",
+        "2, 5, 4, 3"
+      ],
+      "answer": "2, 7, 4, 6"
+    },
+    {
+      "id": 51,
+      "question": "Balance:\n __Ca(OH)₂ + __HCl → __CaCl₂ + __H₂O",
+      "choices": [
+        "1, 1, 1, 1",
+        "2, 1, 1, 2",
+        "1, 2, 1, 2",
+        "2, 2, 1, 1"
+      ],
+      "answer": "1, 2, 1, 2"
+    },
+    {
+      "id": 52,
+      "question": "Correct coefficients for:\n __NH₃ + __O₂ → __NO + __H₂O",
+      "choices": [
+        "2, 5, 2, 6",
+        "4, 5, 4, 6",
+        "3, 2, 3, 4",
+        "1, 5, 1, 3"
+      ],
+      "answer": "4, 5, 4, 6"
+    },
+    {
+      "id": 53,
+      "question": "Balance:\n __Fe₂O₃ + __CO → __Fe + __CO₂",
+      "choices": [
+        "1, 3, 2, 3",
+        "2, 1, 4, 3",
+        "3, 2, 1, 3",
+        "1, 2, 3, 1"
+      ],
+      "answer": "1, 3, 2, 3"
+    },
+    {
+      "id": 54,
+      "question": "Correct coefficients for:\n __Al + __CuSO₄ → __Al₂(SO₄)₃ + __Cu",
+      "choices": [
+        "3, 2, 1, 3",
+        "2, 3, 1, 3",
+        "1, 3, 2, 1",
+        "4, 3, 2, 3"
+      ],
+      "answer": "2, 3, 1, 3"
+    },
+    {
+      "id": 55,
+      "question": "Balance:\n __H₂SO₄ + __NaOH → __Na₂SO₄ + __H₂O",
+      "choices": [
+        "1, 2, 1, 2",
+        "2, 1, 1, 2",
+        "1, 1, 1, 1",
+        "3, 2, 1, 4"
+      ],
+      "answer": "1, 2, 1, 2"
+    },
+    {
+      "id": 56,
+      "question": "Correct coefficients for:\n __C₃H₈ + __O₂ → __CO₂ + __H₂O",
+      "choices": [
+        "1, 5, 3, 4",
+        "2, 5, 6, 4",
+        "3, 2, 1, 4",
+        "1, 3, 2, 5"
+      ],
+      "answer": "1, 5, 3, 4"
+    },
+    {
+      "id": 57,
+      "question": "Balance:\n __KMnO₄ → __K₂MnO₄ + __MnO₂ + __O₂",
+      "choices": [
+        "2, 1, 1, 1",
+        "3, 2, 1, 2",
+        "4, 1, 2, 3",
+        "1, 2, 3, 4"
+      ],
+      "answer": "2, 1, 1, 1"
+    },
+    {
+      "id": 58,
+      "question": "Correct coefficients for:\n __AgNO₃ + __CaCl₂ → __AgCl + __Ca(NO₃)₂",
+      "choices": [
+        "1, 1, 2, 1",
+        "2, 1, 2, 1",
+        "3, 2, 1, 3",
+        "1, 2, 1, 2"
+      ],
+      "answer": "2, 1, 2, 1"
+    },
+    {
+      "id": 59,
+      "question": "Balance:\n __Zn + __HCl → __ZnCl₂ + __H₂",
+      "choices": [
+        "1, 2, 1, 1",
+        "2, 1, 2, 1",
+        "3, 2, 1, 3",
+        "1, 1, 1, 1"
+      ],
+      "answer": "1, 2, 1, 1"
+    },
+    {
+      "id": 60,
+      "question": "Correct coefficients for:\n __SiO₂ + __C → __SiC + __CO",
+      "choices": [
+        "1, 3, 1, 2",
+        "2, 1, 3, 4",
+        "3, 2, 1, 4",
+        "1, 2, 1, 2"
+      ],
+      "answer": "1, 3, 1, 2"
+    },
+    {
+      "id": 61,
+      "question": "Balance:\n __Cu + __HNO₃ → __Cu(NO₃)₂ + __NO + __H₂O",
+      "choices": [
+        "3, 8, 3, 2, 4",
+        "2, 5, 2, 1, 3",
+        "1, 4, 1, 2, 2",
+        "4, 3, 2, 1, 4"
+      ],
+      "answer": "3, 8, 3, 2, 4"
+    }
+  ],
+  "chemistry_reaction_questions": [
+    {
+      "id": 62,
+      "question": "What is the product of the reaction:\n 2Na(s) + Cl₂(g) → ?",
+      "choices": [
+        "NaCl₂",
+        "2NaCl",
+        "Na₂Cl",
+        "NaCl"
+      ],
+      "correct_answer": "2NaCl"
+    },
+    {
+      "id": 63,
+      "question": "What are the products of the reaction:\n HCl(aq) + NaOH(aq) → ?",
+      "choices": [
+        "NaCl + H₂O",
+        "NaH + ClOH",
+        "NaCl₂ + H₂O",
+        "No reaction occurs"
+      ],
+      "correct_answer": "NaCl + H₂O"
+    },
+    {
+      "id": 64,
+      "question": "What gas is produced in the reaction:\n Zn(s) + H₂SO₄(aq) → ?",
+      "choices": [
+        "Oxygen (O₂)",
+        "Carbon dioxide (CO₂)",
+        "Hydrogen (H₂)",
+        "Chlorine (Cl₂)"
+      ],
+      "correct_answer": "Hydrogen (H₂)"
+    },
+    {
+      "id": 65,
+      "question": "What is formed in the reaction:\n 2Mg(s) + O₂(g) → ?",
+      "choices": [
+        "MgO₂",
+        "2MgO",
+        "Mg₂O",
+        "MgO"
+      ],
+      "correct_answer": "2MgO"
+    },
+    {
+      "id": 66,
+      "question": "What are the products of the decomposition:\n 2H₂O₂(l) → ?",
+      "choices": [
+        "H₂ + O₂",
+        "2H₂O + O₂",
+        "H₂O + O",
+        "HO₂ + H₂"
+      ],
+      "correct_answer": "2H₂O + O₂"
+    },
+    {
+      "id": 67,
+      "question": "What are the products of complete combustion:\n CH₄(g) + 2O₂(g) → ?",
+      "choices": [
+        "CO + 2H₂O",
+        "CO₂ + 2H₂O",
+        "C + 2H₂O",
+        "CO₂ + H₂"
+      ],
+      "correct_answer": "CO₂ + 2H₂O"
+    },
+    {
+      "id": 68,
+      "question": "What is formed in the reaction:\n Fe(s) + S(s) → ?",
+      "choices": [
+        "FeS₂",
+        "Fe₂S",
+        "FeS",
+        "Fe₂S₃"
+      ],
+      "correct_answer": "FeS"
+    },
+    {
+      "id": 69,
+      "question": "What are the products when heated:\n CaCO₃(s) → ?",
+      "choices": [
+        "Ca + CO₂",
+        "CaO + CO",
+        "CaO + CO₂",
+        "CaC + O₃"
+      ],
+      "correct_answer": "CaO + CO₂"
+    },
+    {
+      "id": 70,
+      "question": "What is produced in the reaction:\n AgNO₃(aq) + NaCl(aq) → ?",
+      "choices": [
+        "AgCl + NaNO₃",
+        "AgNa + NO₃Cl",
+        "AgCl₂ + NaNO₃",
+        "Ag₂Cl + NaNO₃"
+      ],
+      "correct_answer": "AgCl + NaNO₃"
+    },
+    {
+      "id": 71,
+      "question": "What gas is produced in the reaction:\n 2K(s) + 2H₂O(l) → ?",
+      "choices": [
+        "Oxygen (O₂)",
+        "Hydrogen (H₂)",
+        "Chlorine (Cl₂)",
+        "No gas is produced"
+      ],
+      "correct_answer": "Hydrogen (H₂)"
+    },
+    {
+      "id": 72,
+      "question": "What is formed in the reaction:\n CuSO₄(aq) + 2NaOH(aq) → ?",
+      "choices": [
+        "Cu(OH)₂ + Na₂SO₄",
+        "CuO + Na₂SO₄ + H₂O",
+        "Cu + Na₂SO₄ + H₂O",
+        "Cu(OH) + NaSO₄"
+      ],
+      "correct_answer": "Cu(OH)₂ + Na₂SO₄"
+    },
+    {
+      "id": 73,
+      "question": "What are the products of electrolysis:\n 2H₂O(l) → ?",
+      "choices": [
+        "H₂ + O₂",
+        "H₂O₂",
+        "HO + HO",
+        "2H₂ + O₂"
+      ],
+      "correct_answer": "2H₂ + O₂"
+    },
+    {
+      "id": 74,
+      "question": "What is produced in polymerization:\n n(CH₂=CH₂) → ?",
+      "choices": [
+        "(CH₂-CH₂)n",
+        "(CH₂=CH₂)n",
+        "(CH₃-CH₃)n",
+        "(CH-CH)n"
+      ],
+      "correct_answer": "(CH₂-CH₂)n"
+    },
+    {
+      "id": 75,
+      "question": "What is formed in the reaction:\n N₂(g) + 3H₂(g) → ? (with catalyst)",
+      "choices": [
+        "NH₄",
+        "2NH₃",
+        "N₂H₄",
+        "NH₃"
+      ],
+      "correct_answer": "2NH₃"
+    },
+    {
+      "id": 76,
+      "question": "What are the products of combustion:\n C₂H₅OH(l) + 3O₂(g) → ?",
+      "choices": [
+        "2CO + 3H₂O",
+        "2CO₂ + 3H₂O",
+        "C + 3H₂O + O₂",
+        "CH₄ + 2CO₂"
+      ],
+      "correct_answer": "2CO₂ + 3H₂O"
+    },
+    {
+      "id": 77,
+      "question": "What is produced in the thermite reaction:\n 2Al(s) + Fe₂O₃(s) → ?",
+      "choices": [
+        "Al₂O₃ + 2Fe",
+        "AlO + Fe₂O",
+        "Al₂O + FeO",
+        "AlFe + O₃"
+      ],
+      "correct_answer": "Al₂O₃ + 2Fe"
+    },
+    {
+      "id": 78,
+      "question": "What gas is produced in the reaction:\n CaCO₃(s) + 2HCl(aq) → ?",
+      "choices": [
+        "H₂",
+        "O₂",
+        "CO₂",
+        "Cl₂"
+      ],
+      "correct_answer": "CO₂"
+    },
+    {
+      "id": 79,
+      "question": "What is formed in the reaction:\n 2SO₂(g) + O₂(g) → ?",
+      "choices": [
+        "SO₃",
+        "2SO₃",
+        "S₂O₅",
+        "SO₄"
+      ],
+      "correct_answer": "2SO₃"
+    },
+    {
+      "id": 80,
+      "question": "What are the products when heated:\n 2Pb(NO₃)₂(s) → ?",
+      "choices": [
+        "2PbO + 4NO₂ + O₂",
+        "Pb₂O + 2NO₂ + 3O₂",
+        "Pb + 2N₂ + 6O₂",
+        "PbO₂ + 2NO₂"
+      ],
+      "correct_answer": "2PbO + 4NO₂ + O₂"
+    },
+    {
+      "id": 81,
+      "question": "What is produced in the reaction:\n 2CH₃COOH + Na₂CO₃ → ?",
+      "choices": [
+        "2CH₃COONa + CO₂ + H₂O",
+        "CH₃COONa + CH₄ + CO₂",
+        "Na(CH₃COO)₂ + CO",
+        "2CH₄ + 2Na + 3CO₂"
+      ],
+      "correct_answer": "2CH₃COONa + CO₂ + H₂O"
+    }
+  ]
+}

@@ -66,7 +66,7 @@ class NotesController extends GetxController {
     }
   }
 
-  late Color selectedColor;
+  Color selectedColor = Colors.white;
   void selectNoteColor(Color color) {
     selectedColor = color;
     update();
@@ -80,7 +80,7 @@ class NotesController extends GetxController {
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await notesRef.get();
     notes = snapshot.docs.map((doc) => NoteModel.fromJson(doc.data())).toList();
-    log("Fetched!!!!!");
+    log("Notes Fetched ✅");
     update();
   }
 

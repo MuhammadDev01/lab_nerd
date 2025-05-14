@@ -45,6 +45,7 @@ flutter:
     - assets/images/
     - assets/images/svg/
     - assets/data/periodic-table.json
+    - assets/data/chemistry_questions.json
 
   fonts:
     - family: REM

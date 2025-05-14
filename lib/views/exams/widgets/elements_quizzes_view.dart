@@ -307,7 +307,6 @@ class _ElementsQuizzesViewState extends State<ElementsQuizzesView> {
                     textConfirm: " YES ",
                     confirmTextColor:
                         Get.isDarkMode ? Colors.black : Colors.white,
-                    onCancel: () {},
                     onConfirm: () {
                       Get.off(const MainViewAdaptive(),
                           transition: Transition.fadeIn);

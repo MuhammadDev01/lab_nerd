@@ -8,7 +8,6 @@ import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/models/element_model.dart';
-import 'package:lab_nerd/models/questions_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
 import 'package:lab_nerd/views/exams/exams_view.dart';
@@ -23,7 +22,7 @@ class Maincontroller extends GetxController {
   @override
   onInit() async {
     showProfileUser();
-    await loadJsonData();
+    await loadElements();
     super.onInit();
   }
 
@@ -77,7 +76,7 @@ class Maincontroller extends GetxController {
 //*****************ELEMENTS******************\\
   static List<ElementModel> elementsList = [];
 
-  Future<List<ElementModel>> loadJsonData() async {
+  Future<List<ElementModel>> loadElements() async {
     String jsonString =
         await rootBundle.loadString('assets/data/periodic-table.json');
     var jsonData = jsonDecode(jsonString);
@@ -105,69 +104,8 @@ class Maincontroller extends GetxController {
   //   return examsList;
   // }
 
-  int? examID;
-  String currentQuestion = '';
-  late List<AnswerModel> currentAnswers = [];
-  late List<Color> buttonColors = List.generate(4, (_) {
-    return Get.isDarkMode ? Colors.black : Colors.white;
-  });
-
-  //bool isAnswered = false;
-  List<int> questionsIDList = [];
-  List<QuestionsModel> questionsList = [];
-  int i = 0;
-  int trueAnswerd = 0;
-  // void getQuestionsOfExam() async {
-  //   if (questionsList.isEmpty) {
-  //     await DioHelper.getData(
-  //             url:
-  //                 '${CachedHelper.getData(key: 'url')}/api/quiz/subject/$examID')
-  //         .then((value) {
-  //       for (var question in value.data['data']['questions']) {
-  //         QuestionssModel model = QuestionssModel.fromJson(question);
-  //         questionsIDList.add(model.id!);
-  //       }
-  //     });
-  //     for (int i = 0; i < questionsIDList.length; i++) {
-  //       await DioHelper.getData(
-  //               url:
-  //                   '${CachedHelper.getData(key: 'url')}/api/quiz/questions/${questionsIDList[i]}')
-  //           .then((value) {
-  //         QuestionsModel model = QuestionsModel.fromJson(value.data['data']);
-  //         questionsList.add(model);
-  //       });
-  //     }
-  //     questionsIDList.shuffle();
-  //     update();
-  //   }
-  //   if (i < questionsList.length) {
-  //     currentQuestion = questionsList[i].question!;
-  //     currentAnswers = List.from(questionsList[i].answer);
-  //     currentAnswers.shuffle();
-  //   }
-  // }
-
-  void checkAnswer(bool userAnswer, int selectedIndex) {
-    if (userAnswer) {
-      // Correct answer
-      buttonColors[selectedIndex] = Colors.green;
-      trueAnswerd++;
-      update();
-    } else {
-      // Incorrect answer
-      buttonColors[selectedIndex] =
-          Get.isDarkMode ? Colors.deepOrange.shade900 : Colors.red;
-      for (int i = 0; i < currentAnswers.length; i++) {
-        if (currentAnswers[i].isCorrect) {
-          buttonColors[i] = Get.isDarkMode ? Colors.teal : Colors.green;
-          break;
-        }
-      }
-      update();
-    }
-  }
-
   bool isEnglish = false;
+  int? examID;
   void changeLang() {
     isEnglish = !isEnglish;
     update();
