@@ -5,9 +5,10 @@ import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/models/question_model.dart';
+import 'package:lab_nerd/views/home/quizzes/result_quiz_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
-class QuizView extends StatelessWidget {
+class QuizView extends StatefulWidget {
   final List<QuestionModel> questions;
   const QuizView({
     super.key,
@@ -15,13 +16,27 @@ class QuizView extends StatelessWidget {
   });
 
   @override
+  State<QuizView> createState() => _QuizViewState();
+}
+
+class _QuizViewState extends State<QuizView> {
+  final controller = Get.put(QuizzesController());
+  @override
+  void initState() {
+    controller.answeredQuestions.clear();
+    controller.questionIndex = 1;
+    controller.score = 0;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GetBuilder<QuizzesController>(
-      builder: (controller) => Scaffold(
+      builder: (_) => Scaffold(
         body: Stack(
           children: [
             Image.asset(
-              Assets.imagesQuizzesBackround2,
+              Assets.imagesQuizViewBackround,
               height: double.infinity,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -44,7 +59,9 @@ class QuizView extends StatelessWidget {
                     (choice) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: DefaultButton(
-                        onPressed: () => controller.checkAnswer(choice),
+                        onPressed: () => controller.isUserAnswered
+                            ? null
+                            : controller.checkAnswer(choice),
                         colorButton: controller.getButtonColor(choice),
                         child: Text(
                           choice,
@@ -53,24 +70,36 @@ class QuizView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: getButtonColor(choice),
-                      //     padding: EdgeInsets.symmetric(vertical: 12),
-                      //   ),
-                      //   onPressed: answered ? null : () => checkAnswer(choice),
-                      //   child: Text(choice, style: TextStyle(fontSize: 16)),
-                      // ),
                     ),
                   ),
                   SizedBox(height: 20.h),
-                  ElevatedButton(
-                    onPressed: () => controller.selectRandomQuestion(questions),
-                    child: Text(
-                      "Next Question",
-                      style: TextStyles.rem16Bold.copyWith(color: Colors.black),
+                  controller.questionIndex == 10
+                      ? ElevatedButton(
+                          onPressed: () => Get.off(
+                              () => ResultQuizView(score: controller.score)),
+                          child: Text(
+                            "Finish",
+                            style: TextStyles.rem16Bold
+                                .copyWith(color: Colors.black),
+                          ),
+                        )
+                      : ElevatedButton(
+                          onPressed: () =>
+                              controller.selectRandomQuestion(widget.questions),
+                          child: Text(
+                            "Next Question",
+                            style: TextStyles.rem16Bold
+                                .copyWith(color: Colors.black),
+                          ),
+                        ),
+                  SizedBox(height: 40.h),
+                  Text(
+                    "Question: ${controller.questionIndex}/10",
+                    style: TextStyles.slacksideOnes20Bold.copyWith(
+                      color: Colors.white,
+                      fontSize: 30,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

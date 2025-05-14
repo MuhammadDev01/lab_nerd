@@ -58,15 +58,15 @@ class QuizzesController extends GetxController {
 //**SELECT RANDOM QUESTION **\\
   List<int> answeredQuestions = [];
   late QuestionModel question;
+  int questionIndex = 1;
   void selectRandomQuestion(List<QuestionModel> questions) {
     isUserAnswered = false;
     var index = Random().nextInt(questions.length);
     if (!answeredQuestions.contains(questions[index].id)) {
       answeredQuestions.add(questions[index].id);
       question = questions[index];
-      debugPrint('QUESTION: ${question.question}');
       question.choices.shuffle();
-      debugPrint('CHOICES: ${question.choices.toString()}');
+      questionIndex++;
     } else {
       selectRandomQuestion(questions);
     }
@@ -77,12 +77,15 @@ class QuizzesController extends GetxController {
   Color? colorButton;
   bool isUserAnswered = false;
   String userAnswer = '';
+  int score = 0;
   checkAnswer(String userAnswer) {
     isUserAnswered = true;
+    userAnswer == question.answer ? score++ : score;
     this.userAnswer = userAnswer;
     update();
   }
 
+//**GET BUTTON COLOR **\\
   Color getButtonColor(String choice) {
     if (isUserAnswered) {
       if (choice == question.answer) {
@@ -95,35 +98,4 @@ class QuizzesController extends GetxController {
       return Colors.white;
     }
   }
-
-//   void checkAnswer(bool userAnswer, int selectedIndex) {
-//     if (userAnswer) {
-//       // Correct answer
-//       buttonColors[selectedIndex] = Colors.green;
-//       trueAnswerd++;
-//       update();
-//     } else {
-//       // Incorrect answer
-//       buttonColors[selectedIndex] =
-//           Get.isDarkMode ? Colors.deepOrange.shade900 : Colors.red;
-//       for (int i = 0; i < currentAnswers.length; i++) {
-//         if (true) {
-// //currentAnswers[i].isCorrect
-//           buttonColors[i] = Get.isDarkMode ? Colors.teal : Colors.green;
-//           break;
-//         }
-//       }
-//       update();
-//     }
-//   }
-
-  // void generateRandomElementQuestions(int index) {
-  //   final random = Random();
-  //   final randomIndex = random.nextInt(5);
-  //   currentQuestion = ExamModel[index].questions[randomIndex];
-  //   correctAnswer = ExamModel[index].correctAnswers[randomIndex];
-  //   currentAnswers = List.from(ExamModel[index].options![randomIndex]);
-  //   currentAnswers.shuffle();
-  //   buttonColors = List.generate(4, (_) => Colors.white);
-  // }
 }

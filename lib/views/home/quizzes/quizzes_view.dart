@@ -18,7 +18,7 @@ class QuizzesView extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            Assets.imagesQuizzesBackround2,
+            Assets.imagesQuizViewBackround,
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.cover,

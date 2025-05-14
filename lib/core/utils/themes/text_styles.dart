@@ -52,4 +52,9 @@ class TextStyles {
     fontFamily: fontSlacksideOne,
     fontSize: 20,
   );
+  static TextStyle slacksideOnes30Bold = const TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: fontSlacksideOne,
+    fontSize: 40,
+  );
 }
