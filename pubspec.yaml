@@ -13,6 +13,7 @@ dependencies:
   build_runner: ^2.4.15
   carousel_slider: ^5.0.0
   cloud_firestore: ^5.6.7
+  confetti: ^0.8.0
   cupertino_icons: ^1.0.2
   device_preview: ^1.2.0
   firebase_auth: ^5.5.2
@@ -53,13 +54,13 @@ flutter:
         - asset: assets/fonts/REM-Medium.ttf
         - asset: assets/fonts/REM-Regular.ttf
         - asset: assets/fonts/REM-SemiBold.ttf
-    - family: Inter
-      fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
-        - asset: assets/fonts/Inter-Bold.ttf
     - family: SlacksideOne
       fonts:
         - asset: assets/fonts/SlacksideOne-Regular.ttf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf     
 
 # Generate images_app.dart file
 flutter_assets:

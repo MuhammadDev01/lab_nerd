@@ -14,7 +14,7 @@ class Routes {
   //**Nav Bar**\\
   static const homeView = '/homeView';
   static const periodicTableView = '/peridocTableView';
-  static const examsView = '/ExamsView';
+  static const examView = '/ExamView';
   static const searchElementView = '/searchElementView';
   static const settingsView = '/SettingsView';
 

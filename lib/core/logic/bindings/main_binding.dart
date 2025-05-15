@@ -14,6 +14,6 @@ class MainBinding extends Bindings {
     Get.put(NotesController());
     Get.lazyPut(() => SettingsController(), fenix: true);
     Get.lazyPut(() => SearchElementsController(), fenix: true);
-    Get.lazyPut(() => QuizzesController(), fenix: true);
+    Get.put(QuizzesController());
   }
 }

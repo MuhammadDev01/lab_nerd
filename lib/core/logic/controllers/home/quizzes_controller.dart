@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/models/question_model.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class QuizzesController extends GetxController {
   @override
@@ -55,21 +56,50 @@ class QuizzesController extends GetxController {
     update();
   }
 
-//**SELECT RANDOM QUESTION **\\
+//**SETUP QUESTIONS & GENERATE QUESTION **\\
   List<int> answeredQuestions = [];
   late QuestionModel question;
-  int questionIndex = 1;
-  void selectRandomQuestion(List<QuestionModel> questions) {
+  int questionIndex = 0;
+  List<QuestionModel> currentQuestions = [];
+
+  void setupQuestions(String? quizType) {
+    switch (quizType) {
+      case kSymbols:
+        currentQuestions = symbolsQuestions;
+        break;
+      case kAtomicNumber:
+        currentQuestions = atomicNumberQuestions;
+        break;
+      case kBalanceChemicalEquations:
+        currentQuestions = balanceChemicalEquationsQuestions;
+        break;
+      case kChemistryReactions:
+        currentQuestions = chemistryReactionQuestions;
+        break;
+      default:
+        currentQuestions = allQuestions;
+    }
+  }
+
+  void generateQuestion() {
     isUserAnswered = false;
-    var index = Random().nextInt(questions.length);
-    if (!answeredQuestions.contains(questions[index].id)) {
-      answeredQuestions.add(questions[index].id);
-      question = questions[index];
+    debugPrint('${currentQuestions.length}✅');
+    var index = Random().nextInt(currentQuestions.length);
+    debugPrint('${currentQuestions.length}✅');
+    if (!answeredQuestions.contains(currentQuestions[index].id)) {
+      answeredQuestions.add(currentQuestions[index].id);
+      debugPrint('${answeredQuestions.toString()}✅');
+
+      question = currentQuestions[index];
       question.choices.shuffle();
       questionIndex++;
     } else {
-      selectRandomQuestion(questions);
+      generateQuestion();
     }
+  }
+
+  void nextQuestion() {
+    generateQuestion();
     update();
   }
 

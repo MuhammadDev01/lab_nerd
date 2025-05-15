@@ -52,7 +52,7 @@ class MainBottomNavigationBar extends StatelessWidget {
               },
               image: Assets.imagesSvgExamIcon,
               firstLetter: 'E',
-              label: 'xams',
+              label: 'xam',
             ),
           ),
           Expanded(

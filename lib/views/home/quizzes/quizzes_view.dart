@@ -5,6 +5,7 @@ import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/home/quizzes/quiz_view.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
 class QuizzesView extends StatelessWidget {
@@ -44,15 +45,9 @@ class QuizzesView extends StatelessWidget {
                     ),
                     DefaultButton(
                       colorButton: Colors.white,
-                      onPressed: () {
-                        controller
-                            .selectRandomQuestion(controller.symbolsQuestions);
-                        Get.to(
-                          () => QuizView(
-                            questions: controller.symbolsQuestions,
-                          ),
-                        );
-                      },
+                      onPressed: () => Get.to(
+                        () => QuizView(quizType: kSymbols),
+                      ),
                       child: Text(
                         "Symbol",
                         style: TextStyles.rem16Bold.copyWith(
@@ -65,15 +60,9 @@ class QuizzesView extends StatelessWidget {
                     ),
                     DefaultButton(
                       colorButton: Colors.white,
-                      onPressed: () {
-                        Get.to(
-                          () => QuizView(
-                            questions: controller.atomicNumberQuestions,
-                          ),
-                        );
-                        controller.selectRandomQuestion(
-                            controller.atomicNumberQuestions);
-                      },
+                      onPressed: () => Get.to(
+                        () => QuizView(quizType: kAtomicNumber),
+                      ),
                       child: Text(
                         "Atomic Number",
                         style: TextStyles.rem16Bold.copyWith(
@@ -86,16 +75,9 @@ class QuizzesView extends StatelessWidget {
                     ),
                     DefaultButton(
                       colorButton: Colors.white,
-                      onPressed: () {
-                        Get.to(
-                          () => QuizView(
-                            questions:
-                                controller.balanceChemicalEquationsQuestions,
-                          ),
-                        );
-                        controller.selectRandomQuestion(
-                            controller.balanceChemicalEquationsQuestions);
-                      },
+                      onPressed: () => Get.to(
+                        () => QuizView(quizType: kBalanceChemicalEquations),
+                      ),
                       child: FittedBox(
                         child: Text(
                           "Balance Chemical Equations",
@@ -110,15 +92,9 @@ class QuizzesView extends StatelessWidget {
                     ),
                     DefaultButton(
                       colorButton: Colors.white,
-                      onPressed: () {
-                        Get.to(
-                          () => QuizView(
-                            questions: controller.chemistryReactionQuestions,
-                          ),
-                        );
-                        controller.selectRandomQuestion(
-                            controller.chemistryReactionQuestions);
-                      },
+                      onPressed: () => Get.to(
+                        () => QuizView(quizType: kChemistryReactions),
+                      ),
                       child: Text(
                         "Chemistry Reactions",
                         style: TextStyles.rem16Bold.copyWith(

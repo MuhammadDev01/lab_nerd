@@ -10,7 +10,7 @@ import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
-import 'package:lab_nerd/views/exams/exams_view.dart';
+import 'package:lab_nerd/views/exam/exam_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
 import 'package:lab_nerd/views/home/home_view.dart';
@@ -29,7 +29,7 @@ class Maincontroller extends GetxController {
   List<Widget> views = const [
     HomeView(),
     PeriodicTableView(),
-    ExamsView(),
+    ExamView(),
     SettingsView(),
   ];
 

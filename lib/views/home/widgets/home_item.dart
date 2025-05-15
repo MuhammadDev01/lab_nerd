@@ -36,7 +36,7 @@ class HomeItem extends StatelessWidget {
                       );
                     },
                     child: Image.asset(
-                      image ?? Assets.imagesNotFound,
+                      image ?? Assets.imagesChatGpt,
                       width: 120,
                     ),
                   ),

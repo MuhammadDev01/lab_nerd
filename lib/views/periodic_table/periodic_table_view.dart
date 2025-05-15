@@ -3,45 +3,49 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 
 class PeriodicTableView extends StatelessWidget {
   const PeriodicTableView({super.key});
-  final bool isEnglish = false;
   @override
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(
-      builder: (controller) => Stack(
-        children: [
-          InteractiveViewer(
-            maxScale: 8,
-            minScale: 1,
-            child: SvgPicture.asset(
-              controller.isEnglish
-                  ? Get.isDarkMode
-                      ? Assets.imagesSvgPeriodicTableLargeDark
-                      : Assets.imagesSvgPeriodicTableLarge
-                  : Get.isDarkMode
-                      ? Assets.imagesSvgPeriodicTableArDark
-                      : Assets.imagesSvgPeriodicTableAr,
-              // colorFilter: const ColorFilter.mode(
-              //   Colors.transparent,
-              //   BlendMode.colorDodge,
-              // ),
+      builder: (controller) => SafeArea(
+        child: Stack(
+          children: [
+            BackgroundGradient(
+              gradient: Get.isDarkMode
+                  ? ColorsManager.darkHomeGradient
+                  : ColorsManager.lightHomeGradient,
             ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: TextButton(
-              child: Text(
-                controller.isEnglish ? 'AR' : 'EN',
-                style: Theme.of(context).textTheme.displaySmall,
+            InteractiveViewer(
+              maxScale: 8,
+              minScale: 1,
+              child: SvgPicture.asset(
+                controller.isEnglish
+                    ? Get.isDarkMode
+                        ? Assets.imagesSvgPeriodicTableLargeDark
+                        : Assets.imagesSvgPeriodicTableLarge
+                    : Get.isDarkMode
+                        ? Assets.imagesSvgPeriodicTableArDark
+                        : Assets.imagesSvgPeriodicTableAr,
               ),
-              onPressed: () {
-                controller.changeLang();
-              },
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                child: Text(
+                  controller.isEnglish ? 'AR' : 'EN',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+                onPressed: () {
+                  controller.changeLang();
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

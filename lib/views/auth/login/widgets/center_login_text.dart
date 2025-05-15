@@ -18,22 +18,22 @@ class CenterLoginText extends StatelessWidget {
           children: [
             Text(
               blackText,
-              style: TextStyles.inter32Bold,
+              style: TextStyles.poppins32Bold,
             ),
             Text(
               'to',
-              style: TextStyles.inter32Regular
+              style: TextStyles.poppins32Regular
                   .copyWith(color: const Color(0xffC12D2B)),
             ),
           ],
         ),
         Text(
           'explore world of',
-          style: TextStyles.inter32RegularRED,
+          style: TextStyles.poppins32RegularRED,
         ),
         Text(
           'chemistry',
-          style: TextStyles.inter32RegularRED,
+          style: TextStyles.poppins32RegularRED,
         ),
       ],
     );

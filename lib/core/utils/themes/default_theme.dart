@@ -8,7 +8,7 @@ final defaultTheme = ThemeData(
     backgroundColor: Colors.white,
     elevation: 0.0,
     titleTextStyle: TextStyle(
-      color: Colors.black,
+      color: Colors.white,
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
@@ -16,7 +16,7 @@ final defaultTheme = ThemeData(
       statusBarIconBrightness: Brightness.dark,
     ),
     iconTheme: IconThemeData(
-      color: Colors.black,
+      color: Colors.white,
       size: 32,
     ),
   ),

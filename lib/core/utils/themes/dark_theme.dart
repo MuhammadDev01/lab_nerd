@@ -8,7 +8,7 @@ final darkTheme = ThemeData(
   primaryColorLight: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20,
-    backgroundColor: Color(0xff27292a),
+    backgroundColor: ColorsManager.darkModeColor,
     elevation: 0.0,
     titleTextStyle: TextStyle(
       color: Colors.white,

@@ -10,7 +10,7 @@ import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
 import 'package:lab_nerd/views/settings/edit_profile_view.dart';
 import 'package:lab_nerd/views/home/search_elements/search_element_view.dart';
-import 'package:lab_nerd/views/exams/exams_view.dart';
+import 'package:lab_nerd/views/exam/exam_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
 import 'package:lab_nerd/views/main/main_view_adaptive.dart';
@@ -81,8 +81,8 @@ class AppRouter {
       page: () => const PeriodicTableView(),
     ),
     GetPage(
-      name: Routes.examsView,
-      page: () => const ExamsView(),
+      name: Routes.examView,
+      page: () => const ExamView(),
     ),
     GetPage(
       name: Routes.settingsView,

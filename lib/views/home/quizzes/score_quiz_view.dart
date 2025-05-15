@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
-class ResultQuizView extends StatelessWidget {
-  const ResultQuizView({super.key, required this.score});
+class ScoreQuizView extends StatelessWidget {
+  const ScoreQuizView({super.key, required this.score});
   final int score;
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class ResultQuizView extends StatelessWidget {
                   colorButton: Colors.white,
                   child: Text(
                     'Back to Home',
-                    style: TextStyles.rem20Boldd,
+                    style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
                   ),
                 ),
               ],

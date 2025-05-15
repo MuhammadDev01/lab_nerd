@@ -3,21 +3,20 @@ import 'package:lab_nerd/widgets/constant.dart';
 
 class TextStyles {
   //*** Inter ***\\
-  static TextStyle inter32Regular = const TextStyle(
+  static TextStyle poppins32Regular = const TextStyle(
     fontSize: 32,
-    fontFamily: fontInter,
+    fontFamily: fontPoppins,
     fontWeight: FontWeight.normal,
-    color: Colors.black,
   );
-  static TextStyle inter32RegularRED = const TextStyle(
+  static TextStyle poppins32RegularRED = const TextStyle(
     fontSize: 32,
-    fontFamily: fontInter,
+    fontFamily: fontPoppins,
     fontWeight: FontWeight.normal,
     color: Color(0xffC12D2B),
   );
-  static TextStyle inter32Bold = const TextStyle(
+  static TextStyle poppins32Bold = const TextStyle(
     fontSize: 32,
-    fontFamily: fontInter,
+    fontFamily: fontPoppins,
     fontWeight: FontWeight.bold,
   );
   //*** REM ***\\
