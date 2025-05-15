@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/exam/widgets/exam_timer.dart';
@@ -34,73 +35,81 @@ class _StartExamViewState extends State<StartExamView> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<QuizzesController>(
-      builder: (_) => Scaffold(
-        body: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Image.asset(
-              Assets.imagesExamBackground,
-              height: double.infinity,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            ExamTimer(),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 150.h,
-                    ),
-                    Text(
-                      controller.question.question,
-                      style: TextStyles.poppins32Bold.copyWith(
-                        color: Colors.white,
-                        fontSize: 28,
+      builder: (_) => PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) async {
+          if (!didPop) {
+            result = await showExitDialog(context);
+          }
+        },
+        child: Scaffold(
+          body: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Image.asset(
+                Assets.imagesExamBackground,
+                height: double.infinity,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              ExamTimer(),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 150.h,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(
-                      height: 100.h,
-                    ),
-                    ...controller.question.choices.map(
-                      (choice) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: DefaultButton(
-                          onPressed: () {
-                            controller.isUserAnswered
-                                ? null
-                                : controller.checkAnswer(choice);
-                          },
-                          colorButton: controller.getButtonColor(choice),
-                          child: Text(
-                            choice,
-                            style: TextStyles.rem16Bold.copyWith(
-                              color: Colors.black,
+                      Text(
+                        controller.question.question,
+                        style: TextStyles.poppins32Bold.copyWith(
+                          color: Colors.white,
+                          fontSize: 28,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 100.h,
+                      ),
+                      ...controller.question.choices.map(
+                        (choice) => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: DefaultButton(
+                            onPressed: () {
+                              controller.isUserAnswered
+                                  ? null
+                                  : controller.checkAnswer(choice);
+                            },
+                            colorButton: controller.getButtonColor(choice),
+                            child: Text(
+                              choice,
+                              style: TextStyles.rem16Bold.copyWith(
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20.h),
-                    controller.questionIndex == 50
-                        ? _finishButton()
-                        : _goToNextQuestionButton(),
-                    SizedBox(height: 40.h),
-                    Text(
-                      "Question: ${controller.questionIndex}/50",
-                      style: TextStyles.slacksideOnes20Bold.copyWith(
-                        color: Colors.white,
-                        fontSize: 30,
+                      SizedBox(height: 20.h),
+                      controller.questionIndex == 50
+                          ? _finishButton()
+                          : _goToNextQuestionButton(),
+                      SizedBox(height: 40.h),
+                      Text(
+                        "Question: ${controller.questionIndex}/50",
+                        style: TextStyles.slacksideOnes20Bold.copyWith(
+                          color: Colors.white,
+                          fontSize: 30,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -126,5 +135,26 @@ class _StartExamViewState extends State<StartExamView> {
         style: TextStyles.rem16Bold.copyWith(color: Colors.black),
       ),
     );
+  }
+
+  Future<bool> showExitDialog(BuildContext context) async {
+    return await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text("Are you sure?"),
+            content: Text("Do you want to exit the exam?"),
+            actions: [
+              TextButton(
+                onPressed: () => Get.back(),
+                child: Text("No"),
+              ),
+              TextButton(
+                onPressed: () => Get.offNamed(Routes.mainView),
+                child: Text("Yes"),
+              ),
+            ],
+          ),
+        ) ??
+        false;
   }
 }

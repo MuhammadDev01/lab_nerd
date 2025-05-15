@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/exam/widgets/congratulations_view.dart';
 import 'package:lab_nerd/views/exam/widgets/normal_score.dart';
 
@@ -35,16 +36,6 @@ class _ScoreExamViewState extends State<ScoreExamView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Score Exam',
-          style: TextStyle(
-            letterSpacing: 1,
-            fontSize: 28,
-          ),
-        ),
-        centerTitle: true,
-      ),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -60,6 +51,12 @@ class _ScoreExamViewState extends State<ScoreExamView> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                'Score Exam',
+                style: TextStyles.rem26Bold.copyWith(
+                  letterSpacing: 3,
+                ),
+              ),
               percentage == '100'
                   ? CongratulationsView(percentage: percentage)
                   : NormalScoreView(percentage: int.parse(percentage)),
