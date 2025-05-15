@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class ShareAppWidget extends StatelessWidget {
-  const ShareAppWidget({super.key});
+class ShareApp extends StatelessWidget {
+  const ShareApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ShareAppWidget extends StatelessWidget {
               width: 20,
             ),
             Text(
-              "Share our App",
+              "Share the app",
               style: TextStyles.rem20Boldd,
             ),
           ],

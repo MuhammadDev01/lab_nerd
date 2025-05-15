@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 import 'package:lab_nerd/widgets/app_text_form_field.dart';
@@ -32,10 +33,10 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: ColorsManager.forgotpasswordgradient,
-        ),
+      body: BackgroundGradient(
+        gradient: Get.isDarkMode
+            ? ColorsManager.darkHomeGradient
+            : ColorsManager.lightHomeGradient,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
           child: Column(

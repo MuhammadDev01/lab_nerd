@@ -1,45 +1,77 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/settings/about_us_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class AboutUsWidget extends StatelessWidget {
-  const AboutUsWidget({super.key});
+class ContactUs extends StatelessWidget {
+  const ContactUs({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<Maincontroller>(
-      builder: (controller) => InkWell(
-        onTap: () {
-          Get.to(() => const AboutUsView());
-        },
-        child: Material(
-          color: Colors.transparent,
-          child: Row(
+    return InkWell(
+      onTap: () => showContactSheet(context),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(6),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.brown,
+            ),
+            child: const Icon(
+              Icons.call,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Text(
+            "Contact Us",
+            style: TextStyles.rem20Boldd,
+          ),
+        ],
+      ),
+    );
+  }
+
+  void showContactSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Wrap(
             children: [
-              Container(
-                padding: const EdgeInsets.all(6),
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.brown,
-                ),
-                child: const Icon(
-                  Icons.info,
-                  color: Colors.white,
-                ),
+              Center(
+                child: Text("📞 Contact Us",
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
-              const SizedBox(
-                width: 20,
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.email),
+                title: const Text("Send Email"),
+                onTap: () =>
+                    launchUrl(Uri.parse("muhammadbenkhaled@gmail.com")),
               ),
-              Text(
-                "About Us",
-                style: TextStyles.rem20Boldd,
+              ListTile(
+                leading: const Icon(Icons.phone),
+                title: const Text("Call Us"),
+                onTap: () => launchUrl(Uri.parse("tel:+201029036889")),
+              ),
+              ListTile(
+                leading: const Icon(Icons.message),
+                title: const Text("Chat on WhatsApp"),
+                onTap: () =>
+                    launchUrl(Uri.parse("https://wa.me/+201029036889")),
               ),
             ],
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
