@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
@@ -55,5 +56,61 @@ class SettingsController extends GetxController {
     }
     isLoading(false);
     return null;
+  }
+
+  //*************CHANGE PASSWORD**************\\
+  TextEditingController currentPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  Future<void> changeUserPassword(
+      String currentPassword, String newPassword) async {
+    isLoading(true);
+    if (mainController.user != null) {
+      try {
+        // 1️⃣ الحصول على بيانات تسجيل الدخول
+        AuthCredential credential = EmailAuthProvider.credential(
+          email: mainController.user!.email!,
+          password: currentPassword, // إدخال كلمة المرور الحالية
+        );
+
+        // 2️⃣ إعادة مصادقة المستخدم باستخدام كلمة المرور الحالية
+        await mainController.user!.reauthenticateWithCredential(credential);
+
+        // 3️⃣ إذا كانت صحيحة، يتم تحديث كلمة المرور
+        await mainController.user!.updatePassword(newPassword);
+
+        Get.back();
+        appSnackbar(
+          title: 'Success',
+          message: '',
+          backgroundColor: ColorsManager.successColor,
+        );
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'invalid-credential') {
+          appSnackbar(
+            title: 'Failed',
+            message: 'Current password is incorrect',
+            backgroundColor: ColorsManager.errorColor,
+          );
+        }
+        if (e.code == 'weak-password') {
+          appSnackbar(
+            title: 'Failed',
+            message: 'New password is weak',
+            backgroundColor: ColorsManager.errorColor,
+          );
+        }
+      } catch (e) {
+        appSnackbar(
+          title: 'Failed',
+          message: e.toString(),
+          backgroundColor: ColorsManager.errorColor,
+        );
+      }
+    }
+    update();
+    isLoading(false);
   }
 }

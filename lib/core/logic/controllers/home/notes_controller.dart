@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -80,7 +78,6 @@ class NotesController extends GetxController {
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await notesRef.get();
     notes = snapshot.docs.map((doc) => NoteModel.fromJson(doc.data())).toList();
-    log("Notes Fetched ✅");
     update();
   }
 

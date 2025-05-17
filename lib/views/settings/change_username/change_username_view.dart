@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
+import 'package:lab_nerd/views/settings/change_username/widgets/change_username_appbar.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 import 'package:lab_nerd/widgets/app_text_form_field.dart';
@@ -39,24 +39,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
           child: Column(
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.back(),
-                    icon: const Icon(
-                      FontAwesomeIcons.arrowLeft,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'Change Username',
-                    style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
-                  ),
-                ],
-              ),
+              ChangeUsernameAppbar(),
               const SizedBox(
                 height: 50,
               ),
@@ -75,6 +58,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
                         hintText: 'username',
                         controller: nameController,
                         textInputType: TextInputType.name,
+                        validateMessage: 'Username Required',
                         textStyle:
                             TextStyles.rem16Bold.copyWith(color: Colors.black),
                       ),
