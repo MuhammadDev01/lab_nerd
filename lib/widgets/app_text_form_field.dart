@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
@@ -66,6 +67,7 @@ class AppTextFormField extends StatelessWidget {
           child: SizedBox(
             width: width ?? 650,
             child: TextFormField(
+              cursorErrorColor: Colors.black,
               onFieldSubmitted: onSubmitted,
               style: const TextStyle(
                 color: Colors.black,
@@ -87,6 +89,9 @@ class AppTextFormField extends StatelessWidget {
               decoration: InputDecoration(
                 helperStyle: TextStyle(
                   color: Colors.black,
+                ),
+                errorStyle: TextStyle(
+                  color: ColorsManager.errorColor,
                 ),
                 counterText: '',
                 prefixIconColor: cursorAndPrefixIconColor,

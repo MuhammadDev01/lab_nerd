@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 
 class PeriodicTableView extends StatelessWidget {
@@ -11,41 +12,35 @@ class PeriodicTableView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(
-      builder: (controller) => SafeArea(
-        child: Stack(
-          children: [
-            BackgroundGradient(
-              gradient: Get.isDarkMode
-                  ? ColorsManager.darkHomeGradient
-                  : ColorsManager.lightHomeGradient,
+      builder: (controller) => Stack(
+        children: [
+          BackgroundGradient(
+            gradient: Get.isDarkMode
+                ? ColorsManager.darkHomeGradient
+                : ColorsManager.lightHomeGradient,
+          ),
+          InteractiveViewer(
+            maxScale: 8,
+            minScale: 1,
+            child: SvgPicture.asset(
+              controller.isEnglish
+                  ? Assets.imagesSvgPeriodicTableLarge
+                  : Assets.imagesSvgPeriodicTableAr,
             ),
-            InteractiveViewer(
-              maxScale: 8,
-              minScale: 1,
-              child: SvgPicture.asset(
-                controller.isEnglish
-                    ? Get.isDarkMode
-                        ? Assets.imagesSvgPeriodicTableLargeDark
-                        : Assets.imagesSvgPeriodicTableLarge
-                    : Get.isDarkMode
-                        ? Assets.imagesSvgPeriodicTableArDark
-                        : Assets.imagesSvgPeriodicTableAr,
-              ),
-            ),
-            Align(
+          ),
+          SafeArea(
+            child: Align(
               alignment: Alignment.topRight,
               child: TextButton(
                 child: Text(
-                  controller.isEnglish ? 'AR' : 'EN',
-                  style: Theme.of(context).textTheme.displaySmall,
+                  controller.isEnglish ? 'EN' : 'AR',
+                  style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
                 ),
-                onPressed: () {
-                  controller.changeLang();
-                },
+                onPressed: () => controller.changeLang(),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

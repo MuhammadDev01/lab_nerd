@@ -8,7 +8,7 @@ import 'package:lab_nerd/views/home/my_notes/my_notes_view.dart';
 import 'package:lab_nerd/views/home/quizzes/quizzes_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
 import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
-import 'package:lab_nerd/views/settings/edit_profile_view.dart';
+import 'package:lab_nerd/views/settings/change_username/change_username_view.dart';
 import 'package:lab_nerd/views/home/search_elements/search_element_view.dart';
 import 'package:lab_nerd/views/exam/exam_view.dart';
 import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
@@ -89,9 +89,8 @@ class AppRouter {
       page: () => const SettingsView(),
     ),
     GetPage(
-      name: Routes.editProfileView,
-      page: () => const EditProfileView(),
-      binding: MainBinding(),
+      name: Routes.changeUsername,
+      page: () => const ChangeUsernameView(),
     ),
   ];
 }

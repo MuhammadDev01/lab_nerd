@@ -5,8 +5,8 @@ import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class DarkModeWidget extends StatelessWidget {
-  const DarkModeWidget({super.key});
+class DarkModeButton extends StatelessWidget {
+  const DarkModeButton({super.key});
 
   @override
   Widget build(BuildContext context) {

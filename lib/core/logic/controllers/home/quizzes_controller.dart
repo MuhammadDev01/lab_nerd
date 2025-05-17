@@ -52,7 +52,7 @@ class QuizzesController extends GetxController {
       chemistryReactionQuestions.add(QuestionModel.fromJson(question));
     }
     allQuestions.addAll(chemistryReactionQuestions);
-    debugPrint("Questions Fetched ✅");
+    //debugPrint("Questions Fetched ✅");
     update();
   }
 
@@ -83,12 +83,12 @@ class QuizzesController extends GetxController {
 
   void generateQuestion() {
     isUserAnswered = false;
-    debugPrint('${currentQuestions.length}✅');
+    //debugPrint('${currentQuestions.length}✅');
     var index = Random().nextInt(currentQuestions.length);
-    debugPrint('${currentQuestions.length}✅');
+    //debugPrint('${currentQuestions.length}✅');
     if (!answeredQuestions.contains(currentQuestions[index].id)) {
       answeredQuestions.add(currentQuestions[index].id);
-      debugPrint('${answeredQuestions.toString()}✅');
+      //debugPrint('${answeredQuestions.toString()}✅');
 
       question = currentQuestions[index];
       question.choices.shuffle();

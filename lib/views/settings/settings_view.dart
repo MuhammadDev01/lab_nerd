@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
-import 'package:lab_nerd/views/settings/widget/about_us_widget.dart';
-import 'package:lab_nerd/views/settings/change_username_email_view.dart';
-import 'package:lab_nerd/views/settings/widget/change_password_widget.dart';
-import 'package:lab_nerd/views/settings/widget/dark_mode_widget.dart';
-import 'package:lab_nerd/views/settings/widget/logout_button.dart';
-import 'package:lab_nerd/views/settings/widget/user_details_layout.dart';
-import 'package:lab_nerd/views/settings/widget/share_app_widget.dart';
+import 'package:lab_nerd/views/settings/contact_us/about_us_button.dart';
+import 'package:lab_nerd/views/settings/change_username/change_username_button.dart';
+import 'package:lab_nerd/views/settings/change_password/change_password_button.dart';
+import 'package:lab_nerd/views/settings/dark_mode/dark_mode_button.dart';
+import 'package:lab_nerd/views/settings/logout/logout_button.dart';
+import 'package:lab_nerd/views/settings/user_details/user_details_adaptive.dart';
+import 'package:lab_nerd/views/settings/share_app/share_app_button.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -18,19 +18,19 @@ class SettingsView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            UserDetailsLayout(),
+            UserDetailsBuilder(),
             appDivider(),
-            DarkModeWidget(),
+            DarkModeButton(),
             appDivider(),
-            ChangeUsernameEmailWidget(),
+            ChangeUsernameButton(),
             appDivider(),
-            ChangePasswordWidget(),
+            ChangePasswordButton(),
             appDivider(),
             LogoutButton(),
             appDivider(),
-            ShareApp(),
+            ShareAppButton(),
             appDivider(),
-            ContactUs(),
+            ContactUsButton(),
           ],
         ),
       ),

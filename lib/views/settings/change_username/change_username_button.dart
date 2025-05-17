@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class ShareApp extends StatelessWidget {
-  const ShareApp({super.key});
+class ChangeUsernameButton extends StatelessWidget {
+  const ChangeUsernameButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(
-      builder: (controller) => Material(
-        color: Colors.transparent,
+      builder: (controller) => InkWell(
+        onTap: () {
+          Get.toNamed(Routes.changeUsername);
+        },
+        borderRadius: BorderRadius.circular(6),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(6),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue,
+                color: Colors.orange[900],
               ),
               child: const Icon(
-                Icons.share,
+                Icons.person,
                 color: Colors.white,
               ),
             ),
@@ -28,7 +32,7 @@ class ShareApp extends StatelessWidget {
               width: 20,
             ),
             Text(
-              "Share the app",
+              "Change Username",
               style: TextStyles.rem20Boldd,
             ),
           ],

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ContactUs extends StatelessWidget {
-  const ContactUs({super.key});
+class ContactUsButton extends StatelessWidget {
+  const ContactUsButton({super.key});
 
   @override
   Widget build(BuildContext context) {

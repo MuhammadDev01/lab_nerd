@@ -8,7 +8,6 @@ import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/models/element_model.dart';
-import 'package:lab_nerd/models/exam_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
 import 'package:lab_nerd/views/exam/exam_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
@@ -47,7 +46,7 @@ class Maincontroller extends GetxController {
   //*****************SHOW PROFILE USER*****************\\
 
   final user = FirebaseAuth.instance.currentUser;
-  late ProfileUserModel userPofile;
+  static late ProfileUserModel userPofile;
   showProfileUser() {
     userPofile = ProfileUserModel(
       name: user?.displayName,
@@ -86,23 +85,6 @@ class Maincontroller extends GetxController {
     }
     return elementsList;
   }
-
-  List<ExamModel> examsList = [];
-  // List<ExamModel> getExams() {
-  //   if (examsList.isEmpty) {
-  //     DioHelper.getData(
-  //             url: '${CachedHelper.getData(key: 'url')}/api/quiz/subject')
-  //         .then((value) {
-  //       for (var element in value.data['data']) {
-  //         ExamModel model = ExamModel.fromJson(element);
-  //         examsList.add(model);
-  //       }
-  //       update();
-  //     });
-  //   }
-
-  //   return examsList;
-  // }
 
   bool isEnglish = false;
   int? examID;
