@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
+import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
 import '../login/widgets/logo_of_login.dart';
 import '../login/widgets/background_auth.dart';
 import 'widgets/signup_mobile_bottom_sheet.dart';
@@ -21,7 +21,7 @@ class SignupViewMobile extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              NerdLabWord(),
+              ScienceNerdWord(),
               SizedBox(
                 height: 20,
               ),

@@ -6,7 +6,7 @@ import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
 import 'package:lab_nerd/views/auth/login/widgets/center_login_text.dart';
 import 'package:lab_nerd/views/auth/login/widgets/login_fields_tablet.dart';
 import 'package:lab_nerd/views/auth/login/widgets/floating_action_button_login_tablet.dart';
-import 'package:lab_nerd/views/splash/widgets/nerd_lab_word.dart';
+import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
 
 class LoginViewTablet extends StatelessWidget {
   const LoginViewTablet({super.key});
@@ -29,7 +29,7 @@ class LoginViewTablet extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const NerdLabWord(),
+                const ScienceNerdWord(),
                 Expanded(
                   flex: 3,
                   child: PageView(

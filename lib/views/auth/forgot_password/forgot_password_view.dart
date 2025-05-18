@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
+import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
@@ -32,89 +31,71 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: double.infinity,
         decoration:
             BoxDecoration(gradient: ColorsManager.forgotpasswordgradient),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 36),
           child: Form(
             key: formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const CustomForgotPasswordAppbar(
-                    nameView: 'Forgot Password',
+            child: Column(
+              children: [
+                const CustomForgotPasswordAppbar(
+                  nameView: 'Forgot Password',
+                ),
+                SizedBox(
+                  height: 100.h,
+                ),
+                ForgotPasswordCircleAvatar(
+                  icon: const Icon(
+                    Icons.question_mark,
+                    size: 18,
+                    color: Colors.black,
                   ),
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.1,
-                  ),
-                  CustomForgotPasswordCircleAvatar(
-                    insideCircleAvatar: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        SvgPicture.asset(Assets.imagesSvgLock),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Container(
-                            margin: const EdgeInsets.all(28),
-                            height: 20,
-                            width: 20,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [
-                                const Color(0xCCD3B1B1),
-                                const Color(0xffD9D9D9),
-                              ]),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: const Icon(
-                              Icons.question_mark,
-                              size: 18,
-                              color: Colors.black,
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                Text(
+                  'please enter your Email Address To Receive a Verification Code',
+                  textAlign: TextAlign.center,
+                  style: TextStyles.rem14Bold,
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                AppTextFormField(
+                  helperText: 'Email',
+                  width: 650.w,
+                  controller: emailController,
+                  hintText: 'email address',
+                  textInputType: TextInputType.emailAddress,
+                  validateMessage: 'please enter your email address',
+                ),
+                SizedBox(
+                  height: 100.h,
+                ),
+                GetBuilder<ForgotPasswordController>(
+                  builder: (controller) => ForgotPasswordButton(
+                    child: controller.isLoading
+                        ? const AppLoading()
+                        : Center(
+                            child: Text(
+                              'Send',
+                              style: TextStyles.rem14Bold,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
+                    onTap: () async {
+                      if (formKey.currentState!.validate()) {
+                        await controller.sendPasswordResetEmail(
+                            emailController.text.trim());
+                      }
+                    },
                   ),
-                  const SizedBox(
-                    height: 28,
-                  ),
-                  Text(
-                    'please enter your Email Address To Receive a Verification Code',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.rem14Bold,
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  AppTextFormField(
-                    helperText: 'Email',
-                    width: 650,
-                    controller: emailController,
-                    hintText: 'email address',
-                    textInputType: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(
-                    height: 92,
-                  ),
-                  GetBuilder<LoginController>(
-                    builder: (controller) => ForgotPasswordButton(
-                      child: controller.isLoading
-                          ? const AppLoading()
-                          : Center(
-                              child: Text(
-                                'Send',
-                                style: TextStyles.rem14Bold,
-                              ),
-                            ),
-                      onTap: () async {
-                        if (formKey.currentState!.validate()) {
-                          controller.changeLoading();
-                        }
-                      },
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

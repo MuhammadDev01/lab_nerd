@@ -12,9 +12,9 @@ class ColorsManager {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [
-      Color(0xffFFB636),
-      Color(0x66FFB636),
-      Color(0xE3FFB636),
+      Color(0x7389EAFF),
+      Color(0x2BEDC807),
+      Color(0x3B850404),
     ],
   );
 

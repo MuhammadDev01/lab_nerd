@@ -52,6 +52,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                       hintText: 'username',
                       cursorAndPrefixIconColor: Colors.black,
                       textInputType: TextInputType.name,
+                      validateMessage: 'username required',
                     ),
                     const SizedBox(
                       height: 10,
@@ -62,6 +63,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                       hintText: 'email',
                       textInputType: TextInputType.emailAddress,
                       cursorAndPrefixIconColor: Colors.black,
+                      validateMessage: 'email required',
                     ),
                     const SizedBox(
                       height: 10,
@@ -77,6 +79,7 @@ class SignupMobileBottomSheet extends StatelessWidget {
                       hintText: 'password',
                       cursorAndPrefixIconColor: Colors.black,
                       textInputType: TextInputType.visiblePassword,
+                      validateMessage: 'password required',
                     ),
                     const SizedBox(
                       height: 20,
@@ -94,7 +97,9 @@ class SignupMobileBottomSheet extends StatelessWidget {
                           ? const AppLoading()
                           : Text(
                               'SIGN UP',
-                              style: TextStyles.rem14Bold,
+                              style: TextStyles.rem14Bold.copyWith(
+                                color: Colors.black,
+                              ),
                             ),
                     ),
                   ],

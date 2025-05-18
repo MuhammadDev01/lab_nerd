@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/auth/login/widgets/default_login_button.dart';
 import 'package:lab_nerd/views/auth/login/widgets/remember_me_and_forgot_password.dart';
 import '../../../../widgets/app_text_form_field.dart';
-import 'google_login_button.dart';
 
 class LoginFieldsTablet extends StatefulWidget {
   const LoginFieldsTablet({super.key});
@@ -61,9 +59,9 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
               const SizedBox(
                 height: 16,
               ),
-              controller.emailController.text.isEmpty
-                  ? const GoogleLoginButton()
-                  : DefaultLoginButton(),
+              // controller.emailController.text.isEmpty
+              //     ? const GoogleLogin()
+              //     : DefaultLogin(),
               const SizedBox(
                 height: 6,
               ),

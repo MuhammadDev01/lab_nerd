@@ -1,22 +1,20 @@
 import 'dart:async';
-import 'dart:developer';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
-import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/repos/login_repo.dart';
 
 class LoginController extends GetxController {
+  final LoginRepo _loginRepo = GetIt.instance<LoginRepo>();
+
   @override
   void onInit() {
-    Get.delete<SplashController>();
-
     moveEyes();
     super.onInit();
   }
@@ -28,10 +26,11 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
+//**************DEFAULT**************\\
+
   bool isVisibilty = true;
   IconData visibilityPasswordIcon = Icons.visibility_off;
-
-  bool isLoading = false;
+  RxBool isLoading = false.obs;
   bool check = false;
 
   List<String> eyesList = const [
@@ -73,11 +72,6 @@ class LoginController extends GetxController {
     update();
   }
 
-  void changeLoading() {
-    isLoading = !isLoading;
-    update();
-  }
-
 //**For Tablet**\\
   final PageController pageController = PageController();
   int currentPage = 0;
@@ -96,54 +90,58 @@ class LoginController extends GetxController {
     update();
   }
 
-//***SIGN IN ***\\
+//******LOGIN******\\
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  void Function(String)? onChange(String? value) {
-    emailController.text = value!;
+  onChange(String value) {
+    emailController.text = value;
     update();
-    return null;
   }
 
 //**Email and password
-  Future<void> loginWithEmailAndPassword() async {
-    String emailAddress = emailController.text.trim();
+  Future<void> login() async {
+    String email = emailController.text.trim();
     String password = passwordController.text.trim();
-    await LoginRepo.loginWithEmail(email: emailAddress, password: password)
-        .then((value) {
-      if (value == 'Success') {
-        final userToken = FirebaseAuth.instance.currentUser?.uid;
-        log('userToken : ${userToken.toString()}');
-        CacheHelper.authBox.put(kuserToken, userToken).then((_) {
-          Get.offNamed(Routes.mainView);
-        });
-      } else {
-        appSnackbar(
-          title: 'Failed',
-          message: value,
-          backgroundColor: ColorsManager.errorColor,
+    isLoading(true);
+    if (emailController.text.isEmpty) {
+      //await loginWithGoogle();
+    } else {
+      if (formKey.currentState!.validate()) {
+        final response = await _loginRepo.loginWithEmailAndPassword(
+            email: email, password: password);
+        response.fold(
+          (errorMessage) => appSnackbar(
+              title: "Failed",
+              message: errorMessage,
+              backgroundColor: ColorsManager.errorColor),
+          (user) {
+            CacheHelper.authBox.put(kuserToken, user.uid).then((_) {
+              Get.offNamed(Routes.mainView);
+            });
+          },
         );
       }
-    });
+    }
+    isLoading(false);
     update();
   }
 
 //**Google
-  Future<void> loginWithGoogle() async {
-    await LoginRepo.loginWithFirebaseGoogle().then((value) async {
-      final userID = value.user?.uid;
-      await CacheHelper.authBox.put(kuserToken, userID).then((_) {
-        Get.offNamed(Routes.mainView);
-      });
-    }).catchError((error) {
-      appSnackbar(
-        title: 'Failed',
-        message: 'Login Failed Please Try Again',
-        backgroundColor: ColorsManager.errorColor,
-      );
-    });
-    update();
-  }
+  // Future<void> loginWithGoogle() async {
+  //   await LoginRepo.loginWithFirebaseGoogle().then((value) async {
+  //     final userID = value.user?.uid;
+  //     await CacheHelper.authBox.put(kuserToken, userID).then((_) {
+  //       Get.offNamed(Routes.mainView);
+  //     });
+  //   }).catchError((error) {
+  //     appSnackbar(
+  //       title: 'Failed',
+  //       message: 'Login Failed Please Try Again',
+  //       backgroundColor: ColorsManager.errorColor,
+  //     );
+  //   });
+  //   update();
+  // }
 }

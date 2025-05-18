@@ -6,7 +6,6 @@ import 'package:lab_nerd/views/main/widgets/main_bottom_navigation_bar.dart';
 class MainViewMobile extends StatelessWidget {
   const MainViewMobile({super.key});
 
-  final double sizeIcons = 30;
   @override
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(

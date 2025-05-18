@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -46,26 +47,26 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBMMULprgMsPCsL5LBdcAuvsCCukmUdZOM',
-    appId: '1:1078406388474:android:f012c2558b35273161c743',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.get("FIREBASE_API_KEY_ANDROID"),
+    appId: dotenv.get("FIREBASE_APP_ID_ANDROID"),
     messagingSenderId: '1078406388474',
     projectId: 'lab-nerd01',
     storageBucket: 'lab-nerd01.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyClqQ-pj-k9KaC-GEeK1lKFDLFUwjUiCkg',
-    appId: '1:1078406388474:ios:d292909fa877787761c743',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.get("FIREBASE_API_KEY_IOS"),
+    appId: dotenv.get("FIREBASE_APP_ID_IOS"),
     messagingSenderId: '1078406388474',
     projectId: 'lab-nerd01',
     storageBucket: 'lab-nerd01.firebasestorage.app',
     iosBundleId: 'com.example.labNerd',
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAip_2efh4UlyOEgxZXHMh0iHGu8dpnqa0',
-    appId: '1:1078406388474:web:b79654a9575d799461c743',
+  static FirebaseOptions windows = FirebaseOptions(
+    apiKey: dotenv.get("FIREBASE_API_KEY_WINDOWS"),
+    appId: dotenv.get("FIREBASE_APP_ID_WINDOWS"),
     messagingSenderId: '1078406388474',
     projectId: 'lab-nerd01',
     authDomain: 'lab-nerd01.firebaseapp.com',

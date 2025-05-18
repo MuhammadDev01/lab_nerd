@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/models/onboarding_item_model.dart';
@@ -61,8 +61,7 @@ class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
   }
 
   void _saveInCacheAndGoToLogin() {
-    var authBox = Hive.box(kAuthBox);
-    authBox.put(kOnBoarding, true).then((_) {
+    CacheHelper.authBox.put(kOnBoarding, true).then((_) {
       Get.offNamed(Routes.loginView);
     });
   }

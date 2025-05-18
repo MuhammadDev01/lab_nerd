@@ -39,7 +39,7 @@ class _SearchElementItemBodyState extends State<SearchElementItemBody>
     return Stack(
       children: [
         Image.asset(
-          Assets.imagesSearchInTable,
+          Assets.imagesSearchAnElement,
           height: double.infinity,
           width: double.infinity,
           fit: BoxFit.cover,

@@ -12,6 +12,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<LoginController>();
     return SizedBox(
       width: 650,
       child: Row(
@@ -23,18 +24,14 @@ class RememberMeAndForgotPassword extends StatelessWidget {
           const SizedBox(
             width: 5,
           ),
-          GetBuilder<LoginController>(
-            builder: (controller) => InkWell(
-              onTap: () {
-                controller.rememberMeCheck();
-              },
-              child: Icon(
-                size: 15,
-                color: Colors.black,
-                controller.check
-                    ? FontAwesomeIcons.circleCheck
-                    : FontAwesomeIcons.circle,
-              ),
+          InkWell(
+            onTap: () => controller.rememberMeCheck(),
+            child: Icon(
+              size: 15,
+              color: Colors.black,
+              controller.check
+                  ? FontAwesomeIcons.circleCheck
+                  : FontAwesomeIcons.circle,
             ),
           ),
           Spacer(),

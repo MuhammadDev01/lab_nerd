@@ -20,8 +20,6 @@ import 'package:lab_nerd/views/home/home_view.dart';
 import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {
-  static const initalView = Routes.splashView;
-
   //*get pages
   static final List<GetPage<dynamic>> routes = [
     //** Splash **\\

@@ -13,6 +13,7 @@ class SettingsController extends GetxController {
     try {
       await FirebaseAuth.instance.signOut();
       await CacheHelper.authBox.clear();
+      await CacheHelper.userBox.clear();
       Get.offAllNamed(Routes.loginView);
     } catch (e) {
       appSnackbar(

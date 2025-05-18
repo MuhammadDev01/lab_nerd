@@ -24,7 +24,7 @@ class PeriodicTableView extends StatelessWidget {
             minScale: 1,
             child: SvgPicture.asset(
               controller.isEnglish
-                  ? Assets.imagesSvgPeriodicTableLarge
+                  ? Assets.imagesSvgPeriodicTableEn
                   : Assets.imagesSvgPeriodicTableAr,
             ),
           ),

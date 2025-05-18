@@ -12,14 +12,14 @@ class HomeAnimatedLogo extends StatelessWidget {
   final size = 14;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeController>(
-      builder: (controller) => Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          LogoWithoutEyes(
-            height: 40.h,
-          ),
-          Padding(
+    return Stack(
+      alignment: AlignmentDirectional.center,
+      children: [
+        LogoWithoutEyes(
+          height: 40.h,
+        ),
+        GetBuilder<HomeController>(
+          builder: (controller) => Padding(
             padding: const EdgeInsets.only(top: 14),
             child: Row(
               children: [
@@ -39,8 +39,8 @@ class HomeAnimatedLogo extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

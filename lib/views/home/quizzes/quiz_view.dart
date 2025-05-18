@@ -36,7 +36,7 @@ class _QuizViewState extends State<QuizView> {
       body: Stack(
         children: [
           Image.asset(
-            Assets.imagesQuizViewBackround,
+            Assets.imagesQuizBackground,
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.cover,

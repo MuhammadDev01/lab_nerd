@@ -36,7 +36,7 @@ class AppTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType textInputType;
   final String hintText;
-  final IconButton? suffixIcon;
+  final Widget? suffixIcon;
   final void Function(String)? onChange;
   final void Function(String?)? onSaved;
   final double? width;
