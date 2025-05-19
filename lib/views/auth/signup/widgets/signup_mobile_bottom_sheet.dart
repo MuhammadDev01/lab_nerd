@@ -87,13 +87,11 @@ class SignupMobileBottomSheet extends StatelessWidget {
                     DefaultButton(
                       onPressed: () async {
                         if (controller.formKey.currentState!.validate()) {
-                          controller.changeLoading();
-                          await controller.signUpWithEmailAndPassword();
-                          controller.changeLoading();
+                          await controller.signUp();
                         }
                       },
                       colorButton: ColorsManager.greenWhite,
-                      child: controller.isLoading
+                      child: controller.isLoading.value
                           ? const AppLoading()
                           : Text(
                               'SIGN UP',

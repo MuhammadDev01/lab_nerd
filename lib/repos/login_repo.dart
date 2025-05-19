@@ -1,36 +1,33 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginRepo {
-  String _errorMessage = '';
 //**Login With Email and Password**\\
-  Future<Either<String, User>> loginWithEmailAndPassword({
+  static Future<Either<String, User>> loginWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      )
-          .then((userCredential) {
-        return Right(userCredential.user!);
-      });
+      final userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return Right(userCredential.user!);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        _errorMessage = 'Account Not Found, Signup First';
+        return Left("Account Not Found, Signup First");
       } else if (e.code == 'wrong-password') {
-        _errorMessage = 'Wrong Password, Try Again';
+        return Left("Wrong Password, Try Again");
       } else if (e.code == 'invalid-credential') {
-        _errorMessage = 'Email or Password is incorrect';
+        return Left("Email or Password is incorrect");
       } else {
-        _errorMessage = e.code;
+        log('Error: ${e.code}');
+        return Left("Error: ${e.code}");
       }
     } catch (e) {
-      _errorMessage = e.toString();
+      log('Error: ${e.toString()}');
+      return Left("Error: ${e.toString()}");
     }
-    return Left(_errorMessage);
   }
 
   //  Future<UserCredential> loginWithFirebaseGoogle() async {

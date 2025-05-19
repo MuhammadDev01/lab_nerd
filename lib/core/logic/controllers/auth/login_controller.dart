@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_it/get_it.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
@@ -11,8 +11,6 @@ import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/repos/login_repo.dart';
 
 class LoginController extends GetxController {
-  final LoginRepo _loginRepo = GetIt.instance<LoginRepo>();
-
   @override
   void onInit() {
     moveEyes();
@@ -109,17 +107,19 @@ class LoginController extends GetxController {
       //await loginWithGoogle();
     } else {
       if (formKey.currentState!.validate()) {
-        final response = await _loginRepo.loginWithEmailAndPassword(
+        log('Email: $email, Password: $password');
+        final response = await LoginRepo.loginWithEmailAndPassword(
             email: email, password: password);
         response.fold(
-          (errorMessage) => appSnackbar(
-              title: "Failed",
-              message: errorMessage,
-              backgroundColor: ColorsManager.errorColor),
-          (user) {
-            CacheHelper.authBox.put(kuserToken, user.uid).then((_) {
-              Get.offNamed(Routes.mainView);
-            });
+          (errorMessage) {
+            appSnackbar(
+                title: "Failed",
+                message: errorMessage,
+                backgroundColor: ColorsManager.errorColor);
+          },
+          (user) async {
+            await CacheHelper.authBox.put(kuserToken, user.uid);
+            Get.offAllNamed(Routes.mainView);
           },
         );
       }

@@ -35,9 +35,8 @@ class DarkModeButton extends StatelessWidget {
           Switch(
             activeColor: Colors.blue[700],
             activeTrackColor: Colors.grey,
-            //!!Todo
-            value: CacheHelper.userBox.get(kDarkMode) ?? false,
-            onChanged: (_) => controller.switchDarkMode(),
+            value: CacheHelper.userBox.get(kDarkMode),
+            onChanged: (_) => controller.changeTheme(),
           ),
         ],
       ),

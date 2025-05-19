@@ -21,7 +21,7 @@ class LogoutButton extends StatelessWidget {
             cancelTextColor: Get.isDarkMode ? Colors.white : Colors.black,
             textConfirm: " YES ",
             confirmTextColor: Colors.white,
-            onConfirm: () => controller.signoutFromApp(),
+            onConfirm: () async => await controller.signoutFromApp(),
             buttonColor: Get.isDarkMode ? Colors.blueGrey : Colors.blue[600],
           );
         },

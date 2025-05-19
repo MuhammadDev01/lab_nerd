@@ -1,26 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/repos/sign_up_repo.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class SignUpController extends GetxController {
+  final SignUpRepo _signUpRepo;
+
+  SignUpController(this._signUpRepo);
   bool isVisibilty = true;
   IconData visibilityPassword = Icons.visibility_off;
-  bool isLoading = false;
+  RxBool isLoading = false.obs;
 
   void visibilty() {
     isVisibilty = !isVisibilty;
     visibilityPassword = isVisibilty ? Icons.visibility_off : Icons.visibility;
-    update();
-  }
-
-  void changeLoading() {
-    isLoading = !isLoading;
     update();
   }
 
@@ -37,25 +35,29 @@ class SignUpController extends GetxController {
   var passwordController = TextEditingController();
   var emailController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
-  Future<void> signUpWithEmailAndPassword() async {
+  Future<void> signUp() async {
     String username = usernameController.text.trim();
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
-    await SignUpRepo.signUp(
-            email: email, password: password, username: username)
-        .then((value) {
-      if (value == 'Success') {
-        final userToken = FirebaseAuth.instance.currentUser?.uid;
-        CacheHelper.authBox.put(kuserToken, userToken).then((_) {
-          Get.offNamed(Routes.mainView);
-        });
-      } else {
-        appSnackbar(
-          title: 'Failed',
-          message: value,
-          backgroundColor: ColorsManager.errorColor,
-        );
-      }
+    isLoading(true);
+    final response = await _signUpRepo.signUp(
+      email: email,
+      password: password,
+      username: username,
+    );
+
+    response.fold(
+        (errorMessage) => appSnackbar(
+            title: "Failed",
+            message: errorMessage,
+            backgroundColor: ColorsManager.errorColor), (user) async {
+      final userToken = FirebaseAuth.instance.currentUser?.uid;
+      CacheHelper.authBox.put(kuserToken, userToken).then((_) {
+        Get.offAllNamed(Routes.mainView);
+      });
     });
+
+    isLoading(false);
+    update();
   }
 }

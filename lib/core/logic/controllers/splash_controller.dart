@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -29,6 +30,7 @@ class SplashController extends GetxController {
   ];
 
   moveEyes() {
+    log(CacheHelper.userBox.get(kDarkMode).toString());
     _timer = Timer.periodic(const Duration(milliseconds: 150), (Timer timer) {
       if (currentIndex < splashEyes.length - 1) {
         currentIndex++;

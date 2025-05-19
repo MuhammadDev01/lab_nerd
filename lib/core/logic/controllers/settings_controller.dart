@@ -6,14 +6,16 @@ import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class SettingsController extends GetxController {
+  final Maincontroller _maincontroller = Get.find<Maincontroller>();
   //*************SIGN OUT**************\\
   Future<void> signoutFromApp() async {
     try {
       await FirebaseAuth.instance.signOut();
-      await CacheHelper.authBox.clear();
-      await CacheHelper.userBox.clear();
+      await CacheHelper.authBox.delete(kuserToken);
+      await _maincontroller.changeTheme();
       Get.offAllNamed(Routes.loginView);
     } catch (e) {
       appSnackbar(

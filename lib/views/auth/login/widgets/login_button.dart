@@ -15,7 +15,7 @@ class LoginButton extends StatelessWidget {
     return GetBuilder<LoginController>(
       builder: (controller) => DefaultButton(
         colorButton: ColorsManager.greenWhite,
-        onPressed: () => controller.login(),
+        onPressed: () async => await controller.login(),
         child: controller.isLoading.value
             ? const AppLoading()
             : controller.emailController.text.isEmpty

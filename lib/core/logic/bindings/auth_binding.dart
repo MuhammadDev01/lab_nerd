@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/sign_up_controller.dart';
+import 'package:lab_nerd/repos/sign_up_repo.dart';
 
 class AuthBinding extends Bindings {
   @override
@@ -11,7 +12,7 @@ class AuthBinding extends Bindings {
       fenix: true,
     );
     Get.lazyPut(
-      () => SignUpController(),
+      () => SignUpController(SignUpRepo()),
       fenix: true,
     );
     Get.lazyPut(

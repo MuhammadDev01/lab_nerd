@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -56,19 +56,23 @@ class Maincontroller extends GetxController {
   }
 
   //*****************DARK MODE*****************\\
-  bool isDark = false;
+  late bool isDark;
   Color colorDarkLight =
       CacheHelper.userBox.get(kDarkMode) ? Colors.white : Colors.black;
   Color colorBottomActive = CacheHelper.userBox.get(kDarkMode)
       ? ColorsManager.greenWhite
       : Color(0xff2896E8);
-  void switchDarkMode() {
-    isDark = !isDark;
-    colorDarkLight = isDark ? Colors.white : Colors.black;
-    colorBottomActive = isDark ? ColorsManager.greenWhite : Color(0xff2896E8);
-    CacheHelper.userBox.put(kDarkMode, isDark).then((_) {
-      Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
+  Future<void> changeTheme() async {
+    isDark = CacheHelper.userBox.get(kDarkMode);
+    await CacheHelper.userBox.put(kDarkMode, !isDark).then((_) {
+      isDark = CacheHelper.userBox.get(kDarkMode);
+      colorDarkLight = isDark ? Colors.white : Colors.black;
+      colorBottomActive = isDark ? ColorsManager.greenWhite : Color(0xff2896E8);
+      Get.changeThemeMode(CacheHelper.userBox.get(kDarkMode)
+          ? ThemeMode.dark
+          : ThemeMode.light);
     });
+    log(CacheHelper.userBox.get(kDarkMode).toString());
     update();
   }
 

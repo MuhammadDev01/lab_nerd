@@ -18,7 +18,7 @@ class CenterLoginText extends StatelessWidget {
           children: [
             Text(
               blackText,
-              style: TextStyles.poppins32Bold,
+              style: TextStyles.poppins32Bold.copyWith(color: Colors.black),
             ),
             Text(
               'to',

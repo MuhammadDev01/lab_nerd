@@ -8,6 +8,8 @@ class Assets {
 
   static const String imagesExamBackground = "assets/images/exam_background.jpeg";
 
+  static const String imagesLogo = "assets/images/logo.png";
+
   static const String imagesMyNote = "assets/images/my_note.png";
 
   static const String imagesOnbaording1 = "assets/images/onbaording1.gif";
@@ -51,6 +53,8 @@ class Assets {
   static const String imagesSvgPeriodicTableEn = "assets/images/svg/Periodic_table_en.svg";
 
   static const String imagesSvgPeriodicTableIcon = "assets/images/svg/periodic_table_icon.svg";
+
+  static const String imagesSvgResult = "assets/images/svg/result.svg";
 
   static const String imagesSvgRightEye = "assets/images/svg/right_eye.svg";
 
