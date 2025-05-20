@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../login/widgets/logo_of_auth.dart';
-import '../login/widgets/background_auth.dart';
+import '../widgets/logo_of_auth.dart';
+import '../widgets/background_auth.dart';
 import 'widgets/signup_tablet_fields.dart';
 
 class SignUpViewTablet extends StatelessWidget {

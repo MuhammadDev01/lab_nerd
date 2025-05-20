@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/signup/signup_view_tablet.dart';
 
-class CustomForgotPasswordAppbar extends StatelessWidget {
-  const CustomForgotPasswordAppbar({super.key, required this.nameView});
+class ForgotPasswordAppbar extends StatelessWidget {
+  const ForgotPasswordAppbar({super.key, required this.nameView});
   final String nameView;
   @override
   Widget build(BuildContext context) {

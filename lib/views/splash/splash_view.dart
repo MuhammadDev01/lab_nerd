@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
+import 'package:lab_nerd/views/auth/widgets/background_auth.dart';
 import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
 import 'package:lab_nerd/views/splash/widgets/splash_logo.dart';
 

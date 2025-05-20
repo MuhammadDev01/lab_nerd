@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
-import 'widgets/logo_of_auth.dart';
-import 'widgets/background_auth.dart';
+import '../widgets/logo_of_auth.dart';
+import '../widgets/background_auth.dart';
 import 'widgets/center_login_text.dart';
 import 'widgets/swipe_up_arrow.dart';
 import 'widgets/login_bottom_sheet.dart';

@@ -7,7 +7,7 @@ import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/widgets/login_button.dart';
 import 'package:lab_nerd/views/auth/login/widgets/login_fields.dart';
 import 'package:lab_nerd/views/auth/login/widgets/not_have_an_account.dart';
-import '../../signup/widgets/app_bar_bottom_sheet.dart';
+import '../../widgets/app_bar_auth_bottom_sheet.dart';
 
 class LoginBottomSheetBody extends StatelessWidget {
   LoginBottomSheetBody({super.key});
@@ -19,7 +19,7 @@ class LoginBottomSheetBody extends StatelessWidget {
       child: Column(
         spacing: 16.h,
         children: [
-          const AppbarBottomSheet(),
+          const AppbarAuthBottomSheet(),
           Text(
             'LOGIN',
             style: TextStyles.rem20Boldd.copyWith(color: Colors.black),

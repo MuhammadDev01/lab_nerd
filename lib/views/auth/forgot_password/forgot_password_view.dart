@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'widgets/custom_forgot_password_appbar.dart';
-import 'widgets/custom_forgot_password_circle_avatar.dart';
+import 'widgets/forgot_password_appbar.dart';
+import 'widgets/forgot_password_circle_avatar.dart';
 import '../../../widgets/app_text_form_field.dart';
 import 'widgets/forgot_password_button.dart';
 
@@ -41,7 +41,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             key: formKey,
             child: Column(
               children: [
-                const CustomForgotPasswordAppbar(
+                const ForgotPasswordAppbar(
                   nameView: 'Forgot Password',
                 ),
                 SizedBox(
