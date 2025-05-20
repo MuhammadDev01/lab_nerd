@@ -1,11 +1,11 @@
 import 'dart:developer';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginRepo {
 //**Login With Email and Password**\\
-  static Future<Either<String, User>> loginWithEmailAndPassword({
+  static Future<Either<String, User>> emailAndPasswordFirebase({
     required String email,
     required String password,
   }) async {
@@ -30,21 +30,25 @@ class LoginRepo {
     }
   }
 
-  //  Future<UserCredential> loginWithFirebaseGoogle() async {
-  //   try {
-  //     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  static Future<Either<String, User>> googleFirebase() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-  //     final GoogleSignInAuthentication? googleAuth =
-  //         await googleUser?.authentication;
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
 
-  //     final credential = GoogleAuthProvider.credential(
-  //       accessToken: googleAuth?.accessToken,
-  //       idToken: googleAuth?.idToken,
-  //     );
+      final authCredential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
 
-  //     return await FirebaseAuth.instance.signInWithCredential(credential);
-  //   } catch (e) {
-  //     ret_errorMessage = e.toString();urn Future.error('Failed to sign in with Google: $e');
-  //   }
-  // }
+      final userCredential =
+          await FirebaseAuth.instance.signInWithCredential(authCredential);
+      return Right(userCredential.user!);
+    } on FirebaseAuthException catch (e) {
+      return Left(e.code);
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
 }

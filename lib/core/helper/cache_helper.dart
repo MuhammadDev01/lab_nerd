@@ -6,6 +6,6 @@ class CacheHelper {
   static Box userBox = Hive.box(kUserBox);
 
   static Future<void> init() async {
-    await userBox.get(kDarkMode) == null ? userBox.put(kDarkMode, false) : null;
+    if (userBox.get(kDarkMode) == null) await userBox.put(kDarkMode, false);
   }
 }

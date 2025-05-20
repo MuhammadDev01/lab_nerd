@@ -57,7 +57,7 @@ class _SignupDesktopFieldsState extends State<SignupDesktopFields> {
                 obscureText: controller.isVisibilty,
                 suffixIcon: IconButton(
                   onPressed: () {
-                    controller.visibiltyPassword();
+                    controller.toggleVisibiltyPassword();
                   },
                   icon: Icon(
                     controller.isVisibilty

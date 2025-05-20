@@ -32,7 +32,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
               AppTextFormField(
                 helperText: 'Email',
                 hintText: 'email address',
-                onChange: (value) => controller.onChangeOnField(value),
+                onChange: (value) => controller.onChangedOnField(value),
                 cursorAndPrefixIconColor: Colors.black,
                 controller: controller.emailController,
                 textInputType: TextInputType.emailAddress,
@@ -47,7 +47,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                 obscureText: controller.isVisibilty,
                 suffixIcon: IconButton(
                   onPressed: () {
-                    controller.visibiltyPassword();
+                    controller.toggleVisibiltyPassword();
                   },
                   icon: Icon(controller.visibilityPasswordIcon),
                 ),

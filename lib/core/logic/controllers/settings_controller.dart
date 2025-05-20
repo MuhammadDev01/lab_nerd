@@ -9,13 +9,13 @@ import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 
 class SettingsController extends GetxController {
-  final Maincontroller _maincontroller = Get.find<Maincontroller>();
   //*************SIGN OUT**************\\
   Future<void> signoutFromApp() async {
     try {
       await FirebaseAuth.instance.signOut();
       await CacheHelper.authBox.delete(kuserToken);
-      await _maincontroller.changeTheme();
+      await CacheHelper.userBox.put(kDarkMode, false);
+      if (Get.isDarkMode) await Get.find<Maincontroller>().changeTheme();
       Get.offAllNamed(Routes.loginView);
     } catch (e) {
       appSnackbar(

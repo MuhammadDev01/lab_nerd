@@ -24,11 +24,9 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-//**************DEFAULT**************\\
-
-  bool isVisibilty = true;
-  IconData visibilityPasswordIcon = Icons.visibility_off;
-  RxBool isLoading = false.obs;
+//**************MOVE EYES**************\\
+  RxInt currentEyeIndex = 0.obs;
+  Timer? timer;
 
   List<String> eyesList = const [
     Assets.imagesSvgLookEye,
@@ -39,10 +37,6 @@ class LoginController extends GetxController {
     Assets.imagesSvgLeftEye,
     Assets.imagesSvgHalfEye,
   ];
-
-  RxInt currentEyeIndex = 0.obs;
-  Timer? timer;
-
   moveEyes() {
     timer = Timer.periodic(
       const Duration(milliseconds: 250),
@@ -56,7 +50,10 @@ class LoginController extends GetxController {
     );
   }
 
-  visibiltyPassword() {
+//**************VISIBILITY**************\\
+  bool isVisibilty = true;
+  IconData visibilityPasswordIcon = Icons.visibility_off;
+  toggleVisibiltyPassword() {
     isVisibilty = !isVisibilty;
     visibilityPasswordIcon =
         isVisibilty ? Icons.visibility_off : Icons.visibility;
@@ -86,8 +83,14 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  onChangeOnField(String value) {
+  onChangedOnField(String value) {
     emailController.text = value;
+    update();
+  }
+
+  bool isLoading = false;
+  toggleLoading() {
+    isLoading = !isLoading;
     update();
   }
 
@@ -95,47 +98,39 @@ class LoginController extends GetxController {
   Future<void> login() async {
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
-    isLoading(true);
+    toggleLoading();
     if (emailController.text.isEmpty) {
-      //await loginWithGoogle();
-    } else {
-      if (formKey.currentState!.validate()) {
-        final response = await LoginRepo.loginWithEmailAndPassword(
-          email: email,
-          password: password,
-        );
+      await LoginRepo.googleFirebase().then((response) {
         response.fold(
-          (errorMessage) {
-            appSnackbar(
+            (errorMessage) => appSnackbar(
                 title: "Failed",
                 message: errorMessage,
-                backgroundColor: ColorsManager.errorColor);
-          },
-          (user) async {
-            await CacheHelper.authBox.put(kuserToken, user.uid);
-            Get.offAllNamed(Routes.mainView);
-          },
-        );
+                backgroundColor: ColorsManager.errorColor), (user) async {
+          await CacheHelper.authBox.put(kuserToken, user.uid);
+          Get.offAllNamed(Routes.mainView);
+        });
+      });
+    } else {
+      if (formKey.currentState!.validate()) {
+        await LoginRepo.emailAndPasswordFirebase(
+          email: email,
+          password: password,
+        ).then((response) {
+          response.fold(
+            (errorMessage) {
+              appSnackbar(
+                  title: "Failed",
+                  message: errorMessage,
+                  backgroundColor: ColorsManager.errorColor);
+            },
+            (user) async {
+              await CacheHelper.authBox.put(kuserToken, user.uid);
+              Get.offAllNamed(Routes.mainView);
+            },
+          );
+        });
       }
     }
-    isLoading(false);
-    update();
+    toggleLoading();
   }
-
-//**Google
-  // Future<void> loginWithGoogle() async {
-  //   await LoginRepo.loginWithFirebaseGoogle().then((value) async {
-  //     final userID = value.user?.uid;
-  //     await CacheHelper.authBox.put(kuserToken, userID).then((_) {
-  //       Get.offNamed(Routes.mainView);
-  //     });
-  //   }).catchError((error) {
-  //     appSnackbar(
-  //       title: 'Failed',
-  //       message: 'Login Failed Please Try Again',
-  //       backgroundColor: ColorsManager.errorColor,
-  //     );
-  //   });
-  //   update();
-  // }
 }

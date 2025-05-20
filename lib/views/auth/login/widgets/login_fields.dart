@@ -9,32 +9,35 @@ class LoginFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AppTextFormField(
-          helperText: 'Email',
-          hintText: 'email address',
-          onChange: (value) => controller.onChangeOnField(value),
-          cursorAndPrefixIconColor: Colors.black,
-          controller: controller.emailController,
-          textInputType: TextInputType.emailAddress,
-        ),
-        GetBuilder<LoginController>(
-          builder: (_) => AppTextFormField(
-            helperText: 'Password',
+    return Form(
+      key: controller.formKey,
+      child: Column(
+        children: [
+          AppTextFormField(
+            helperText: 'Email',
+            hintText: 'email address',
+            onChange: (value) => controller.onChangedOnField(value),
             cursorAndPrefixIconColor: Colors.black,
-            controller: controller.passwordController,
-            obscureText: controller.isVisibilty,
-            suffixIcon: IconButton(
-              onPressed: () => controller.visibiltyPassword(),
-              icon: Icon(controller.visibilityPasswordIcon),
-            ),
-            hintText: 'Password',
-            textInputType: TextInputType.visiblePassword,
-            validateMessage: 'enter password',
+            controller: controller.emailController,
+            textInputType: TextInputType.emailAddress,
           ),
-        ),
-      ],
+          GetBuilder<LoginController>(
+            builder: (_) => AppTextFormField(
+              helperText: 'Password',
+              cursorAndPrefixIconColor: Colors.black,
+              controller: controller.passwordController,
+              obscureText: controller.isVisibilty,
+              suffixIcon: IconButton(
+                onPressed: () => controller.toggleVisibiltyPassword(),
+                icon: Icon(controller.visibilityPasswordIcon),
+              ),
+              hintText: 'Password',
+              textInputType: TextInputType.visiblePassword,
+              validateMessage: 'enter password',
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
