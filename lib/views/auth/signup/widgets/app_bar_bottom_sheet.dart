@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomAppbarAuthBottomSheet extends StatelessWidget {
-  const CustomAppbarAuthBottomSheet({
+class AppbarBottomSheet extends StatelessWidget {
+  const AppbarBottomSheet({
     super.key,
   });
 

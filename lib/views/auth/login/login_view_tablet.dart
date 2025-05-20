@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/views/auth/login/widgets/logo_of_login.dart';
+import 'package:lab_nerd/views/auth/login/widgets/logo_of_auth.dart';
 import 'package:lab_nerd/views/auth/login/widgets/background_auth.dart';
 import 'package:lab_nerd/views/auth/login/widgets/center_login_text.dart';
 import 'package:lab_nerd/views/auth/login/widgets/login_fields_tablet.dart';
@@ -16,7 +16,7 @@ class LoginViewTablet extends StatelessWidget {
     return GetBuilder<LoginController>(
       builder: (controller) => Scaffold(
         backgroundColor: Colors.white,
-        floatingActionButton: controller.currentPage == 1
+        floatingActionButton: controller.currentPageIndex.value == 1
             ? null
             : FloatingActionButtonLoginTablet(),
         body: BackgroundAuth(
@@ -25,7 +25,7 @@ class LoginViewTablet extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const LogoOfLogin(),
+                LogoOfAuth(),
                 const SizedBox(
                   height: 20,
                 ),
@@ -34,7 +34,6 @@ class LoginViewTablet extends StatelessWidget {
                   flex: 3,
                   child: PageView(
                     controller: controller.pageController,
-                    onPageChanged: (value) => controller.changeIndexPage(value),
                     children: [
                       Column(
                         children: [

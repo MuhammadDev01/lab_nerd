@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
-import '../login/widgets/logo_of_login.dart';
+import '../login/widgets/logo_of_auth.dart';
 import '../login/widgets/background_auth.dart';
-import 'widgets/signup_mobile_bottom_sheet.dart';
+import 'widgets/bottom_sheet_signup_mobile.dart';
 
 class SignupViewMobile extends StatelessWidget {
   const SignupViewMobile({
@@ -16,17 +16,17 @@ class SignupViewMobile extends StatelessWidget {
       body: BackgroundAuth(
         child: SafeArea(
           child: Column(
-            children: const [
-              LogoOfLogin(),
-              SizedBox(
+            children: [
+              LogoOfAuth(),
+              const SizedBox(
                 height: 20,
               ),
-              ScienceNerdWord(),
-              SizedBox(
+              const ScienceNerdWord(),
+              const SizedBox(
                 height: 20,
               ),
-              Spacer(),
-              SignupMobileBottomSheet(),
+              const Spacer(),
+              BottomSheetSignUpMobile(),
             ],
           ),
         ),

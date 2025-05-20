@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/auth/login/widgets/remember_me_and_forgot_password.dart';
 import '../../../../widgets/app_text_form_field.dart';
 
 class LoginFieldsTablet extends StatefulWidget {
@@ -33,7 +32,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
               AppTextFormField(
                 helperText: 'Email',
                 hintText: 'email address',
-                onChange: (value) => controller.onChange(value),
+                onChange: (value) => controller.onChangeOnField(value),
                 cursorAndPrefixIconColor: Colors.black,
                 controller: controller.emailController,
                 textInputType: TextInputType.emailAddress,
@@ -55,7 +54,16 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                 hintText: 'password',
                 textInputType: TextInputType.visiblePassword,
               ),
-              RememberMeAndForgotPassword(),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () => Get.toNamed(Routes.forgotPasswordView),
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyles.rem14Bold.copyWith(color: Colors.red),
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 16,
               ),

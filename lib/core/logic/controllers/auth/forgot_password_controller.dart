@@ -4,11 +4,11 @@ import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 
 class ForgotPasswordController extends GetxController {
-  bool isLoading = false;
+  RxBool isLoading = false.obs;
 
   Future<void> sendPasswordResetEmail(String email) async {
-    isLoading = true;
-    update();
+    isLoading(true);
+
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       appSnackbar(
@@ -16,24 +16,21 @@ class ForgotPasswordController extends GetxController {
         message: "sent successfully check your email",
         backgroundColor: ColorsManager.successColor,
       );
-      update();
       Get.back();
     } on FirebaseAuthException catch (e) {
       appSnackbar(
-        title: "Failed",
-        message: "${e.code}.......${e.message}",
+        title: e.code,
+        message: e.message!,
         backgroundColor: ColorsManager.errorColor,
       );
-      update();
     } catch (e) {
       appSnackbar(
         title: "Failed",
         message: e.toString(),
         backgroundColor: ColorsManager.errorColor,
       );
-      update();
     }
-    isLoading = false;
-    update();
+    isLoading(false);
+    update(['send']);
   }
 }

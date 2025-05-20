@@ -29,13 +29,10 @@ class NotesController extends GetxController {
     super.onClose();
   }
 
-  bool isLoading = false;
-  void changeLoading() {
-    isLoading = !isLoading;
-    update();
-  }
+  RxBool isLoading = false.obs;
 
   Future<void> addNote() async {
+    isLoading(true);
     try {
       final CollectionReference notesRef = FirebaseFirestore.instance
           .collection('users')
@@ -62,6 +59,7 @@ class NotesController extends GetxController {
         backgroundColor: ColorsManager.errorColor,
       );
     }
+    isLoading(false);
   }
 
   Color selectedColor = Colors.white;
@@ -82,8 +80,8 @@ class NotesController extends GetxController {
   }
 
   Future<void> updateNote(String noteID) async {
-    isLoading = true;
-    update();
+    isLoading(true);
+
     final note = NoteModel(
       title: titleController.text.trim(),
       content: contentController.text.trim(),
@@ -110,7 +108,7 @@ class NotesController extends GetxController {
         backgroundColor: ColorsManager.errorColor,
       );
     }
-    isLoading = false;
+    isLoading(false);
     update();
   }
 

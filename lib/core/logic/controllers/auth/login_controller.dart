@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/widgets/constant.dart';
@@ -21,6 +20,7 @@ class LoginController extends GetxController {
   void onClose() {
     emailController.dispose();
     passwordController.dispose();
+    timer?.cancel();
     super.onClose();
   }
 
@@ -29,7 +29,6 @@ class LoginController extends GetxController {
   bool isVisibilty = true;
   IconData visibilityPasswordIcon = Icons.visibility_off;
   RxBool isLoading = false.obs;
-  bool check = false;
 
   List<String> eyesList = const [
     Assets.imagesSvgLookEye,
@@ -41,18 +40,17 @@ class LoginController extends GetxController {
     Assets.imagesSvgHalfEye,
   ];
 
-  int currentEyeIndex = 0;
+  RxInt currentEyeIndex = 0.obs;
   Timer? timer;
+
   moveEyes() {
     timer = Timer.periodic(
       const Duration(milliseconds: 250),
       (_) {
         if (currentEyeIndex < eyesList.length - 1) {
-          currentEyeIndex++;
-          update();
+          currentEyeIndex.value++;
         } else {
-          currentEyeIndex = 0;
-          update();
+          currentEyeIndex(0);
         }
       },
     );
@@ -65,18 +63,13 @@ class LoginController extends GetxController {
     update();
   }
 
-  void rememberMeCheck() {
-    check = !check;
-    update();
-  }
-
 //**For Tablet**\\
   final PageController pageController = PageController();
-  int currentPage = 0;
-  changeIndexPage(int index) {
-    currentPage = index;
-    update();
-  }
+  RxInt currentPageIndex = 0.obs;
+  // changeIndexPage(int index) {
+  //   currentPage = index;
+  //   update();
+  // }
 
   onPressedFloatingTabletButton() {
     pageController.animateToPage(
@@ -84,7 +77,7 @@ class LoginController extends GetxController {
       duration: const Duration(milliseconds: 500),
       curve: Curves.fastOutSlowIn,
     );
-    currentPage = 1;
+    currentPageIndex.value = 1;
     update();
   }
 
@@ -93,7 +86,7 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  onChange(String value) {
+  onChangeOnField(String value) {
     emailController.text = value;
     update();
   }
@@ -107,9 +100,10 @@ class LoginController extends GetxController {
       //await loginWithGoogle();
     } else {
       if (formKey.currentState!.validate()) {
-        log('Email: $email, Password: $password');
         final response = await LoginRepo.loginWithEmailAndPassword(
-            email: email, password: password);
+          email: email,
+          password: password,
+        );
         response.fold(
           (errorMessage) {
             appSnackbar(

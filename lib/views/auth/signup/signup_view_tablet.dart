@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../login/widgets/logo_of_login.dart';
+import '../login/widgets/logo_of_auth.dart';
 import '../login/widgets/background_auth.dart';
 import 'widgets/signup_tablet_fields.dart';
 
@@ -9,21 +9,14 @@ class SignUpViewTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: BackgroundAuth(
         child: Stack(
           children: [
             Column(
               children: [
-                LogoOfLogin(
-                    // logoHight: 190,
-                    // sizeEye: 70,
-                    // betweenEyes: 140,
-                    // trans: 60,
-                    // labNerdSize: 60,
-                    // wordSize: 26,
-                    ),
+                LogoOfAuth(),
                 Spacer(),
                 SignupDesktopFields(),
                 Spacer(

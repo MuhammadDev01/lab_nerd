@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/widgets/app_loading.dart';
+import 'package:lab_nerd/widgets/default_button.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
-  const ForgotPasswordButton(
-      {super.key, required this.child, required this.onTap});
-  final Widget child;
-  final void Function()? onTap;
+  const ForgotPasswordButton({super.key, required this.onTap});
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: 256,
-        height: 50,
-        decoration: BoxDecoration(
-          gradient: ColorsManager.forgotpasswordgradient,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: child,
+    return GetBuilder<ForgotPasswordController>(
+      id: 'send',
+      builder: (controller) => DefaultButton(
+        onPressed: onTap,
+        colorButton: ColorsManager.greenWhite,
+        width: 256.w,
+        child: controller.isLoading.value
+            ? const AppLoading()
+            : Center(
+                child: Text(
+                  'Send',
+                  style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+                ),
+              ),
       ),
     );
   }

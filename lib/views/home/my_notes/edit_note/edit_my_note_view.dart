@@ -24,7 +24,7 @@ class EditMyNoteView extends StatelessWidget {
               ? ColorsManager.darkHomeGradient
               : ColorsManager.lightHomeGradient,
           child: ModalProgressHUD(
-            inAsyncCall: controller.isLoading,
+            inAsyncCall: controller.isLoading.value,
             child: SafeArea(
               child: Form(
                 key: controller.formKey,

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/widgets/app_loading.dart';
 import 'widgets/custom_forgot_password_appbar.dart';
 import 'widgets/custom_forgot_password_circle_avatar.dart';
 import '../../../widgets/app_text_form_field.dart';
@@ -61,7 +60,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 Text(
                   'please enter your Email Address To Receive a Verification Code',
                   textAlign: TextAlign.center,
-                  style: TextStyles.rem14Bold,
+                  style: TextStyles.rem14Bold.copyWith(color: Colors.black),
                 ),
                 SizedBox(
                   height: 30.h,
@@ -77,23 +76,13 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 SizedBox(
                   height: 100.h,
                 ),
-                GetBuilder<ForgotPasswordController>(
-                  builder: (controller) => ForgotPasswordButton(
-                    child: controller.isLoading
-                        ? const AppLoading()
-                        : Center(
-                            child: Text(
-                              'Send',
-                              style: TextStyles.rem14Bold,
-                            ),
-                          ),
-                    onTap: () async {
-                      if (formKey.currentState!.validate()) {
-                        await controller.sendPasswordResetEmail(
-                            emailController.text.trim());
-                      }
-                    },
-                  ),
+                ForgotPasswordButton(
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      Get.find<ForgotPasswordController>()
+                          .sendPasswordResetEmail(emailController.text.trim());
+                    }
+                  },
                 ),
               ],
             ),

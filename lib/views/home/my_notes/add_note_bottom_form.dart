@@ -46,7 +46,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
               height: 25,
             ),
             AddNoteButton(
-              child: controller.isLoading
+              child: controller.isLoading.value
                   ? AppLoading()
                   : Text(
                       'Add',
@@ -58,9 +58,8 @@ class AddNoteBottomSheetForm extends StatelessWidget {
                     ),
               onTap: () async {
                 if (controller.formKey.currentState!.validate()) {
-                  controller.changeLoading();
                   await controller.addNote();
-                  controller.changeLoading();
+
                   Get.back();
                 }
               },

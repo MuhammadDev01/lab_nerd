@@ -4,11 +4,12 @@ import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/views/splash/widgets/eye_of_logo.dart';
 import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
 
-class LogoOfLogin extends StatelessWidget {
-  const LogoOfLogin({
+class LogoOfAuth extends StatelessWidget {
+  LogoOfAuth({
     super.key,
   });
   final double sizeEye = 40;
+  final controller = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +19,19 @@ class LogoOfLogin extends StatelessWidget {
         LogoWithoutEyes(),
         Padding(
           padding: EdgeInsets.only(top: 50),
-          child: GetBuilder<LoginController>(
-            builder: (controller) => Row(
+          child: Obx(
+            () => Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 EyeOfLogo(
-                    eyeAsset: controller.eyesList[controller.currentEyeIndex]),
+                    eyeAsset:
+                        controller.eyesList[controller.currentEyeIndex.value]),
                 const SizedBox(
                   width: 100,
                 ),
                 EyeOfLogo(
-                    eyeAsset: controller.eyesList[controller.currentEyeIndex]),
+                    eyeAsset:
+                        controller.eyesList[controller.currentEyeIndex.value]),
               ],
             ),
           ),
