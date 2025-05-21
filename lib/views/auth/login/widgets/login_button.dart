@@ -22,7 +22,9 @@ class LoginButton extends StatelessWidget {
                 ? GoogleLogin()
                 : Text(
                     'Login',
-                    style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+                    style: TextStyles.rem14Bold.copyWith(
+                      color: Colors.black,
+                    ),
                   ),
       ),
     );

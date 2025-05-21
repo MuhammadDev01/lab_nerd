@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
-import 'package:lab_nerd/views/auth/signup/signup_view_tablet.dart';
+import 'package:lab_nerd/views/auth/forgot_password/widgets/forgot_password_back_button.dart';
 
 class ForgotPasswordAppbar extends StatelessWidget {
   const ForgotPasswordAppbar({super.key, required this.nameView});

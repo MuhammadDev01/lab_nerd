@@ -6,6 +6,7 @@ class ColorsManager {
   static const Color errorColor = Color(0xffBC1620);
   static const Color successColor = Color(0xff16B57A);
   static const Color darkModeColor = Color(0xFF121212);
+  static const Color authRedColor = Color(0xffFD0505);
 
   //****Gradients****\\
   static const Gradient forgotpasswordgradient = LinearGradient(

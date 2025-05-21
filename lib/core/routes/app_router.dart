@@ -11,8 +11,7 @@ import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
 import 'package:lab_nerd/views/settings/change_username/change_username_view.dart';
 import 'package:lab_nerd/views/home/search_elements/search_element_view.dart';
 import 'package:lab_nerd/views/exam/exam_view.dart';
-import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
-import 'package:lab_nerd/views/auth/signup/signup_layout.dart';
+import 'package:lab_nerd/views/auth/auth_view_builder.dart';
 import 'package:lab_nerd/views/main/main_view_adaptive.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
@@ -34,13 +33,9 @@ class AppRouter {
     ),
     //** Auth **\\
     GetPage(
-      name: Routes.loginView,
-      page: () => const LoginViewBuilder(),
+      name: Routes.authView,
+      page: () => const AuthViewBuilder(),
       binding: AuthBinding(),
-    ),
-    GetPage(
-      name: Routes.signupView,
-      page: () => const SignupLayout(),
     ),
     GetPage(
       name: Routes.forgotPasswordView,

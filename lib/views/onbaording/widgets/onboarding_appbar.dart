@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
-import 'package:lab_nerd/views/auth/login/login_view_builder.dart';
 
 class OnboardingAppbar extends StatelessWidget implements PreferredSizeWidget {
   const OnboardingAppbar({
@@ -14,14 +14,9 @@ class OnboardingAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       actions: [
         TextButton(
-          onPressed: () {
-            CacheHelper.authBox.put(kOnBoarding, true).then((_) {
-              Get.off(
-                () => const LoginViewBuilder(),
-                transition: Transition.cupertino,
-                duration: const Duration(milliseconds: 500),
-              );
-            });
+          onPressed: () async {
+            await CacheHelper.authBox.put(kOnBoarding, true);
+            Get.offAllNamed(Routes.authView);
           },
           child: const Text(
             'SKIP',

@@ -85,7 +85,7 @@ class _LoginFieldsTabletState extends State<LoginFieldsTablet> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.toNamed(Routes.signupView);
+                      //    Get.toNamed(Routes.authView);
                     },
                     child: Text(
                       'Sign up',

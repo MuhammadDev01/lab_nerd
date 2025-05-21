@@ -14,35 +14,32 @@ class LoginBottomSheetBody extends StatelessWidget {
   final controller = Get.find<LoginController>();
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      child: Column(
-        spacing: 16.h,
-        children: [
-          const AppbarAuthBottomSheet(),
-          Text(
-            'LOGIN',
-            style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
-          ),
-          Column(
-            children: [
-              LoginFields(),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () => Get.toNamed(Routes.forgotPasswordView),
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyles.rem14Bold.copyWith(color: Colors.red),
-                  ),
+    return Column(
+      spacing: 16.h,
+      children: [
+        const AppbarAuthBottomSheet(),
+        Text(
+          'LOGIN',
+          style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
+        ),
+        Column(
+          children: [
+            LoginFields(),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () => Get.toNamed(Routes.forgotPasswordView),
+                child: Text(
+                  'Forgot Password?',
+                  style: TextStyles.rem14Bold.copyWith(color: Colors.red),
                 ),
               ),
-            ],
-          ),
-          LoginButton(),
-          NotHaveAnAccount(),
-        ],
-      ),
+            ),
+          ],
+        ),
+        LoginButton(),
+        NotHaveAnAccount(),
+      ],
     );
   }
 }

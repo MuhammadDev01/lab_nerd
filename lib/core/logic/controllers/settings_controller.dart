@@ -16,7 +16,7 @@ class SettingsController extends GetxController {
       await CacheHelper.authBox.delete(kuserToken);
       await CacheHelper.userBox.put(kDarkMode, false);
       if (Get.isDarkMode) await Get.find<Maincontroller>().changeTheme();
-      Get.offAllNamed(Routes.loginView);
+      Get.offAllNamed(Routes.authView);
     } catch (e) {
       appSnackbar(
         title: 'Failed',

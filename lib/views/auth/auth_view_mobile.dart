@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
-import '../widgets/logo_of_auth.dart';
-import '../widgets/background_auth.dart';
-import 'widgets/center_login_text.dart';
+import 'widgets/logo_of_auth.dart';
+import 'widgets/background_auth.dart';
+import 'auth_view_center_text.dart';
 import 'widgets/swipe_up_arrow.dart';
-import 'widgets/login_bottom_sheet.dart';
+import 'auth_bottom_sheet.dart';
 
-class LoginViewMobile extends StatelessWidget {
-  const LoginViewMobile({
+class AuthViewMobile extends StatelessWidget {
+  const AuthViewMobile({
     super.key,
   });
 
@@ -16,7 +16,6 @@ class LoginViewMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: false,
       body: BackgroundAuth(
         child: Padding(
           padding: EdgeInsets.only(right: 16, left: 16, top: 16),
@@ -33,12 +32,12 @@ class LoginViewMobile extends StatelessWidget {
                     SizedBox(
                       height: 20.h,
                     ),
-                    CenterLoginText(),
+                    AuthViewCenterText(),
                     Expanded(child: SwipeUpArrow()),
                   ],
                 ),
               ),
-              LoginBottomSheet(),
+              AuthBottomSheet(),
             ],
           ),
         ),

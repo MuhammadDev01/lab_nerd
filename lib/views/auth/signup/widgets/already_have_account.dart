@@ -5,17 +5,16 @@ import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class NotHaveAnAccount extends StatelessWidget {
-  const NotHaveAnAccount({
-    super.key,
-  });
+class AlreadyHaveAccount extends StatelessWidget {
+  const AlreadyHaveAccount({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Don't have an account?",
+          "Already have account?",
           style: TextStyles.rem14Bold.copyWith(color: Colors.black),
         ),
         SizedBox(
@@ -24,9 +23,9 @@ class NotHaveAnAccount extends StatelessWidget {
         GetBuilder<LoginController>(
           id: 'auth_bottom_sheet',
           builder: (controller) => InkWell(
-            onTap: () => controller.toggleAuthBottomSheet(isLogin: false),
+            onTap: () => controller.toggleAuthBottomSheet(isLogin: true),
             child: Text(
-              'Sign up',
+              'Login',
               style: TextStyles.rem14Bold.copyWith(
                 color: ColorsManager.authRedColor,
                 decoration: TextDecoration.underline,

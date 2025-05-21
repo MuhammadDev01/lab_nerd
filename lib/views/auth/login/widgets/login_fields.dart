@@ -22,6 +22,7 @@ class LoginFields extends StatelessWidget {
             textInputType: TextInputType.emailAddress,
           ),
           GetBuilder<LoginController>(
+            id: 'visibility_password',
             builder: (_) => AppTextFormField(
               helperText: 'Password',
               cursorAndPrefixIconColor: Colors.black,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/themes/text_styles.dart';
 
-class CenterLoginText extends StatelessWidget {
-  const CenterLoginText({
+class AuthViewCenterText extends StatelessWidget {
+  const AuthViewCenterText({
     super.key,
     this.blackText = 'swipe up ',
   });

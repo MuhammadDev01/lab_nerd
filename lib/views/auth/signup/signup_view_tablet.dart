@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lab_nerd/views/auth/forgot_password/widgets/forgot_password_back_button.dart';
 import '../widgets/logo_of_auth.dart';
 import '../widgets/background_auth.dart';
 import 'widgets/signup_tablet_fields.dart';
@@ -26,35 +26,6 @@ class SignUpViewTablet extends StatelessWidget {
             ),
             BackArrow(),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class BackArrow extends StatelessWidget {
-  const BackArrow({
-    super.key,
-    this.backgroundColor = Colors.teal,
-    this.arrowColor = Colors.white,
-  });
-  final Color backgroundColor;
-  final Color arrowColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: CircleAvatar(
-        backgroundColor: backgroundColor,
-        child: InkWell(
-          onTap: () {
-            Get.back();
-          },
-          child: const Icon(
-            Icons.keyboard_arrow_left,
-            size: 40,
-          ),
         ),
       ),
     );

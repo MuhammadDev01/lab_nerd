@@ -48,7 +48,7 @@ class SplashController extends GetxController {
         Get.toNamed(Routes.onBoardingView);
       } else if (authBox.get(kuserToken) == null) {
         log('token:  ${authBox.get(kuserToken)}');
-        Get.toNamed(Routes.loginView);
+        Get.toNamed(Routes.authView);
       } else {
         Get.toNamed(Routes.mainView);
       }

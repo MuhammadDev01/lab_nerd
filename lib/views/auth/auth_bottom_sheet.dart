@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'login_bottom_sheet_body.dart';
+import 'package:lab_nerd/views/auth/widgets/auth_bottom_sheet_body.dart';
 
-class LoginBottomSheet extends StatelessWidget {
-  const LoginBottomSheet({
+class AuthBottomSheet extends StatelessWidget {
+  const AuthBottomSheet({
     super.key,
   });
 
@@ -19,6 +20,7 @@ class LoginBottomSheet extends StatelessWidget {
         } else if (details.delta.dy < -sensitivity) {
           Get.bottomSheet(
             Container(
+              height: 450.h,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -26,8 +28,9 @@ class LoginBottomSheet extends StatelessWidget {
                   topRight: Radius.circular(25),
                 ),
               ),
-              child: LoginBottomSheetBody(),
+              child: AuthBottomSheetBody(),
             ),
+            isScrollControlled: true,
           );
         }
       },

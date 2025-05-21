@@ -30,18 +30,21 @@ class SignUpFields extends StatelessWidget {
             cursorAndPrefixIconColor: Colors.black,
             validateMessage: 'email required',
           ),
-          AppTextFormField(
-            controller: controller.passwordController,
-            helperText: 'Password',
-            obscureText: controller.isVisibilty,
-            suffixIcon: IconButton(
-              onPressed: () => controller.visibilty(),
-              icon: Icon(controller.visibilityPassword),
+          GetBuilder<SignUpController>(
+            id: 'visibilty',
+            builder: (_) => AppTextFormField(
+              controller: controller.passwordController,
+              helperText: 'Password',
+              obscureText: controller.isVisibilty,
+              suffixIcon: IconButton(
+                onPressed: () => controller.visibilty(),
+                icon: Icon(controller.visibilityPassword),
+              ),
+              hintText: 'password',
+              cursorAndPrefixIconColor: Colors.black,
+              textInputType: TextInputType.visiblePassword,
+              validateMessage: 'password required',
             ),
-            hintText: 'password',
-            cursorAndPrefixIconColor: Colors.black,
-            textInputType: TextInputType.visiblePassword,
-            validateMessage: 'password required',
           ),
         ],
       ),

@@ -13,6 +13,7 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     moveEyes();
+
     super.onInit();
   }
 
@@ -57,7 +58,7 @@ class LoginController extends GetxController {
     isVisibilty = !isVisibilty;
     visibilityPasswordIcon =
         isVisibilty ? Icons.visibility_off : Icons.visibility;
-    update();
+    update(['visibility_password']);
   }
 
 //**For Tablet**\\
@@ -78,7 +79,14 @@ class LoginController extends GetxController {
     update();
   }
 
-//******LOGIN******\\
+//**************LOGIN**************\\
+  String kLogin = 'login';
+  bool isLogin = true;
+  toggleAuthBottomSheet({required bool isLogin}) {
+    this.isLogin = isLogin;
+    update(['auth_bottom_sheet']);
+  }
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();

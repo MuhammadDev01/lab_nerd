@@ -14,12 +14,12 @@ class SignUpController extends GetxController {
   SignUpController(this._signUpRepo);
   bool isVisibilty = true;
   IconData visibilityPassword = Icons.visibility_off;
-  RxBool isLoading = false.obs;
+  bool isLoading = false;
 
   void visibilty() {
     isVisibilty = !isVisibilty;
     visibilityPassword = isVisibilty ? Icons.visibility_off : Icons.visibility;
-    update();
+    update(['visibilty']);
   }
 
   @override
@@ -28,6 +28,11 @@ class SignUpController extends GetxController {
     passwordController.dispose();
     emailController.dispose();
     super.onClose();
+  }
+
+  toggleLoading() {
+    isLoading = !isLoading;
+    update();
   }
 
 //**SIGN UP**\\
@@ -39,25 +44,26 @@ class SignUpController extends GetxController {
     String username = usernameController.text.trim();
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
-    isLoading(true);
-    final response = await _signUpRepo.signUp(
+    toggleLoading();
+    await _signUpRepo
+        .signUp(
       email: email,
       password: password,
       username: username,
-    );
-
-    response.fold(
-        (errorMessage) => appSnackbar(
-            title: "Failed",
-            message: errorMessage,
-            backgroundColor: ColorsManager.errorColor), (user) async {
-      final userToken = FirebaseAuth.instance.currentUser?.uid;
-      CacheHelper.authBox.put(kuserToken, userToken).then((_) {
-        Get.offAllNamed(Routes.mainView);
+    )
+        .then((response) {
+      response.fold(
+          (errorMessage) => appSnackbar(
+              title: "Failed",
+              message: errorMessage,
+              backgroundColor: ColorsManager.errorColor), (user) async {
+        final userToken = FirebaseAuth.instance.currentUser?.uid;
+        CacheHelper.authBox.put(kuserToken, userToken).then((_) {
+          Get.offAllNamed(Routes.mainView);
+        });
       });
     });
 
-    isLoading(false);
-    update();
+    toggleLoading();
   }
 }

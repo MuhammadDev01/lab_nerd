@@ -38,9 +38,9 @@ class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
         FloatingActionButton(
           backgroundColor: Colors.blue[400],
           foregroundColor: Colors.white,
-          onPressed: () {
+          onPressed: () async {
             if (isLast) {
-              _saveInCacheAndGoToLogin();
+              await _saveInCacheAndGoToLogin();
             } else {
               _goToNextPage();
             }
@@ -60,9 +60,8 @@ class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
     );
   }
 
-  void _saveInCacheAndGoToLogin() {
-    CacheHelper.authBox.put(kOnBoarding, true).then((_) {
-      Get.offNamed(Routes.loginView);
-    });
+  Future<void> _saveInCacheAndGoToLogin() async {
+    await CacheHelper.authBox.put(kOnBoarding, true);
+    Get.offNamed(Routes.authView);
   }
 }

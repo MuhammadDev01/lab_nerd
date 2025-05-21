@@ -3,8 +3,7 @@ class Routes {
   static const splashView = '/splashView';
   static const onBoardingView = '/onBoardingView';
   //**auth **\\
-  static const loginView = '/loginView';
-  static const signupView = '/signupView';
+  static const authView = '/authView';
   static const forgotPasswordView = '/forgotPasswordView';
   //**main **\\
   static const mainView = '/mainView';
