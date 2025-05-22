@@ -22,9 +22,9 @@ class NotHaveAnAccount extends StatelessWidget {
           width: 14.w,
         ),
         GetBuilder<LoginController>(
-          id: 'auth_bottom_sheet',
+          id: 'login_or_sign_up',
           builder: (controller) => InkWell(
-            onTap: () => controller.toggleAuthBottomSheet(isLogin: false),
+            onTap: () => controller.toggleAuth(isLogin: false),
             child: Text(
               'Sign up',
               style: TextStyles.rem14Bold.copyWith(

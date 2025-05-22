@@ -18,12 +18,12 @@ class AlreadyHaveAccount extends StatelessWidget {
           style: TextStyles.rem14Bold.copyWith(color: Colors.black),
         ),
         SizedBox(
-          width: 14.w,
+          width: 10.w,
         ),
         GetBuilder<LoginController>(
-          id: 'auth_bottom_sheet',
+          id: 'login_or_sign_up',
           builder: (controller) => InkWell(
-            onTap: () => controller.toggleAuthBottomSheet(isLogin: true),
+            onTap: () => controller.toggleAuth(isLogin: true),
             child: Text(
               'Login',
               style: TextStyles.rem14Bold.copyWith(

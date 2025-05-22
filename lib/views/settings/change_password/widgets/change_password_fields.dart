@@ -23,7 +23,7 @@ class _ChangePasswordFieldsState extends State<ChangePasswordFields> {
       child: Column(
         children: [
           AppTextFormField(
-            cursorAndPrefixIconColor: Colors.black54,
+            prefixIconColor: Colors.black54,
             helperText: 'Current password',
             controller: controller.currentPasswordController,
             hintText: 'current password',
@@ -47,7 +47,7 @@ class _ChangePasswordFieldsState extends State<ChangePasswordFields> {
             height: 25,
           ),
           AppTextFormField(
-            cursorAndPrefixIconColor: Colors.black54,
+            prefixIconColor: Colors.black54,
             helperText: 'New password',
             controller: controller.newPasswordController,
             hintText: 'new password',
@@ -69,7 +69,7 @@ class _ChangePasswordFieldsState extends State<ChangePasswordFields> {
             height: 25,
           ),
           AppTextFormField(
-            cursorAndPrefixIconColor: Colors.black,
+            prefixIconColor: Colors.black,
             helperText: 'Confirm password',
             controller: controller.confirmPasswordController,
             hintText: 'confirm password',

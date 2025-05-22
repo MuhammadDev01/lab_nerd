@@ -10,7 +10,7 @@ class LogoWithoutEyes extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       Assets.imagesSvgLogoWithoutEyes,
-      height: height ?? 130,
+      height: height ?? 105,
       colorFilter: colorFilter,
     );
   }

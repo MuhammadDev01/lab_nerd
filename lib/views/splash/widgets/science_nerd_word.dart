@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
@@ -15,18 +16,27 @@ class ScienceNerdWord extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(Assets.imagesSvgScience),
-              const SizedBox(
-                width: 12,
+              SvgPicture.asset(
+                Assets.imagesSvgScience,
+                height: 40.h,
               ),
-              SvgPicture.asset(Assets.imagesSvgNerd),
+              SizedBox(
+                width: 5.w,
+              ),
+              SvgPicture.asset(
+                Assets.imagesSvgNerd,
+                height: 40.h,
+              ),
             ],
           ),
         ),
-        const SizedBox(
-          height: 15,
+        SizedBox(
+          height: 10.h,
         ),
-        SvgPicture.asset(Assets.imagesSvgChemistryForEveryone),
+        SvgPicture.asset(
+          Assets.imagesSvgChemistryForEveryone,
+          height: 20.h,
+        ),
       ],
     );
   }

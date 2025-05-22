@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/views/splash/widgets/eye_of_logo.dart';
 import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
 
-class LogoOfAuth extends StatelessWidget {
-  LogoOfAuth({
+class AuthLogoAnimated extends StatelessWidget {
+  AuthLogoAnimated({
     super.key,
   });
-  final double sizeEye = 40;
   final controller = Get.find<LoginController>();
 
   @override
@@ -18,20 +17,22 @@ class LogoOfAuth extends StatelessWidget {
       children: [
         LogoWithoutEyes(),
         Padding(
-          padding: EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(top: 36),
           child: Obx(
             () => Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EyeOfLogo(
-                    eyeAsset:
-                        controller.eyesList[controller.currentEyeIndex.value]),
-                const SizedBox(
-                  width: 100,
+                SvgPicture.asset(
+                  controller.eyes[controller.currentEyeIndex.value],
+                  height: 34,
                 ),
-                EyeOfLogo(
-                    eyeAsset:
-                        controller.eyesList[controller.currentEyeIndex.value]),
+                SizedBox(
+                  width: 78,
+                ),
+                SvgPicture.asset(
+                  controller.eyes[controller.currentEyeIndex.value],
+                  height: 34,
+                ),
               ],
             ),
           ),

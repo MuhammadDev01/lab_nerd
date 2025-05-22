@@ -18,7 +18,7 @@ class AppTextFormField extends StatelessWidget {
     this.width,
     this.height = 70,
     this.borderColor,
-    this.cursorAndPrefixIconColor,
+    this.prefixIconColor,
     this.focusedColor,
     this.colorText,
     this.textStyle,
@@ -44,7 +44,7 @@ class AppTextFormField extends StatelessWidget {
   final double height;
   final Color? borderColor;
   final Color? focusedColor;
-  final Color? cursorAndPrefixIconColor;
+  final Color? prefixIconColor;
   final Color? colorText;
   final TextStyle? textStyle;
   final void Function(String)? onSubmitted;
@@ -86,7 +86,7 @@ class AppTextFormField extends StatelessWidget {
                 }
                 return null;
               },
-              cursorColor: cursorAndPrefixIconColor,
+              cursorColor: Colors.black,
               decoration: InputDecoration(
                 helperStyle: TextStyle(
                   color: Colors.black,
@@ -95,7 +95,7 @@ class AppTextFormField extends StatelessWidget {
                   color: ColorsManager.errorColor,
                 ),
                 counterText: '',
-                prefixIconColor: cursorAndPrefixIconColor,
+                prefixIconColor: prefixIconColor,
                 focusColor: Colors.black,
                 labelText: labelText,
                 labelStyle: Theme.of(context).textTheme.displaySmall,

@@ -13,7 +13,7 @@ class AuthBottomSheetBody extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       child: GetBuilder<LoginController>(
-        id: 'auth_bottom_sheet',
+        id: 'login_or_sign_up',
         builder: (controller) => controller.isLogin
             ? LoginBottomSheetBody()
             : SignUpBottomSheetBody(),

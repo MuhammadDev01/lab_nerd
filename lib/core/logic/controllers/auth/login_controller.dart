@@ -12,7 +12,7 @@ import 'package:lab_nerd/repos/login_repo.dart';
 class LoginController extends GetxController {
   @override
   void onInit() {
-    moveEyes();
+    _animationLogo();
 
     super.onInit();
   }
@@ -21,15 +21,15 @@ class LoginController extends GetxController {
   void onClose() {
     emailController.dispose();
     passwordController.dispose();
-    timer?.cancel();
+    //  timer?.cancel();
     super.onClose();
   }
 
-//**************MOVE EYES**************\\
+//**************ANIMATION**************\\
   RxInt currentEyeIndex = 0.obs;
-  Timer? timer;
+  // Timer? timer;
 
-  List<String> eyesList = const [
+  List<String> eyes = const [
     Assets.imagesSvgLookEye,
     Assets.imagesSvgLookEye,
     Assets.imagesSvgRightEye,
@@ -38,17 +38,12 @@ class LoginController extends GetxController {
     Assets.imagesSvgLeftEye,
     Assets.imagesSvgHalfEye,
   ];
-  moveEyes() {
-    timer = Timer.periodic(
-      const Duration(milliseconds: 250),
-      (_) {
-        if (currentEyeIndex < eyesList.length - 1) {
-          currentEyeIndex.value++;
-        } else {
-          currentEyeIndex(0);
-        }
-      },
-    );
+  _animationLogo() {
+    Future.doWhile(() async {
+      await Future.delayed(const Duration(milliseconds: 300));
+      currentEyeIndex.value = (currentEyeIndex.value + 1) % eyes.length;
+      return true;
+    });
   }
 
 //**************VISIBILITY**************\\
@@ -61,30 +56,27 @@ class LoginController extends GetxController {
     update(['visibility_password']);
   }
 
-//**For Tablet**\\
+//**************TABLET**************\\
   final PageController pageController = PageController();
-  RxInt currentPageIndex = 0.obs;
-  // changeIndexPage(int index) {
-  //   currentPage = index;
-  //   update();
-  // }
+  RxInt currentPage = 0.obs;
+  onPageChanged(int value) {
+    currentPage.value = value;
+    update();
+  }
 
-  onPressedFloatingTabletButton() {
+  goToSecondPageView() {
     pageController.animateToPage(
       1,
       duration: const Duration(milliseconds: 500),
       curve: Curves.fastOutSlowIn,
     );
-    currentPageIndex.value = 1;
-    update();
   }
 
 //**************LOGIN**************\\
-  String kLogin = 'login';
   bool isLogin = true;
-  toggleAuthBottomSheet({required bool isLogin}) {
+  toggleAuth({required bool isLogin}) {
     this.isLogin = isLogin;
-    update(['auth_bottom_sheet']);
+    update(['login_or_sign_up']);
   }
 
   final emailController = TextEditingController();

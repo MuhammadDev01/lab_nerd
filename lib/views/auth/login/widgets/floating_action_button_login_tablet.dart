@@ -18,7 +18,7 @@ class _FloatingActionButtonLoginTabletState
   Widget build(BuildContext context) {
     return FloatingActionButton(
       backgroundColor: Colors.black54,
-      onPressed: () => _controller.onPressedFloatingTabletButton(),
+      onPressed: () => _controller.goToSecondPageView(),
       child: const Icon(
         Icons.arrow_forward_ios,
         color: Colors.white,

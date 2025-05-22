@@ -12,13 +12,13 @@ class SignUpController extends GetxController {
   final SignUpRepo _signUpRepo;
 
   SignUpController(this._signUpRepo);
-  bool isVisibilty = true;
-  IconData visibilityPassword = Icons.visibility_off;
+  bool isVisible = true;
+  IconData iconPassword = Icons.visibility_off;
   bool isLoading = false;
 
-  void visibilty() {
-    isVisibilty = !isVisibilty;
-    visibilityPassword = isVisibilty ? Icons.visibility_off : Icons.visibility;
+  void toggleVisibiltyPassword() {
+    isVisible = !isVisible;
+    iconPassword = isVisible ? Icons.visibility_off : Icons.visibility;
     update(['visibilty']);
   }
 

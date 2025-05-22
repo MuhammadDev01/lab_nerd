@@ -53,7 +53,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
                         height: 25,
                       ),
                       AppTextFormField(
-                        cursorAndPrefixIconColor: Colors.black87,
+                        prefixIconColor: Colors.black87,
                         helperText: 'Username',
                         hintText: 'username',
                         controller: nameController,

@@ -17,7 +17,7 @@ class LoginFields extends StatelessWidget {
             helperText: 'Email',
             hintText: 'email address',
             onChange: (value) => controller.onChangedOnField(value),
-            cursorAndPrefixIconColor: Colors.black,
+            prefixIconColor: Colors.black,
             controller: controller.emailController,
             textInputType: TextInputType.emailAddress,
           ),
@@ -25,7 +25,7 @@ class LoginFields extends StatelessWidget {
             id: 'visibility_password',
             builder: (_) => AppTextFormField(
               helperText: 'Password',
-              cursorAndPrefixIconColor: Colors.black,
+              prefixIconColor: Colors.black,
               controller: controller.passwordController,
               obscureText: controller.isVisibilty,
               suffixIcon: IconButton(
