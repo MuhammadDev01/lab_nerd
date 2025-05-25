@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/widgets/app_rich_text.dart';
@@ -83,7 +83,7 @@ class DetailsElementView extends StatelessWidget {
                       children: [
                         Text(
                           'Source:',
-                          style: TextStyles.rem16Bold.copyWith(
+                          style: TextStyles.rem16SemiBold.copyWith(
                             color: Colors.teal,
                           ),
                         ),
@@ -102,7 +102,7 @@ class DetailsElementView extends StatelessWidget {
                           },
                           child: Text(
                             'Click Here',
-                            style: TextStyles.rem16Bold.copyWith(
+                            style: TextStyles.rem16SemiBold.copyWith(
                               color: Colors.blue[600],
                               decoration: TextDecoration.underline,
                               decorationColor: Colors.black,

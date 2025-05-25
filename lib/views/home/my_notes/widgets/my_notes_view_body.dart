@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/custom_note_item.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/no_notes_yet.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';

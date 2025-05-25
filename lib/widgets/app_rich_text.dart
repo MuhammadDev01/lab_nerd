@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class AppRichText extends StatelessWidget {
   const AppRichText({
@@ -17,13 +17,13 @@ class AppRichText extends StatelessWidget {
         children: [
           TextSpan(
             text: title,
-            style: TextStyles.rem16Bold.copyWith(
+            style: TextStyles.rem16SemiBold.copyWith(
               color: Colors.teal,
             ),
           ),
           TextSpan(
             text: description,
-            style: TextStyles.rem16Bold.copyWith(
+            style: TextStyles.rem16SemiBold.copyWith(
               color: Colors.black,
               height: 2,
             ),

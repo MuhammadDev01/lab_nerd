@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 
 class ForgotPasswordController extends GetxController {
   RxBool isLoading = false.obs;

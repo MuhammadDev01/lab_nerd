@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/repos/sign_up_repo.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 

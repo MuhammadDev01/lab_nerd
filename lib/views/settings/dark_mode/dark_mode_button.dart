@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class DarkModeButton extends StatelessWidget {
   const DarkModeButton({super.key});
@@ -29,7 +29,7 @@ class DarkModeButton extends StatelessWidget {
           ),
           Text(
             "Dark mode",
-            style: TextStyles.rem20Boldd,
+            style: TextStyles.rem20Bold,
           ),
           const Spacer(),
           Switch(

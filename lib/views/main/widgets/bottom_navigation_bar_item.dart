@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class CustomBottomNavigatorBarItem extends StatelessWidget {
   const CustomBottomNavigatorBarItem({

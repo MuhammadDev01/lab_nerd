@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/models/note_model.dart';
 
 class NotesController extends GetxController {

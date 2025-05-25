@@ -13,7 +13,6 @@ class AuthViewTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(
-      id: 'login_or_sign_up',
       builder: (controller) => Scaffold(
         backgroundColor: Colors.white,
         floatingActionButton: controller.currentPage.value == 1
@@ -34,14 +33,20 @@ class AuthViewTablet extends StatelessWidget {
                 children: [
                   AuthAnimatedLogoWithText(),
                   Expanded(
-                    flex: 3,
                     child: PageView(
                       onPageChanged: (currentPage) =>
                           controller.onPageChanged(currentPage),
                       controller: controller.pageController,
                       children: [
-                        const AuthViewCenterText(
-                          blackText: 'Swipe ',
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.sizeOf(context).height * 0.1,
+                            ),
+                            const AuthViewCenterText(
+                              blackText: 'Swipe ',
+                            ),
+                          ],
                         ),
                         controller.isLogin
                             ? TabletLoginView()

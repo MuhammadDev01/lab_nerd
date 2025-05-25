@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/home/search_elements_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/views/home/search_elements/widgets/element_builder.dart';
 import 'package:lab_nerd/views/home/search_elements/widgets/search_an_element_field.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';

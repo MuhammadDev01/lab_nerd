@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
 class ScoreQuizView extends StatelessWidget {
@@ -40,7 +40,7 @@ class ScoreQuizView extends StatelessWidget {
                   colorButton: Colors.white,
                   child: Text(
                     'Back to Home',
-                    style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
+                    style: TextStyles.rem20Bold.copyWith(color: Colors.black),
                   ),
                 ),
               ],

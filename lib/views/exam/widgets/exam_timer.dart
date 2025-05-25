@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/views/exam/widgets/score_exam_view.dart';
 
 class ExamTimer extends StatefulWidget {

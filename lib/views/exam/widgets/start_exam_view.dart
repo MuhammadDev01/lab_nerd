@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/exam/widgets/exam_timer.dart';
 import 'package:lab_nerd/views/exam/widgets/score_exam_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
@@ -85,7 +85,7 @@ class _StartExamViewState extends State<StartExamView> {
                             colorButton: controller.getButtonColor(choice),
                             child: Text(
                               choice,
-                              style: TextStyles.rem16Bold.copyWith(
+                              style: TextStyles.rem16SemiBold.copyWith(
                                 color: Colors.black,
                               ),
                             ),
@@ -121,7 +121,7 @@ class _StartExamViewState extends State<StartExamView> {
       style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
       child: Text(
         "Next Question",
-        style: TextStyles.rem16Bold.copyWith(color: Colors.black),
+        style: TextStyles.rem16SemiBold.copyWith(color: Colors.black),
       ),
     );
   }
@@ -132,7 +132,7 @@ class _StartExamViewState extends State<StartExamView> {
       style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
       child: Text(
         "Finish",
-        style: TextStyles.rem16Bold.copyWith(color: Colors.black),
+        style: TextStyles.rem16SemiBold.copyWith(color: Colors.black),
       ),
     );
   }

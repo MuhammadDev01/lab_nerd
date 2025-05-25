@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/views/settings/change_username/widgets/change_username_appbar.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
@@ -59,8 +59,8 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
                         controller: nameController,
                         textInputType: TextInputType.name,
                         validateMessage: 'Username Required',
-                        textStyle:
-                            TextStyles.rem16Bold.copyWith(color: Colors.black),
+                        textStyle: TextStyles.rem16SemiBold
+                            .copyWith(color: Colors.black),
                       ),
                       const SizedBox(
                         height: 100,

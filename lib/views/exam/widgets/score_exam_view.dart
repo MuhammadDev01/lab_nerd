@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/exam/widgets/congratulations_view.dart';
 import 'package:lab_nerd/views/exam/widgets/normal_score.dart';
 

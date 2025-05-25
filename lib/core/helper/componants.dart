@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 appSnackbar({
   required String title,
@@ -13,11 +13,11 @@ appSnackbar({
       '',
       titleText: Text(
         title,
-        style: TextStyles.rem20Boldd.copyWith(color: Colors.white),
+        style: TextStyles.rem20Bold.copyWith(color: Colors.white),
       ),
       messageText: Text(
         message,
-        style: TextStyles.rem16Bold.copyWith(color: Colors.white),
+        style: TextStyles.rem16SemiBold.copyWith(color: Colors.white),
       ),
       snackStyle: SnackStyle.FLOATING,
       snackPosition: SnackPosition.TOP,

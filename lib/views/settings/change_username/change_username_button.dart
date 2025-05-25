@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class ChangeUsernameButton extends StatelessWidget {
   const ChangeUsernameButton({super.key});
@@ -31,7 +31,7 @@ class ChangeUsernameButton extends StatelessWidget {
           ),
           Text(
             "Change Username",
-            style: TextStyles.rem20Boldd,
+            style: TextStyles.rem20Bold,
           ),
         ],
       ),

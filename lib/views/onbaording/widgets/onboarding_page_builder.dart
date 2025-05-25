@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/models/onboarding_item_model.dart';
 
 class OnboardingPageBuilder extends StatelessWidget {
@@ -30,7 +30,7 @@ class OnboardingPageBuilder extends StatelessWidget {
         ),
         Text(
           model.body,
-          style: TextStyles.rem16Bold,
+          style: TextStyles.rem16SemiBold,
         ),
       ],
     );

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/home/quizzes/score_quiz_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
@@ -51,8 +51,7 @@ class _QuizViewState extends State<QuizView> {
                     ),
                     Text(
                       controller.question.question,
-                      style:
-                          TextStyles.rem20Boldd.copyWith(color: Colors.white),
+                      style: TextStyles.rem20Bold.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
@@ -68,7 +67,7 @@ class _QuizViewState extends State<QuizView> {
                           colorButton: controller.getButtonColor(choice),
                           child: Text(
                             choice,
-                            style: TextStyles.rem16Bold.copyWith(
+                            style: TextStyles.rem16SemiBold.copyWith(
                               color: Colors.black,
                             ),
                           ),
@@ -84,7 +83,7 @@ class _QuizViewState extends State<QuizView> {
                                 backgroundColor: Colors.white),
                             child: Text(
                               "Finish",
-                              style: TextStyles.rem16Bold
+                              style: TextStyles.rem16SemiBold
                                   .copyWith(color: Colors.black),
                             ),
                           )
@@ -94,7 +93,7 @@ class _QuizViewState extends State<QuizView> {
                                 backgroundColor: Colors.white),
                             child: Text(
                               "Next Question",
-                              style: TextStyles.rem16Bold
+                              style: TextStyles.rem16SemiBold
                                   .copyWith(color: Colors.black),
                             ),
                           ),

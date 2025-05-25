@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
@@ -60,8 +60,8 @@ class AppTextFormField extends StatelessWidget {
       children: [
         Text(
           helperText,
-          style:
-              textStyle ?? TextStyles.rem14Bold.copyWith(color: Colors.black),
+          style: textStyle ??
+              TextStyles.rem14SemiBold.copyWith(color: Colors.black),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),

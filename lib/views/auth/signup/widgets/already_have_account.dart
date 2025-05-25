@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class AlreadyHaveAccount extends StatelessWidget {
   const AlreadyHaveAccount({super.key});
@@ -15,7 +15,7 @@ class AlreadyHaveAccount extends StatelessWidget {
       children: [
         Text(
           "Already have account?",
-          style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
         ),
         SizedBox(
           width: 10.w,
@@ -26,7 +26,7 @@ class AlreadyHaveAccount extends StatelessWidget {
             onTap: () => controller.toggleAuth(isLogin: true),
             child: Text(
               'Login',
-              style: TextStyles.rem14Bold.copyWith(
+              style: TextStyles.rem14SemiBold.copyWith(
                 color: ColorsManager.authRedColor,
                 decoration: TextDecoration.underline,
                 decorationColor: ColorsManager.authRedColor,

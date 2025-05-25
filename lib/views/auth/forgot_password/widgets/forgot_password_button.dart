@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
@@ -23,7 +23,7 @@ class ForgotPasswordButton extends StatelessWidget {
             : Center(
                 child: Text(
                   'Send',
-                  style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+                  style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
                 ),
               ),
       ),

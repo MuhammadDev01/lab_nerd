@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class GoogleLogin extends StatelessWidget {
   const GoogleLogin({
@@ -21,7 +21,7 @@ class GoogleLogin extends StatelessWidget {
         ),
         Text(
           'Login with Google',
-          style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
         ),
       ],
     );

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/views/settings/change_password/widgets/change_password_appbar.dart';
 import 'package:lab_nerd/views/settings/change_password/widgets/change_password_fields.dart';
@@ -48,7 +48,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                       ? AppLoading()
                       : Text(
                           'Update',
-                          style: TextStyles.rem16Bold
+                          style: TextStyles.rem16SemiBold
                               .copyWith(color: Colors.white),
                         ),
                 ),

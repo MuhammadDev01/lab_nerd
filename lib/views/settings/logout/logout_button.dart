@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});
@@ -13,9 +13,9 @@ class LogoutButton extends StatelessWidget {
         onTap: () {
           Get.defaultDialog(
             title: "Logout From App",
-            titleStyle: TextStyles.rem20Boldd,
+            titleStyle: TextStyles.rem20Bold,
             middleText: 'Are you sure you need to logout',
-            middleTextStyle: TextStyles.rem16Bold,
+            middleTextStyle: TextStyles.rem16SemiBold,
             radius: 10,
             textCancel: " No ",
             cancelTextColor: Get.isDarkMode ? Colors.white : Colors.black,
@@ -44,7 +44,7 @@ class LogoutButton extends StatelessWidget {
             ),
             Text(
               "Logout",
-              style: TextStyles.rem20Boldd,
+              style: TextStyles.rem20Bold,
             ),
           ],
         ),

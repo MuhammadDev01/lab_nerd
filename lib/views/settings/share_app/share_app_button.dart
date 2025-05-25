@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class ShareAppButton extends StatelessWidget {
   const ShareAppButton({super.key});
@@ -29,7 +29,7 @@ class ShareAppButton extends StatelessWidget {
             ),
             Text(
               "Share the app",
-              style: TextStyles.rem20Boldd,
+              style: TextStyles.rem20Bold,
             ),
           ],
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class AuthViewCenterText extends StatelessWidget {
   const AuthViewCenterText({

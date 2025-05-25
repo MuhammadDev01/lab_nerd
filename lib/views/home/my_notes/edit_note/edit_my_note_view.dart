@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/models/note_model.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/widgets/edit_note_color.dart';
 import 'package:lab_nerd/views/home/my_notes/widgets/add_note_text_field.dart';

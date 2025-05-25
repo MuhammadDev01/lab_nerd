@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class ChangeUsernameAppbar extends StatelessWidget {
   const ChangeUsernameAppbar({
@@ -23,7 +23,7 @@ class ChangeUsernameAppbar extends StatelessWidget {
         ),
         Text(
           'Change Username',
-          style: TextStyles.rem20Boldd.copyWith(color: Colors.black),
+          style: TextStyles.rem20Bold.copyWith(color: Colors.black),
         ),
       ],
     );

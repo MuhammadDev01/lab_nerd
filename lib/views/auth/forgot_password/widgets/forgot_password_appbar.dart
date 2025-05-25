@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/forgot_password/widgets/forgot_password_back_button.dart';
 
 class ForgotPasswordAppbar extends StatelessWidget {
@@ -22,7 +22,7 @@ class ForgotPasswordAppbar extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               child: Text(
                 nameView,
-                style: TextStyles.rem14Bold.copyWith(
+                style: TextStyles.rem14SemiBold.copyWith(
                   fontSize: 18,
                   color: Colors.black,
                 ),

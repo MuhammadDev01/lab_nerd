@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsButton extends StatelessWidget {
@@ -27,7 +27,7 @@ class ContactUsButton extends StatelessWidget {
           ),
           Text(
             "Contact Us",
-            style: TextStyles.rem20Boldd,
+            style: TextStyles.rem20Bold,
           ),
         ],
       ),

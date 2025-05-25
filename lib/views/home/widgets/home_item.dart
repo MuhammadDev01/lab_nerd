@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class HomeItem extends StatelessWidget {
   const HomeItem({

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/notes_controller.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/models/note_model.dart';
 import 'package:lab_nerd/views/home/my_notes/edit_note/edit_my_note_view.dart';
 
@@ -49,9 +49,9 @@ class CustomNoteItem extends StatelessWidget {
                 onPressed: () {
                   Get.defaultDialog(
                     title: "Delete Note",
-                    titleStyle: TextStyles.rem20Boldd,
+                    titleStyle: TextStyles.rem20Bold,
                     middleText: 'Are you sure delete this note?',
-                    middleTextStyle: TextStyles.rem16Bold,
+                    middleTextStyle: TextStyles.rem16SemiBold,
                     radius: 10,
                     textCancel: " No ",
                     cancelTextColor:

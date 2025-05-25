@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/views/home/widgets/home_app_bar.dart';
 import 'package:lab_nerd/views/home/widgets/home_item.dart';
 import 'package:lab_nerd/views/home/widgets/search_element_item_body.dart';
@@ -40,25 +43,26 @@ class _HomeViewState extends State<HomeView>
 
   @override
   Widget build(BuildContext context) {
+    log(MediaQuery.sizeOf(context).width.toString());
     return BackgroundGradient(
       gradient: Get.isDarkMode
           ? ColorsManager.darkHomeGradient
           : ColorsManager.lightHomeGradient,
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0.sp),
           child: Column(
             children: [
               HomeAppBar(),
               SizedBox(
-                height: 20,
+                height: 10.w,
               ),
               Expanded(
                 child: GridView.count(
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
                   childAspectRatio:
-                      MediaQuery.sizeOf(context).width > 900 ? 2.2 : 0.9,
+                      MediaQuery.sizeOf(context).width > 600 ? 1.4 : 0.9,
                   crossAxisCount: 2,
                   children: [
                     HomeItem(

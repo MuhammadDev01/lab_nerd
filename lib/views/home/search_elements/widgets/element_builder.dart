@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/views/home/search_elements/details_element_view.dart';
 
@@ -38,7 +38,7 @@ class ElementBuilder extends StatelessWidget {
                     ),
                     child: Text(
                       element.symbol,
-                      style: TextStyles.rem16Bold.copyWith(
+                      style: TextStyles.rem16SemiBold.copyWith(
                         color: Colors.white,
                       ),
                     ),
@@ -57,7 +57,7 @@ class ElementBuilder extends StatelessWidget {
                         Text(
                           element.name,
                           maxLines: 2,
-                          style: TextStyles.rem20Boldd
+                          style: TextStyles.rem20Bold
                               .copyWith(color: Colors.black),
                         ),
                         const SizedBox(
@@ -71,7 +71,7 @@ class ElementBuilder extends StatelessWidget {
                           ),
                           child: Text(
                             element.atomicNumber.toString(),
-                            style: TextStyles.rem16Bold.copyWith(
+                            style: TextStyles.rem16SemiBold.copyWith(
                               color: Colors.white,
                             ),
                           ),
@@ -83,7 +83,7 @@ class ElementBuilder extends StatelessWidget {
                         element.image?.title ?? 'no information',
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyles.rem16Bold.copyWith(
+                        style: TextStyles.rem16SemiBold.copyWith(
                           color: Colors.black45,
                         ),
                       ),

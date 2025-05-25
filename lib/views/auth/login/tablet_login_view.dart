@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/widgets/login_button.dart';
 import 'package:lab_nerd/views/auth/login/widgets/not_have_an_account.dart';
 import '../../../widgets/app_text_form_field.dart';
@@ -56,7 +56,7 @@ class TabletLoginView extends StatelessWidget {
                 onPressed: () => Get.toNamed(Routes.forgotPasswordView),
                 child: Text(
                   'Forgot Password?',
-                  style: TextStyles.rem14Bold.copyWith(color: Colors.red),
+                  style: TextStyles.rem14SemiBold.copyWith(color: Colors.red),
                 ),
               ),
             ),

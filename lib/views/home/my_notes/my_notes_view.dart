@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/views/home/my_notes/add_note_bottom_sheet.dart';
 import 'widgets/my_notes_view_body.dart';
 

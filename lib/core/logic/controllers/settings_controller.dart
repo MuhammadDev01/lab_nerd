@@ -5,7 +5,7 @@ import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 
 class SettingsController extends GetxController {

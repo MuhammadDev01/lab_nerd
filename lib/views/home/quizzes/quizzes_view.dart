@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/home/quizzes/quiz_view.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
@@ -50,7 +50,7 @@ class QuizzesView extends StatelessWidget {
                       ),
                       child: Text(
                         "Symbol",
-                        style: TextStyles.rem16Bold.copyWith(
+                        style: TextStyles.rem16SemiBold.copyWith(
                           color: Colors.black,
                         ),
                       ),
@@ -65,7 +65,7 @@ class QuizzesView extends StatelessWidget {
                       ),
                       child: Text(
                         "Atomic Number",
-                        style: TextStyles.rem16Bold.copyWith(
+                        style: TextStyles.rem16SemiBold.copyWith(
                           color: Colors.black,
                         ),
                       ),
@@ -81,7 +81,7 @@ class QuizzesView extends StatelessWidget {
                       child: FittedBox(
                         child: Text(
                           "Balance Chemical Equations",
-                          style: TextStyles.rem16Bold.copyWith(
+                          style: TextStyles.rem16SemiBold.copyWith(
                             color: Colors.black,
                           ),
                         ),
@@ -97,7 +97,7 @@ class QuizzesView extends StatelessWidget {
                       ),
                       child: Text(
                         "Chemistry Reactions",
-                        style: TextStyles.rem16Bold.copyWith(
+                        style: TextStyles.rem16SemiBold.copyWith(
                           color: Colors.black,
                         ),
                       ),

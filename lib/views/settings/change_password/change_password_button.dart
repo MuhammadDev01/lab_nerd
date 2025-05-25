@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/settings/change_password/change_password_view.dart';
 
 class ChangePasswordButton extends StatelessWidget {
@@ -31,7 +31,7 @@ class ChangePasswordButton extends StatelessWidget {
           ),
           Text(
             "Change Password",
-            style: TextStyles.rem20Boldd,
+            style: TextStyles.rem20Bold,
           ),
         ],
       ),

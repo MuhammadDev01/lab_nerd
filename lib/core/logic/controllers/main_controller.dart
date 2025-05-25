@@ -4,15 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/views/home/home_view.dart';
 import 'package:lab_nerd/widgets/constant.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/models/user_profile_model.dart';
 import 'package:lab_nerd/views/exam/exam_view.dart';
 import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
 import 'package:lab_nerd/views/settings/settings_view.dart';
-import 'package:lab_nerd/views/home/home_view.dart';
 
 class Maincontroller extends GetxController {
   bool isLoading = false;

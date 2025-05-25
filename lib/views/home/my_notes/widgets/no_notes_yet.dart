@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class NoNotesYet extends StatelessWidget {
   const NoNotesYet({
@@ -19,7 +19,7 @@ class NoNotesYet extends StatelessWidget {
           ),
           Text(
             'No notes yet ....',
-            style: TextStyles.rem20Boldd.copyWith(color: Colors.black54),
+            style: TextStyles.rem20Bold.copyWith(color: Colors.black54),
           ),
         ],
       ),

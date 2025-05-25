@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/exam/widgets/start_exam_view.dart';
 import 'package:lab_nerd/widgets/default_button.dart';
 
@@ -51,7 +51,7 @@ class ExamView extends StatelessWidget {
                 colorButton: ColorsManager.errorColor,
                 child: Text(
                   'Start Exam',
-                  style: TextStyles.rem20Boldd.copyWith(color: Colors.white),
+                  style: TextStyles.rem20Bold.copyWith(color: Colors.white),
                 ),
               ),
             ),

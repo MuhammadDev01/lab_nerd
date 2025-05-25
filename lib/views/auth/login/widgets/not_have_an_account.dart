@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/core/utils/themes/colors_manager.dart';
-import 'package:lab_nerd/core/utils/themes/text_styles.dart';
+import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class NotHaveAnAccount extends StatelessWidget {
   const NotHaveAnAccount({
@@ -16,7 +16,7 @@ class NotHaveAnAccount extends StatelessWidget {
       children: [
         Text(
           "Don't have an account?",
-          style: TextStyles.rem14Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
         ),
         SizedBox(
           width: 14.w,
@@ -27,7 +27,7 @@ class NotHaveAnAccount extends StatelessWidget {
             onTap: () => controller.toggleAuth(isLogin: false),
             child: Text(
               'Sign up',
-              style: TextStyles.rem14Bold.copyWith(
+              style: TextStyles.rem14SemiBold.copyWith(
                 color: ColorsManager.authRedColor,
                 decoration: TextDecoration.underline,
                 decorationColor: ColorsManager.authRedColor,

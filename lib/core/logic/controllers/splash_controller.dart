@@ -8,10 +8,12 @@ import 'package:lab_nerd/core/utils/assets.dart';
 class SplashController extends GetxController {
   RxInt currentIndex = 0.obs;
   Timer? _timer;
+
   @override
   void onInit() async {
     _animationLogo();
     await _navigateToWhere();
+
     super.onInit();
   }
 
@@ -30,7 +32,7 @@ class SplashController extends GetxController {
   ];
 
   _animationLogo() {
-    _timer = Timer.periodic(const Duration(milliseconds: 300), (Timer timer) {
+    _timer = Timer.periodic(const Duration(milliseconds: 300), (_) {
       if (currentIndex.value < splashEyes.length - 1) {
         currentIndex.value++;
       }
