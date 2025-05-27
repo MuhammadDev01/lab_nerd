@@ -5,7 +5,6 @@ import 'package:lab_nerd/views/settings/change_username/change_username_button.d
 import 'package:lab_nerd/views/settings/change_password/change_password_button.dart';
 import 'package:lab_nerd/views/settings/dark_mode/dark_mode_button.dart';
 import 'package:lab_nerd/views/settings/logout/logout_button.dart';
-import 'package:lab_nerd/views/settings/share_app/share_app_button.dart';
 import 'package:lab_nerd/views/settings/user_details/user_details.dart';
 
 class SettingsView extends StatelessWidget {
@@ -28,8 +27,6 @@ class SettingsView extends StatelessWidget {
               ChangePasswordButton(),
               appDivider(),
               LogoutButton(),
-              appDivider(),
-              ShareAppButton(),
               appDivider(),
               ContactUsButton(),
             ],
