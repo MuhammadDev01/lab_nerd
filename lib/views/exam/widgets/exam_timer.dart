@@ -19,19 +19,17 @@ class _ExamTimerState extends State<ExamTimer> {
   @override
   void initState() {
     totalTime = 5 * 60;
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment(0, 0.15),
+      alignment: Alignment(0, 0.17),
       children: [
         Image.asset(
           Assets.imagesTimer,
-          height: 210.h,
-          width: 210.w,
+          height: 205.h,
         ),
         TweenAnimationBuilder<int>(
           tween: IntTween(begin: totalTime, end: 0),
@@ -47,13 +45,17 @@ class _ExamTimerState extends State<ExamTimer> {
             return Stack(
               alignment: Alignment.center,
               children: [
-                SizedBox(
-                  width: 88.w,
-                  height: 88.h,
-                  child: CircularProgressIndicator(
-                    color: ColorsManager.errorColor,
-                    value: secondsLeft / totalTime, // تعديل قيمة المؤشر التقدمي
-                    strokeWidth: 10,
+                Transform.rotate(
+                  angle: 3.14 * 2 * (1 - secondsLeft / totalTime),
+                  child: SizedBox(
+                    width: 27.w,
+                    height: 87.h,
+                    child: CircularProgressIndicator(
+                      color: ColorsManager.errorColor,
+                      value:
+                          secondsLeft / totalTime, // تعديل قيمة المؤشر التقدمي
+                      strokeWidth: 6,
+                    ),
                   ),
                 ),
                 Text(

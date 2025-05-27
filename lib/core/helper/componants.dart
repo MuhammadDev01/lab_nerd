@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
@@ -25,23 +26,9 @@ appSnackbar({
       backgroundColor: backgroundColor,
     );
 
-Divider appDivider() => const Divider(
-      color: ColorsManager.greenWhite,
-      height: 50,
+Divider appDivider({Color? color, double? height, double? thickness}) =>
+    Divider(
+      color: color ?? ColorsManager.greenWhite,
+      height: height ?? 50.h,
+      thickness: thickness ?? 1.5.h,
     );
-
-AppBar customAppBar({
-  required String centerTitle,
-  List<Widget>? actions,
-}) {
-  return AppBar(
-    backgroundColor: Colors.transparent,
-    title: Text(
-      centerTitle,
-      style: TextStyles.rem26Bold,
-    ),
-    centerTitle: true,
-    actionsPadding: EdgeInsets.only(right: 18),
-    actions: actions,
-  );
-}

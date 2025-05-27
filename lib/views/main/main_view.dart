@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
-import 'package:lab_nerd/views/main/widgets/main_bottom_navigation_bar.dart';
+import 'package:lab_nerd/views/main/widgets/custom_bottom_navigation_bar.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -10,7 +10,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<Maincontroller>(
       builder: (controller) => Scaffold(
-        bottomNavigationBar: MainBottomNavigationBar(
+        bottomNavigationBar: CustomBottomNavigationBar(
           controller: controller,
         ),
         body: controller.views[controller.currentIndex],

@@ -5,7 +5,7 @@ import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
-import 'package:lab_nerd/widgets/default_button.dart';
+import 'package:lab_nerd/widgets/custom_app_button.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton({super.key, required this.onTap});
@@ -14,7 +14,7 @@ class ForgotPasswordButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<ForgotPasswordController>(
       id: 'send',
-      builder: (controller) => DefaultButton(
+      builder: (controller) => CustomAppButton(
         onPressed: onTap,
         colorButton: ColorsManager.greenWhite,
         width: 256.w,
@@ -23,7 +23,7 @@ class ForgotPasswordButton extends StatelessWidget {
             : Center(
                 child: Text(
                   'Send',
-                  style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
+                  style: TextStyles.rem14SemiBold,
                 ),
               ),
       ),

@@ -5,7 +5,7 @@ import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/login/widgets/google_login.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
-import 'package:lab_nerd/widgets/default_button.dart';
+import 'package:lab_nerd/widgets/custom_app_button.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -13,7 +13,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(
-      builder: (controller) => DefaultButton(
+      builder: (controller) => CustomAppButton(
         colorButton: ColorsManager.greenWhite,
         onPressed: () async => await controller.login(),
         child: controller.isLoading
@@ -22,9 +22,7 @@ class LoginButton extends StatelessWidget {
                 ? GoogleLogin()
                 : Text(
                     'Login',
-                    style: TextStyles.rem14SemiBold.copyWith(
-                      color: Colors.black,
-                    ),
+                    style: TextStyles.rem14SemiBold,
                   ),
       ),
     );

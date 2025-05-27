@@ -26,7 +26,7 @@ class UserDetails extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 15.w,
+                      width: 15,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class UserDetails extends StatelessWidget {
                           style: TextStyles.rem16SemiBold,
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Text(
                           controller.currentEmail!.value,

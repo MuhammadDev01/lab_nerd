@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/views/home/quizzes/score_quiz_view.dart';
-import 'package:lab_nerd/widgets/default_button.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/quiz_choices.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/finish_button.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/next_question_button.dart';
 
 class QuizView extends StatefulWidget {
   const QuizView({
@@ -32,6 +33,7 @@ class _QuizViewState extends State<QuizView> {
 
   @override
   Widget build(BuildContext context) {
+    final isTalet = MediaQuery.sizeOf(context).width > 600;
     return Scaffold(
       body: Stack(
         children: [
@@ -45,64 +47,32 @@ class _QuizViewState extends State<QuizView> {
             builder: (_) {
               return Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      height: 150.h,
-                    ),
                     Text(
                       controller.question.question,
                       style: TextStyles.rem20Bold.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
-                      height: 200.h,
-                    ),
-                    ...controller.question.choices.map(
-                      (choice) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: DefaultButton(
-                          onPressed: () => controller.isUserAnswered
-                              ? null
-                              : controller.checkAnswer(choice),
-                          colorButton: controller.getButtonColor(choice),
-                          child: Text(
-                            choice,
-                            style: TextStyles.rem16SemiBold.copyWith(
-                              color: Colors.black,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.w),
+                      child: Column(
+                        children: [
+                          QuizChoices(),
+                          SizedBox(
+                            height: isTalet ? 60.h : 35.h,
+                          ),
+                          controller.questionIndex == 10
+                              ? FinishButton(controller: controller)
+                              : NextQuestionButton(controller: controller),
+                          Text(
+                            "Question: ${controller.questionIndex}/10",
+                            style: TextStyles.slacksideOnes20Bold.copyWith(
+                              color: Colors.white,
+                              fontSize: 30,
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
-                    controller.questionIndex == 10
-                        ? ElevatedButton(
-                            onPressed: () => Get.off(
-                                () => ScoreQuizView(score: controller.score)),
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white),
-                            child: Text(
-                              "Finish",
-                              style: TextStyles.rem16SemiBold
-                                  .copyWith(color: Colors.black),
-                            ),
-                          )
-                        : ElevatedButton(
-                            onPressed: () => controller.nextQuestion(),
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white),
-                            child: Text(
-                              "Next Question",
-                              style: TextStyles.rem16SemiBold
-                                  .copyWith(color: Colors.black),
-                            ),
-                          ),
-                    SizedBox(height: 40.h),
-                    Text(
-                      "Question: ${controller.questionIndex}/10",
-                      style: TextStyles.slacksideOnes20Bold.copyWith(
-                        color: Colors.white,
-                        fontSize: 30,
+                        ],
                       ),
                     ),
                   ],

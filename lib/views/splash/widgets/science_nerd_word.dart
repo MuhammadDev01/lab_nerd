@@ -7,7 +7,7 @@ class ScienceNerdWord extends StatelessWidget {
   const ScienceNerdWord({
     super.key,
   });
-
+  final size = 40;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,14 +18,18 @@ class ScienceNerdWord extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 Assets.imagesSvgScience,
-                height: 40.h,
+                height: MediaQuery.sizeOf(context).width > 600
+                    ? size.h * 2
+                    : size.h,
               ),
               SizedBox(
                 width: 5.w,
               ),
               SvgPicture.asset(
                 Assets.imagesSvgNerd,
-                height: 40.h,
+                height: MediaQuery.sizeOf(context).width > 600
+                    ? size.h * 2
+                    : size.h,
               ),
             ],
           ),

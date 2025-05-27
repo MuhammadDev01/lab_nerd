@@ -18,7 +18,7 @@ class AuthViewCenterText extends StatelessWidget {
           children: [
             Text(
               blackText,
-              style: TextStyles.poppins32Bold.copyWith(color: Colors.black),
+              style: TextStyles.poppins32Bold,
             ),
             Text(
               'to',

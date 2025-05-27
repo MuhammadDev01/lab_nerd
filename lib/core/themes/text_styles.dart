@@ -60,7 +60,7 @@ class TextStyles {
 }
 
 class ConfigSize {
-  static const double tabletSize = 768.0;
+  static const double tabletSize = 600;
   static const double desktopSize = 1200.0;
 }
 
@@ -70,7 +70,7 @@ double getResponsiveFontSize({required double fontSize}) {
 
   // 🔒 الحد الأدنى والأقصى لحجم الخط
   final double lowerLimit = fontSize * 0.8;
-  final double upperLimit = fontSize * 1.2;
+  final double upperLimit = fontSize * 1.3;
 
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
@@ -78,11 +78,5 @@ double getResponsiveFontSize({required double fontSize}) {
 double _getScaleFactor() {
   final double width = MediaQuery.of(Get.context!).size.width;
 
-  if (width < ConfigSize.tabletSize) {
-    return width / 550;
-  } else if (width < ConfigSize.desktopSize) {
-    return width / 1000;
-  } else {
-    return width / 1920;
-  }
+  return width / 550;
 }

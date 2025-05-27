@@ -60,7 +60,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 Text(
                   'please enter your Email Address To Receive a Verification Code',
                   textAlign: TextAlign.center,
-                  style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
+                  style: TextStyles.rem14SemiBold,
                 ),
                 SizedBox(
                   height: 30.h,

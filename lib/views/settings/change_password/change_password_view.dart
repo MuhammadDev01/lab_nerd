@@ -9,7 +9,7 @@ import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/views/settings/change_password/widgets/change_password_appbar.dart';
 import 'package:lab_nerd/views/settings/change_password/widgets/change_password_fields.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
-import 'package:lab_nerd/widgets/default_button.dart';
+import 'package:lab_nerd/widgets/custom_app_button.dart';
 
 class ChangePasswordView extends StatefulWidget {
   const ChangePasswordView({super.key});
@@ -36,7 +36,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
               ChangePasswordAppBar(),
               ChangePasswordFields(),
               Obx(
-                () => DefaultButton(
+                () => CustomAppButton(
                   width: 100.w,
                   onPressed: () async {
                     if (controller.formKey.currentState!.validate()) {

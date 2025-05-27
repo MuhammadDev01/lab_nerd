@@ -7,7 +7,7 @@ import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
 import 'package:lab_nerd/views/settings/change_username/widgets/change_username_appbar.dart';
 import 'package:lab_nerd/widgets/app_loading.dart';
-import 'package:lab_nerd/widgets/default_button.dart';
+import 'package:lab_nerd/widgets/custom_app_button.dart';
 import 'package:lab_nerd/widgets/app_text_form_field.dart';
 
 class ChangeUsernameView extends StatefulWidget {
@@ -66,7 +66,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
                         height: 100,
                       ),
                       Obx(
-                        () => DefaultButton(
+                        () => CustomAppButton(
                           width: 120,
                           colorButton: Colors.teal,
                           onPressed: () => updateUserName(controller),
