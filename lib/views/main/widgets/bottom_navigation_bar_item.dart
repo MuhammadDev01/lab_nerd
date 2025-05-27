@@ -28,7 +28,7 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0.h),
+          padding: EdgeInsets.only(bottom: 8.0.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
