@@ -21,9 +21,7 @@ class TabletSignUpView extends StatelessWidget {
           children: [
             Text(
               'SIGNUP',
-              style: TextStyles.rem26Bold.copyWith(
-                color: Colors.black,
-              ),
+              style: TextStyles.rem26Bold,
             ),
             AppTextFormField(
               helperText: 'Username',

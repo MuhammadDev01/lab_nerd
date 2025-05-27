@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 
 final darkTheme = ThemeData(
-  primaryColorDark: Colors.black,
-  primaryColorLight: Colors.white,
+//  primaryColorDark: ColorsManager.greenWhite,
+//  primaryColorLight: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20,
     backgroundColor: ColorsManager.darkModeColor,
@@ -25,12 +24,7 @@ final darkTheme = ThemeData(
   ),
   scaffoldBackgroundColor: ColorsManager.darkModeColor,
   textTheme: TextTheme(
-    displaySmall: TextStyle(
-      color: Colors.white,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'REM',
-      fontSize: 20.sp,
-    ),
+    bodyMedium: TextStyle(color: Colors.white),
   ),
   brightness: Brightness.dark,
 );

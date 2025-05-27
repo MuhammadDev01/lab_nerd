@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final defaultTheme = ThemeData(
   appBarTheme: const AppBarTheme(
@@ -21,12 +20,7 @@ final defaultTheme = ThemeData(
     ),
   ),
   textTheme: TextTheme(
-    displaySmall: TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'REM',
-      fontSize: 20.sp,
-    ),
+    bodyMedium: TextStyle(color: Colors.black),
   ),
   scaffoldBackgroundColor: Colors.white,
   brightness: Brightness.light,

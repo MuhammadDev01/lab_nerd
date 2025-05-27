@@ -54,22 +54,6 @@ class LoginController extends GetxController {
     update(['visibility_password']);
   }
 
-//**************TABLET**************\\
-  final PageController pageController = PageController();
-  RxInt currentPage = 0.obs;
-  onPageChanged(int value) {
-    currentPage.value = value;
-    update();
-  }
-
-  goToSecondPageView() {
-    pageController.animateToPage(
-      1,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.fastOutSlowIn,
-    );
-  }
-
 //**************LOGIN**************\\
   bool isLogin = true;
   toggleAuth({required bool isLogin}) {
@@ -130,5 +114,21 @@ class LoginController extends GetxController {
       }
     }
     toggleLoading();
+  }
+
+//**************TABLET**************\\
+  final PageController pageController = PageController();
+  RxInt currentPage = 0.obs;
+  onPageChanged(int value) {
+    currentPage.value = value;
+    update();
+  }
+
+  goToSecondPageView() {
+    pageController.animateToPage(
+      1,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.fastOutSlowIn,
+    );
   }
 }

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/helper/cache_helper.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -10,6 +11,7 @@ import 'package:lab_nerd/views/home/widgets/home_app_bar.dart';
 import 'package:lab_nerd/views/home/widgets/home_item.dart';
 import 'package:lab_nerd/views/home/widgets/search_element_item_body.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -43,7 +45,7 @@ class _HomeViewState extends State<HomeView>
 
   @override
   Widget build(BuildContext context) {
-    log(MediaQuery.sizeOf(context).width.toString());
+    log(CacheHelper.userBox.get(kuserToken).toString());
     return BackgroundGradient(
       gradient: Get.isDarkMode
           ? ColorsManager.darkHomeGradient

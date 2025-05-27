@@ -29,14 +29,24 @@ class NotesController extends GetxController {
     super.onClose();
   }
 
-  RxBool isLoading = false.obs;
+  bool isLoading = false;
+  toggleLoading() {
+    isLoading = !isLoading;
+    update();
+  }
+
+  Color selectedColor = Colors.white;
+  void selectNoteColor(Color color) {
+    selectedColor = color;
+    update();
+  }
 
   Future<void> addNote() async {
-    isLoading(true);
+    toggleLoading();
     try {
       final CollectionReference notesRef = FirebaseFirestore.instance
           .collection('users')
-          .doc(CacheHelper.userBox.get(kuserToken))
+          .doc(CacheHelper.authBox.get(kuserToken))
           .collection('notes');
 
       final newNote = NoteModel(
@@ -51,7 +61,7 @@ class NotesController extends GetxController {
       await fetchAllNotes();
       titleController.clear();
       contentController.clear();
-      update();
+      //update();
     } catch (e) {
       appSnackbar(
         title: 'Failed',
@@ -59,19 +69,13 @@ class NotesController extends GetxController {
         backgroundColor: ColorsManager.errorColor,
       );
     }
-    isLoading(false);
-  }
-
-  Color selectedColor = Colors.white;
-  void selectNoteColor(Color color) {
-    selectedColor = color;
-    update();
+    toggleLoading();
   }
 
   Future<void> fetchAllNotes() async {
     final notesRef = FirebaseFirestore.instance
         .collection('users')
-        .doc(CacheHelper.userBox.get(kuserToken))
+        .doc(CacheHelper.authBox.get(kuserToken))
         .collection('notes');
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await notesRef.get();
@@ -80,7 +84,7 @@ class NotesController extends GetxController {
   }
 
   Future<void> updateNote(String noteID) async {
-    isLoading(true);
+    toggleLoading();
 
     final note = NoteModel(
       title: titleController.text.trim(),
@@ -92,7 +96,7 @@ class NotesController extends GetxController {
     try {
       final DocumentReference noteRef = FirebaseFirestore.instance
           .collection('users')
-          .doc(CacheHelper.userBox.get(kuserToken))
+          .doc(CacheHelper.authBox.get(kuserToken))
           .collection('notes')
           .doc(noteID);
 
@@ -108,15 +112,14 @@ class NotesController extends GetxController {
         backgroundColor: ColorsManager.errorColor,
       );
     }
-    isLoading(false);
-    update();
+    toggleLoading();
   }
 
   Future<void> deleteNote(String noteID) async {
     try {
       final DocumentReference noteRef = FirebaseFirestore.instance
           .collection('users')
-          .doc(CacheHelper.userBox.get(kuserToken))
+          .doc(CacheHelper.authBox.get(kuserToken))
           .collection('notes')
           .doc(noteID);
 

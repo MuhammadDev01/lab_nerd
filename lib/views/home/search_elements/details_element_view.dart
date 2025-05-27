@@ -39,10 +39,10 @@ class DetailsElementView extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
                 child: Column(
                   spacing: 10.h,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,18 +88,7 @@ class DetailsElementView extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () async {
-                            Uri uri = Uri.parse(element.source);
-                            if (await canLaunchUrl(uri)) {
-                              await launchUrl(uri,
-                                  mode: LaunchMode.externalApplication);
-                            } else {
-                              appSnackbar(
-                                  title: 'Failed',
-                                  message: 'try again',
-                                  backgroundColor: ColorsManager.errorColor);
-                            }
-                          },
+                          onPressed: () async => await _goToDetailsOfElement(),
                           child: Text(
                             'Click Here',
                             style: TextStyles.rem16SemiBold.copyWith(
@@ -119,6 +108,18 @@ class DetailsElementView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _goToDetailsOfElement() async {
+    Uri uri = Uri.parse(element.source);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      appSnackbar(
+          title: 'Failed',
+          message: 'try again',
+          backgroundColor: ColorsManager.errorColor);
+    }
   }
 
   Container _elementAvatar() {
@@ -159,13 +160,7 @@ class DetailsElementView extends StatelessWidget {
   AppBar _detailsAppBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
-      title: const Text(
-        'Details',
-        style: TextStyle(
-          letterSpacing: 1,
-          fontSize: 28,
-        ),
-      ),
+      title: Text('Details', style: TextStyles.slacksideOnes30Bold),
       centerTitle: true,
     );
   }

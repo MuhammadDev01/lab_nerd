@@ -35,9 +35,12 @@ class HomeItem extends StatelessWidget {
                         child: child,
                       );
                     },
-                    child: Image.asset(
-                      image ?? Assets.imagesChatGpt,
-                      width: 120,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: Image.asset(
+                        image ?? Assets.imagesChatGpt,
+                        width: 120,
+                      ),
                     ),
                   ),
             ),

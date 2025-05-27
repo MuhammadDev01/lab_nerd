@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/main/widgets/bottom_navigation_bar_item.dart';
@@ -12,9 +13,8 @@ class MainBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.09,
+      height: 80.h,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: CustomBottomNavigatorBarItem(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/views/home/my_notes/add_note_bottom_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -8,11 +9,11 @@ class AddNoteBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        right: 16,
-        left: 16,
-        bottom: MediaQuery.of(context).viewInsets.bottom,
+        right: 4.w,
+        left: 4.w,
+        bottom: 20.h,
       ),
-      child: const SingleChildScrollView(
+      child: SingleChildScrollView(
         child: AddNoteBottomSheetForm(),
       ),
     );
