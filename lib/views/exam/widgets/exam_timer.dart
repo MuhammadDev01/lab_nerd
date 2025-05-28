@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
+import 'package:lab_nerd/core/helper/global_helper.dart';
+import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
-import 'package:lab_nerd/views/exam/widgets/score_exam_view.dart';
+import 'package:lab_nerd/views/exam/widgets/exam_score_view.dart';
 
 class ExamTimer extends StatefulWidget {
   const ExamTimer({super.key});
@@ -15,7 +16,6 @@ class ExamTimer extends StatefulWidget {
 
 class _ExamTimerState extends State<ExamTimer> {
   late final int totalTime;
-  final controller = Get.find<QuizzesController>();
   @override
   void initState() {
     totalTime = 5 * 60;
@@ -29,7 +29,7 @@ class _ExamTimerState extends State<ExamTimer> {
       children: [
         Image.asset(
           Assets.imagesTimer,
-          height: 205.h,
+          height: GlobalHelper.isTablet ? 400.h : 205.h,
         ),
         TweenAnimationBuilder<int>(
           tween: IntTween(begin: totalTime, end: 0),
@@ -39,32 +39,28 @@ class _ExamTimerState extends State<ExamTimer> {
             int seconds = secondsLeft % 60; // حساب الثواني المتبقية
             if (secondsLeft == 0) {
               Future.microtask(() {
-                Get.to(() => ScoreExamView(score: controller.score));
+                Get.to(() => ExamScoreView());
               });
             }
             return Stack(
               alignment: Alignment.center,
               children: [
-                Transform.rotate(
-                  angle: 3.14 * 2 * (1 - secondsLeft / totalTime),
+                Transform.scale(
+                  scaleX: -1,
                   child: SizedBox(
-                    width: 27.w,
-                    height: 87.h,
+                    height: GlobalHelper.isTablet ? 160 : 80,
+                    width: GlobalHelper.isTablet ? 160 : 80,
                     child: CircularProgressIndicator(
                       color: ColorsManager.errorColor,
                       value:
                           secondsLeft / totalTime, // تعديل قيمة المؤشر التقدمي
-                      strokeWidth: 6,
+                      strokeWidth: GlobalHelper.isTablet ? 10 : 6,
                     ),
                   ),
                 ),
                 Text(
                   "$minutes:${seconds.toString().padLeft(2, '0')}", // عرض الوقت بصيغة MM:SS
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                  style: TextStyles.rem20Bold.copyWith(color: Colors.black),
                 ),
               ],
             );

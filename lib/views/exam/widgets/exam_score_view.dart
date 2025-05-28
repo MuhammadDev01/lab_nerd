@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/routes/routes.dart';
+import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/views/exam/widgets/congratulations_view.dart';
+import 'package:lab_nerd/views/exam/widgets/full_mark_score_view.dart';
 import 'package:lab_nerd/views/exam/widgets/normal_score.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/back_home_button.dart';
 
-class ScoreExamView extends StatefulWidget {
-  final int score;
-
-  const ScoreExamView({super.key, required this.score});
+class ExamScoreView extends StatefulWidget {
+  const ExamScoreView({super.key});
 
   @override
-  State<ScoreExamView> createState() => _ScoreExamViewState();
+  State<ExamScoreView> createState() => _ExamScoreViewState();
 }
 
-class _ScoreExamViewState extends State<ScoreExamView> {
+class _ExamScoreViewState extends State<ExamScoreView> {
   late ConfettiController _confettiController;
   late String percentage;
+  final QuizzesController controller = Get.find();
   @override
   void initState() {
-    percentage = (widget.score / 50 * 100).toStringAsFixed(0);
+    percentage = (controller.score / 50 * 100).toStringAsFixed(0);
     super.initState();
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 5));
@@ -55,28 +55,13 @@ class _ScoreExamViewState extends State<ScoreExamView> {
                 'Score Exam',
                 style: TextStyles.rem26Bold.copyWith(
                   letterSpacing: 3,
+                  fontSize: getResponsiveFontSize(fontSize: 40),
                 ),
               ),
               percentage == '100'
-                  ? CongratulationsView(percentage: percentage)
+                  ? FullMarkScoreView()
                   : NormalScoreView(percentage: int.parse(percentage)),
-              const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () => Get.offNamed(Routes.mainView),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                  textStyle: const TextStyle(fontSize: 16),
-                ),
-                child: const Text(
-                  "Back to Home",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              BackHomeButton(),
             ],
           ),
         ],

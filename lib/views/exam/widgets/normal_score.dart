@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
 class NormalScoreView extends StatelessWidget {
   const NormalScoreView({super.key, required this.percentage});
@@ -23,13 +24,13 @@ class NormalScoreView extends StatelessWidget {
           children: [
             Text(
               getEmojiForScore(),
-              style: TextStyle(fontSize: 100),
+              style: TextStyle(fontSize: 150),
             ),
             SizedBox(height: 20.h),
             Text(
               percentage < 50 ? "Fail" : "Success",
               style: TextStyles.rem26Bold.copyWith(
-                fontSize: 50.sp,
+                fontSize: getResponsiveFontSize(fontSize: 50),
                 letterSpacing: 2,
                 color: percentage < 50 ? Colors.red[900] : Colors.green,
               ),
@@ -38,7 +39,8 @@ class NormalScoreView extends StatelessWidget {
             Text(
               "$percentage%",
               style: TextStyle(
-                fontSize: 48,
+                fontSize: getResponsiveFontSize(fontSize: 50),
+                fontFamily: fontREM,
                 fontWeight: FontWeight.bold,
                 color: percentage < 50 ? Colors.red[900] : Colors.green,
               ),

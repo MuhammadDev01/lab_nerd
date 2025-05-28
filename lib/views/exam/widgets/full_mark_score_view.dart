@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
+import 'package:lab_nerd/widgets/constant.dart';
 
-class CongratulationsView extends StatelessWidget {
-  const CongratulationsView({super.key, required this.percentage});
-  final String percentage;
+class FullMarkScoreView extends StatelessWidget {
+  const FullMarkScoreView({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -13,22 +15,24 @@ class CongratulationsView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.emoji_events, size: 100, color: Colors.amber),
-            const SizedBox(height: 20),
+            Icon(Icons.emoji_events, size: 75.sp, color: Colors.amber),
+            SizedBox(height: 20.h),
             Text(
               "🎉 Congratulations!   ",
-              style: TextStyles.poppins32Bold,
+              style: TextStyles.poppins32Bold.copyWith(letterSpacing: 2),
             ),
             SizedBox(height: 12.h),
             Text(
               "You scored",
-              style: TextStyles.poppins32Bold.copyWith(
-                fontSize: 20.sp,
-              ),
+              style: TextStyle(
+                  fontFamily: fontPoppins,
+                  fontSize: getResponsiveFontSize(fontSize: 36),
+                  color: Colors.blueAccent,
+                  letterSpacing: 2),
             ),
             const SizedBox(height: 12),
             Text(
-              "$percentage%",
+              "100%",
               style: const TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,

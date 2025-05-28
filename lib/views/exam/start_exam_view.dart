@@ -32,42 +32,33 @@ class _StartExamViewState extends State<StartExamView> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<QuizzesController>(
-      builder: (_) => PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, result) async {
-          if (!didPop) {
-            result = await showExitDialog(context);
-          }
-        },
-        child: Scaffold(
-          body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  Assets.imagesExamBackground,
-                ),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (!didPop) {
+          result = await showExitDialog(context);
+        }
+      },
+      child: Scaffold(
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                Assets.imagesExamBackground,
               ),
             ),
-            child: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ExamTimer(),
-                      if (MediaQuery.sizeOf(context).width > 600)
-                        SizedBox(
-                          height: 100.h,
-                        ),
-                      QuestionsOfExam(),
-                    ],
-                  ),
-                ),
-              ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ExamTimer(),
+                QuestionsOfExam(),
+              ],
             ),
           ),
         ),

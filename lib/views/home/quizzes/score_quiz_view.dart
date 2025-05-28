@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/routes/routes.dart';
-import 'package:lab_nerd/core/themes/colors_manager.dart';
+import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/widgets/custom_app_button.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/back_home_button.dart';
 
 class ScoreQuizView extends StatelessWidget {
   final int score;
@@ -13,7 +11,6 @@ class ScoreQuizView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isTablet = MediaQuery.sizeOf(context).width > 600;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -39,42 +36,29 @@ class ScoreQuizView extends StatelessWidget {
                 Text(
                   "Your Score",
                   style: TextStyles.rem26Bold.copyWith(
-                    fontSize:
-                        getResponsiveFontSize(fontSize: isTablet ? 40 : 30),
+                    fontSize: getResponsiveFontSize(
+                        fontSize: GlobalHelper.isTablet ? 40 : 30),
                   ),
                 ),
                 SizedBox(height: 10.h),
                 Text(
                   "$score / 10",
                   style: TextStyles.rem26Bold.copyWith(
-                    fontSize:
-                        getResponsiveFontSize(fontSize: isTablet ? 38 : 28),
+                    fontSize: getResponsiveFontSize(
+                        fontSize: GlobalHelper.isTablet ? 38 : 28),
                   ),
                 ),
-                SizedBox(height: isTablet ? 100.h : 50.h),
+                SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
                 Text(
                   _getResultMessage(),
                   style: TextStyles.rem26Bold.copyWith(
-                      fontSize:
-                          getResponsiveFontSize(fontSize: isTablet ? 30 : 26),
+                      fontSize: getResponsiveFontSize(
+                          fontSize: GlobalHelper.isTablet ? 30 : 26),
                       fontStyle: FontStyle.italic),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: isTablet ? 100.h : 50.h),
-                CustomAppButton(
-                  onPressed: () => Get.offNamed(Routes.mainView),
-                  colorButton: ColorsManager.greenWhite,
-                  width: isTablet ? 150.w : 100.w,
-                  height: isTablet ? 100.h : 50.h,
-                  child: Text(
-                    "Back Home",
-                    style: TextStyles.rem26Bold.copyWith(
-                      fontSize:
-                          getResponsiveFontSize(fontSize: isTablet ? 30 : 24),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+                SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
+                BackHomeButton(),
               ],
             ),
           ),

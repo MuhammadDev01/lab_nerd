@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/cache_helper.dart';
+import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/themes/dark_theme.dart';
@@ -15,11 +16,12 @@ class ScienceNerdApp extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    GlobalHelper.isTablet = MediaQuery.sizeOf(context).width > 600;
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) {
+      builder: (_, child) {
         return GetMaterialApp(
           useInheritedMediaQuery: true,
           title: 'Science Nerd',

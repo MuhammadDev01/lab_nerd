@@ -1,87 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/logic/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/views/exam/widgets/score_exam_view.dart';
-import 'package:lab_nerd/widgets/constant.dart';
-import 'package:lab_nerd/widgets/custom_app_button.dart';
+import 'package:lab_nerd/views/exam/widgets/exam_score_view.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/finish_button.dart';
+import 'package:lab_nerd/views/home/quizzes/widgets/next_question_button.dart';
 
 class QuestionsOfExam extends StatelessWidget {
-  QuestionsOfExam({super.key});
-  final controller = Get.find<QuizzesController>();
+  const QuestionsOfExam({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 10.h,
-      children: [
-        Text(
-          controller.question.question,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 8.sp,
-            fontFamily: fontPoppins,
-            fontWeight: FontWeight.bold,
+    return GetBuilder<QuizzesController>(
+      builder: (controller) => Column(
+        spacing: GlobalHelper.isTablet ? 20.h : 10.h,
+        children: [
+          Text(
+            controller.question.question,
+            style: TextStyles.rem26Bold,
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(
-          height: 20.h,
-        ),
-        ...controller.question.choices.map(
-          (choice) => Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h),
-            child: CustomAppButton(
-              width: 150.w,
-              onPressed: () {
+          if (GlobalHelper.isTablet)
+            SizedBox(
+              height: 20.h,
+            ),
+          ...controller.question.choices.map((choice) {
+            return ChoiceChip(
+              label: Center(
+                child: Text(
+                  choice,
+                  style: TextStyles.rem16SemiBold.copyWith(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              showCheckmark: false,
+              color: WidgetStatePropertyAll(controller.getButtonColor(choice)),
+              selected: controller.isUserAnswered,
+              selectedColor: controller.getButtonColor(choice),
+              backgroundColor: Colors.grey[200],
+              padding: EdgeInsets.symmetric(
+                  vertical: GlobalHelper.isTablet ? 30.h : 12.h),
+              disabledColor: Colors.grey[300],
+              onSelected: (_) {
                 controller.isUserAnswered
                     ? null
                     : controller.checkAnswer(choice);
               },
-              colorButton: controller.getButtonColor(choice),
-              child: Text(
-                choice,
-                style: TextStyles.rem16SemiBold,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.r),
               ),
+            );
+          }),
+          SizedBox(height: 10.h),
+          controller.questionIndex == 50
+              ? FinishButton(
+                  onPressed: () => Get.off(() => ExamScoreView()),
+                )
+              : NextQuestionButton(),
+          SizedBox(height: 5.h),
+          FittedBox(
+            child: Text(
+              "Question: ${controller.questionIndex}/50",
+              style: TextStyles.rem26Bold.copyWith(color: Colors.white),
             ),
           ),
-        ),
-        controller.questionIndex == 50
-            ? _finishButton()
-            : _goToNextQuestionButton(),
-        FittedBox(
-          child: Text(
-            "Question: ${controller.questionIndex}/50",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12.sp,
-              fontFamily: fontSlacksideOne,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  ElevatedButton _goToNextQuestionButton() {
-    return ElevatedButton(
-      onPressed: () => controller.nextQuestion(),
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-      child: Text(
-        "Next Question",
-        style: TextStyles.rem16SemiBold.copyWith(color: Colors.black),
-      ),
-    );
-  }
-
-  ElevatedButton _finishButton() {
-    return ElevatedButton(
-      onPressed: () => Get.off(() => ScoreExamView(score: controller.score)),
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-      child: Text(
-        "Finish",
-        style: TextStyles.rem16SemiBold.copyWith(color: Colors.black),
+        ],
       ),
     );
   }
