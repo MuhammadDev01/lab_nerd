@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
-import 'package:lab_nerd/widgets/app_text_form_field.dart';
+import 'package:lab_nerd/controllers/auth/login_controller.dart';
+import 'package:lab_nerd/views/components/app_text_form_field.dart';
 
 class LoginFields extends StatelessWidget {
   LoginFields({super.key});

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
+import 'package:lab_nerd/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'widgets/forgot_password_appbar.dart';
 import 'widgets/forgot_password_circle_avatar.dart';
-import '../../../widgets/app_text_form_field.dart';
+import '../../components/app_text_form_field.dart';
 import 'widgets/forgot_password_button.dart';
 
 class ForgotPasswordView extends StatefulWidget {

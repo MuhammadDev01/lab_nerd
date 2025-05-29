@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/cache_helper.dart';
-import 'package:lab_nerd/widgets/constant.dart';
+import 'package:lab_nerd/data/local_data.dart';
+import 'package:lab_nerd/views/components/constant.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/models/onboarding_item_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -61,7 +61,7 @@ class OnboardingIndicatorAndFloatingActionButton extends StatelessWidget {
   }
 
   Future<void> _saveInCacheAndGoToLogin() async {
-    await CacheHelper.authBox.put(kOnBoarding, true);
+    await LocalData.authBox.put(kOnBoarding, true);
     Get.offNamed(Routes.authView);
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/splash_controller.dart';
+import 'package:lab_nerd/controllers/splash_controller.dart';
 import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
 
 class SplashLogo extends StatelessWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/sign_up_controller.dart';
+import 'package:lab_nerd/controllers/auth/sign_up_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/signup/widgets/already_have_account.dart';
 import 'package:lab_nerd/views/auth/signup/widgets/sign_up_button.dart';
-import 'package:lab_nerd/widgets/app_text_form_field.dart';
+import 'package:lab_nerd/views/components/app_text_form_field.dart';
 
 class TabletSignUpView extends StatelessWidget {
   TabletSignUpView({super.key});

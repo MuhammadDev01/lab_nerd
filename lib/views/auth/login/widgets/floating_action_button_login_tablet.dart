@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
+import 'package:lab_nerd/controllers/auth/login_controller.dart';
 
 class FloatingActionButtonLoginTablet extends StatefulWidget {
   const FloatingActionButtonLoginTablet({super.key});

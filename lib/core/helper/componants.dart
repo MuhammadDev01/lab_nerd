@@ -29,7 +29,7 @@ appSnackbar({
 
 Divider appDivider({Color? color, double? height, double? thickness}) =>
     Divider(
-      color: color ?? ColorsManager.greenWhite,
+      color: color ?? ColorsManager.greenWhiteColor,
       height: height ?? (GlobalHelper.isTablet ? 80.h : 50.h),
       thickness: thickness ?? 1.5.h,
     );

@@ -1,14 +1,15 @@
-import 'package:device_preview/device_preview.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/cache_helper.dart';
+import 'package:lab_nerd/data/local_data.dart';
 import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/themes/dark_theme.dart';
-import 'package:lab_nerd/core/themes/default_theme.dart';
-import 'package:lab_nerd/widgets/constant.dart';
+import 'package:lab_nerd/core/themes/light_theme.dart';
+import 'package:lab_nerd/views/components/constant.dart';
 
 class ScienceNerdApp extends StatelessWidget {
   const ScienceNerdApp({
@@ -16,6 +17,9 @@ class ScienceNerdApp extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    log(MediaQuery.sizeOf(context).width.toString());
+    log(MediaQuery.sizeOf(context).height.toString());
+
     GlobalHelper.isTablet = MediaQuery.sizeOf(context).width > 600;
     return ScreenUtilInit(
       designSize: const Size(375, 812),
@@ -27,13 +31,11 @@ class ScienceNerdApp extends StatelessWidget {
           title: 'Science Nerd',
           debugShowCheckedModeBanner: false,
           getPages: AppRouter.routes,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
           initialRoute: Routes.splashView,
           textDirection: TextDirection.ltr,
-          theme: defaultTheme,
+          theme: lightTheme,
           darkTheme: darkTheme,
-          themeMode: CacheHelper.userBox.get(kDarkMode) == true
+          themeMode: LocalData.userBox.get(kDarkMode) == true
               ? ThemeMode.dark
               : ThemeMode.light,
         );

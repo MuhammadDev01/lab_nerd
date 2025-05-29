@@ -1,21 +1,21 @@
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/bindings/main_binding.dart';
-import 'package:lab_nerd/core/logic/bindings/auth_binding.dart';
-import 'package:lab_nerd/core/logic/bindings/splash_binding.dart';
+import 'package:lab_nerd/core/bindings/main_binding.dart';
+import 'package:lab_nerd/core/bindings/auth_binding.dart';
+import 'package:lab_nerd/core/bindings/splash_binding.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/views/auth/forgot_password/forgot_password_view.dart';
-import 'package:lab_nerd/views/home/home_view.dart';
-import 'package:lab_nerd/views/home/my_notes/my_notes_view.dart';
-import 'package:lab_nerd/views/home/quizzes/quizzes_view.dart';
+import 'package:lab_nerd/views/main/screens/home/home_view.dart';
+import 'package:lab_nerd/views/main/screens/home/my_notes/my_notes_view.dart';
+import 'package:lab_nerd/views/main/screens/home/quizzes/quizzes_view.dart';
 import 'package:lab_nerd/views/main/main_view.dart';
 import 'package:lab_nerd/views/onbaording/onboarding_view.dart';
-import 'package:lab_nerd/views/home/chat_gpt/chat_gpt_view.dart';
-import 'package:lab_nerd/views/settings/change_username/change_username_view.dart';
-import 'package:lab_nerd/views/home/search_elements/search_element_view.dart';
-import 'package:lab_nerd/views/exam/exam_view.dart';
+import 'package:lab_nerd/views/main/screens/home/chat_gpt/chat_gpt_view.dart';
+import 'package:lab_nerd/views/main/screens/settings/change_username/change_username_view.dart';
+import 'package:lab_nerd/views/main/screens/home/search_elements/search_element_view.dart';
+import 'package:lab_nerd/views/main/screens/exam/exam_view.dart';
 import 'package:lab_nerd/views/auth/auth_view_builder.dart';
-import 'package:lab_nerd/views/periodic_table/periodic_table_view.dart';
-import 'package:lab_nerd/views/settings/settings_view.dart';
+import 'package:lab_nerd/views/main/screens/periodic_table/periodic_table_view.dart';
+import 'package:lab_nerd/views/main/screens/settings/settings_view.dart';
 import 'package:lab_nerd/views/splash/splash_view.dart';
 
 class AppRouter {

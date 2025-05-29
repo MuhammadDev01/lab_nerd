@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/forgot_password_controller.dart';
+import 'package:lab_nerd/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/widgets/app_loading.dart';
-import 'package:lab_nerd/widgets/custom_app_button.dart';
+import 'package:lab_nerd/views/components/app_loading.dart';
+import 'package:lab_nerd/views/components/custom_app_button.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton({super.key, required this.onTap});
@@ -16,7 +16,7 @@ class ForgotPasswordButton extends StatelessWidget {
       id: 'send',
       builder: (controller) => CustomAppButton(
         onPressed: onTap,
-        colorButton: ColorsManager.greenWhite,
+        colorButton: ColorsManager.greenWhiteColor,
         width: 256.w,
         child: controller.isLoading.value
             ? const AppLoading()

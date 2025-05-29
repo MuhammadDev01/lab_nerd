@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/auth/login_controller.dart';
+import 'package:lab_nerd/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/views/auth/signup/tablet_sign_up_view.dart';
 import 'package:lab_nerd/views/auth/widgets/auth_animated_logo_with_text.dart';
 import 'package:lab_nerd/views/auth/widgets/background_auth.dart';

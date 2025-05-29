@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
+import 'package:lab_nerd/controllers/main_controller.dart';
 import 'package:lab_nerd/views/main/widgets/custom_bottom_navigation_bar.dart';
 
 class MainView extends StatelessWidget {
