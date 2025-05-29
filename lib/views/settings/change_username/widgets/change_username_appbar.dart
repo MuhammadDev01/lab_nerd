@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lab_nerd/core/themes/text_styles.dart';
 
 class ChangeUsernameAppbar extends StatelessWidget {
   const ChangeUsernameAppbar({
@@ -9,23 +7,12 @@ class ChangeUsernameAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Colors.black,
-          ),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Text(
-          'Change Username',
-          style: TextStyles.rem20Bold.copyWith(color: Colors.black),
-        ),
-      ],
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      title: Text(
+        'Change Username',
+      ),
+      centerTitle: true,
     );
   }
 }

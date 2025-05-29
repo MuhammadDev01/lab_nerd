@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/logic/controllers/main_controller.dart';
 import 'package:lab_nerd/core/logic/controllers/settings_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -29,6 +33,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
 
   @override
   Widget build(BuildContext context) {
+    log(GlobalHelper.isTablet.toString());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundGradient(
@@ -36,7 +41,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
             ? ColorsManager.darkHomeGradient
             : ColorsManager.lightHomeGradient,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
           child: Column(
             children: [
               ChangeUsernameAppbar(),

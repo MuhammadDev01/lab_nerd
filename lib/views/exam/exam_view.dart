@@ -16,7 +16,7 @@ class ExamView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '   Exam View 🧪',
-          style: TextStyles.rem26Bold,
+          style: TextStyles.rem26Bold.copyWith(color: Colors.white),
         ),
         backgroundColor: ColorsManager.errorColor,
         centerTitle: true,
