@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lab_nerd/views/auth/widgets/background_auth.dart';
-import 'package:lab_nerd/views/splash/widgets/science_nerd_word.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:lab_nerd/core/helper/spacing.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
+import 'package:lab_nerd/views/components/background_svg_image.dart';
+import 'package:lab_nerd/views/components/science_nerd_word.dart';
 import 'package:lab_nerd/views/splash/widgets/splash_logo.dart';
 
 class SplashView extends StatelessWidget {
@@ -11,17 +14,20 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: BackgroundAuth(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+      body: BackgroundSvgImage(
+        image: Assets.imagesSvgAuthBackground,
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SplashLogo(),
-              SizedBox(
-                height: 20.h,
+              verticalSpacing(11),
+              ScienceNerdWord(),
+              verticalSpacing(7),
+              SvgPicture.asset(
+                Assets.imagesSvgChemistryForEveryone,
+                height: 17.h,
               ),
-              const ScienceNerdWord(),
             ],
           ),
         ),

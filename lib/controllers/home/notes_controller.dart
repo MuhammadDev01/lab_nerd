@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/helper/app_snack_bar.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 import 'package:lab_nerd/data/local_data.dart';
-import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/models/note_model.dart';
 

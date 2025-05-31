@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class NormalScoreView extends StatelessWidget {
   const NormalScoreView({super.key, required this.percentage});

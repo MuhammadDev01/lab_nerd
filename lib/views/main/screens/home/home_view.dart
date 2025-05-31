@@ -11,7 +11,7 @@ import 'package:lab_nerd/views/main/screens/home/widgets/home_app_bar.dart';
 import 'package:lab_nerd/views/main/screens/home/widgets/home_item.dart';
 import 'package:lab_nerd/views/main/screens/home/widgets/search_element_item_body.dart';
 import 'package:lab_nerd/views/main/widgets/background_gradient.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

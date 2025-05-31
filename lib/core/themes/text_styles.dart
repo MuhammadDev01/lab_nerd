@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class TextStyles {
   //*** Inter ***\\

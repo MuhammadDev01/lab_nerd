@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/splash_controller.dart';
-import 'package:lab_nerd/views/splash/widgets/logo_without_eyes.dart';
+import 'package:lab_nerd/core/helper/spacing.dart';
+import 'package:lab_nerd/views/components/logo_without_eyes.dart';
 
 class SplashLogo extends StatelessWidget {
   SplashLogo({
@@ -12,32 +14,30 @@ class SplashLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        LogoWithoutEyes(),
-        Padding(
-          padding: EdgeInsets.only(top: 36),
-          child: Obx(
-            () => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  controller.splashEyes[controller.currentIndex.value],
-                  height: 34,
-                ),
-                SizedBox(
-                  width: 78,
-                ),
-                SvgPicture.asset(
-                  controller.splashEyes[controller.currentIndex.value],
-                  height: 34,
-                ),
-              ],
-            ),
+    return Obx(
+      () => Stack(
+        alignment: Alignment.center,
+        children: [
+          LogoWithoutEyes(),
+          SvgPicture.asset(
+            controller.splashEyes[controller.currentIndex.value],
+            height: 30.h,
           ),
-        ),
-      ],
+          SvgPicture.asset(
+            controller.splashEyes[controller.currentIndex.value],
+            height: 30.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // FractionallySizedBox(
+              //   widthFactor: 3,
+              // ),
+              //horizontalSpacing(87),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

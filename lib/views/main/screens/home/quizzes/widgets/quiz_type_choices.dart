@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/screens/home/quizzes/quiz_view.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class QuizTypeChoices extends StatelessWidget {
   const QuizTypeChoices({super.key});

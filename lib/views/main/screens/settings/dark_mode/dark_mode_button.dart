@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 import 'package:lab_nerd/data/local_data.dart';
 import 'package:lab_nerd/controllers/main_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';

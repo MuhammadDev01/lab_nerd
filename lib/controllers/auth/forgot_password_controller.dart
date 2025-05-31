@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:lab_nerd/core/helper/componants.dart';
+import 'package:lab_nerd/core/helper/app_snack_bar.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 
 class ForgotPasswordController extends GetxController {

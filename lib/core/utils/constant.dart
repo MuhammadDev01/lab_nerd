@@ -3,14 +3,10 @@ const fontPoppins = 'Poppins';
 const fontSlacksideOne = 'SlacksideOne';
 const fontREM = 'REM';
 
-//**Database**\\
-
 //**Hive**\\
 const String kAuthBox = 'authBox';
 const String kUserBox = 'usersBox';
-const String kNoteBox = 'noteBox';
 const String kOnBoarding = 'onboarding';
-const String kLogin = 'kLogin';
 const String kuserToken = 'kUserToken';
 const String kDarkMode = 'kDarkMode';
 

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,7 +10,7 @@ import 'package:lab_nerd/core/routes/app_router.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/themes/dark_theme.dart';
 import 'package:lab_nerd/core/themes/light_theme.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class ScienceNerdApp extends StatelessWidget {
   const ScienceNerdApp({
@@ -28,6 +29,8 @@ class ScienceNerdApp extends StatelessWidget {
       builder: (_, child) {
         return GetMaterialApp(
           useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           title: 'Science Nerd',
           debugShowCheckedModeBanner: false,
           getPages: AppRouter.routes,

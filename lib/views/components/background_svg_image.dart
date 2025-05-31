@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lab_nerd/core/utils/assets.dart';
 
-class BackgroundAuth extends StatelessWidget {
+class BackgroundSvgImage extends StatelessWidget {
   final Widget child;
-  const BackgroundAuth({
+  const BackgroundSvgImage({
     super.key,
     required this.child,
+    required this.image,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,7 +16,7 @@ class BackgroundAuth extends StatelessWidget {
         SvgPicture.asset(
           width: double.infinity,
           height: double.infinity,
-          Assets.imagesSvgAuthBackground,
+          image,
           fit: BoxFit.fill,
         ),
         child,

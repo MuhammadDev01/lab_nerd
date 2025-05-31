@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:lab_nerd/views/components/constant.dart';
+import 'package:lab_nerd/core/utils/constant.dart';
 
 class LocalData {
   static Box authBox = Hive.box(kAuthBox);

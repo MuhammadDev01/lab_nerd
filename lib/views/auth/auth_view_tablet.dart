@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/login_controller.dart';
+import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/auth/signup/tablet_sign_up_view.dart';
 import 'package:lab_nerd/views/auth/widgets/auth_animated_logo_with_text.dart';
-import 'package:lab_nerd/views/auth/widgets/background_auth.dart';
+import 'package:lab_nerd/views/components/background_svg_image.dart';
 import 'package:lab_nerd/views/auth/auth_view_center_text.dart';
 import 'package:lab_nerd/views/auth/login/tablet_login_view.dart';
 
@@ -25,7 +26,8 @@ class AuthViewTablet extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-        body: BackgroundAuth(
+        body: BackgroundSvgImage(
+          image: Assets.imagesSvgAuthBackground,
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
