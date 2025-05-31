@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -29,7 +27,7 @@ class _ExamTimerState extends State<ExamTimer> {
       children: [
         Image.asset(
           Assets.imagesTimer,
-          height: GlobalHelper.isTablet ? 400.h : 205.h,
+          height: 205,
         ),
         TweenAnimationBuilder<int>(
           tween: IntTween(begin: totalTime, end: 0),
@@ -48,13 +46,13 @@ class _ExamTimerState extends State<ExamTimer> {
                 Transform.scale(
                   scaleX: -1,
                   child: SizedBox(
-                    height: GlobalHelper.isTablet ? 160 : 80,
-                    width: GlobalHelper.isTablet ? 160 : 80,
+                    height: 80,
+                    width: 80,
                     child: CircularProgressIndicator(
                       color: ColorsManager.errorColor,
                       value:
                           secondsLeft / totalTime, // تعديل قيمة المؤشر التقدمي
-                      strokeWidth: GlobalHelper.isTablet ? 10 : 6,
+                      strokeWidth: 6,
                     ),
                   ),
                 ),

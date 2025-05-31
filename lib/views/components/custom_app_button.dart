@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppButton extends StatelessWidget {
   const CustomAppButton({
@@ -23,8 +22,8 @@ class CustomAppButton extends StatelessWidget {
           backgroundColor: colorButton,
           foregroundColor: Theme.of(context).textTheme.bodyMedium!.color,
           fixedSize: Size(
-            width ?? 256.w,
-            height ?? 50.h,
+            width ?? 256,
+            height ?? 50,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),

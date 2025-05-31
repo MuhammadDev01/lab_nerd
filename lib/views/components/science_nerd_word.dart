@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lab_nerd/core/helper/spacing.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -17,12 +16,10 @@ class ScienceNerdWord extends StatelessWidget {
       children: [
         SvgPicture.asset(
           Assets.imagesSvgScience,
-          height: height?.h ?? 37.h,
         ),
-        horizontalSpacing(5),
+        horizontalSpacing(10),
         SvgPicture.asset(
           Assets.imagesSvgNerd,
-          height: height?.h ?? 37.h,
         ),
       ],
     );

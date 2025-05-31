@@ -1,9 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/controllers/main_controller.dart';
 import 'package:lab_nerd/controllers/settings_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -33,7 +29,6 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
 
   @override
   Widget build(BuildContext context) {
-    log(GlobalHelper.isTablet.toString());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundGradient(
@@ -41,7 +36,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
             ? ColorsManager.darkHomeGradient
             : ColorsManager.lightHomeGradient,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          padding: EdgeInsets.symmetric(horizontal: 8),
           child: Column(
             children: [
               ChangeUsernameAppbar(),
@@ -97,7 +92,7 @@ class _ChangeUsernameViewState extends State<ChangeUsernameView> {
     );
   }
 
-  updateUserName(SettingsController controller) async {
+  Future<void> updateUserName(SettingsController controller) async {
     if (formKey.currentState!.validate()) {
       await controller.updateUserName(nameController.text.trim()).then((value) {
         if (value == 'Success') Get.back();

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/componants.dart';
 import 'package:lab_nerd/controllers/home/search_elements_controller.dart';
@@ -22,9 +21,9 @@ class SearchElementView extends StatelessWidget {
         child: GetBuilder<SearchElementsController>(
           builder: (controller) => SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              padding: EdgeInsets.symmetric(horizontal: 4),
               child: Column(
-                spacing: 20.h,
+                spacing: 20,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppBar(
@@ -47,7 +46,7 @@ class SearchElementView extends StatelessWidget {
                           element: controller.resultElements[index],
                         ),
                         separatorBuilder: (context, index) => appDivider(
-                            color: Colors.black, height: 50.h, thickness: 2.h),
+                            color: Colors.black, height: 50, thickness: 2),
                         itemCount: controller.resultElements.length,
                       ),
                     ),

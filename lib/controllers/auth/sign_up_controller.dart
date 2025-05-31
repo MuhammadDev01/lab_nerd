@@ -30,7 +30,7 @@ class SignUpController extends GetxController {
     super.onClose();
   }
 
-  toggleLoading() {
+  void toggleLoading() {
     isLoading = !isLoading;
     update();
   }

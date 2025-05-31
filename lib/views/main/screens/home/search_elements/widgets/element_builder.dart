@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/models/element_model.dart';
 import 'package:lab_nerd/views/main/screens/home/search_elements/details_element_view.dart';
@@ -15,7 +14,7 @@ class ElementBuilder extends StatelessWidget {
     return InkWell(
       onTap: () => Get.to(() => DetailsElementView(element: element)),
       child: SizedBox(
-        height: 150.h,
+        height: 150,
         child: Row(
           children: [
             Stack(
@@ -28,7 +27,7 @@ class ElementBuilder extends StatelessWidget {
               ],
             ),
             SizedBox(
-              width: 10.w,
+              width: 10,
             ),
             ElementDetails(element: element),
           ],

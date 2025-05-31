@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
@@ -15,8 +13,8 @@ class NextQuestionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<QuizzesController>(
       builder: (controller) => CustomAppButton(
-        width: GlobalHelper.isTablet ? 130.w : 80.w,
-        height: GlobalHelper.isTablet ? 80.h : 50.h,
+        width: 80,
+        height: 50,
         onPressed: () => controller.nextQuestion(),
         colorButton: ColorsManager.greenWhiteColor,
         child: Text(

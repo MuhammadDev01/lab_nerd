@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/views/auth/widgets/auth_bottom_sheet_body.dart';
 
@@ -20,7 +19,7 @@ class AuthBottomSheet extends StatelessWidget {
         } else if (details.delta.dy < -sensitivity) {
           Get.bottomSheet(
             Container(
-              height: 450.h,
+              height: 450,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(

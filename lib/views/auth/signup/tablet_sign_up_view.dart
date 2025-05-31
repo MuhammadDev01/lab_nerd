@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/sign_up_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
@@ -66,11 +65,11 @@ class TabletSignUpView extends StatelessWidget {
               textInputType: TextInputType.emailAddress,
             ),
             SizedBox(
-              height: 40.h,
+              height: 40,
             ),
             SignUpButton(),
             SizedBox(
-              height: 10.h,
+              height: 10,
             ),
             AlreadyHaveAccount(),
           ],

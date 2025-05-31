@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/home/notes_controller.dart';
@@ -27,14 +26,14 @@ class CustomNoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
+                padding: EdgeInsets.only(bottom: 12),
                 child: Text(
                   note.title,
                   style: TextStyles.rem20Bold.copyWith(color: Colors.black),
                 ),
               ),
               subtitle: Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
+                padding: EdgeInsets.only(bottom: 12),
                 child: Text(
                   note.content,
                   maxLines: 3,

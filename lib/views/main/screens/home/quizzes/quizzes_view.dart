@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/main/screens/home/quizzes/quizzes_view_body.dart';
 
@@ -22,7 +21,7 @@ class QuizzesView extends StatelessWidget {
           ),
           SafeArea(
               child: Padding(
-            padding: EdgeInsets.all(16.sp),
+            padding: EdgeInsets.all(16),
             child: QuizzesViewBody(),
           )),
         ],

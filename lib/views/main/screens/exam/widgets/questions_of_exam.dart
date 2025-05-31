@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/screens/exam/widgets/exam_score_view.dart';
@@ -15,17 +13,13 @@ class QuestionsOfExam extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<QuizzesController>(
       builder: (controller) => Column(
-        spacing: GlobalHelper.isTablet ? 20.h : 10.h,
+        spacing: 10,
         children: [
           Text(
             controller.question.question,
             style: TextStyles.rem26Bold,
             textAlign: TextAlign.center,
           ),
-          if (GlobalHelper.isTablet)
-            SizedBox(
-              height: 20.h,
-            ),
           ...controller.question.choices.map((choice) {
             return ChoiceChip(
               label: Center(
@@ -41,8 +35,7 @@ class QuestionsOfExam extends StatelessWidget {
               selected: controller.isUserAnswered,
               selectedColor: controller.getButtonColor(choice),
               backgroundColor: Colors.grey[200],
-              padding: EdgeInsets.symmetric(
-                  vertical: GlobalHelper.isTablet ? 30.h : 12.h),
+              padding: EdgeInsets.symmetric(vertical: 12),
               disabledColor: Colors.grey[300],
               onSelected: (_) {
                 controller.isUserAnswered
@@ -50,17 +43,17 @@ class QuestionsOfExam extends StatelessWidget {
                     : controller.checkAnswer(choice);
               },
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
               ),
             );
           }),
-          SizedBox(height: 10.h),
+          SizedBox(height: 10),
           controller.questionIndex == 50
               ? FinishButton(
                   onPressed: () => Get.off(() => ExamScoreView()),
                 )
               : NextQuestionButton(),
-          SizedBox(height: 5.h),
+          SizedBox(height: 5),
           FittedBox(
             child: Text(
               "Question: ${controller.questionIndex}/50",

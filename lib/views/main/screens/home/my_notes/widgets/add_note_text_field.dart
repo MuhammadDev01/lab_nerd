@@ -46,7 +46,7 @@ class AddNoteTextFormField extends StatelessWidget {
   }
 }
 
-OutlineInputBorder outlineMethod(color) {
+OutlineInputBorder outlineMethod(Color color) {
   return OutlineInputBorder(
     borderSide: BorderSide(
       color: color,

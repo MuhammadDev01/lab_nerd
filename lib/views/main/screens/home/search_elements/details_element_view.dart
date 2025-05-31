@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/app_snack_bar.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -39,12 +38,12 @@ class DetailsElementView extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
-                  spacing: 10.h,
+                  spacing: 10,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppRichText(
@@ -144,7 +143,7 @@ class DetailsElementView extends StatelessWidget {
 
   Container _elementCover() {
     return Container(
-      height: 200.h,
+      height: 200,
       decoration: BoxDecoration(
           image: DecorationImage(
         image: NetworkImage(element.bohrModelImage),

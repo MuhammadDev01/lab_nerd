@@ -20,6 +20,9 @@ void main() async {
   );
 
   runApp(
-    DevicePreview(enabled: false, builder: (_) => ScienceNerdApp()),
+    DevicePreview(
+      enabled: false,
+      builder: (_) => ScienceNerdApp(),
+    ),
   );
 }

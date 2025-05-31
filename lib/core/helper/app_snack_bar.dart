@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/utils/constant.dart';
 
-appSnackbar({
+SnackbarController appSnackbar({
   required String title,
   required String message,
   required Color backgroundColor,
@@ -14,7 +13,7 @@ appSnackbar({
       titleText: Text(
         title,
         style: TextStyle(
-          fontSize: 20.sp,
+          fontSize: 20,
           fontFamily: fontREM,
           fontWeight: FontWeight.bold,
           color: Colors.white,
@@ -23,7 +22,7 @@ appSnackbar({
       messageText: Text(
         message,
         style: TextStyle(
-          fontSize: 16.sp,
+          fontSize: 16,
           fontFamily: fontREM,
           color: Colors.white,
         ),

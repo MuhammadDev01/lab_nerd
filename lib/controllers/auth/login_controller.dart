@@ -36,7 +36,7 @@ class LoginController extends GetxController {
     Assets.imagesSvgLeftEye,
     Assets.imagesSvgHalfEye,
   ];
-  _animationLogo() {
+  void _animationLogo() {
     Future.doWhile(() async {
       await Future.delayed(const Duration(milliseconds: 300));
       currentEyeIndex.value = (currentEyeIndex.value + 1) % eyes.length;
@@ -47,7 +47,7 @@ class LoginController extends GetxController {
 //**************VISIBILITY**************\\
   bool isVisibilty = true;
   IconData visibilityPasswordIcon = Icons.visibility_off;
-  toggleVisibiltyPassword() {
+  void toggleVisibiltyPassword() {
     isVisibilty = !isVisibilty;
     visibilityPasswordIcon =
         isVisibilty ? Icons.visibility_off : Icons.visibility;
@@ -56,7 +56,7 @@ class LoginController extends GetxController {
 
 //**************LOGIN**************\\
   bool isLogin = true;
-  toggleAuth({required bool isLogin}) {
+  void toggleAuth({required bool isLogin}) {
     this.isLogin = isLogin;
     update(['login_or_sign_up']);
   }
@@ -65,13 +65,13 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  onChangedOnField(String value) {
+  void onChangedOnField(String value) {
     emailController.text = value;
     update();
   }
 
   bool isLoading = false;
-  toggleLoading() {
+  void toggleLoading() {
     isLoading = !isLoading;
     update();
   }
@@ -119,12 +119,12 @@ class LoginController extends GetxController {
 //**************TABLET**************\\
   final PageController pageController = PageController();
   RxInt currentPage = 0.obs;
-  onPageChanged(int value) {
+  void onPageChanged(int value) {
     currentPage.value = value;
     update();
   }
 
-  goToSecondPageView() {
+  void goToSecondPageView() {
     pageController.animateToPage(
       1,
       duration: const Duration(milliseconds: 500),

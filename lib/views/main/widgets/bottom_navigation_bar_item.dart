@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/main_controller.dart';
@@ -28,7 +27,7 @@ class CustomBottomNavigatorBarItem extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: EdgeInsets.only(bottom: 8.0.h),
+          padding: EdgeInsets.only(bottom: 8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

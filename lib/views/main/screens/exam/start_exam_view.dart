@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -52,7 +51,7 @@ class _StartExamViewState extends State<StartExamView> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

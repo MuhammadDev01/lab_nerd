@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -45,7 +44,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   nameView: 'Forgot Password',
                 ),
                 SizedBox(
-                  height: 100.h,
+                  height: 100,
                 ),
                 ForgotPasswordCircleAvatar(
                   icon: const Icon(
@@ -55,7 +54,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   ),
                 ),
                 SizedBox(
-                  height: 30.h,
+                  height: 30,
                 ),
                 Text(
                   'please enter your Email Address To Receive a Verification Code',
@@ -63,18 +62,18 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   style: TextStyles.rem14SemiBold,
                 ),
                 SizedBox(
-                  height: 30.h,
+                  height: 30,
                 ),
                 AppTextFormField(
                   helperText: 'Email',
-                  width: 650.w,
+                  width: 650,
                   controller: emailController,
                   hintText: 'email address',
                   textInputType: TextInputType.emailAddress,
                   validateMessage: 'please enter your email address',
                 ),
                 SizedBox(
-                  height: 100.h,
+                  height: 100,
                 ),
                 ForgotPasswordButton(
                   onTap: () {

@@ -30,7 +30,7 @@ class NotesController extends GetxController {
   }
 
   bool isLoading = false;
-  toggleLoading() {
+  void toggleLoading() {
     isLoading = !isLoading;
     update();
   }

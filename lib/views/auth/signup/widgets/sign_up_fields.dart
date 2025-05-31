@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/sign_up_controller.dart';
 import 'package:lab_nerd/views/components/app_text_form_field.dart';
@@ -12,7 +11,7 @@ class SignUpFields extends StatelessWidget {
     return Form(
       key: controller.formKey,
       child: Column(
-        spacing: 10.h,
+        spacing: 10,
         children: [
           AppTextFormField(
             controller: controller.usernameController,

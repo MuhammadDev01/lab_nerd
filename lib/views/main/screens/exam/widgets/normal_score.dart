@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/core/utils/constant.dart';
 
@@ -26,7 +25,7 @@ class NormalScoreView extends StatelessWidget {
               getEmojiForScore(),
               style: TextStyle(fontSize: 150),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 20),
             Text(
               percentage < 50 ? "Fail" : "Success",
               style: TextStyles.rem26Bold.copyWith(

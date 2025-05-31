@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/forgot_password_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -17,7 +16,7 @@ class ForgotPasswordButton extends StatelessWidget {
       builder: (controller) => CustomAppButton(
         onPressed: onTap,
         colorButton: ColorsManager.greenWhiteColor,
-        width: 256.w,
+        width: 256,
         child: controller.isLoading.value
             ? const AppLoading()
             : Center(

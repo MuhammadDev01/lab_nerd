@@ -108,7 +108,7 @@ class QuizzesController extends GetxController {
   bool isUserAnswered = false;
   String userAnswer = '';
   int score = 0;
-  checkAnswer(String userAnswer) {
+  void checkAnswer(String userAnswer) {
     isUserAnswered = true;
     userAnswer == question.answer ? score++ : score;
     this.userAnswer = userAnswer;

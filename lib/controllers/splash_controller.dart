@@ -1,17 +1,14 @@
 import 'dart:async';
 import 'package:get/get.dart';
-import 'package:lab_nerd/data/local_data.dart';
-import 'package:lab_nerd/core/utils/constant.dart';
-import 'package:lab_nerd/core/routes/routes.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 
 class SplashController extends GetxController {
-  RxInt currentIndex = 0.obs;
+  int currentIndex = 0;
   Timer? _timer;
 
   @override
   void onInit() async {
-    _animationLogo();
+    _animateLogo();
     // await _goToNext();
 
     super.onInit();
@@ -31,10 +28,10 @@ class SplashController extends GetxController {
     Assets.imagesSvgLookEye,
   ];
 
-  _animationLogo() {
+  void _animateLogo() {
     _timer = Timer.periodic(const Duration(milliseconds: 300), (_) {
-      if (currentIndex.value < splashEyes.length - 1) {
-        currentIndex.value++;
+      if (currentIndex < splashEyes.length - 1) {
+        currentIndex++;
       }
     });
   }

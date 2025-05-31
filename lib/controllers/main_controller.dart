@@ -47,7 +47,7 @@ class Maincontroller extends GetxController {
 
   final user = FirebaseAuth.instance.currentUser;
   static late ProfileUserModel userPofile;
-  showProfileUser() {
+  void showProfileUser() {
     userPofile = ProfileUserModel(
       name: user?.displayName,
       email: user?.email,

@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     Assets.imagesSvgLeftEye,
     Assets.imagesSvgHalfEye,
   ];
-  moveEyes() {
+  void moveEyes() {
     timer = Timer.periodic(
       const Duration(milliseconds: 250),
       (_) {

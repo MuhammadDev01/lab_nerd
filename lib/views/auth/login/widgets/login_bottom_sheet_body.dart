@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
@@ -15,7 +14,7 @@ class LoginBottomSheetBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 16.h,
+      spacing: 16,
       children: [
         const AppbarAuthBottomSheet(),
         Text(

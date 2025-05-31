@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/components/science_nerd_word.dart';
 import 'widgets/auth_logo_animated.dart';
@@ -28,11 +27,11 @@ class AuthViewMobile extends StatelessWidget {
                   children: [
                     AuthLogoAnimated(),
                     SizedBox(
-                      height: 20.h,
+                      height: 20,
                     ),
                     ScienceNerdWord(),
                     SizedBox(
-                      height: 20.h,
+                      height: 20,
                     ),
                     AuthViewCenterText(),
                     Expanded(child: SwipeUpArrow()),

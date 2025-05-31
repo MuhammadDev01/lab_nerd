@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/screens/exam/start_exam_view.dart';
@@ -31,7 +29,7 @@ class ExamView extends StatelessWidget {
               '📝 This Exam Includes:',
               style: TextStyles.rem26Bold,
             ),
-            SizedBox(height: 30.h),
+            SizedBox(height: 30),
             buildTopic("1. Chemical Reactions"),
             buildTopic("2. Chemical Symbols"),
             buildTopic("3. Atomic Numbers"),
@@ -45,11 +43,11 @@ class ExamView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: GlobalHelper.isTablet ? 50.h : 20.h),
+            // SizedBox(height: GlobalHelper.isTablet ? 50.h : 20.h),
             Center(
               child: CustomAppButton(
-                height: GlobalHelper.isTablet ? 80.h : 50.h,
-                width: GlobalHelper.isTablet ? 150.w : 80.w,
+                height: 50,
+                width: 80,
                 onPressed: () => Get.to(() => StartExamView()),
                 colorButton: ColorsManager.errorColor,
                 child: Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/models/element_model.dart';
 
@@ -22,7 +21,7 @@ class ElementDetails extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 6.w,
+                width: 6,
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -39,7 +38,7 @@ class ElementDetails extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 5.h),
+          SizedBox(height: 5),
           Expanded(
             child: Text(
               element.image?.title ?? 'no information',

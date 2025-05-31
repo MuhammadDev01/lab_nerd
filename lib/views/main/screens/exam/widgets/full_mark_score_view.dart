@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/core/utils/constant.dart';
 
@@ -15,13 +14,13 @@ class FullMarkScoreView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.emoji_events, size: 75.sp, color: Colors.amber),
-            SizedBox(height: 20.h),
+            Icon(Icons.emoji_events, size: 75, color: Colors.amber),
+            SizedBox(height: 20),
             Text(
               "🎉 Congratulations!   ",
               style: TextStyles.poppins32Bold.copyWith(letterSpacing: 2),
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: 12),
             Text(
               "You scored",
               style: TextStyle(

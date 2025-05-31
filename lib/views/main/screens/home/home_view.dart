@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/data/local_data.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
@@ -52,12 +51,12 @@ class _HomeViewState extends State<HomeView>
           : ColorsManager.lightHomeGradient,
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(8.0.sp),
+          padding: EdgeInsets.all(8.0),
           child: Column(
             children: [
               HomeAppBar(),
               SizedBox(
-                height: 10.w,
+                height: 10,
               ),
               Expanded(
                 child: GridView.count(

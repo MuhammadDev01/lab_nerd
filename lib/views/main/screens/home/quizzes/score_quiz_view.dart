@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/main/screens/home/quizzes/widgets/back_home_button.dart';
 
@@ -35,29 +33,21 @@ class ScoreQuizView extends StatelessWidget {
               children: [
                 Text(
                   "Your Score",
-                  style: TextStyles.rem26Bold.copyWith(
-                    fontSize: getResponsiveFontSize(
-                        fontSize: GlobalHelper.isTablet ? 40 : 30),
-                  ),
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 10),
                 Text(
                   "$score / 10",
-                  style: TextStyles.rem26Bold.copyWith(
-                    fontSize: getResponsiveFontSize(
-                        fontSize: GlobalHelper.isTablet ? 38 : 28),
-                  ),
+                  style: TextStyles.rem26Bold.copyWith(),
                 ),
-                SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
+                //SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
                 Text(
                   _getResultMessage(),
                   style: TextStyles.rem26Bold.copyWith(
-                      fontSize: getResponsiveFontSize(
-                          fontSize: GlobalHelper.isTablet ? 30 : 26),
-                      fontStyle: FontStyle.italic),
+                    fontStyle: FontStyle.italic,
+                  ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
+                //   SizedBox(height: GlobalHelper.isTablet ? 100.h : 50.h),
                 BackHomeButton(),
               ],
             ),

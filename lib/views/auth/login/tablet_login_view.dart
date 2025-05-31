@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/routes/routes.dart';
@@ -33,7 +32,7 @@ class TabletLoginView extends StatelessWidget {
               textInputType: TextInputType.emailAddress,
             ),
             SizedBox(
-              height: 8.h,
+              height: 8,
             ),
             GetBuilder<LoginController>(
               id: 'visibility_password',
@@ -61,11 +60,11 @@ class TabletLoginView extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 16.h,
+              height: 16,
             ),
             LoginButton(),
             SizedBox(
-              height: 10.h,
+              height: 10,
             ),
             NotHaveAnAccount(),
           ],

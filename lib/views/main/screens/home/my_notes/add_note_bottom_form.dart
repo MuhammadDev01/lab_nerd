@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/home/notes_controller.dart';
 import 'package:lab_nerd/views/main/screens/home/my_notes/widgets/colors_list_view.dart';
@@ -19,7 +18,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 25.h,
+            height: 25,
           ),
           AddNoteTextFormField(
             controller: controller.titleController,
@@ -28,7 +27,7 @@ class AddNoteBottomSheetForm extends StatelessWidget {
                 title!.isEmpty ? 'Please enter a title' : null,
           ),
           SizedBox(
-            height: 16.h,
+            height: 16,
           ),
           AddNoteTextFormField(
             controller: controller.contentController,
@@ -38,11 +37,11 @@ class AddNoteBottomSheetForm extends StatelessWidget {
                 content!.isEmpty ? 'Please enter some content' : null,
           ),
           SizedBox(
-            height: 25.h,
+            height: 25,
           ),
           const ColorsListView(),
           SizedBox(
-            height: 25.h,
+            height: 25,
           ),
           AddNoteButton(),
         ],

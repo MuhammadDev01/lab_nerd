@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/home/quizzes_controller.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
@@ -21,7 +20,7 @@ class QuizTypeChoices extends StatelessWidget {
     return GetBuilder<QuizzesController>(
       builder: (controller) => Center(
         child: Column(
-          spacing: 30.h,
+          spacing: 30,
           children: quizTypeList.entries.map((type) {
             return ChoiceChip(
               label: Center(
@@ -38,7 +37,7 @@ class QuizTypeChoices extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 15),
               onSelected: (_) => Get.to(() => QuizView(quizType: type.value)),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
               ),
             );
           }).toList(),

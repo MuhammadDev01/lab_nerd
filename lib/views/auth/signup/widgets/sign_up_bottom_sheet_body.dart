@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 import 'package:lab_nerd/views/auth/signup/widgets/already_have_account.dart';
 import 'package:lab_nerd/views/auth/signup/widgets/sign_up_button.dart';
@@ -14,7 +13,7 @@ class SignUpBottomSheetBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        spacing: 16.h,
+        spacing: 16,
         children: [
           const AppbarAuthBottomSheet(),
           Text(

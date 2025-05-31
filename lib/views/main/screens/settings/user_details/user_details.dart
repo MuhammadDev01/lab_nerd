@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/settings_controller.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
@@ -20,7 +19,7 @@ class UserDetails extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.transparent,
-                      radius: 50.r,
+                      radius: 50,
                       backgroundImage: AssetImage(
                         Assets.imagesUserImageProfile,
                       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/views/auth/widgets/auth_logo_animated.dart';
 import 'package:lab_nerd/views/components/science_nerd_word.dart';
 
@@ -12,7 +11,7 @@ class AuthAnimatedLogoWithText extends StatelessWidget {
       children: [
         AuthLogoAnimated(),
         SizedBox(
-          height: 20.h,
+          height: 20,
         ),
         const ScienceNerdWord(),
       ],

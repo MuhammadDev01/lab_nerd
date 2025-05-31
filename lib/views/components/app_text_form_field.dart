@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';
 
@@ -66,7 +65,7 @@ class AppTextFormField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: SizedBox(
-            width: width ?? 650.w,
+            width: width ?? 650,
             child: TextFormField(
               cursorErrorColor: Colors.black,
               onFieldSubmitted: onSubmitted,

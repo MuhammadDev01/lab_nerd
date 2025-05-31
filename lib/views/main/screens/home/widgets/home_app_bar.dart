@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lab_nerd/core/helper/global_helper.dart';
 import 'package:lab_nerd/core/utils/assets.dart';
 import 'package:lab_nerd/views/main/screens/home/widgets/home_animated_logo.dart';
 
@@ -10,7 +8,7 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double imageSize = GlobalHelper.isTablet ? 48.h : 24.h;
+    final double imageSize = 24;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -20,14 +18,14 @@ class HomeAppBar extends StatelessWidget {
           height: imageSize,
         ),
         SizedBox(
-          width: 4.w,
+          width: 4,
         ),
         SvgPicture.asset(
           Assets.imagesSvgNerd,
           height: imageSize,
         ),
         SizedBox(
-          width: 6.w,
+          width: 6,
         ),
         HomeAnimatedLogo(),
       ],

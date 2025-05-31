@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/controllers/auth/login_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
@@ -18,7 +17,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           style: TextStyles.rem14SemiBold.copyWith(color: Colors.black),
         ),
         SizedBox(
-          width: 10.w,
+          width: 10,
         ),
         GetBuilder<LoginController>(
           id: 'login_or_sign_up',

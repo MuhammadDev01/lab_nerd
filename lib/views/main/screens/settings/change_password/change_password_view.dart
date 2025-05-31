@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lab_nerd/core/helper/app_snack_bar.dart';
 import 'package:lab_nerd/controllers/settings_controller.dart';
@@ -31,13 +30,13 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 30),
           child: Column(
-            spacing: 50.h,
+            spacing: 50,
             children: [
               ChangePasswordAppBar(),
               ChangePasswordFields(),
               Obx(
                 () => CustomAppButton(
-                  width: 100.w,
+                  width: 100,
                   onPressed: () async {
                     if (controller.formKey.currentState!.validate()) {
                       await changePassword(controller);
