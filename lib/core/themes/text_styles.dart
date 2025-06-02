@@ -31,6 +31,13 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     fontFamily: fontREM,
   );
+  static TextStyle rem16RegularGrey = TextStyle(
+    fontSize: getResponsiveFontSize(fontSize: 16),
+    fontWeight: FontWeight.normal,
+    fontFamily: fontREM,
+    color: Colors.grey,
+    height: 1.5,
+  );
   static TextStyle rem20Bold = TextStyle(
     fontSize: getResponsiveFontSize(fontSize: 20),
     fontWeight: FontWeight.bold,
@@ -76,7 +83,7 @@ double getResponsiveFontSize({required double fontSize}) {
 }
 
 double _getScaleFactor() {
-  final double width = MediaQuery.of(Get.context!).size.width;
-
-  return width / 550;
+  double screenWidth =
+      WidgetsBinding.instance.platformDispatcher.views.first.physicalSize.width;
+  return screenWidth / 550;
 }

@@ -27,7 +27,7 @@ class ContactUsButton extends StatelessWidget {
           ),
           Text(
             "Contact Us",
-            style: TextStyles.rem20Bold,
+            style: TextStyles.rem16RegularGrey,
           ),
         ],
       ),

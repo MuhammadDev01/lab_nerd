@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lab_nerd/core/helper/componants.dart';
+import 'package:lab_nerd/core/helper/app_divider.dart';
 import 'package:lab_nerd/controllers/home/search_elements_controller.dart';
 import 'package:lab_nerd/core/themes/colors_manager.dart';
 import 'package:lab_nerd/core/themes/text_styles.dart';

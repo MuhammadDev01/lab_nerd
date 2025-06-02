@@ -19,7 +19,7 @@ class NextQuestionButton extends StatelessWidget {
         colorButton: ColorsManager.greenWhiteColor,
         child: Text(
           "Next Question",
-          style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
         ),
       ),
     );

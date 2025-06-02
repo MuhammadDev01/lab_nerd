@@ -23,7 +23,7 @@ class ChangePasswordAppBar extends StatelessWidget {
         ),
         Text(
           'Change Paassword',
-          style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
         ),
       ],
     );

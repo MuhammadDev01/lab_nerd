@@ -31,7 +31,7 @@ class ChangeUsernameButton extends StatelessWidget {
           ),
           Text(
             "Change Username",
-            style: TextStyles.rem20Bold,
+            style: TextStyles.rem16RegularGrey,
           ),
         ],
       ),

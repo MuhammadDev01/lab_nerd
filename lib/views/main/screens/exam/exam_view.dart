@@ -39,7 +39,7 @@ class ExamView extends StatelessWidget {
               child: FittedBox(
                 child: Text(
                   '🎯 Are you ready to start the exam?',
-                  style: TextStyles.rem20Bold,
+                  style: TextStyles.rem16RegularGrey,
                 ),
               ),
             ),
@@ -52,7 +52,8 @@ class ExamView extends StatelessWidget {
                 colorButton: ColorsManager.errorColor,
                 child: Text(
                   'Start Exam',
-                  style: TextStyles.rem20Bold.copyWith(color: Colors.white),
+                  style:
+                      TextStyles.rem16RegularGrey.copyWith(color: Colors.white),
                 ),
               ),
             ),
@@ -71,7 +72,7 @@ class ExamView extends StatelessWidget {
           const Icon(Icons.check_circle, color: ColorsManager.successColor),
           const SizedBox(width: 10),
           Expanded(
-            child: Text(text, style: TextStyles.rem20Bold),
+            child: Text(text, style: TextStyles.rem16RegularGrey),
           ),
         ],
       ),

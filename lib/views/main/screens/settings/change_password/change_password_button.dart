@@ -31,7 +31,7 @@ class ChangePasswordButton extends StatelessWidget {
           ),
           Text(
             "Change Password",
-            style: TextStyles.rem20Bold,
+            style: TextStyles.rem16RegularGrey,
           ),
         ],
       ),

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,9 +14,6 @@ class ScienceNerdApp extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    log(MediaQuery.sizeOf(context).width.toString());
-    log(MediaQuery.sizeOf(context).height.toString());
-
     return GetMaterialApp(
       useInheritedMediaQuery: true,
       title: 'Science Nerd',
@@ -26,7 +21,7 @@ class ScienceNerdApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       getPages: AppRouter.routes,
-      initialRoute: Routes.splashView,
+      initialRoute: Routes.onBoardingView,
       textDirection: TextDirection.ltr,
       theme: lightTheme,
       darkTheme: darkTheme,

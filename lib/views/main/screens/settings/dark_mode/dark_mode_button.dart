@@ -29,7 +29,7 @@ class DarkModeButton extends StatelessWidget {
           ),
           Text(
             "Dark mode",
-            style: TextStyles.rem20Bold,
+            style: TextStyles.rem16RegularGrey,
           ),
           const Spacer(),
           Switch(

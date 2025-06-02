@@ -13,7 +13,7 @@ class LogoutButton extends StatelessWidget {
         onTap: () {
           Get.defaultDialog(
             title: "Logout From App",
-            titleStyle: TextStyles.rem20Bold,
+            titleStyle: TextStyles.rem16RegularGrey,
             middleText: 'Are you sure you need to logout',
             middleTextStyle: TextStyles.rem16SemiBold,
             radius: 10,
@@ -44,7 +44,7 @@ class LogoutButton extends StatelessWidget {
             ),
             Text(
               "Logout",
-              style: TextStyles.rem20Bold,
+              style: TextStyles.rem16RegularGrey,
             ),
           ],
         ),

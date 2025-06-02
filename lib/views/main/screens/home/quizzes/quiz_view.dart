@@ -51,7 +51,8 @@ class _QuizViewState extends State<QuizView> {
                   children: [
                     Text(
                       controller.question.question,
-                      style: TextStyles.rem20Bold.copyWith(color: Colors.white),
+                      style: TextStyles.rem16RegularGrey
+                          .copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                     Padding(

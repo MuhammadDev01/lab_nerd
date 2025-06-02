@@ -22,7 +22,7 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: false,
-      builder: (_) => ScienceNerdApp(),
+      builder: (context) => ScienceNerdApp(),
     ),
   );
 }

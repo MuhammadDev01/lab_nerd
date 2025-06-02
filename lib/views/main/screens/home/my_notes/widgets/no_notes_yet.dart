@@ -19,7 +19,7 @@ class NoNotesYet extends StatelessWidget {
           ),
           Text(
             'No notes yet ....',
-            style: TextStyles.rem20Bold.copyWith(color: Colors.black54),
+            style: TextStyles.rem16RegularGrey.copyWith(color: Colors.black54),
           ),
         ],
       ),

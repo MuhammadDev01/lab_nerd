@@ -17,7 +17,8 @@ class ElementDetails extends StatelessWidget {
               FittedBox(
                 child: Text(
                   element.name,
-                  style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+                  style:
+                      TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
                 ),
               ),
               SizedBox(

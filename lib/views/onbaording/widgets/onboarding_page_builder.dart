@@ -7,32 +7,31 @@ class OnboardingPageBuilder extends StatelessWidget {
   final OnboardingItemModel model;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Align(
-            alignment: Alignment.center,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Column(
+        children: [
+          Expanded(
             child: Image.asset(model.assetImage),
           ),
-        ),
-        const SizedBox(
-          height: 72,
-        ),
-        FittedBox(
-          child: Text(
-            model.title,
-            style: TextStyles.rem26Bold,
+          FittedBox(
+            child: Text(
+              model.title,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        Text(
-          model.body,
-          style: TextStyles.rem16SemiBold,
-        ),
-      ],
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            model.body,
+            style: Theme.of(context).textTheme.displayMedium,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
     );
   }
 }

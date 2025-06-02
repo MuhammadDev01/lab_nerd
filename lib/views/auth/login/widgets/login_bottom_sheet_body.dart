@@ -19,7 +19,7 @@ class LoginBottomSheetBody extends StatelessWidget {
         const AppbarAuthBottomSheet(),
         Text(
           'LOGIN',
-          style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+          style: TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
         ),
         Column(
           children: [

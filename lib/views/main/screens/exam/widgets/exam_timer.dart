@@ -58,7 +58,8 @@ class _ExamTimerState extends State<ExamTimer> {
                 ),
                 Text(
                   "$minutes:${seconds.toString().padLeft(2, '0')}", // عرض الوقت بصيغة MM:SS
-                  style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+                  style:
+                      TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
                 ),
               ],
             );

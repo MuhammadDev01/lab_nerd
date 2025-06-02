@@ -34,7 +34,8 @@ class PeriodicTableView extends StatelessWidget {
               child: TextButton(
                 child: Text(
                   controller.isEnglish ? 'EN' : 'AR',
-                  style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+                  style:
+                      TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
                 ),
                 onPressed: () => controller.changeLang(),
               ),

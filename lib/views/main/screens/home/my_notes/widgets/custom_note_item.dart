@@ -29,7 +29,8 @@ class CustomNoteItem extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 12),
                 child: Text(
                   note.title,
-                  style: TextStyles.rem20Bold.copyWith(color: Colors.black),
+                  style:
+                      TextStyles.rem16RegularGrey.copyWith(color: Colors.black),
                 ),
               ),
               subtitle: Padding(
@@ -48,7 +49,7 @@ class CustomNoteItem extends StatelessWidget {
                 onPressed: () {
                   Get.defaultDialog(
                     title: "Delete Note",
-                    titleStyle: TextStyles.rem20Bold,
+                    titleStyle: TextStyles.rem16RegularGrey,
                     middleText: 'Are you sure delete this note?',
                     middleTextStyle: TextStyles.rem16SemiBold,
                     radius: 10,
